@@ -87,3 +87,11 @@
 /* v2.3.1: readable blog title */
 .blog-article-head h1,.blog-index-head h1{color:#07111f!important;text-shadow:none!important}
 .blog-article-head{background:#f6fafb}
+
+/* v2.4: source product files in solved assignment */
+.product-file-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:14px 0 30px}
+.product-file-card{overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff}
+.product-file-card__head{padding:11px 14px;background:#eef6f6;border-bottom:1px solid var(--line);color:#163b4e;font-size:12px}
+.product-file-content{margin:0;padding:17px 18px;overflow:auto;background:#0a1722;color:#d9e8f4}
+.product-file-content code{font:500 12px/1.65 Consolas,"SFMono-Regular",monospace;white-space:pre}
+@media(max-width:760px){.product-file-content{padding:14px}.product-file-content code{font-size:10px}}

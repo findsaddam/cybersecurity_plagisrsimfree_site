@@ -42,6 +42,38 @@ TXT,
         'topic_q3' => 'Topic: Verifying product files with GPG',
         'tool_q3' => 'Tool: GPG (Command Line)',
         'q3_intro' => 'I need to find out which of the three product files is the real one from the supplier. The supplier gave us a signature file (product.txt.sig) and their public key (supplier_public_key.asc). I used GPG on the command line to check each file.',
+        'product_files' => [
+            'product_1.txt' => <<<'TXT'
+PRODUCT INFORMATION
+
+Product ID: ACS-1047
+Product Name: Security Scanner 1.2.335
+Category: Computer Security
+Supplier: ACS (11907 and 11940) Pty Ltd
+Status: Active
+Additional: kzvPM0kcBCRWsBKCah2Li+V9W/hG4QsFz3wMlkkdLbYq/1+ooq3A9TCWTgUNzU/jrxmnb3INwMvsYpV2rg4w2w
+TXT,
+            'product_2.txt' => <<<'TXT'
+PRODUCT INFORMATION
+
+Product ID: ACS-1047
+Product Name: Security Scanner 1.2.335
+Category: Computer Security
+Supplier: ACS (11907 and 11940) Pty Ltd
+Status: Active
+Additional: kzvPM0kcBCRWsBKCah2Li-V9W/hG4QsFz3wMlkkdLbYq/1+ooq3A9TCWTgUNzU/jrxmnb3INwMvsYpV2rg4w2w
+TXT,
+            'product_3.txt' => <<<'TXT'
+PRODUCT INFORMATION
+
+Product ID: ACS-1047
+Product Name: Security Scanner 1.5.335
+Category: Computer Security
+Supplier: ACS (11907 and 11940) Pty Ltd
+Status: Active
+Additional: kzvPM0kcBCRWsBKCah2Li-V9W/hG4QsFt3wMlkkdLbYq/1+ooq3A9TCWTgUNzU/jrxmnb3INwMvsYpV2rg4w2w
+TXT,
+        ],
         'import_text' => 'First I imported the public key into my GPG keyring:',
         'confirm_key_text' => 'I confirmed the key was imported:',
         'commands' => [

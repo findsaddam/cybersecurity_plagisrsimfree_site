@@ -88,6 +88,16 @@ function renderCaseStudy(string $slug, array $case, array $caseStudies, array $s
                     <h3>a) Authenticity Analysis of Product Files</h3>
                     <p><?=e($case['q3_intro'])?></p>
 
+                    <h4>Product Files</h4>
+                    <div class="product-file-grid">
+                        <?php foreach($case['product_files'] as $fileName=>$fileContent): ?>
+                        <section class="product-file-card">
+                            <div class="product-file-card__head"><strong><?=e($fileName)?></strong></div>
+                            <pre class="product-file-content"><code><?=e($fileContent)?></code></pre>
+                        </section>
+                        <?php endforeach; ?>
+                    </div>
+
                     <?php foreach($case['commands'] as $i=>$command): ?>
                         <?php if($command[0]): ?><h4><?=e($command[0])?></h4><?php endif; ?>
                         <?php if($i===0): ?><p><?=e($case['import_text'])?></p><?php elseif($i===1): ?><p><?=e($case['confirm_key_text'])?></p><?php endif; ?>
