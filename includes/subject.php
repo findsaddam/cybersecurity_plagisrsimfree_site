@@ -44,6 +44,14 @@ function renderQuestionsBlock(array $page): void {
         <div class="insight-grid"><?php foreach($page['questions'] as $i=>$item): ?><div class="insight-card reveal" style="--delay:<?=($i+1)*55?>ms"><span><?=str_pad((string)($i+1),2,'0',STR_PAD_LEFT)?></span><h3><?=e($item[0])?></h3><p><?=e($item[1])?></p></div><?php endforeach; ?></div>
     </div></section><?php
 }
+function renderSignatureBlock(array $page): void {
+    $s=$page['architecture']['signature']??[];
+    if(empty($s)) return; ?>
+    <section class="section"><div class="container">
+        <div class="section-head section-head--split reveal"><div><span class="section-kicker"><?=e($s['kicker']??'Subject framework')?></span><h2><?=e($s['title']??'Assignment Framework')?></h2></div><p><?=e($s['intro']??'')?></p></div>
+        <div class="insight-grid"><?php foreach(($s['items']??[]) as $i=>$item): ?><div class="insight-card reveal" style="--delay:<?=($i+1)*55?>ms"><span><?=e($item[0])?></span><h3><?=e($item[1])?></h3><p><?=e($item[2])?></p></div><?php endforeach; ?></div>
+    </div></section><?php
+}
 function renderLongCopyBlock(array $page): void {
     $s=subjectSection($page,'long_copy'); ?>
     <section class="section"><div class="container content-split">
@@ -67,7 +75,7 @@ function renderRelatedBlock(string $slug,array $page,array $subjects): void {
     $s=subjectSection($page,'related'); ?>
     <section class="related-section"><div class="container">
         <div class="section-head section-head--split reveal"><div><span class="section-kicker"><?=e($s['kicker']??'Related subjects')?></span><h2><?=e($s['title']??'Related Cybersecurity Assignment Help')?></h2></div><p><?=e($s['intro']??'')?></p></div>
-        <div class="related-grid"><?php $shown=0; foreach($subjects as $relatedSlug=>$subject): if($relatedSlug===$slug) continue; $shown++; if($shown>3) break; ?><a class="related-card reveal" href="/<?=e($relatedSlug)?>"><span><?=icon($subject['icon'],22)?></span><div><h3><?=e($subject['nav'])?></h3><p><?=e($subject['eyebrow'])?></p></div><?=icon('arrow',17)?></a><?php endforeach; ?></div>
+        <div class="related-grid"><?php $relatedSlugs=$page['architecture']['related_slugs']??[]; if(!$relatedSlugs){$relatedSlugs=array_values(array_filter(array_keys($subjects),fn($k)=>$k!==$slug));$relatedSlugs=array_slice($relatedSlugs,0,3);} foreach($relatedSlugs as $relatedSlug): if(!isset($subjects[$relatedSlug])) continue; $subject=$subjects[$relatedSlug]; ?><a class="related-card reveal" href="/<?=e($relatedSlug)?>"><span><?=icon($subject['icon'],22)?></span><div><h3><?=e($subject['nav'])?></h3><p><?=e($subject['eyebrow'])?></p></div><?=icon('arrow',17)?></a><?php endforeach; ?></div>
     </div></section><?php
 }
 function renderSubject(string $slug,array $page,array $subjects): void {
@@ -91,6 +99,7 @@ foreach($order as $block){
     elseif($block==='tools_report') renderToolsReportBlock($page);
     elseif($block==='intent') renderIntentBlock($page);
     elseif($block==='questions') renderQuestionsBlock($page);
+    elseif($block==='signature') renderSignatureBlock($page);
     elseif($block==='long_copy') renderLongCopyBlock($page);
 }
 renderFaqBlock($page);

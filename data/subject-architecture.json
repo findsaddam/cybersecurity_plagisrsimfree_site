@@ -3,6 +3,7 @@
     "order": [
       "topics",
       "problems",
+      "signature",
       "workflow",
       "intent",
       "tools_report",
@@ -65,6 +66,38 @@
         "title": "Network Security Assignment Help",
         "intro": "Share the network scenario, marking rubric, deadline and any diagrams or authorised lab evidence."
       }
+    },
+    "related_slugs": [
+      "penetration-testing-assignment-help",
+      "cloud-security-assignment-help",
+      "cryptography-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Architecture to evidence",
+      "title": "Network Security Control Map",
+      "intro": "Use this chain to connect the network design to the security argument in the report.",
+      "items": [
+        [
+          "01",
+          "Asset and trust zone",
+          "Identify the system, user group or service and the network zone where it operates."
+        ],
+        [
+          "02",
+          "Threat or exposure",
+          "Describe the traffic path, weakness or trust relationship that creates security risk."
+        ],
+        [
+          "03",
+          "Security control",
+          "Explain why segmentation, a firewall, VPN, ACL or monitoring control fits that risk."
+        ],
+        [
+          "04",
+          "Evidence",
+          "Use a diagram, packet capture, log or configuration extract to support the conclusion."
+        ]
+      ]
     }
   },
   "ethical-hacking-assignment-help": {
@@ -73,6 +106,7 @@
       "workflow",
       "intent",
       "topics",
+      "signature",
       "questions",
       "tools_report",
       "long_copy"
@@ -133,6 +167,38 @@
         "title": "Ethical Hacking Assignment Help",
         "intro": "Share the authorised lab brief, assessment criteria, deadline and any evidence you need to explain."
       }
+    },
+    "related_slugs": [
+      "penetration-testing-assignment-help",
+      "web-application-security-assignment-help",
+      "network-security-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Professional finding format",
+      "title": "Ethical Hacking Finding Anatomy",
+      "intro": "A good ethical hacking finding reads like a small evidence-led security argument.",
+      "items": [
+        [
+          "Scope",
+          "Authorised target",
+          "State which approved system or lab component the finding relates to."
+        ],
+        [
+          "Evidence",
+          "Observed condition",
+          "Present concise evidence and explain exactly what it demonstrates."
+        ],
+        [
+          "Risk",
+          "Security impact",
+          "Connect the observation to a realistic consequence and justify severity."
+        ],
+        [
+          "Fix",
+          "Remediation",
+          "Recommend a defensive change that addresses the root cause and can be verified."
+        ]
+      ]
     }
   },
   "digital-forensics-assignment-help": {
@@ -140,6 +206,7 @@
       "workflow",
       "problems",
       "topics",
+      "signature",
       "long_copy",
       "intent",
       "tools_report",
@@ -201,6 +268,38 @@
         "title": "Digital Forensics Assignment Help",
         "intro": "Share the case scenario, evidence requirements, marking rubric and deadline for a focused review."
       }
+    },
+    "related_slugs": [
+      "incident-response-assignment-help",
+      "malware-analysis-assignment-help",
+      "cyber-threat-intelligence-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Forensic reasoning",
+      "title": "From Evidence to Conclusion",
+      "intro": "Forensic reports become easier to defend when every conclusion follows a visible reasoning chain.",
+      "items": [
+        [
+          "Acquire",
+          "Evidence source",
+          "Record where the artefact came from and how integrity was maintained."
+        ],
+        [
+          "Examine",
+          "Observable artefact",
+          "Identify the file, log, metadata, timestamp or activity that can be verified."
+        ],
+        [
+          "Interpret",
+          "Meaning and context",
+          "Explain what the artefact suggests while separating fact from inference."
+        ],
+        [
+          "Conclude",
+          "Supported judgement",
+          "State only the conclusion that the available evidence can reasonably support."
+        ]
+      ]
     }
   },
   "penetration-testing-assignment-help": {
@@ -209,6 +308,7 @@
       "problems",
       "workflow",
       "tools_report",
+      "signature",
       "topics",
       "questions",
       "long_copy"
@@ -269,6 +369,38 @@
         "title": "Penetration Testing Assignment Help",
         "intro": "Share the approved lab scope, assignment brief, marking rubric and deadline."
       }
+    },
+    "related_slugs": [
+      "ethical-hacking-assignment-help",
+      "web-application-security-assignment-help",
+      "network-security-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Finding quality",
+      "title": "Penetration Test Finding Anatomy",
+      "intro": "Use a consistent structure so each technical observation becomes a professional assessment finding.",
+      "items": [
+        [
+          "Asset",
+          "Affected component",
+          "Name the authorised target or service clearly enough for the reader to locate the issue."
+        ],
+        [
+          "Proof",
+          "Finding evidence",
+          "Show the minimum evidence required to demonstrate the observed weakness."
+        ],
+        [
+          "Severity",
+          "Risk rating",
+          "Explain likelihood and impact using the same rating method across the report."
+        ],
+        [
+          "Action",
+          "Remediation",
+          "Address the root cause, priority and how the fix should be verified."
+        ]
+      ]
     }
   },
   "cryptography-assignment-help": {
@@ -276,6 +408,7 @@
       "topics",
       "intent",
       "problems",
+      "signature",
       "long_copy",
       "questions",
       "workflow",
@@ -337,12 +470,45 @@
         "title": "Cryptography Assignment Help",
         "intro": "Share the cryptography question, required algorithms or scenario, marking criteria and deadline."
       }
+    },
+    "related_slugs": [
+      "network-security-assignment-help",
+      "cloud-security-assignment-help",
+      "web-application-security-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Choose the right method",
+      "title": "Encryption, Hashing and Signatures",
+      "intro": "These methods solve different security problems, so a cryptography assignment should explain the required property before choosing the technique.",
+      "items": [
+        [
+          "Encryption",
+          "Confidentiality",
+          "Protect readable data using a key and explain who must be able to decrypt it."
+        ],
+        [
+          "Hashing",
+          "Integrity",
+          "Create a one-way digest for verification and explain why hashing is not encryption."
+        ],
+        [
+          "Signatures",
+          "Authenticity",
+          "Use private/public-key operations to support integrity and signer verification."
+        ],
+        [
+          "PKI",
+          "Trust",
+          "Explain how certificates and trust chains help bind identities to public keys."
+        ]
+      ]
     }
   },
   "malware-analysis-assignment-help": {
     "order": [
       "tools_report",
       "workflow",
+      "signature",
       "problems",
       "intent",
       "topics",
@@ -405,6 +571,38 @@
         "title": "Malware Analysis Assignment Help",
         "intro": "Share the safe lab brief, evidence requirements, marking rubric and deadline."
       }
+    },
+    "related_slugs": [
+      "digital-forensics-assignment-help",
+      "incident-response-assignment-help",
+      "cyber-threat-intelligence-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Two evidence perspectives",
+      "title": "Static vs Behavioural Malware Analysis",
+      "intro": "The report should show how pre-execution artefacts and safe runtime observations complement each other.",
+      "items": [
+        [
+          "Static",
+          "Before execution",
+          "Review hashes, metadata, strings and file properties without running the sample."
+        ],
+        [
+          "Behavioural",
+          "During execution",
+          "Observe processes, files, registry activity and network events inside the safe lab."
+        ],
+        [
+          "Correlation",
+          "Combine evidence",
+          "Use several observations together before making a judgement about likely behaviour."
+        ],
+        [
+          "Defence",
+          "Turn evidence into action",
+          "Extract useful indicators and connect them to detection, containment or monitoring."
+        ]
+      ]
     }
   },
   "cloud-security-assignment-help": {
@@ -413,6 +611,7 @@
       "topics",
       "problems",
       "questions",
+      "signature",
       "workflow",
       "long_copy",
       "tools_report"
@@ -473,6 +672,38 @@
         "title": "Cloud Security Assignment Help",
         "intro": "Share the cloud scenario, platform, rubric, evidence requirements and deadline."
       }
+    },
+    "related_slugs": [
+      "network-security-assignment-help",
+      "cryptography-assignment-help",
+      "incident-response-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Responsibility boundaries",
+      "title": "Cloud Shared Responsibility Map",
+      "intro": "A cloud-security answer should show who controls each layer before recommending security improvements.",
+      "items": [
+        [
+          "Provider",
+          "Cloud infrastructure",
+          "Explain the security responsibilities retained by the platform provider."
+        ],
+        [
+          "Customer",
+          "Identity and configuration",
+          "Identify permissions, data, settings and workloads the customer must secure."
+        ],
+        [
+          "Evidence",
+          "Configuration and logs",
+          "Use platform evidence to show whether the responsibility is being handled effectively."
+        ],
+        [
+          "Control",
+          "Risk reduction",
+          "Recommend the IAM, logging, encryption or network change that addresses the identified gap."
+        ]
+      ]
     }
   },
   "web-application-security-assignment-help": {
@@ -480,6 +711,7 @@
       "topics",
       "problems",
       "intent",
+      "signature",
       "workflow",
       "long_copy",
       "tools_report",
@@ -541,6 +773,38 @@
         "title": "Web Application Security Assignment Help",
         "intro": "Share the application scenario, approved lab scope, rubric and deadline."
       }
+    },
+    "related_slugs": [
+      "ethical-hacking-assignment-help",
+      "penetration-testing-assignment-help",
+      "cryptography-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Finding to remediation",
+      "title": "OWASP Finding to Secure Fix",
+      "intro": "Use OWASP categories as context, then explain the application-specific weakness and defensive design change.",
+      "items": [
+        [
+          "Feature",
+          "Affected function",
+          "Identify the login, form, API, access-control check or other application feature."
+        ],
+        [
+          "Weakness",
+          "Security failure",
+          "Explain the failed validation, authorisation, session or configuration principle."
+        ],
+        [
+          "Impact",
+          "Application risk",
+          "Connect the weakness to affected data, users or business functions."
+        ],
+        [
+          "Fix",
+          "Secure design",
+          "Recommend a code, configuration or architecture control that addresses the root cause."
+        ]
+      ]
     }
   },
   "incident-response-assignment-help": {
@@ -548,6 +812,7 @@
       "workflow",
       "questions",
       "problems",
+      "signature",
       "topics",
       "intent",
       "long_copy",
@@ -609,6 +874,38 @@
         "title": "Incident Response Assignment Help",
         "intro": "Share the incident scenario, logs or evidence requirements, rubric and deadline."
       }
+    },
+    "related_slugs": [
+      "digital-forensics-assignment-help",
+      "malware-analysis-assignment-help",
+      "cyber-threat-intelligence-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Response decisions",
+      "title": "Incident Response Decision Points",
+      "intro": "A strong incident report explains why the response changed as new evidence became available.",
+      "items": [
+        [
+          "Triage",
+          "What matters first?",
+          "Prioritise assets, evidence and business impact so the most urgent risks are addressed first."
+        ],
+        [
+          "Contain",
+          "How do we limit impact?",
+          "Choose an action that reduces immediate risk while considering evidence and service availability."
+        ],
+        [
+          "Recover",
+          "When is it safe to restore?",
+          "Define validation, monitoring and recovery checks before normal service resumes."
+        ],
+        [
+          "Improve",
+          "What changes next?",
+          "Turn root causes and response gaps into better controls, logging and playbooks."
+        ]
+      ]
     }
   },
   "cyber-threat-intelligence-assignment-help": {
@@ -617,6 +914,7 @@
       "topics",
       "intent",
       "questions",
+      "signature",
       "workflow",
       "long_copy",
       "tools_report"
@@ -677,6 +975,38 @@
         "title": "Cyber Threat Intelligence Assignment Help",
         "intro": "Share the intelligence question, required sources or framework, rubric and deadline."
       }
+    },
+    "related_slugs": [
+      "incident-response-assignment-help",
+      "malware-analysis-assignment-help",
+      "digital-forensics-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Intelligence reasoning chain",
+      "title": "Source to Defensive Action",
+      "intro": "Threat intelligence becomes useful when the path from source material to a security decision is explicit.",
+      "items": [
+        [
+          "Source",
+          "Evaluate reliability",
+          "Check recency, access, corroboration and possible bias before accepting a claim."
+        ],
+        [
+          "Evidence",
+          "Extract what is supported",
+          "Separate indicators and reported behaviour from assumptions or attribution."
+        ],
+        [
+          "Judgement",
+          "State confidence",
+          "Explain the conclusion, supporting evidence, uncertainty and confidence level."
+        ],
+        [
+          "Action",
+          "Defensive implication",
+          "Translate the judgement into monitoring, prioritisation, detection or hardening decisions."
+        ]
+      ]
     }
   }
 }
