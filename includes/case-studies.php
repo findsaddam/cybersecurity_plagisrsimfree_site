@@ -5,7 +5,7 @@ function renderCaseStudiesIndex(array $caseStudies, array $subjects): void {
         'title' => 'Solved Assignments',
         'meta_title' => 'Solved Cybersecurity Assignments | Cyber Assignment Pro',
         'h1' => 'Solved Cybersecurity Assignments',
-        'description' => 'Question 2 — End-to-End Encryption. Question 3 — Digital Signature Analysis.',
+        'description' => 'Question 2: End to End Encryption. Question 3: Digital Signature Analysis.',
         'primary' => 'solved cybersecurity assignments',
         'nav' => 'Case Studies',
     ];
@@ -55,16 +55,16 @@ function renderCaseStudy(string $slug, array $case, array $caseStudies, array $s
         <div class="container blog-layout">
             <article class="blog-article">
                 <section id="question-2">
-                    <h2>Question 2 — End-to-End Encryption</h2>
+                    <h2>Question 2: End to End Encryption</h2>
                     <p class="source-meta"><strong><?=e($case['topic_q2'])?></strong> | <?=e($case['reference_q2'])?></p>
 
                     <h3>a) Architecture and Design of the Double Ratchet Algorithm</h3>
                     <p><?=e($case['q2_intro'])?></p>
 
-                    <h4>1. Diffie-Hellman (DH) Ratchet</h4>
+                    <h4>1. Diffie Hellman (DH) Ratchet</h4>
                     <p><?=e($case['dh_ratchet'])?></p>
 
-                    <h4>2. Symmetric-Key Ratchet</h4>
+                    <h4>2. Symmetric Key Ratchet</h4>
                     <p><?=e($case['symmetric_ratchet'])?></p>
 
                     <h4>How messages flow (Alice → Bob)</h4>
@@ -77,12 +77,12 @@ function renderCaseStudy(string $slug, array $case, array $caseStudies, array $s
                     <h4>Forward Secrecy</h4>
                     <p><?=e($case['forward_secrecy'])?></p>
 
-                    <h4>Post-Compromise Security</h4>
+                    <h4>Post Compromise Security</h4>
                     <p><?=e($case['post_compromise'])?></p>
                 </section>
 
                 <section id="question-3">
-                    <h2>Question 3 — Digital Signature Analysis</h2>
+                    <h2>Question 3: Digital Signature Analysis</h2>
                     <p class="source-meta"><strong><?=e($case['topic_q3'])?></strong> | <?=e($case['tool_q3'])?></p>
 
                     <h3>a) Authenticity Analysis of Product Files</h3>
@@ -136,8 +136,8 @@ function renderCaseStudy(string $slug, array $case, array $caseStudies, array $s
             <aside class="blog-sidebar">
                 <div class="blog-sidebar-card">
                     <span class="mini-label">On this page</span>
-                    <a href="#question-2">Question 2 — End-to-End Encryption</a>
-                    <a href="#question-3">Question 3 — Digital Signature Analysis</a>
+                    <a href="#question-2">Question 2: End to End Encryption</a>
+                    <a href="#question-3">Question 3: Digital Signature Analysis</a>
                 </div>
                 <div class="blog-sidebar-card">
                     <span class="mini-label">Related</span>

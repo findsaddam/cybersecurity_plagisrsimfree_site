@@ -83,3 +83,7 @@
 .subject-case-promo__meta span{font-size:11px;color:#9db0bf;margin-top:6px}
 @media(max-width:1050px){.blog-layout{grid-template-columns:1fr}.blog-sidebar{position:static;grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.blog-index-head,.blog-article-head{padding:45px 0 38px}.blog-body-section{padding:42px 0 70px}.blog-article h2{font-size:30px}.blog-article h3{font-size:23px}.blog-sidebar{grid-template-columns:1fr}.subject-case-promo{grid-template-columns:1fr}.assignment-diagram,.assignment-command,.assignment-output{padding:15px}.assignment-diagram code,.assignment-command code,.assignment-output code{font-size:10px}}
+
+/* v2.3.1: readable blog title */
+.blog-article-head h1,.blog-index-head h1{color:#07111f!important;text-shadow:none!important}
+.blog-article-head{background:#f6fafb}

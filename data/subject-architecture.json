@@ -506,8 +506,8 @@
     },
     "case_study": {
       "kicker": "Solved Assignment",
-      "title": "End-to-End Encryption & Digital Signature Analysis",
-      "intro": "The Double Ratchet Algorithm is what apps like Signal, WhatsApp, and Facebook Messenger use for end-to-end encryption. The main idea is simple: every single message gets its own unique key. It does this by combining two ratchets.",
+      "title": "End to End Encryption and Digital Signature Analysis",
+      "intro": "The Double Ratchet Algorithm is what apps like Signal, WhatsApp, and Facebook Messenger use for end to end encryption. The main idea is simple: every single message gets its own unique key. It does this by combining two ratchets.",
       "url": "/case-studies/double-ratchet-digital-signature-assignment",
       "badge": "Double Ratchet Algorithm",
       "meta": "GPG (Command Line)"
