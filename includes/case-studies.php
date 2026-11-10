@@ -5,7 +5,7 @@ function renderCaseStudiesIndex(array $caseStudies, array $subjects): void {
         'title' => 'Solved Assignments',
         'meta_title' => 'Solved Cybersecurity Assignments | Cyber Assignment Pro',
         'h1' => 'Solved Cybersecurity Assignments',
-        'description' => 'Solved cybersecurity assignments.',
+        'description' => 'Question 2 — End-to-End Encryption. Question 3 — Digital Signature Analysis.',
         'primary' => 'solved cybersecurity assignments',
         'nav' => 'Case Studies',
     ];
@@ -116,11 +116,16 @@ function renderCaseStudy(string $slug, array $case, array $caseStudies, array $s
 
                     <h4>Key Trust</h4>
                     <ul>
-                        <?php foreach($case['key_trust'] as $i=>$item): ?>
-                            <?php if($i===3): ?><ul class="nested-list"><?php endif; ?>
-                            <li><?=e($item)?></li>
-                            <?php if($i===5): ?></ul><?php endif; ?>
-                        <?php endforeach; ?>
+                        <li><?=e($case['key_trust'][0])?></li>
+                        <li><?=e($case['key_trust'][1])?></li>
+                        <li><?=e($case['key_trust'][2])?>
+                            <ul class="nested-list">
+                                <li><?=e($case['key_trust'][3])?></li>
+                                <li><?=e($case['key_trust'][4])?></li>
+                                <li><?=e($case['key_trust'][5])?></li>
+                            </ul>
+                        </li>
+                        <li><?=e($case['key_trust'][6])?></li>
                     </ul>
 
                     <p><strong>Simple way to remember:</strong><br><?=e($case['remember'][0])?><br><?=e($case['remember'][1])?></p>

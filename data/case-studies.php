@@ -10,6 +10,7 @@ return [
         'primary' => 'Double Ratchet Algorithm',
         'eyebrow' => 'Solved Assignment',
         'menu_meta' => 'Double Ratchet Algorithm · GPG (Command Line)',
+        'topics' => ['Double Ratchet Algorithm','End-to-End Encryption','Forward Secrecy','Post-Compromise Security','GPG','Digital Signature Analysis','Signature Validity','Key Trust'],
         'topic_q2' => 'Topic: Double Ratchet Algorithm',
         'reference_q2' => 'Reference: Perrin & Marlinspike, "The Double Ratchet Algorithm", 2016',
         'q2_intro' => 'The Double Ratchet Algorithm is what apps like Signal, WhatsApp, and Facebook Messenger use for end-to-end encryption. The main idea is simple: every single message gets its own unique key. It does this by combining two ratchets.',
