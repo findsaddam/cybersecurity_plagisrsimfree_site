@@ -45,7 +45,7 @@ TXT,
         'import_text' => 'First I imported the public key into my GPG keyring:',
         'confirm_key_text' => 'I confirmed the key was imported:',
         'commands' => [
-            ['Step 1 — Import the Supplier\'s Public Key','gpg --import supplier_public_key.asc',''],
+            ['Step 1: Import the Supplier\'s Public Key','gpg --import supplier_public_key.asc',''],
             ['','gpg --list-keys',''],
             ['Step 2: Verify product_1.txt','gpg --verify product.txt.sig product_1.txt','Result: INVALID'],
             ['Step 3: Verify product_2.txt','gpg --verify product.txt.sig product_2.txt','Result: INVALID'],
