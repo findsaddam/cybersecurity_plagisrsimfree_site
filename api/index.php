@@ -22,6 +22,13 @@ $subjects = json_decode($subjectJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
 $extraSubjectJson = file_get_contents(dirname(__DIR__) . '/data/subjects-extra.json');
 $extraSubjects = json_decode($extraSubjectJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
 $subjects = array_merge($subjects, $extraSubjects);
+$expansionJson = file_get_contents(dirname(__DIR__) . '/data/content-expansion.json');
+$contentExpansions = json_decode($expansionJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
+foreach ($contentExpansions as $expansionSlug => $expansionData) {
+    if (isset($subjects[$expansionSlug])) {
+        $subjects[$expansionSlug] = array_merge($subjects[$expansionSlug], $expansionData);
+    }
+}
 
 $subjectOrder = [
     'network-security-assignment-help',

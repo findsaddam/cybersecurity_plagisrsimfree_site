@@ -89,6 +89,48 @@ function renderSubject(string $slug, array $page, array $subjects): void {
         </div>
     </section>
 
+    <?php if (!empty($page['intent_heading'])): ?>
+    <section class="section section--light">
+        <div class="container">
+            <div class="section-head section-head--split reveal">
+                <div>
+                    <span class="section-kicker">More assignment guidance</span>
+                    <h2><?= e($page['intent_heading']) ?></h2>
+                </div>
+                <p><?= e($page['intent_intro']) ?></p>
+            </div>
+            <div class="problem-grid">
+                <?php foreach ($page['intent_cards'] as $i => $item): ?>
+                    <div class="problem-card reveal" style="--delay:<?= ($i + 1) * 55 ?>ms">
+                        <span class="problem-card__num"><?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></span>
+                        <h3><?= e($item[0]) ?></h3>
+                        <p><?= e($item[1]) ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--soft">
+        <div class="container">
+            <div class="section-head section-head--center reveal">
+                <span class="section-kicker">Common student searches</span>
+                <h2><?= e($page['questions_heading']) ?></h2>
+                <p><?= e($page['questions_intro']) ?></p>
+            </div>
+            <div class="insight-grid">
+                <?php foreach ($page['questions'] as $i => $item): ?>
+                    <div class="insight-card reveal" style="--delay:<?= ($i + 1) * 55 ?>ms">
+                        <span><?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></span>
+                        <h3><?= e($item[0]) ?></h3>
+                        <p><?= e($item[1]) ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
+
     <section class="section">
         <div class="container content-split">
             <article class="long-copy reveal">

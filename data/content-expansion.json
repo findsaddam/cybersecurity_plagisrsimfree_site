@@ -1,0 +1,422 @@
+{
+  "network-security-assignment-help": {
+    "intent_heading": "Computer Network Assignment Help",
+    "intent_intro": "Computer network assignment help often overlaps with network security because students must explain how traffic flows, where trust boundaries exist, and how controls such as firewalls, segmentation, VPNs and monitoring reduce risk. A strong submission connects the network design to the threat model instead of listing technologies without explaining why they are needed.",
+    "intent_cards": [
+      [
+        "Networking coursework",
+        "Explain addressing, routing, switching, VLANs and segmentation in a way that supports the security requirements of the scenario."
+      ],
+      [
+        "Firewall and VPN reports",
+        "Describe rule purpose, traffic direction, remote-access requirements and the security trade-offs behind the selected configuration."
+      ],
+      [
+        "Network security evidence",
+        "Use diagrams, packet captures, logs and configuration screenshots as evidence, then explain what each item proves."
+      ],
+      [
+        "Risk-based recommendations",
+        "Link weaknesses to realistic threats and prioritise improvements such as segmentation, monitoring, access control and secure remote connectivity."
+      ]
+    ],
+    "questions_heading": "Network Security Assignment Questions",
+    "questions_intro": "These are the kinds of questions students commonly need to answer when networking coursework becomes a security assignment.",
+    "questions": [
+      [
+        "How should I structure a network security assignment?",
+        "Start with the scenario and assets, describe the network design, identify threats and weaknesses, present evidence, then justify security controls and recommendations."
+      ],
+      [
+        "What should a network diagram explain?",
+        "A useful diagram should show key devices, trust zones, important connections, security boundaries and where controls such as firewalls or VPN gateways are applied."
+      ],
+      [
+        "How do I explain Wireshark evidence?",
+        "State what traffic was captured, identify the relevant protocol or event, explain the observation, and connect it directly to the security question."
+      ],
+      [
+        "What makes a good network security recommendation?",
+        "The recommendation should address a specific risk, be realistic for the environment, and explain how it improves confidentiality, integrity, availability or monitoring."
+      ]
+    ]
+  },
+  "ethical-hacking-assignment-help": {
+    "intent_heading": "Ethical Hacking Homework Help",
+    "intent_intro": "Ethical hacking homework and coursework should demonstrate authorised security testing, clear methodology and responsible reporting. Students usually earn stronger marks when they explain why a test was selected, what evidence was observed, what the result means for the system, and how the weakness should be remediated rather than presenting tool output alone.",
+    "intent_cards": [
+      [
+        "Authorised lab methodology",
+        "Define the permitted target, test objective, assumptions and sequence of activities before discussing any technical result."
+      ],
+      [
+        "Vulnerability evidence",
+        "Present only the evidence needed to support the finding and explain the security impact in plain academic language."
+      ],
+      [
+        "Risk and remediation",
+        "Use a consistent risk approach and connect every finding to practical defensive actions such as patching, hardening or access-control changes."
+      ],
+      [
+        "Professional reporting",
+        "Separate observations, findings and recommendations so the final report reads like a security assessment rather than a collection of screenshots."
+      ]
+    ],
+    "questions_heading": "Ethical Hacking Assignment Questions",
+    "questions_intro": "Ethical hacking assignments often test both technical understanding and the student's ability to communicate security findings responsibly.",
+    "questions": [
+      [
+        "What should an ethical hacking report include?",
+        "Include scope and authorisation, methodology, evidence, findings, risk ratings, remediation, limitations and a conclusion linked to the assignment objectives."
+      ],
+      [
+        "How many screenshots should I include?",
+        "Use enough screenshots to prove the important observations, but avoid repetitive evidence. Each screenshot should have a caption and explanation."
+      ],
+      [
+        "How do I write about Kali Linux tools academically?",
+        "Explain the purpose of the tool, why it was appropriate for the authorised lab, what the relevant output showed and what defensive lesson follows."
+      ],
+      [
+        "How should I discuss vulnerabilities safely?",
+        "Keep the discussion inside the authorised coursework context and focus on evidence, risk, root cause and remediation rather than operational misuse."
+      ]
+    ]
+  },
+  "digital-forensics-assignment-help": {
+    "intent_heading": "Digital Forensics Coursework Help",
+    "intent_intro": "Digital forensics coursework usually combines evidence handling, technical examination and formal reporting. Students need to show how evidence was acquired or provided, how integrity was maintained, what artefacts were examined, and how each conclusion is supported. This also overlaps with information security assignment help when the task asks how forensic findings affect security controls or incident response.",
+    "intent_cards": [
+      [
+        "Evidence handling",
+        "Document the source of evidence, preservation method, integrity checks and any limitations before interpreting artefacts."
+      ],
+      [
+        "Timeline analysis",
+        "Use timestamps carefully, account for time zones or clock differences, and explain how events relate to one another."
+      ],
+      [
+        "Forensic artefacts",
+        "Connect files, logs, metadata, browser activity or system records to the question instead of listing every artefact found."
+      ],
+      [
+        "Forensic reporting",
+        "Write findings so another reader can follow the reasoning from evidence to interpretation without relying on unsupported assumptions."
+      ]
+    ],
+    "questions_heading": "Digital Forensics Assignment Questions",
+    "questions_intro": "The strongest digital forensics reports make the chain from evidence to conclusion easy for the reader to verify.",
+    "questions": [
+      [
+        "What is the difference between evidence and interpretation?",
+        "Evidence is the observable artefact or record; interpretation explains what that artefact may mean in the context of the case and its limitations."
+      ],
+      [
+        "How should I write a forensic timeline?",
+        "Order verified events by timestamp, state the evidence source, identify gaps or uncertainty, and explain why each event matters."
+      ],
+      [
+        "Do I need to discuss chain of custody?",
+        "If the assignment involves forensic evidence handling, chain of custody and integrity are usually important because they establish how evidence was controlled."
+      ],
+      [
+        "How do I avoid overclaiming forensic findings?",
+        "Separate confirmed facts from reasonable inference, mention alternative explanations where relevant, and state limitations in the available evidence."
+      ]
+    ]
+  },
+  "penetration-testing-assignment-help": {
+    "intent_heading": "Penetration Testing Homework Help",
+    "intent_intro": "The Search Console data already shows direct demand for penetration testing assignment help and penetration testing homework help. For coursework, the important part is not simply completing authorised tests; it is documenting scope, methodology, evidence, risk and remediation in a way that demonstrates security understanding and professional reporting.",
+    "intent_cards": [
+      [
+        "Scope and rules",
+        "State the authorised targets, exclusions, assumptions and rules of engagement before presenting test activity."
+      ],
+      [
+        "Finding evidence",
+        "Use concise evidence that demonstrates the issue and explain the affected asset, condition and security consequence."
+      ],
+      [
+        "Risk ratings",
+        "Apply one consistent approach to likelihood and impact so high-priority findings are supported by clear reasoning."
+      ],
+      [
+        "Remediation planning",
+        "Recommend realistic fixes, verification steps and priorities rather than providing generic advice that is not linked to the finding."
+      ]
+    ],
+    "questions_heading": "Penetration Testing Assignment Questions",
+    "questions_intro": "These questions reflect the reporting and analysis decisions that often determine the quality of a penetration testing submission.",
+    "questions": [
+      [
+        "How should I structure a penetration testing assignment?",
+        "Use sections for scope, methodology, evidence, findings, risk ratings, remediation, limitations and a concise conclusion."
+      ],
+      [
+        "What is the difference between a vulnerability and a finding?",
+        "A vulnerability is a weakness; a finding is the documented assessment of that weakness in the tested context, including evidence, impact and remediation."
+      ],
+      [
+        "How should I write a risk rating?",
+        "Explain likelihood and impact using a consistent method, then justify why the finding is critical, high, medium or low for the scenario."
+      ],
+      [
+        "What makes remediation advice stronger?",
+        "Tie the recommendation to the root cause, affected system and risk, then explain how the proposed control reduces exposure."
+      ]
+    ]
+  },
+  "cryptography-assignment-help": {
+    "intent_heading": "Cryptography Coursework Help",
+    "intent_intro": "Cryptography assignment help has strong visibility in the Search Console data, so the page should answer more than definitions. Students commonly need to compare algorithms, explain key management, evaluate hashing or encryption choices, discuss PKI, and show why a cryptographic control is suitable for a particular security requirement.",
+    "intent_cards": [
+      [
+        "Encryption comparisons",
+        "Compare symmetric and asymmetric approaches by purpose, performance, key distribution and the security property required by the scenario."
+      ],
+      [
+        "Hashing and integrity",
+        "Explain how hashes support integrity and verification, and distinguish hashing from encryption or password storage methods."
+      ],
+      [
+        "PKI and certificates",
+        "Connect certificates, trust chains, digital signatures and certificate authorities to authentication and secure communication."
+      ],
+      [
+        "Key management",
+        "Discuss generation, storage, rotation, access, backup and revocation because strong algorithms still depend on secure key handling."
+      ]
+    ],
+    "questions_heading": "Cryptography Assignment Questions",
+    "questions_intro": "Good cryptography coursework explains why a method fits the requirement instead of treating algorithms as interchangeable.",
+    "questions": [
+      [
+        "How do I compare cryptographic algorithms?",
+        "Use criteria such as security purpose, key size, performance, maturity, implementation context and current suitability rather than only describing how each algorithm works."
+      ],
+      [
+        "What should I write about hashing?",
+        "Explain one-way transformation, integrity use cases, collision resistance and the difference between general hashing and password-hashing approaches."
+      ],
+      [
+        "How do I explain digital signatures?",
+        "Describe how signatures support authenticity, integrity and non-repudiation, then connect the process to keys, certificates and verification."
+      ],
+      [
+        "Why is key management important?",
+        "Keys must be generated, stored, distributed, rotated and revoked securely; weak key handling can undermine otherwise strong cryptographic controls."
+      ]
+    ]
+  },
+  "malware-analysis-assignment-help": {
+    "intent_heading": "Malware Analysis Coursework Help",
+    "intent_intro": "Malware analysis coursework should focus on safe observation, evidence interpretation and defensive understanding. A strong report separates static indicators from runtime behaviour, explains what the evidence suggests about persistence or communication, and turns findings into detection and containment recommendations without moving beyond the authorised laboratory environment.",
+    "intent_cards": [
+      [
+        "Static analysis",
+        "Describe relevant file properties, strings, metadata or hashes and explain what they suggest rather than listing every artefact."
+      ],
+      [
+        "Behavioural evidence",
+        "Summarise observed processes, files, registry changes, network activity or other safe lab behaviour with clear evidence."
+      ],
+      [
+        "Indicators and detection",
+        "Explain which indicators are useful for detection, where false positives may occur and what additional context defenders need."
+      ],
+      [
+        "Defensive recommendations",
+        "Connect behaviour to containment, hardening, monitoring, endpoint controls and incident-response actions appropriate to the scenario."
+      ]
+    ],
+    "questions_heading": "Malware Analysis Assignment Questions",
+    "questions_intro": "Malware reports are strongest when the student clearly distinguishes observed behaviour from assumptions about intent.",
+    "questions": [
+      [
+        "What should a malware analysis report include?",
+        "Include scope, safe lab environment, sample identification, methodology, static observations, behavioural findings, indicators, security impact and defensive recommendations."
+      ],
+      [
+        "How do I discuss malware behaviour safely?",
+        "Describe only what was observed in the authorised lab and focus on security impact, detection and defence rather than operational misuse."
+      ],
+      [
+        "What are useful malware indicators?",
+        "Relevant indicators can include hashes, domains, file paths, process names or other artefacts, but their value depends on context and reliability."
+      ],
+      [
+        "How should I write the conclusion?",
+        "Summarise the most important observed behaviours, likely security implications, confidence level and defensive actions supported by the evidence."
+      ]
+    ]
+  },
+  "cloud-security-assignment-help": {
+    "intent_heading": "Cloud Computing Assignment Help",
+    "intent_intro": "Cloud computing assignment help is one of the strongest query themes in the Search Console export, with substantial impressions. On a cloud security page, that intent is best served by explaining the shared responsibility model, IAM, storage security, logging, encryption and network controls in the context of AWS, Azure or another cloud scenario rather than discussing cloud services only at a general level.",
+    "intent_cards": [
+      [
+        "Shared responsibility",
+        "Identify which security duties belong to the cloud provider and which remain with the customer for the service model used."
+      ],
+      [
+        "IAM and least privilege",
+        "Explain users, roles, policies, MFA and access decisions in terms of business need and the risk of excessive permissions."
+      ],
+      [
+        "Cloud evidence",
+        "Use configuration screenshots, logs and security findings as evidence, then explain why the setting is secure or risky."
+      ],
+      [
+        "Cloud risk controls",
+        "Connect misconfiguration, identity weaknesses, exposed data or missing logging to practical controls and monitoring improvements."
+      ]
+    ],
+    "questions_heading": "Cloud Computing Assignment Rubric",
+    "questions_intro": "The GSC data also shows searches for an undergraduate cloud computing assignment rubric. These are the areas a student should check when mapping work to typical marking criteria.",
+    "questions": [
+      [
+        "Does the report explain the cloud model?",
+        "State the platform and service model, identify important assets and users, and explain how shared responsibility affects the security design."
+      ],
+      [
+        "Is the evidence linked to security risk?",
+        "Every screenshot or configuration should be followed by an explanation of what it shows, why it matters and which risk or control it supports."
+      ],
+      [
+        "Are IAM decisions justified?",
+        "Do more than list permissions. Explain why access is required, where least privilege applies and how authentication or role design reduces risk."
+      ],
+      [
+        "Are recommendations specific to the cloud environment?",
+        "Prioritise realistic changes such as policy correction, encryption, logging, network restriction, backup or monitoring rather than generic security advice."
+      ]
+    ]
+  },
+  "web-application-security-assignment-help": {
+    "intent_heading": "Web Security Coursework Help",
+    "intent_intro": "Web application security coursework often combines secure development concepts with evidence from an authorised training environment. Students need to connect OWASP risks, authentication, access control, validation, session management and configuration issues to the application scenario, then explain how secure design or coding changes reduce the identified risk.",
+    "intent_cards": [
+      [
+        "OWASP risk analysis",
+        "Use OWASP categories as a framework, but explain the actual weakness, affected feature and impact in the specific application."
+      ],
+      [
+        "Authentication and access",
+        "Discuss login, session and authorisation controls separately so the report shows how identity and permissions protect different resources."
+      ],
+      [
+        "Secure coding evidence",
+        "Explain how validation, output handling, error management, secrets and security headers reduce application risk."
+      ],
+      [
+        "Remediation quality",
+        "Recommend code, configuration or architecture changes that address the root cause and can be verified after implementation."
+      ]
+    ],
+    "questions_heading": "Web Security Assignment Questions",
+    "questions_intro": "Web security reports should show that the student understands both the application weakness and the defensive principle behind the fix.",
+    "questions": [
+      [
+        "How should I use the OWASP Top 10 in an assignment?",
+        "Map relevant findings to OWASP categories where appropriate, but keep the explanation centred on the evidence, security impact and application context."
+      ],
+      [
+        "What should an application-security finding contain?",
+        "Include the affected feature, evidence, risk, relevant security principle, limitations and a practical remediation recommendation."
+      ],
+      [
+        "How do I write about authentication securely?",
+        "Explain credential handling, MFA, session management, reset processes and access control at a defensive design level."
+      ],
+      [
+        "What makes remediation more academic?",
+        "Justify why the control addresses the root cause and explain any trade-offs, implementation constraints or verification steps."
+      ]
+    ]
+  },
+  "incident-response-assignment-help": {
+    "intent_heading": "Incident Response Coursework Help",
+    "intent_intro": "Incident response coursework asks students to turn security events into a structured decision process. The report should show how alerts and evidence were prioritised, what containment and recovery actions were selected, how business impact was considered, and which lessons should improve future detection, logging, identity controls or response procedures.",
+    "intent_cards": [
+      [
+        "Triage and severity",
+        "Explain which assets are affected, what evidence is reliable, how severe the incident may be and why certain actions take priority."
+      ],
+      [
+        "Containment decisions",
+        "Compare short-term containment with longer-term remediation and explain the effect on business continuity and evidence preservation."
+      ],
+      [
+        "Recovery evidence",
+        "Document what must be restored, verified or monitored before the incident can be considered contained and services returned safely."
+      ],
+      [
+        "Lessons learned",
+        "Turn root causes and control gaps into specific improvements for monitoring, access, patching, backups, communication and playbooks."
+      ]
+    ],
+    "questions_heading": "Incident Response Assignment Questions",
+    "questions_intro": "Good incident-response writing makes each decision traceable to evidence, risk and operational priorities.",
+    "questions": [
+      [
+        "How should I build an incident timeline?",
+        "Use verified timestamps and evidence sources, identify important actions or changes, and distinguish confirmed facts from assumptions."
+      ],
+      [
+        "What should I include in containment?",
+        "State the objective, affected systems, chosen action, expected risk reduction, operational impact and any evidence-preservation considerations."
+      ],
+      [
+        "How is recovery different from eradication?",
+        "Eradication removes the cause or malicious presence; recovery restores services safely and includes validation and monitoring for recurrence."
+      ],
+      [
+        "What belongs in lessons learned?",
+        "Summarise root causes, process gaps, detection weaknesses, communication issues and practical improvements that reduce the chance or impact of recurrence."
+      ]
+    ]
+  },
+  "cyber-threat-intelligence-assignment-help": {
+    "intent_heading": "Threat Intelligence Coursework Help",
+    "intent_intro": "Threat intelligence coursework is strongest when raw information is converted into defensible judgements. Students should define the intelligence question, evaluate source reliability, distinguish indicators from behaviour, use frameworks such as MITRE ATT&CK appropriately, and explain what the intelligence means for monitoring, hardening and security priorities.",
+    "intent_cards": [
+      [
+        "Intelligence requirements",
+        "Start with the decision or question the analysis must support so collection remains relevant instead of becoming a list of threat data."
+      ],
+      [
+        "Source evaluation",
+        "Consider reliability, recency, access, corroboration and potential bias before treating a source as evidence for a judgement."
+      ],
+      [
+        "IOC and TTP analysis",
+        "Separate observable indicators from tactics, techniques and procedures and explain what each type of evidence can and cannot prove."
+      ],
+      [
+        "Defensive implications",
+        "Translate intelligence into monitoring, detection, hardening or prioritisation recommendations that are clearly linked to the assessed threat."
+      ]
+    ],
+    "questions_heading": "Threat Intelligence Assignment Questions",
+    "questions_intro": "CTI assignments usually reward disciplined reasoning more than the number of indicators or threat reports collected.",
+    "questions": [
+      [
+        "How do I write a threat intelligence requirement?",
+        "Define the subject, decision, audience, time frame and information needed so the research has a clear purpose and stopping point."
+      ],
+      [
+        "How should I evaluate threat sources?",
+        "Compare reliability, recency, corroboration, possible bias and whether the source had direct access to the information being reported."
+      ],
+      [
+        "When should I use MITRE ATT&CK?",
+        "Use ATT&CK when observed or reported behaviour can be mapped to a supported technique and the mapping helps explain defensive visibility or controls."
+      ],
+      [
+        "What makes a strong CTI conclusion?",
+        "Present the key judgement, evidence, confidence level, limitations and the most important defensive implication without overstating certainty."
+      ]
+    ]
+  }
+}
