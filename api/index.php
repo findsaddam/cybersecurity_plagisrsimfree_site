@@ -29,6 +29,13 @@ foreach ($contentExpansions as $expansionSlug => $expansionData) {
         $subjects[$expansionSlug] = array_merge($subjects[$expansionSlug], $expansionData);
     }
 }
+$architectureJson = file_get_contents(dirname(__DIR__) . '/data/subject-architecture.json');
+$subjectArchitecture = json_decode($architectureJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
+foreach ($subjectArchitecture as $architectureSlug => $architectureData) {
+    if (isset($subjects[$architectureSlug])) {
+        $subjects[$architectureSlug]['architecture'] = $architectureData;
+    }
+}
 
 $subjectOrder = [
     'network-security-assignment-help',

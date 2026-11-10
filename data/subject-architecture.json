@@ -1,0 +1,682 @@
+{
+  "network-security-assignment-help": {
+    "order": [
+      "topics",
+      "problems",
+      "workflow",
+      "intent",
+      "tools_report",
+      "questions",
+      "long_copy"
+    ],
+    "hero_card": {
+      "label": "Network coursework",
+      "intro": "Build a network-security answer around architecture, traffic evidence, security controls and justified risk decisions.",
+      "bullets": [
+        "Network diagrams and trust zones",
+        "Firewall, VPN and segmentation analysis",
+        "Packet and log evidence",
+        "Risk-based security recommendations"
+      ]
+    },
+    "sections": {
+      "topics": {
+        "kicker": "Core network concepts",
+        "title": "Network Security Assignment Topics",
+        "intro": "Network security coursework commonly combines architecture, protocols and defensive controls. The strongest answers explain how those elements work together rather than treating each technology as a separate definition."
+      },
+      "problems": {
+        "kicker": "Common coursework challenges",
+        "title": "Network Security Coursework Challenges",
+        "intro": "Students often lose marks when diagrams, packet evidence or firewall choices are shown without explaining the security purpose behind them."
+      },
+      "workflow": {
+        "kicker": "From brief to report",
+        "title": "Network Security Assignment Workflow",
+        "intro": "A clear workflow starts with the network scenario, maps assets and trust boundaries, then uses evidence to justify controls and recommendations."
+      },
+      "tools_report": {
+        "kicker": "Network lab evidence",
+        "title": "Network Security Lab Tools",
+        "intro": "Use network tools to answer a specific question: what traffic is present, where a control applies, or what evidence supports the security conclusion.",
+        "report_heading": "Network Security Report Structure"
+      },
+      "long_copy": {
+        "kicker": "Writing the analysis",
+        "title": "Network Security Report Writing Help",
+        "paragraphs": [
+          "A network security report should make the architecture easy to understand before discussing individual controls. Start with the important assets, users, network segments and trust boundaries, then explain how traffic is expected to move between them. A labelled diagram is useful when the text refers back to it and explains why each boundary matters.",
+          "Packet captures and configuration screenshots should be selective. A Wireshark frame, firewall rule or routing output is evidence only when the report explains what it shows, why it is relevant and how it supports the security judgement. Raw output without interpretation adds volume but little academic value.",
+          "Recommendations should follow directly from the identified risk. Segmentation, secure remote access, monitoring, access control and firewall changes become stronger recommendations when the report explains the affected asset, threat, expected benefit and any operational trade-off."
+        ]
+      },
+      "faq": {
+        "kicker": "Network security questions",
+        "title": "Network Security Assignment FAQs",
+        "intro": "Answers to common questions about network diagrams, packet evidence, firewalls, VPNs and security reporting."
+      },
+      "related": {
+        "kicker": "Related security modules",
+        "title": "Related Network Security Subjects",
+        "intro": "Network security often overlaps with penetration testing, cloud security, cryptography and incident response."
+      },
+      "cta": {
+        "kicker": "Network security support",
+        "title": "Network Security Assignment Help",
+        "intro": "Share the network scenario, marking rubric, deadline and any diagrams or authorised lab evidence."
+      }
+    }
+  },
+  "ethical-hacking-assignment-help": {
+    "order": [
+      "problems",
+      "workflow",
+      "intent",
+      "topics",
+      "questions",
+      "tools_report",
+      "long_copy"
+    ],
+    "hero_card": {
+      "label": "Authorised lab work",
+      "intro": "Plan ethical hacking coursework around scope, methodology, evidence, risk and responsible remediation.",
+      "bullets": [
+        "Authorised testing methodology",
+        "Vulnerability evidence and risk",
+        "Kali Linux lab reporting",
+        "Professional remediation writing"
+      ]
+    },
+    "sections": {
+      "problems": {
+        "kicker": "Where ethical hacking reports fail",
+        "title": "Ethical Hacking Coursework Challenges",
+        "intro": "The difficult part is usually not running a tool; it is showing why the test was appropriate, what the evidence proves and how the finding should be remediated."
+      },
+      "workflow": {
+        "kicker": "Authorised testing process",
+        "title": "Ethical Hacking Assessment Workflow",
+        "intro": "Keep the assignment aligned with scope and permission from the first step through evidence collection, risk analysis and final reporting."
+      },
+      "topics": {
+        "kicker": "Ethical hacking concepts",
+        "title": "Ethical Hacking Lab Topics",
+        "intro": "Coursework may combine methodology, reconnaissance concepts, vulnerability assessment, web security, password security and professional reporting."
+      },
+      "tools_report": {
+        "kicker": "Lab tools and evidence",
+        "title": "Ethical Hacking Lab Tools",
+        "intro": "Tools such as Kali Linux utilities should appear in the report only when their output supports an authorised coursework objective.",
+        "report_heading": "Ethical Hacking Report Structure"
+      },
+      "long_copy": {
+        "kicker": "Professional reporting",
+        "title": "Ethical Hacking Report Writing Help",
+        "paragraphs": [
+          "An ethical hacking report should open with scope and authorisation. State what environment was approved for testing, what the assessment was intended to examine and any important limitations. This gives the technical evidence a clear academic and ethical context.",
+          "Findings should be written consistently. Identify the affected component, describe the observed weakness, present concise evidence, explain the security impact and justify the risk rating. Screenshots should support the explanation rather than replace it.",
+          "The remediation section is where technical testing becomes defensive security analysis. Recommendations should address the root cause and explain how patching, hardening, access-control changes, secure configuration or monitoring would reduce the identified risk."
+        ]
+      },
+      "faq": {
+        "kicker": "Ethical hacking questions",
+        "title": "Ethical Hacking Assignment FAQs",
+        "intro": "Practical answers about authorised labs, Kali Linux evidence, vulnerability reports and remediation."
+      },
+      "related": {
+        "kicker": "Related offensive-security modules",
+        "title": "Related Ethical Hacking Subjects",
+        "intro": "Ethical hacking commonly overlaps with penetration testing, web application security, network security and digital forensics."
+      },
+      "cta": {
+        "kicker": "Ethical hacking support",
+        "title": "Ethical Hacking Assignment Help",
+        "intro": "Share the authorised lab brief, assessment criteria, deadline and any evidence you need to explain."
+      }
+    }
+  },
+  "digital-forensics-assignment-help": {
+    "order": [
+      "workflow",
+      "problems",
+      "topics",
+      "long_copy",
+      "intent",
+      "tools_report",
+      "questions"
+    ],
+    "hero_card": {
+      "label": "Forensic evidence",
+      "intro": "Turn digital evidence into a defensible timeline, interpretation and formal forensic report.",
+      "bullets": [
+        "Evidence integrity and chain of custody",
+        "Timeline and artefact analysis",
+        "Forensic tool output",
+        "Evidence-led conclusions"
+      ]
+    },
+    "sections": {
+      "workflow": {
+        "kicker": "Investigation sequence",
+        "title": "Digital Forensics Investigation Workflow",
+        "intro": "Forensic coursework is easier to follow when evidence handling, examination, interpretation and reporting are separated into clear stages."
+      },
+      "problems": {
+        "kicker": "Evidence and interpretation",
+        "title": "Digital Forensics Evidence Challenges",
+        "intro": "Strong forensic work distinguishes what the evidence actually shows from what the student infers about the event or user activity."
+      },
+      "topics": {
+        "kicker": "Forensic investigation areas",
+        "title": "Digital Forensics Assignment Topics",
+        "intro": "Common topics include evidence preservation, file-system artefacts, timelines, logs, browser activity, metadata and forensic reporting."
+      },
+      "tools_report": {
+        "kicker": "Forensic lab tools",
+        "title": "Digital Forensics Lab Tools",
+        "intro": "Forensic tools should support reproducible examination. Record what source was examined, what artefact was identified and how integrity was maintained.",
+        "report_heading": "Digital Forensics Report Structure"
+      },
+      "long_copy": {
+        "kicker": "Evidence-led writing",
+        "title": "Digital Forensics Report Writing Help",
+        "paragraphs": [
+          "A forensic report should distinguish evidence from interpretation. File metadata, log entries, browser records or timestamps are observations; the explanation of what those observations suggest belongs in the analysis. Keeping the two separate makes conclusions easier to defend.",
+          "Timelines require particular care. State the source of each timestamp, note time-zone or clock issues when relevant, and avoid presenting uncertain events as confirmed facts. The most useful timeline entries are those that change the understanding of the case.",
+          "The conclusion should be proportionate to the available evidence. Summarise the strongest supported findings, identify important limitations and avoid claims that cannot be traced back to an artefact, log, image or documented examination step."
+        ]
+      },
+      "faq": {
+        "kicker": "Forensics questions",
+        "title": "Digital Forensics Assignment FAQs",
+        "intro": "Questions about chain of custody, forensic timelines, artefact interpretation and evidence-based conclusions."
+      },
+      "related": {
+        "kicker": "Related investigation modules",
+        "title": "Related Digital Forensics Subjects",
+        "intro": "Digital forensics connects naturally with incident response, malware analysis, threat intelligence and network security."
+      },
+      "cta": {
+        "kicker": "Forensics coursework support",
+        "title": "Digital Forensics Assignment Help",
+        "intro": "Share the case scenario, evidence requirements, marking rubric and deadline for a focused review."
+      }
+    }
+  },
+  "penetration-testing-assignment-help": {
+    "order": [
+      "intent",
+      "problems",
+      "workflow",
+      "tools_report",
+      "topics",
+      "questions",
+      "long_copy"
+    ],
+    "hero_card": {
+      "label": "Scoped security testing",
+      "intro": "Build penetration testing coursework around rules of engagement, evidence, risk ratings and remediation.",
+      "bullets": [
+        "Scope and rules of engagement",
+        "Finding evidence and severity",
+        "Risk-rating justification",
+        "Remediation and retest planning"
+      ]
+    },
+    "sections": {
+      "problems": {
+        "kicker": "Reporting challenges",
+        "title": "Penetration Testing Reporting Challenges",
+        "intro": "Penetration testing coursework is judged on the quality of the assessment narrative as much as the technical evidence."
+      },
+      "workflow": {
+        "kicker": "Assessment process",
+        "title": "Penetration Testing Assessment Workflow",
+        "intro": "A disciplined sequence from scope to remediation keeps the report consistent and prevents findings from becoming disconnected tool output."
+      },
+      "topics": {
+        "kicker": "Testing and reporting topics",
+        "title": "Penetration Testing Assignment Topics",
+        "intro": "Typical university work covers scope, reconnaissance concepts, vulnerability validation, evidence, risk ratings, remediation and professional reporting."
+      },
+      "tools_report": {
+        "kicker": "Authorised testing tools",
+        "title": "Penetration Testing Lab Tools",
+        "intro": "Use testing tools only inside the approved environment and document the evidence needed to support each finding.",
+        "report_heading": "Penetration Testing Report Structure"
+      },
+      "long_copy": {
+        "kicker": "Finding-by-finding writing",
+        "title": "Penetration Testing Report Writing Help",
+        "paragraphs": [
+          "A penetration testing report should make scope visible before any findings are discussed. Identify authorised targets, exclusions, assumptions and rules of engagement so the reader understands exactly what the evidence represents.",
+          "Each finding should follow a consistent pattern: affected asset, observed condition, evidence, security impact, risk rating and remediation. This format makes it easier to compare findings and helps the assessor see how technical observations lead to professional judgement.",
+          "Remediation should be specific enough to act on. Address the root cause, identify the control or configuration change, explain priority and describe how the organisation could verify that the weakness has been reduced after the fix."
+        ]
+      },
+      "faq": {
+        "kicker": "Penetration testing questions",
+        "title": "Penetration Testing Assignment FAQs",
+        "intro": "Answers about scope, findings, risk ratings, authorised testing and remediation reports."
+      },
+      "related": {
+        "kicker": "Related testing modules",
+        "title": "Related Penetration Testing Subjects",
+        "intro": "Penetration testing frequently overlaps with ethical hacking, web application security, network security and cryptography."
+      },
+      "cta": {
+        "kicker": "Penetration testing support",
+        "title": "Penetration Testing Assignment Help",
+        "intro": "Share the approved lab scope, assignment brief, marking rubric and deadline."
+      }
+    }
+  },
+  "cryptography-assignment-help": {
+    "order": [
+      "topics",
+      "intent",
+      "problems",
+      "long_copy",
+      "questions",
+      "workflow",
+      "tools_report"
+    ],
+    "hero_card": {
+      "label": "Cryptographic concepts",
+      "intro": "Explain encryption, hashing, PKI and key management by linking each method to a real security requirement.",
+      "bullets": [
+        "Encryption algorithm comparison",
+        "Hashing and integrity",
+        "PKI and digital signatures",
+        "Key-management decisions"
+      ]
+    },
+    "sections": {
+      "topics": {
+        "kicker": "Core cryptography concepts",
+        "title": "Cryptography Assignment Concepts",
+        "intro": "Cryptography coursework usually asks students to compare methods, explain security properties and justify why a particular approach suits a scenario."
+      },
+      "problems": {
+        "kicker": "Where students lose marks",
+        "title": "Cryptography Coursework Challenges",
+        "intro": "A common weakness is describing algorithms accurately but never explaining why one method is appropriate for the requirement or what limitations it introduces."
+      },
+      "workflow": {
+        "kicker": "Analysis process",
+        "title": "Cryptography Assignment Workflow",
+        "intro": "Move from the security requirement to the cryptographic property, compare suitable methods, then justify implementation and key-management decisions."
+      },
+      "tools_report": {
+        "kicker": "Cryptography tools",
+        "title": "Cryptography Tools and Examples",
+        "intro": "Practical examples should demonstrate a concept such as encryption, hashing, certificate validation or key handling without replacing the academic explanation.",
+        "report_heading": "Cryptography Report Structure"
+      },
+      "long_copy": {
+        "kicker": "Comparative analysis",
+        "title": "Cryptography Report Writing Help",
+        "paragraphs": [
+          "Cryptography assignments become stronger when they begin with the security requirement rather than the algorithm name. Identify whether the task needs confidentiality, integrity, authentication, non-repudiation or a combination of these properties before evaluating suitable methods.",
+          "Comparisons should use meaningful criteria such as key distribution, performance, security assumptions, maturity and implementation context. Symmetric and asymmetric methods solve different problems, so a good answer explains where they complement one another rather than declaring one universally better.",
+          "Key management deserves its own analysis. Generation, storage, distribution, rotation, backup and revocation can determine whether a cryptographic design is secure in practice. A strong recommendation therefore considers both the algorithm and the lifecycle of its keys."
+        ]
+      },
+      "faq": {
+        "kicker": "Cryptography questions",
+        "title": "Cryptography Assignment FAQs",
+        "intro": "Questions about encryption, hashing, PKI, digital signatures and key management."
+      },
+      "related": {
+        "kicker": "Related security modules",
+        "title": "Related Cryptography Subjects",
+        "intro": "Cryptography supports network security, cloud security, web application security and secure authentication."
+      },
+      "cta": {
+        "kicker": "Cryptography support",
+        "title": "Cryptography Assignment Help",
+        "intro": "Share the cryptography question, required algorithms or scenario, marking criteria and deadline."
+      }
+    }
+  },
+  "malware-analysis-assignment-help": {
+    "order": [
+      "tools_report",
+      "workflow",
+      "problems",
+      "intent",
+      "topics",
+      "long_copy",
+      "questions"
+    ],
+    "hero_card": {
+      "label": "Safe malware analysis",
+      "intro": "Separate static evidence from runtime behaviour and turn lab observations into defensive conclusions.",
+      "bullets": [
+        "Static artefact analysis",
+        "Behavioural observations",
+        "Indicators and detection",
+        "Defensive recommendations"
+      ]
+    },
+    "sections": {
+      "problems": {
+        "kicker": "Analysis challenges",
+        "title": "Malware Analysis Coursework Challenges",
+        "intro": "Malware coursework requires careful wording because the report must distinguish observed behaviour from assumptions about capability or intent."
+      },
+      "topics": {
+        "kicker": "Malware analysis areas",
+        "title": "Malware Analysis Assignment Topics",
+        "intro": "Common areas include file properties, strings, hashes, process behaviour, persistence artefacts, network observations, indicators and defensive response."
+      },
+      "workflow": {
+        "kicker": "Safe analysis process",
+        "title": "Malware Analysis Lab Workflow",
+        "intro": "Keep the investigation inside the authorised sandbox or university environment and record evidence in a sequence that can be reproduced."
+      },
+      "tools_report": {
+        "kicker": "Analysis environment",
+        "title": "Malware Analysis Lab Tools",
+        "intro": "Use tools to observe safely, document what changed and extract defensive evidence without moving beyond the approved laboratory scope.",
+        "report_heading": "Malware Analysis Report Structure"
+      },
+      "long_copy": {
+        "kicker": "From artefacts to defence",
+        "title": "Malware Analysis Report Writing Help",
+        "paragraphs": [
+          "A malware analysis report should separate static observations from behavioural evidence. Hashes, metadata and strings describe the sample before execution, while processes, file changes, registry activity or network events describe what happened inside the safe lab environment.",
+          "Indicators should be presented with context. A domain, file path or hash may be useful for detection, but the report should explain how reliable the indicator is, what it represents and whether defenders would need additional context to avoid false positives.",
+          "Defensive recommendations should come directly from observed behaviour. Monitoring, containment, endpoint controls, access restrictions or incident-response actions are more persuasive when the report shows which behaviour or artefact each recommendation addresses."
+        ]
+      },
+      "faq": {
+        "kicker": "Malware analysis questions",
+        "title": "Malware Analysis Assignment FAQs",
+        "intro": "Questions about safe analysis, static and dynamic evidence, indicators and defensive reporting."
+      },
+      "related": {
+        "kicker": "Related analysis modules",
+        "title": "Related Malware Analysis Subjects",
+        "intro": "Malware analysis often connects with digital forensics, incident response, threat intelligence and network monitoring."
+      },
+      "cta": {
+        "kicker": "Malware analysis support",
+        "title": "Malware Analysis Assignment Help",
+        "intro": "Share the safe lab brief, evidence requirements, marking rubric and deadline."
+      }
+    }
+  },
+  "cloud-security-assignment-help": {
+    "order": [
+      "intent",
+      "topics",
+      "problems",
+      "questions",
+      "workflow",
+      "long_copy",
+      "tools_report"
+    ],
+    "hero_card": {
+      "label": "Cloud security design",
+      "intro": "Explain cloud risk through shared responsibility, identity, logging, data protection and platform-specific controls.",
+      "bullets": [
+        "Shared responsibility model",
+        "IAM and least privilege",
+        "Cloud logging and evidence",
+        "AWS and Azure security controls"
+      ]
+    },
+    "sections": {
+      "problems": {
+        "kicker": "Cloud security challenges",
+        "title": "Cloud Security Coursework Challenges",
+        "intro": "Cloud assignments often become generic unless the answer identifies the service model, assets, identities and configuration decisions that create or reduce risk."
+      },
+      "topics": {
+        "kicker": "Cloud security concepts",
+        "title": "Cloud Security Assignment Topics",
+        "intro": "Core topics include shared responsibility, IAM, storage security, encryption, logging, network controls, monitoring and misconfiguration risk."
+      },
+      "workflow": {
+        "kicker": "Cloud assessment process",
+        "title": "Cloud Security Assignment Workflow",
+        "intro": "Start with the cloud service and responsibility boundary, then map threats to evidence, controls and risk-based recommendations."
+      },
+      "tools_report": {
+        "kicker": "Cloud platforms and evidence",
+        "title": "Cloud Security Tools and Platforms",
+        "intro": "Platform screenshots and logs should prove a configuration or event and be followed by an explanation of its security significance.",
+        "report_heading": "Cloud Security Report Structure"
+      },
+      "long_copy": {
+        "kicker": "Cloud risk analysis",
+        "title": "Cloud Security Report Writing Help",
+        "paragraphs": [
+          "Cloud security reports should make the service model explicit. The security responsibilities for infrastructure, platform services and software services differ, so the report needs to explain which controls belong to the provider and which remain with the customer.",
+          "Identity is often the centre of the analysis. Roles, policies, MFA and permissions should be evaluated against least privilege and business need. A screenshot of an IAM policy is useful only when the text explains what access it grants and why that access is appropriate or excessive.",
+          "Cloud recommendations should be platform-aware. Logging, encryption, network restrictions, secure storage, backup and monitoring controls are stronger when they reference the specific risk and explain how the proposed change would improve visibility or reduce exposure."
+        ]
+      },
+      "faq": {
+        "kicker": "Cloud security questions",
+        "title": "Cloud Security Assignment FAQs",
+        "intro": "Questions about AWS, Azure, IAM, shared responsibility, evidence and cloud risk."
+      },
+      "related": {
+        "kicker": "Related cloud modules",
+        "title": "Related Cloud Security Subjects",
+        "intro": "Cloud security commonly overlaps with network security, cryptography, incident response and web application security."
+      },
+      "cta": {
+        "kicker": "Cloud security support",
+        "title": "Cloud Security Assignment Help",
+        "intro": "Share the cloud scenario, platform, rubric, evidence requirements and deadline."
+      }
+    }
+  },
+  "web-application-security-assignment-help": {
+    "order": [
+      "topics",
+      "problems",
+      "intent",
+      "workflow",
+      "long_copy",
+      "tools_report",
+      "questions"
+    ],
+    "hero_card": {
+      "label": "Secure web applications",
+      "intro": "Connect OWASP risks and authorised evidence to secure design, coding and remediation decisions.",
+      "bullets": [
+        "OWASP risk analysis",
+        "Authentication and access control",
+        "Secure coding evidence",
+        "Application remediation"
+      ]
+    },
+    "sections": {
+      "problems": {
+        "kicker": "Application-security challenges",
+        "title": "Web Security Coursework Challenges",
+        "intro": "Students often identify a weakness correctly but lose marks by failing to connect it to the affected feature, security impact and appropriate defensive control."
+      },
+      "topics": {
+        "kicker": "Application security concepts",
+        "title": "Web Application Security Topics",
+        "intro": "Typical coursework covers OWASP risks, authentication, access control, input handling, session security, secure coding and remediation."
+      },
+      "workflow": {
+        "kicker": "Application review process",
+        "title": "Web Security Assignment Workflow",
+        "intro": "Use the application scenario to define trust boundaries and security requirements before interpreting authorised lab evidence."
+      },
+      "tools_report": {
+        "kicker": "Authorised application testing",
+        "title": "Web Security Lab Tools",
+        "intro": "Tools such as OWASP ZAP or Burp Suite should support a defensive coursework objective inside an authorised training environment.",
+        "report_heading": "Web Security Report Structure"
+      },
+      "long_copy": {
+        "kicker": "Secure-design analysis",
+        "title": "Web Security Report Writing Help",
+        "paragraphs": [
+          "A web security report should describe the affected application feature before naming a vulnerability category. Explain what the feature is intended to do, what security assumption failed and which evidence demonstrates the weakness in the authorised environment.",
+          "OWASP categories are useful for classification, but they should not replace analysis. The report still needs to explain the affected asset, likely impact, relevant security principle and why the chosen remediation addresses the underlying cause.",
+          "Remediation should connect code, configuration and architecture. Input handling, access control, session management, secrets, headers and error handling each solve different problems, so recommendations should be specific to the observed condition and include a way to verify the fix."
+        ]
+      },
+      "faq": {
+        "kicker": "Web security questions",
+        "title": "Web Security Assignment FAQs",
+        "intro": "Questions about OWASP, authorised testing, secure coding, findings and application remediation."
+      },
+      "related": {
+        "kicker": "Related application-security modules",
+        "title": "Related Web Security Subjects",
+        "intro": "Web application security overlaps with ethical hacking, penetration testing, cryptography and cloud security."
+      },
+      "cta": {
+        "kicker": "Web security support",
+        "title": "Web Application Security Assignment Help",
+        "intro": "Share the application scenario, approved lab scope, rubric and deadline."
+      }
+    }
+  },
+  "incident-response-assignment-help": {
+    "order": [
+      "workflow",
+      "questions",
+      "problems",
+      "topics",
+      "intent",
+      "long_copy",
+      "tools_report"
+    ],
+    "hero_card": {
+      "label": "Incident handling",
+      "intro": "Build an incident report from timeline evidence, triage decisions, containment, recovery and lessons learned.",
+      "bullets": [
+        "Incident timeline and triage",
+        "Containment decisions",
+        "Recovery and validation",
+        "Post-incident improvements"
+      ]
+    },
+    "sections": {
+      "problems": {
+        "kicker": "Decision-making challenges",
+        "title": "Incident Response Coursework Challenges",
+        "intro": "Incident-response assignments require students to justify why one action takes priority over another and how business impact affects the response."
+      },
+      "topics": {
+        "kicker": "Incident response concepts",
+        "title": "Incident Response Assignment Topics",
+        "intro": "Core areas include preparation, detection, triage, containment, eradication, recovery, communication, evidence handling and lessons learned."
+      },
+      "workflow": {
+        "kicker": "Incident lifecycle",
+        "title": "Incident Response Workflow",
+        "intro": "A chronological structure helps the reader see how evidence changed the understanding of the incident and why each response decision followed."
+      },
+      "tools_report": {
+        "kicker": "Incident evidence",
+        "title": "Incident Response Tools and Logs",
+        "intro": "SIEM alerts, endpoint logs and network evidence are useful when the report explains what each source contributes to triage or response.",
+        "report_heading": "Incident Response Report Structure"
+      },
+      "long_copy": {
+        "kicker": "Decision-focused reporting",
+        "title": "Incident Response Report Writing Help",
+        "paragraphs": [
+          "An incident report should make the timeline and decision points visible. Identify what was known at each stage, which assets were affected and why the severity assessment changed as new evidence became available.",
+          "Containment, eradication and recovery should not be blended together. Containment limits immediate impact, eradication addresses the cause or malicious presence, and recovery restores services safely. Explaining these distinctions helps justify the response strategy.",
+          "Lessons learned should translate the incident into better controls. Logging gaps, weak access controls, patching delays, backup issues or communication failures become useful recommendations when they are linked directly to what complicated detection or recovery."
+        ]
+      },
+      "faq": {
+        "kicker": "Incident response questions",
+        "title": "Incident Response Assignment FAQs",
+        "intro": "Questions about timelines, triage, containment, recovery, SIEM evidence and lessons learned."
+      },
+      "related": {
+        "kicker": "Related response modules",
+        "title": "Related Incident Response Subjects",
+        "intro": "Incident response closely connects with digital forensics, malware analysis, threat intelligence and network security."
+      },
+      "cta": {
+        "kicker": "Incident response support",
+        "title": "Incident Response Assignment Help",
+        "intro": "Share the incident scenario, logs or evidence requirements, rubric and deadline."
+      }
+    }
+  },
+  "cyber-threat-intelligence-assignment-help": {
+    "order": [
+      "problems",
+      "topics",
+      "intent",
+      "questions",
+      "workflow",
+      "long_copy",
+      "tools_report"
+    ],
+    "hero_card": {
+      "label": "Threat intelligence",
+      "intro": "Turn sources, indicators and behavioural evidence into defensible intelligence judgements and defensive priorities.",
+      "bullets": [
+        "Source reliability assessment",
+        "IOC and TTP analysis",
+        "MITRE ATT&CK mapping",
+        "Defensive intelligence reporting"
+      ]
+    },
+    "sections": {
+      "problems": {
+        "kicker": "Intelligence-analysis challenges",
+        "title": "Threat Intelligence Coursework Challenges",
+        "intro": "The difficult part of CTI is not collecting information; it is deciding what is reliable, what the evidence supports and what defenders should do with the judgement."
+      },
+      "topics": {
+        "kicker": "Threat intelligence concepts",
+        "title": "Cyber Threat Intelligence Topics",
+        "intro": "Coursework commonly covers intelligence requirements, source evaluation, threat actors, indicators, TTPs, MITRE ATT&CK and defensive implications."
+      },
+      "workflow": {
+        "kicker": "Intelligence cycle",
+        "title": "Threat Intelligence Assignment Workflow",
+        "intro": "Define the intelligence requirement first, then collect, evaluate, correlate and communicate only the information needed to support that decision."
+      },
+      "tools_report": {
+        "kicker": "Intelligence platforms",
+        "title": "Threat Intelligence Tools",
+        "intro": "Platforms and public sources should strengthen provenance and analysis, not encourage a report to become a list of indicators.",
+        "report_heading": "Threat Intelligence Report Structure"
+      },
+      "long_copy": {
+        "kicker": "Analytical writing",
+        "title": "Threat Intelligence Report Writing Help",
+        "paragraphs": [
+          "A threat intelligence report should begin with the intelligence requirement. Define the audience, decision and time frame so the research has a clear purpose. This prevents the report from becoming a collection of unrelated threat information.",
+          "Source evaluation should be visible in the reasoning. Consider reliability, recency, corroboration and whether the source had direct access to the information. Indicators and reported behaviours should then be separated from analytical judgement.",
+          "The conclusion should state the key judgement, confidence and defensive implication. MITRE ATT&CK mappings, indicators and threat-actor context are valuable only when they help the reader decide what to monitor, prioritise or harden."
+        ]
+      },
+      "faq": {
+        "kicker": "Threat intelligence questions",
+        "title": "Threat Intelligence Assignment FAQs",
+        "intro": "Questions about source reliability, IOCs, TTPs, MITRE ATT&CK and intelligence reporting."
+      },
+      "related": {
+        "kicker": "Related intelligence modules",
+        "title": "Related Threat Intelligence Subjects",
+        "intro": "Threat intelligence overlaps with incident response, malware analysis, digital forensics and network defence."
+      },
+      "cta": {
+        "kicker": "Threat intelligence support",
+        "title": "Cyber Threat Intelligence Assignment Help",
+        "intro": "Share the intelligence question, required sources or framework, rubric and deadline."
+      }
+    }
+  }
+}

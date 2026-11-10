@@ -127,7 +127,7 @@
   },
   "penetration-testing-assignment-help": {
     "intent_heading": "Penetration Testing Homework Help",
-    "intent_intro": "The Search Console data already shows direct demand for penetration testing assignment help and penetration testing homework help. For coursework, the important part is not simply completing authorised tests; it is documenting scope, methodology, evidence, risk and remediation in a way that demonstrates security understanding and professional reporting.",
+    "intent_intro": "Penetration testing homework and coursework should show more than authorised test activity. A strong submission documents scope, methodology, evidence, risk and remediation so the reader can see how technical observations lead to a professional security finding.",
     "intent_cards": [
       [
         "Scope and rules",
@@ -169,7 +169,7 @@
   },
   "cryptography-assignment-help": {
     "intent_heading": "Cryptography Homework Help",
-    "intent_intro": "Cryptography assignment help has strong visibility in the Search Console data, so the page should answer more than definitions. Students commonly need to compare algorithms, explain key management, evaluate hashing or encryption choices, discuss PKI, and show why a cryptographic control is suitable for a particular security requirement.",
+    "intent_intro": "Cryptography coursework often moves beyond definitions into comparison and design. Students may need to compare algorithms, explain key management, evaluate hashing or encryption choices, discuss PKI, and justify why a cryptographic control suits a particular security requirement.",
     "intent_cards": [
       [
         "Encryption comparisons",
@@ -253,7 +253,7 @@
   },
   "cloud-security-assignment-help": {
     "intent_heading": "Cloud Computing Assignment Help",
-    "intent_intro": "Cloud computing assignment help is one of the strongest query themes in the Search Console export, with substantial impressions. On a cloud security page, that intent is best served by explaining the shared responsibility model, IAM, storage security, logging, encryption and network controls in the context of AWS, Azure or another cloud scenario rather than discussing cloud services only at a general level.",
+    "intent_intro": "Cloud computing assignments often combine architecture with security decisions. A strong answer explains shared responsibility, IAM, storage protection, logging, encryption and network controls in the context of AWS, Azure or another cloud scenario rather than discussing cloud services only at a general level.",
     "intent_cards": [
       [
         "Shared responsibility",
@@ -273,7 +273,7 @@
       ]
     ],
     "questions_heading": "Cloud Computing Assignment Rubric",
-    "questions_intro": "The GSC data also shows searches for an undergraduate cloud computing assignment rubric. These are the areas a student should check when mapping work to typical marking criteria.",
+    "questions_intro": "Cloud computing rubrics commonly reward clear understanding of the service model, security responsibilities, evidence quality, IAM decisions and realistic platform-specific recommendations.",
     "questions": [
       [
         "Does the report explain the cloud model?",
