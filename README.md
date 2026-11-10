@@ -1,6 +1,6 @@
-# CyberSecurityAssignmentHelp.com
+# CyberAssignmentPro.com
 
-A lightweight, responsive PHP website for cybersecurity academic support. It uses no database and keeps page content in a single PHP data structure so future human-written content can be replaced page by page without changing the design system.
+A lightweight, responsive PHP website for Cyber Assignment Pro, focused on cybersecurity academic support. It uses no database and keeps page content in a single PHP data structure so future human-written content can be replaced page by page without changing the design system.
 
 ## Pages
 

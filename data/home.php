@@ -1,6 +1,6 @@
 <?php
 return [
-    'title' => 'Cyber Security Assignment Help | Expert Homework, Labs & Project Support',
+    'title' => 'Cyber Security Assignment Help | Cyber Assignment Pro',
     'h1' => 'Cyber Security Assignment Help for Students',
     'description' => 'Cyber security assignment help for university students covering ethical hacking, network security, cloud security, digital forensics, labs, reports and projects.',
     'primary' => 'cyber security assignment help',

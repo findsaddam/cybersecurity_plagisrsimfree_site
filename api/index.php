@@ -1,6 +1,6 @@
 <?php
 /**
- * CyberSecurityAssignmentHelp.com
+ * CyberAssignmentPro.com
  * Plain PHP, no database. Clean routes are handled by Vercel or PHP's dev router.
  */
 declare(strict_types=1);
@@ -11,8 +11,8 @@ if (PHP_SAPI === 'cli-server') {
     if ($requested !== '/' && is_file($assetPath)) return false;
 }
 
-const SITE_NAME = 'Cyber Security Assignment Help';
-const SITE_URL = 'https://cybersecurityassignmenthelp.com';
+const SITE_NAME = 'Cyber Assignment Pro';
+const SITE_URL = 'https://cyberassignmentpro.com';
 const WHATSAPP_NUMBER = '447949817583';
 const WHATSAPP_LABEL = '+44 7949 817583';
 

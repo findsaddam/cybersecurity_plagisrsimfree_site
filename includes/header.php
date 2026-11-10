@@ -12,9 +12,9 @@ function renderHeader(array $subjects): void {
 </div>
 <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
-        <a class="brand" href="/" aria-label="Cyber Security Assignment Help home">
+        <a class="brand" href="/" aria-label="Cyber Assignment Pro home">
             <span class="brand__mark"><?= icon('shield', 28) ?></span>
-            <span class="brand__text"><strong>CyberSecurity</strong><small>Assignment Help</small></span>
+            <span class="brand__text"><strong>CyberAssignment</strong><small>Pro</small></span>
         </a>
         <nav class="desktop-nav" aria-label="Main navigation">
             <a href="/" class="nav-link">Home</a>
@@ -53,7 +53,7 @@ function renderHeader(array $subjects): void {
     <div class="mobile-menu__head">
         <a class="brand" href="/">
             <span class="brand__mark"><?= icon('shield', 25) ?></span>
-            <span class="brand__text"><strong>CyberSecurity</strong><small>Assignment Help</small></span>
+            <span class="brand__text"><strong>CyberAssignment</strong><small>Pro</small></span>
         </a>
         <button class="mobile-close" type="button" aria-label="Close menu" data-menu-close>×</button>
     </div>

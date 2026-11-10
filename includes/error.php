@@ -1,7 +1,7 @@
 <?php
 function render404(array $subjects): void {
     $page = [
-        'title' => 'Page Not Found | Cyber Security Assignment Help',
+        'title' => 'Page Not Found | Cyber Assignment Pro',
         'h1' => 'Page Not Found',
         'description' => 'The requested cybersecurity assignment help page could not be found.',
         'primary' => 'cyber security assignment help',
