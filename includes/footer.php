@@ -8,8 +8,8 @@ function renderFooter(array $subjects): void {
                 <span class="brand__mark"><?= icon('shield', 28) ?></span>
                 <span class="brand__text"><strong>CyberAssignment</strong><small>Pro</small></span>
             </a>
-            <p>Clear, student-focused support for cybersecurity theory, authorised labs, technical reports and practical coursework.</p>
-            <div class="footer__note"><?= icon('lock', 18) ?> Educational and authorised-use guidance only.</div>
+            <p>Clear, student focused support for cybersecurity theory, authorised labs, technical reports and practical coursework.</p>
+            <div class="footer__note"><?= icon('lock', 18) ?> Educational and authorised use guidance only.</div>
         </div>
         <div>
             <h3>Popular Subjects</h3>
