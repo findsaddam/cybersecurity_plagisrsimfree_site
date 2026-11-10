@@ -54,7 +54,7 @@ function renderHead(array $page, string $canonical, array $subjects): void {
     }
 
     $metaTitles = [
-        'Cyber Security Assignment Help for Students' => 'Cyber Security Assignment Help | Cyber Assignment Pro',
+        'Cyber Security Assignment Help for Students' => 'Premium Cyber Security Assignment Help | Cyber Assignment Pro',
         'Network Security Assignment Help' => 'Premium Network Security Assignment Help | Coursework & Labs',
         'Ethical Hacking Assignment Help' => 'Premium Ethical Hacking Assignment Help | Coursework & Labs',
         'Digital Forensics Assignment Help' => 'Premium Digital Forensics Assignment Help | Reports & Labs',
