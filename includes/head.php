@@ -39,6 +39,21 @@ function renderHead(array $page, string $canonical, array $subjects): void {
         ];
     }
 
+    $metaTitles = [
+        'Cyber Security Assignment Help for Students' => 'Premium Cyber Security Assignment Help | Homework & Coursework',
+        'Network Security Assignment Help' => 'Premium Network Security Assignment Help | Coursework & Labs',
+        'Ethical Hacking Assignment Help' => 'Premium Ethical Hacking Assignment Help | Coursework & Labs',
+        'Digital Forensics Assignment Help' => 'Premium Digital Forensics Assignment Help | Reports & Labs',
+        'Penetration Testing Assignment Help' => 'Premium Penetration Testing Assignment Help | Coursework Support',
+        'Cryptography Assignment Help' => 'Premium Cryptography Assignment Help | Homework & Coursework',
+        'Malware Analysis Assignment Help' => 'Premium Malware Analysis Assignment Help | Reports & Labs',
+        'Cloud Security Assignment Help' => 'Premium Cloud Security Assignment Help | AWS & Azure Coursework',
+        'Web Application Security Assignment Help' => 'Premium Web Application Security Assignment Help | OWASP Coursework',
+        'Incident Response Assignment Help' => 'Premium Incident Response Assignment Help | Reports & Playbooks',
+        'Cyber Threat Intelligence Assignment Help' => 'Premium Cyber Threat Intelligence Assignment Help | CTI Coursework',
+    ];
+    $metaTitle = $metaTitles[$page['h1']] ?? ('Premium ' . $page['title']);
+
     $schema = ['@context'=>'https://schema.org','@graph'=>$graph];
     ?>
 <!doctype html>
@@ -46,21 +61,21 @@ function renderHead(array $page, string $canonical, array $subjects): void {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= e($page['title']) ?></title>
+    <title><?= e($metaTitle) ?></title>
     <meta name="description" content="<?= e($page['description']) ?>">
     <meta name="robots" content="<?= e($robots) ?>">
     <link rel="canonical" href="<?= e($canonical) ?>">
     <meta name="theme-color" content="#07111f">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="<?= e($page['title']) ?>">
+    <meta property="og:title" content="<?= e($metaTitle) ?>">
     <meta property="og:description" content="<?= e($page['description']) ?>">
     <meta property="og:url" content="<?= e($canonical) ?>">
     <meta property="og:site_name" content="<?= e(SITE_NAME) ?>">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="<?= e($page['title']) ?>">
+    <meta name="twitter:title" content="<?= e($metaTitle) ?>">
     <meta name="twitter:description" content="<?= e($page['description']) ?>">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-    <link rel="stylesheet" href="/assets/styles.css?v=2.0.0">
+    <link rel="stylesheet" href="/assets/styles.css?v=2.1.0">
     <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 </head>
 <body>

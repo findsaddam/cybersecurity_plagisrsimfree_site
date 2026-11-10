@@ -23,3 +23,8 @@
 .dropdown-badge{display:inline-flex;align-items:center;padding:7px 10px;border-radius:999px;background:#edf8f6;color:#087f73;font-size:11px;font-weight:700;white-space:nowrap}
 .mobile-subjects.is-open{max-height:680px;overflow-y:auto}
 @media(max-width:1050px){.dropdown-grid{grid-template-columns:1fr}}
+
+/* v2.1: align the Subjects chevron with the menu label */
+.nav-dropdown__toggle{display:inline-flex;align-items:center;justify-content:center;line-height:1.2}
+.nav-dropdown__toggle .chevron{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;font-size:14px;line-height:1;position:relative;top:-1px;transform:none}
+.nav-dropdown.is-open .chevron{transform:rotate(180deg);top:1px}

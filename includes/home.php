@@ -34,7 +34,7 @@ function renderHome(array $home, array $subjects): void {
     <section class="section section--light" id="subjects">
         <div class="container">
             <div class="section-head section-head--split reveal">
-                <div><span class="section-kicker">Popular subject areas</span><h2>Cyber Security Assignment Help for High-Demand Modules</h2></div>
+                <div><span class="section-kicker">Popular subject areas</span><h2>Cyber Security Assignment Topics</h2></div>
                 <p>From network defence and cryptography to cloud security and incident response, these subject pages explain common coursework topics, practical tools, report structures and questions students regularly meet at university.</p>
             </div>
             <div class="subject-grid">
@@ -55,7 +55,7 @@ function renderHome(array $home, array $subjects): void {
         <div class="container two-col">
             <div class="feature-panel reveal">
                 <span class="section-kicker section-kicker--light">Built around the assignment brief</span>
-                <h2>From Technical Evidence to a Clear Cybersecurity Report</h2>
+                <h2>Cybersecurity Report Writing Help</h2>
                 <p>Cybersecurity coursework often combines technical work with academic explanation. We organise support around the exact marking criteria so the report remains understandable, evidence-led and relevant to the question.</p>
                 <div class="feature-list">
                     <div><?= icon('file', 21) ?><span><strong>Report structure</strong><small>Introduction, method, evidence, findings and justified recommendations.</small></span></div>
@@ -79,7 +79,7 @@ function renderHome(array $home, array $subjects): void {
 
     <section class="section" id="how-it-works">
         <div class="container">
-            <div class="section-head section-head--center reveal"><span class="section-kicker">Simple process</span><h2>How Cyber Security Assignment Support Works</h2><p>Start with the assignment brief and marking rubric, then organise the concepts, evidence and written analysis around the work your module requires.</p></div>
+            <div class="section-head section-head--center reveal"><span class="section-kicker">Simple process</span><h2>How Cyber Security Assignment Help Works</h2><p>Start with the assignment brief and marking rubric, then organise the concepts, evidence and written analysis around the work your module requires.</p></div>
             <div class="steps-grid">
                 <div class="step-card reveal"><span class="step-card__num">01</span><?= icon('message', 28) ?><h3>Share the Brief</h3><p>Send the question, rubric, deadline, academic level and any lab instructions or files.</p></div>
                 <div class="step-card reveal"><span class="step-card__num">02</span><?= icon('search', 28) ?><h3>Clarify the Scope</h3><p>Identify the concepts, evidence, tools and report sections that carry the most marks.</p></div>
@@ -93,7 +93,7 @@ function renderHome(array $home, array $subjects): void {
         <div class="container two-col two-col--balanced">
             <div class="reveal">
                 <span class="section-kicker">Academic writing & evidence</span>
-                <h2>Cybersecurity Coursework Should Explain, Not Just Display Tools</h2>
+                <h2>Cyber Security Coursework Help</h2>
                 <p class="body-large">A command, screenshot or scan result does not earn strong marks by itself. Students usually need to explain what was tested, why the result matters, how it relates to a security principle and what should happen next.</p>
                 <p>That is why the site is organised around understanding and communication. Whether the assignment covers network defence, digital evidence, cryptography or an authorised security lab, the content is designed to help the reader connect technical detail with academic reasoning.</p>
                 <a class="text-link" href="/network-security-assignment-help">See a subject example <?= icon('arrow', 17) ?></a>
@@ -109,7 +109,7 @@ function renderHome(array $home, array $subjects): void {
 
     <section class="section" id="faq">
         <div class="container faq-layout">
-            <div class="faq-intro reveal"><span class="section-kicker">Common questions</span><h2>Cyber Security Assignment Help FAQs</h2><p>Quick answers for students planning coursework, reports and authorised practical labs.</p><a class="btn btn--dark" href="<?= e(waLink()) ?>" target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+            <div class="faq-intro reveal"><span class="section-kicker">Common questions</span><h2>Cyber Security Assignment FAQs</h2><p>Quick answers for students planning coursework, reports and authorised practical labs.</p><a class="btn btn--dark" href="<?= e(waLink()) ?>" target="_blank" rel="noopener">Ask on WhatsApp</a></div>
             <div class="faq-list reveal">
                 <?php foreach ($home['faqs'] as $faq): ?>
                     <div class="faq-item"><button type="button" aria-expanded="false"><span><?= e($faq[0]) ?></span><b>+</b></button><div class="faq-answer"><p><?= e($faq[1]) ?></p></div></div>
@@ -120,7 +120,7 @@ function renderHome(array $home, array $subjects): void {
 
     <section class="cta-section">
         <div class="container cta-box reveal">
-            <div><span class="section-kicker section-kicker--light">Assignment support</span><h2>Share Your Cybersecurity Assignment Brief</h2><p>Send the module question, deadline and marking criteria so the requirements can be reviewed together.</p></div>
+            <div><span class="section-kicker section-kicker--light">Assignment support</span><h2>Cyber Security Assignment Help</h2><p>Send the module question, deadline and marking criteria so the requirements can be reviewed together.</p></div>
             <a class="btn btn--white" href="<?= e(waLink()) ?>" target="_blank" rel="noopener">Message on WhatsApp <?= icon('arrow', 18) ?></a>
         </div>
     </section>
