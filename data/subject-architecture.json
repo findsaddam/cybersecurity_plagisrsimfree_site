@@ -68,8 +68,8 @@
       }
     },
     "related_slugs": [
-      "penetration-testing-assignment-help",
-      "cloud-security-assignment-help",
+      "information-security-assignment-help",
+      "cloud-computing-assignment-help",
       "cryptography-assignment-help"
     ],
     "signature": {
@@ -270,7 +270,6 @@
       }
     },
     "related_slugs": [
-      "incident-response-assignment-help",
       "malware-analysis-assignment-help",
       "cyber-threat-intelligence-assignment-help"
     ],
@@ -583,7 +582,6 @@
     },
     "related_slugs": [
       "digital-forensics-assignment-help",
-      "incident-response-assignment-help",
       "cyber-threat-intelligence-assignment-help"
     ],
     "signature": {
@@ -683,9 +681,9 @@
       }
     },
     "related_slugs": [
-      "network-security-assignment-help",
-      "cryptography-assignment-help",
-      "incident-response-assignment-help"
+      "cloud-computing-assignment-help",
+      "information-security-assignment-help",
+      "network-security-assignment-help"
     ],
     "signature": {
       "kicker": "Responsibility boundaries",
@@ -816,107 +814,6 @@
       ]
     }
   },
-  "incident-response-assignment-help": {
-    "order": [
-      "workflow",
-      "questions",
-      "problems",
-      "signature",
-      "topics",
-      "intent",
-      "long_copy",
-      "tools_report"
-    ],
-    "hero_card": {
-      "label": "Incident handling",
-      "intro": "Build an incident report from timeline evidence, triage decisions, containment, recovery and lessons learned.",
-      "bullets": [
-        "Incident timeline and triage",
-        "Containment decisions",
-        "Recovery and validation",
-        "Post-incident improvements"
-      ]
-    },
-    "sections": {
-      "problems": {
-        "kicker": "Decision-making challenges",
-        "title": "Incident Response Coursework Challenges",
-        "intro": "Incident-response assignments require students to justify why one action takes priority over another and how business impact affects the response."
-      },
-      "topics": {
-        "kicker": "Incident response concepts",
-        "title": "Incident Response Assignment Topics",
-        "intro": "Core areas include preparation, detection, triage, containment, eradication, recovery, communication, evidence handling and lessons learned."
-      },
-      "workflow": {
-        "kicker": "Incident lifecycle",
-        "title": "Incident Response Workflow",
-        "intro": "A chronological structure helps the reader see how evidence changed the understanding of the incident and why each response decision followed."
-      },
-      "tools_report": {
-        "kicker": "Incident evidence",
-        "title": "Incident Response Tools and Logs",
-        "intro": "SIEM alerts, endpoint logs and network evidence are useful when the report explains what each source contributes to triage or response.",
-        "report_heading": "Incident Response Report Structure"
-      },
-      "long_copy": {
-        "kicker": "Decision-focused reporting",
-        "title": "Incident Response Report Writing Help",
-        "paragraphs": [
-          "An incident report should make the timeline and decision points visible. Identify what was known at each stage, which assets were affected and why the severity assessment changed as new evidence became available.",
-          "Containment, eradication and recovery should not be blended together. Containment limits immediate impact, eradication addresses the cause or malicious presence, and recovery restores services safely. Explaining these distinctions helps justify the response strategy.",
-          "Lessons learned should translate the incident into better controls. Logging gaps, weak access controls, patching delays, backup issues or communication failures become useful recommendations when they are linked directly to what complicated detection or recovery."
-        ]
-      },
-      "faq": {
-        "kicker": "Incident response questions",
-        "title": "Incident Response Assignment FAQs",
-        "intro": "Questions about timelines, triage, containment, recovery, SIEM evidence and lessons learned."
-      },
-      "related": {
-        "kicker": "Related response modules",
-        "title": "Related Incident Response Subjects",
-        "intro": "Incident response closely connects with digital forensics, malware analysis, threat intelligence and network security."
-      },
-      "cta": {
-        "kicker": "Incident response support",
-        "title": "Incident Response Assignment Help",
-        "intro": "Share the incident scenario, logs or evidence requirements, rubric and deadline."
-      }
-    },
-    "related_slugs": [
-      "digital-forensics-assignment-help",
-      "malware-analysis-assignment-help",
-      "cyber-threat-intelligence-assignment-help"
-    ],
-    "signature": {
-      "kicker": "Response decisions",
-      "title": "Incident Response Decision Points",
-      "intro": "A strong incident report explains why the response changed as new evidence became available.",
-      "items": [
-        [
-          "Triage",
-          "What matters first?",
-          "Prioritise assets, evidence and business impact so the most urgent risks are addressed first."
-        ],
-        [
-          "Contain",
-          "How do we limit impact?",
-          "Choose an action that reduces immediate risk while considering evidence and service availability."
-        ],
-        [
-          "Recover",
-          "When is it safe to restore?",
-          "Define validation, monitoring and recovery checks before normal service resumes."
-        ],
-        [
-          "Improve",
-          "What changes next?",
-          "Turn root causes and response gaps into better controls, logging and playbooks."
-        ]
-      ]
-    }
-  },
   "cyber-threat-intelligence-assignment-help": {
     "order": [
       "problems",
@@ -986,7 +883,7 @@
       }
     },
     "related_slugs": [
-      "incident-response-assignment-help",
+      "information-security-assignment-help",
       "malware-analysis-assignment-help",
       "digital-forensics-assignment-help"
     ],
@@ -1014,6 +911,208 @@
           "Action",
           "Defensive implication",
           "Translate the judgement into monitoring, prioritisation, detection or hardening decisions."
+        ]
+      ]
+    }
+  },
+  "cloud-computing-assignment-help": {
+    "order": [
+      "intent",
+      "topics",
+      "signature",
+      "problems",
+      "workflow",
+      "questions",
+      "long_copy",
+      "tools_report"
+    ],
+    "hero_card": {
+      "label": "Cloud architecture coursework",
+      "intro": "Design and explain cloud solutions using service models, deployment models, virtualisation, scalable architecture and platform evidence.",
+      "bullets": [
+        "IaaS, PaaS and SaaS comparisons",
+        "AWS and Azure architecture",
+        "Virtualisation and containers",
+        "Scalability, storage and networking"
+      ]
+    },
+    "sections": {
+      "topics": {
+        "kicker": "Core cloud computing concepts",
+        "title": "Cloud Computing Assignment Topics",
+        "intro": "Cloud computing assignments often move from service models into architecture, platform selection, virtualisation, scalability and practical deployment decisions."
+      },
+      "problems": {
+        "kicker": "Common cloud coursework challenges",
+        "title": "Cloud Computing Coursework Challenges",
+        "intro": "The main challenge is usually turning broad cloud terminology into a justified architecture that matches the scenario and marking rubric."
+      },
+      "workflow": {
+        "kicker": "From scenario to architecture",
+        "title": "Cloud Computing Assignment Workflow",
+        "intro": "A clear cloud workflow starts with the workload and requirements, selects an appropriate service model, designs the architecture and then evaluates scalability, availability and platform choices."
+      },
+      "tools_report": {
+        "kicker": "Cloud platforms and practical evidence",
+        "title": "Cloud Computing Tools and Platforms",
+        "intro": "Use AWS, Azure, Docker and architecture diagrams to demonstrate the required cloud concept rather than filling the report with unrelated platform screenshots.",
+        "report_heading": "Cloud Computing Report Structure"
+      },
+      "long_copy": {
+        "kicker": "Writing the cloud analysis",
+        "title": "Cloud Computing Report Writing Help",
+        "paragraphs": [
+          "A cloud computing report should make the workload and requirements clear before recommending a platform or service. Explain the users, data, performance needs, expected scale and availability requirements so the architecture choices can be judged against a defined problem.",
+          "Service model comparisons should focus on responsibility and control. IaaS gives more infrastructure control, PaaS reduces platform management, and SaaS delivers a complete application service. The strongest comparison explains which model best fits the scenario and why.",
+          "Architecture diagrams should support the written analysis. Compute, storage, networking, databases and scaling components should be labelled clearly, and the report should explain how those components work together to provide availability, performance and manageable cloud operations."
+        ]
+      },
+      "faq": {
+        "kicker": "Cloud computing questions",
+        "title": "Cloud Computing Assignment FAQs",
+        "intro": "Answers about service models, cloud architecture, AWS, Azure, virtualisation and assignment rubrics."
+      },
+      "related": {
+        "kicker": "Related cloud and security modules",
+        "title": "Related Cloud Computing Subjects",
+        "intro": "Cloud computing connects directly with cloud security, information security, network security and web application security."
+      },
+      "cta": {
+        "kicker": "Cloud computing support",
+        "title": "Cloud Computing Assignment Help",
+        "intro": "Share the cloud computing brief, marking rubric, platform requirements and deadline for a focused review."
+      }
+    },
+    "related_slugs": [
+      "cloud-security-assignment-help",
+      "information-security-assignment-help",
+      "network-security-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Architecture decision framework",
+      "title": "Cloud Model to Architecture Map",
+      "intro": "Use this sequence to turn a cloud computing scenario into a justified technical design.",
+      "items": [
+        [
+          "01",
+          "Workload requirement",
+          "Define users, data, scale, performance and availability before choosing cloud services."
+        ],
+        [
+          "02",
+          "Service model",
+          "Select IaaS, PaaS or SaaS according to the level of control and management the scenario requires."
+        ],
+        [
+          "03",
+          "Architecture components",
+          "Map compute, storage, networking and data services to the required workload."
+        ],
+        [
+          "04",
+          "Evaluation",
+          "Explain scalability, availability, cost or management trade offs and justify the final architecture."
+        ]
+      ]
+    }
+  },
+  "information-security-assignment-help": {
+    "order": [
+      "signature",
+      "problems",
+      "intent",
+      "topics",
+      "workflow",
+      "long_copy",
+      "questions",
+      "tools_report"
+    ],
+    "hero_card": {
+      "label": "Information security management",
+      "intro": "Connect information assets, CIA requirements, risk, policies, governance and controls in one evidence based security analysis.",
+      "bullets": [
+        "CIA triad application",
+        "Risk assessment and treatment",
+        "Security policies and governance",
+        "Administrative and technical controls"
+      ]
+    },
+    "sections": {
+      "topics": {
+        "kicker": "Core information security concepts",
+        "title": "Information Security Assignment Topics",
+        "intro": "Information security coursework commonly combines risk management, the CIA triad, policy, access control, governance, continuity and control selection."
+      },
+      "problems": {
+        "kicker": "Where information security reports fail",
+        "title": "Information Security Coursework Challenges",
+        "intro": "Students often define security concepts correctly but lose marks when they do not connect those concepts to the assets, risks and business requirements in the scenario."
+      },
+      "workflow": {
+        "kicker": "From assets to controls",
+        "title": "Information Security Assignment Workflow",
+        "intro": "A strong workflow identifies information assets, evaluates threats and vulnerabilities, assesses risk and then justifies policies and controls that reduce that risk."
+      },
+      "tools_report": {
+        "kicker": "Risk and governance tools",
+        "title": "Information Security Tools and Frameworks",
+        "intro": "Risk matrices, asset registers, policy templates and recognised security frameworks should support the analysis without replacing the reasoning required by the assignment.",
+        "report_heading": "Information Security Report Structure"
+      },
+      "long_copy": {
+        "kicker": "Writing the security analysis",
+        "title": "Information Security Report Writing Help",
+        "paragraphs": [
+          "An information security report should start with the information and business process that needs protection. Identifying assets first makes it easier to explain why confidentiality, integrity or availability matters and what the impact of a security failure would be.",
+          "Risk analysis should show a traceable relationship between threats, vulnerabilities, likelihood, impact and controls. A risk score is useful only when the report explains how it was reached and why one risk should be treated before another.",
+          "Policies and controls should be proportionate to the identified risk. Administrative controls define responsibilities and expectations, technical controls enforce or monitor security, and physical controls protect facilities or equipment. Strong recommendations explain how these layers work together."
+        ]
+      },
+      "faq": {
+        "kicker": "Information security questions",
+        "title": "Information Security Assignment FAQs",
+        "intro": "Answers about CIA, risk assessment, security policy, governance, controls and information security management."
+      },
+      "related": {
+        "kicker": "Related security modules",
+        "title": "Related Information Security Subjects",
+        "intro": "Information security provides a foundation for network security, cloud security, cryptography and cyber threat intelligence."
+      },
+      "cta": {
+        "kicker": "Information security support",
+        "title": "Information Security Assignment Help",
+        "intro": "Share the information security case study, marking criteria, risk framework and deadline for a focused review."
+      }
+    },
+    "related_slugs": [
+      "network-security-assignment-help",
+      "cloud-security-assignment-help",
+      "cryptography-assignment-help"
+    ],
+    "signature": {
+      "kicker": "Risk reasoning chain",
+      "title": "Information Asset to Security Control",
+      "intro": "Use this sequence to connect business information to a defensible security recommendation.",
+      "items": [
+        [
+          "Asset",
+          "What needs protection",
+          "Identify the information, system or business process and explain its value."
+        ],
+        [
+          "CIA",
+          "Security requirement",
+          "State whether confidentiality, integrity, availability or several properties are most important."
+        ],
+        [
+          "Risk",
+          "Threat and vulnerability",
+          "Explain what could go wrong, which weakness makes it possible and how serious the impact could be."
+        ],
+        [
+          "Control",
+          "Risk treatment",
+          "Recommend a proportionate administrative, technical or physical control and explain the expected risk reduction."
         ]
       ]
     }

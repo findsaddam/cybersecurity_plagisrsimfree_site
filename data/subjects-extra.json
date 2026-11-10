@@ -227,120 +227,6 @@
       ]
     ]
   },
-  "incident-response-assignment-help": {
-    "title": "Incident Response Assignment Help | IR Reports & Playbooks",
-    "h1": "Incident Response Assignment Help",
-    "description": "Incident response assignment help for university students covering triage, containment, eradication, recovery, evidence, playbooks, lessons learned and incident reports.",
-    "primary": "incident response assignment help",
-    "secondary": [
-      "cyber incident response assignment help",
-      "incident response coursework help",
-      "incident response report help",
-      "incident handling assignment help",
-      "DFIR assignment help"
-    ],
-    "longtails": [
-      "incident response assignment help for university students",
-      "help with cyber incident response reports and playbooks",
-      "digital forensics and incident response coursework help"
-    ],
-    "nav": "Incident Response",
-    "name": "Incident Response",
-    "eyebrow": "Triage, containment, recovery & lessons learned",
-    "icon": "file",
-    "intro": "Work through the incident lifecycle from preparation and triage to containment, recovery and lessons learned, while keeping evidence, timelines, communication and recommendations clear in the final report.",
-    "problems": [
-      {
-        "title": "Incident timeline",
-        "text": "Organise alerts, logs, user reports and forensic observations into a sequence that explains what happened and when."
-      },
-      {
-        "title": "Triage decisions",
-        "text": "Prioritise affected assets, likely impact and immediate actions instead of treating every alert as equally important."
-      },
-      {
-        "title": "Containment and recovery",
-        "text": "Explain why a containment or recovery action is appropriate and how it balances business continuity with risk."
-      },
-      {
-        "title": "Lessons learned",
-        "text": "Turn incident findings into improvements for logging, access control, patching, backups, monitoring and response procedures."
-      }
-    ],
-    "topics": [
-      "Incident lifecycle",
-      "Triage and prioritisation",
-      "Containment strategies",
-      "Eradication and recovery",
-      "Incident timelines",
-      "Evidence handling",
-      "Communication and escalation",
-      "Post-incident review"
-    ],
-    "workflow": [
-      [
-        "Establish the incident context",
-        "Identify the affected service, business impact, available evidence and assumptions in the case study or lab."
-      ],
-      [
-        "Build the timeline",
-        "Order the relevant alerts, logs, actions and observations so the incident can be explained chronologically."
-      ],
-      [
-        "Analyse response decisions",
-        "Justify triage, containment, eradication and recovery actions using risk and operational impact."
-      ],
-      [
-        "Document evidence and communication",
-        "Record what evidence supports each conclusion and who should be informed or escalated to."
-      ],
-      [
-        "Produce lessons learned",
-        "Recommend improvements that address the root causes, control gaps and response weaknesses revealed by the incident."
-      ]
-    ],
-    "tools": [
-      "Splunk",
-      "Security Onion",
-      "Sysmon",
-      "SIEM dashboards",
-      "Windows Event Logs",
-      "Linux logs",
-      "Wireshark",
-      "Incident response playbooks"
-    ],
-    "structure": [
-      "Executive summary",
-      "Incident scope and timeline",
-      "Evidence and data sources",
-      "Triage and analysis",
-      "Containment and recovery",
-      "Lessons learned and controls",
-      "Conclusion and references"
-    ],
-    "faqs": [
-      [
-        "What should an incident response assignment include?",
-        "A strong assignment commonly includes incident context, a timeline, evidence sources, triage decisions, containment, eradication, recovery, communication and lessons learned."
-      ],
-      [
-        "How is incident response different from digital forensics?",
-        "Incident response focuses on managing and recovering from a security event, while digital forensics focuses more deeply on preserving, examining and interpreting evidence. University tasks often combine both."
-      ],
-      [
-        "Can you help with incident response playbooks?",
-        "Yes. Guidance can cover playbook structure, roles, triggers, decision points, evidence requirements, containment actions, escalation and post-incident review."
-      ],
-      [
-        "How should an incident timeline be written?",
-        "Use verified timestamps and evidence sources, distinguish facts from assumptions, and explain how key events change the understanding of the incident."
-      ],
-      [
-        "Can incident response coursework use SIEM evidence?",
-        "Yes. Alerts, event logs and SIEM dashboards can support analysis when the report explains what the evidence shows, why it is relevant and what response action it justifies."
-      ]
-    ]
-  },
   "cyber-threat-intelligence-assignment-help": {
     "title": "Cyber Threat Intelligence Assignment Help | CTI Coursework",
     "h1": "Cyber Threat Intelligence Assignment Help",
@@ -452,6 +338,234 @@
       [
         "Can CTI assignments include defensive recommendations?",
         "Yes. Strong CTI writing usually explains what the intelligence means for monitoring, detection, hardening, prioritisation or other defensive decisions."
+      ]
+    ]
+  },
+  "cloud-computing-assignment-help": {
+    "title": "Cloud Computing Assignment Help | Architecture, AWS & Azure Coursework",
+    "h1": "Cloud Computing Assignment Help",
+    "description": "Cloud computing assignment help for university students covering service models, cloud architecture, virtualisation, deployment models, storage, networking, scalability, AWS, Azure and cloud coursework.",
+    "primary": "cloud computing assignment help",
+    "secondary": [
+      "cloud computing homework help",
+      "cloud computing coursework help",
+      "cloud computing assignment rubric",
+      "AWS cloud computing assignment help",
+      "Azure cloud computing assignment help"
+    ],
+    "longtails": [
+      "cloud computing assignment help for university students",
+      "cloud computing assignment rubric undergraduate",
+      "help with cloud architecture and deployment coursework"
+    ],
+    "nav": "Cloud Computing",
+    "name": "Cloud Computing",
+    "eyebrow": "Architecture, service models, AWS, Azure & deployment",
+    "icon": "cloud",
+    "intro": "Understand cloud computing models, architecture, virtualisation, storage, networking and scalable service design, then apply those concepts to university assignments, technical reports and practical cloud scenarios.",
+    "problems": [
+      {
+        "title": "Service models",
+        "text": "Explain IaaS, PaaS and SaaS by comparing responsibility, control, management effort and suitable use cases instead of listing definitions."
+      },
+      {
+        "title": "Cloud architecture",
+        "text": "Connect compute, storage, networking, databases and availability choices to the requirements of the assignment scenario."
+      },
+      {
+        "title": "Virtualisation and containers",
+        "text": "Distinguish virtual machines, containers and serverless approaches and explain how each affects deployment, isolation and resource use."
+      },
+      {
+        "title": "Rubric alignment",
+        "text": "Turn broad cloud concepts into structured evidence, diagrams, comparisons and recommendations that map directly to the marking criteria."
+      }
+    ],
+    "topics": [
+      "IaaS, PaaS and SaaS",
+      "Public, private and hybrid cloud",
+      "Virtualisation and containers",
+      "Cloud architecture and availability",
+      "Elasticity and scalability",
+      "Cloud storage and databases",
+      "Cloud networking",
+      "AWS and Azure services"
+    ],
+    "workflow": [
+      [
+        "Read the cloud scenario",
+        "Identify the business requirement, workload, users, data, expected scale and technical constraints in the assignment."
+      ],
+      [
+        "Choose the cloud model",
+        "Compare service and deployment models and explain why the selected model fits the scenario."
+      ],
+      [
+        "Design the architecture",
+        "Map compute, storage, networking, data and availability components into a clear cloud architecture."
+      ],
+      [
+        "Evaluate performance and cost",
+        "Discuss scalability, resilience, resource use and cost considerations where they are relevant to the rubric."
+      ],
+      [
+        "Write the technical report",
+        "Use diagrams, service comparisons, evidence and justified recommendations to answer the assignment criteria directly."
+      ]
+    ],
+    "tools": [
+      "AWS Management Console",
+      "Microsoft Azure",
+      "AWS EC2",
+      "Amazon S3",
+      "Azure Virtual Machines",
+      "Azure Storage",
+      "Docker",
+      "Cloud architecture diagrams"
+    ],
+    "structure": [
+      "Introduction and assignment scenario",
+      "Cloud service and deployment model",
+      "Architecture and component selection",
+      "Virtualisation, storage and networking",
+      "Scalability and availability analysis",
+      "Platform comparison or practical evidence",
+      "Recommendations, conclusion and references"
+    ],
+    "faqs": [
+      [
+        "What is usually included in a cloud computing assignment?",
+        "Cloud computing assignments commonly cover service models, deployment models, virtualisation, cloud architecture, storage, networking, scalability, availability and platform comparisons using AWS, Azure or similar services."
+      ],
+      [
+        "How should I compare IaaS, PaaS and SaaS?",
+        "Compare the level of control, provider responsibility, customer management effort, flexibility and typical use cases, then connect the comparison to the assignment scenario."
+      ],
+      [
+        "Can cloud computing coursework include AWS or Azure?",
+        "Yes. Many university assignments use AWS or Azure to demonstrate compute, storage, networking, deployment or architecture decisions. The report should explain what each service contributes to the solution."
+      ],
+      [
+        "How do I use a cloud computing assignment rubric?",
+        "Turn each marking criterion into a report requirement. Check that the final submission includes the required concepts, architecture evidence, analysis, comparisons and justified recommendations."
+      ],
+      [
+        "What should a cloud architecture diagram show?",
+        "A useful diagram should show the main users, services, compute resources, storage, network boundaries, data flow and any availability or scaling components that are important to the scenario."
+      ]
+    ]
+  },
+  "information-security-assignment-help": {
+    "title": "Information Security Assignment Help | Risk, CIA & Security Management",
+    "h1": "Information Security Assignment Help",
+    "description": "Information security assignment help for university students covering the CIA triad, risk assessment, security policies, governance, access control, threats, controls, compliance and security management reports.",
+    "primary": "information security assignment help",
+    "secondary": [
+      "information security homework help",
+      "information security coursework help",
+      "information security risk assessment assignment",
+      "information security policy assignment help",
+      "information security management assignment help"
+    ],
+    "longtails": [
+      "information security assignment help for university students",
+      "help with information security risk assessment coursework",
+      "information security policy and governance assignment help"
+    ],
+    "nav": "Information Security",
+    "name": "Information Security",
+    "eyebrow": "CIA, risk assessment, policies, governance & controls",
+    "icon": "shield",
+    "intro": "Build information security assignments around assets, threats, vulnerabilities, risk and controls, while connecting confidentiality, integrity and availability to security policies, governance and business requirements.",
+    "problems": [
+      {
+        "title": "CIA triad application",
+        "text": "Move beyond defining confidentiality, integrity and availability by showing which assets and business processes depend on each security property."
+      },
+      {
+        "title": "Risk assessment",
+        "text": "Identify assets, threats and vulnerabilities, then justify likelihood, impact and control priorities using a consistent method."
+      },
+      {
+        "title": "Policies and governance",
+        "text": "Explain how policies, standards, roles, responsibilities and management decisions support security objectives across an organisation."
+      },
+      {
+        "title": "Control selection",
+        "text": "Match administrative, technical and physical controls to the identified risk and explain why the selected control is proportionate."
+      }
+    ],
+    "topics": [
+      "Confidentiality, integrity and availability",
+      "Information security risk assessment",
+      "Threats and vulnerabilities",
+      "Security policies and standards",
+      "Access control and least privilege",
+      "Security governance",
+      "Business continuity and resilience",
+      "Compliance and security management"
+    ],
+    "workflow": [
+      [
+        "Define the information assets",
+        "Identify important data, systems, users and business processes that need protection."
+      ],
+      [
+        "Identify threats and vulnerabilities",
+        "Explain what could affect each asset and which weaknesses or exposures make the threat relevant."
+      ],
+      [
+        "Assess information security risk",
+        "Evaluate likelihood and impact using the method required by the assignment or marking rubric."
+      ],
+      [
+        "Select appropriate controls",
+        "Map administrative, technical and physical safeguards to the risks and explain expected risk reduction."
+      ],
+      [
+        "Write the security management report",
+        "Present policy, governance, control and risk recommendations in a structured form supported by the assignment scenario."
+      ]
+    ],
+    "tools": [
+      "Risk matrices",
+      "Asset registers",
+      "ISO 27001 concepts",
+      "NIST security concepts",
+      "Access control matrices",
+      "Policy templates",
+      "Threat modelling",
+      "Security audit checklists"
+    ],
+    "structure": [
+      "Introduction and organisation context",
+      "Information assets and security requirements",
+      "Threats, vulnerabilities and risk assessment",
+      "CIA impact analysis",
+      "Existing and proposed controls",
+      "Policies, governance and compliance",
+      "Recommendations, conclusion and references"
+    ],
+    "faqs": [
+      [
+        "What topics are common in information security assignments?",
+        "Common topics include the CIA triad, risk assessment, threats and vulnerabilities, access control, policies, governance, security controls, business continuity and security management."
+      ],
+      [
+        "How should I structure an information security risk assessment?",
+        "Identify assets, threats and vulnerabilities first, then assess likelihood and impact, determine the level of risk, document existing controls and recommend additional treatment where necessary."
+      ],
+      [
+        "What is the difference between a threat and a vulnerability?",
+        "A threat is something that could cause harm, while a vulnerability is a weakness that can make the asset susceptible to that threat. Good assignments explain the relationship between both in the specific scenario."
+      ],
+      [
+        "How should the CIA triad be used in coursework?",
+        "Use confidentiality, integrity and availability to analyse what the organisation needs to protect and what the consequence would be if each property were lost or weakened."
+      ],
+      [
+        "Can information security assignments include policy and governance?",
+        "Yes. Many assignments require students to discuss policies, security roles, management responsibilities, compliance, awareness, risk ownership and how security decisions are governed."
       ]
     ]
   }

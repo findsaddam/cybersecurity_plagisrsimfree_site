@@ -23,6 +23,7 @@ $subjects = json_decode($subjectJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
 $extraSubjectJson = file_get_contents(dirname(__DIR__) . '/data/subjects-extra.json');
 $extraSubjects = json_decode($extraSubjectJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
 $subjects = array_merge($subjects, $extraSubjects);
+unset($subjects['incident-response-assignment-help']);
 $expansionJson = file_get_contents(dirname(__DIR__) . '/data/content-expansion.json');
 $contentExpansions = json_decode($expansionJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
 foreach ($contentExpansions as $expansionSlug => $expansionData) {
@@ -45,9 +46,10 @@ $subjectOrder = [
     'penetration-testing-assignment-help',
     'cryptography-assignment-help',
     'malware-analysis-assignment-help',
+    'cloud-computing-assignment-help',
+    'information-security-assignment-help',
     'cloud-security-assignment-help',
     'web-application-security-assignment-help',
-    'incident-response-assignment-help',
     'cyber-threat-intelligence-assignment-help',
 ];
 $orderedSubjects = [];
@@ -106,6 +108,10 @@ if ($path === 'llms.txt') {
     foreach ($caseStudies as $slug => $case) {
         echo "- " . SITE_URL . "/case-studies/" . $slug . " — " . $case['h1'] . "\n";
     }
+    exit;
+}
+if ($path === 'incident-response-assignment-help') {
+    header('Location: ' . SITE_URL . '/information-security-assignment-help', true, 301);
     exit;
 }
 if ($path === 'case-studies') {

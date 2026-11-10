@@ -61,9 +61,10 @@ function renderHead(array $page, string $canonical, array $subjects): void {
         'Penetration Testing Assignment Help' => 'Premium Penetration Testing Assignment Help | Coursework Support',
         'Cryptography Assignment Help' => 'Premium Cryptography Assignment Help | Homework & Coursework',
         'Malware Analysis Assignment Help' => 'Premium Malware Analysis Assignment Help | Reports & Labs',
+        'Cloud Computing Assignment Help' => 'Premium Cloud Computing Assignment Help | AWS & Azure Coursework',
+        'Information Security Assignment Help' => 'Premium Information Security Assignment Help | Risk & CIA',
         'Cloud Security Assignment Help' => 'Premium Cloud Security Assignment Help | AWS & Azure Coursework',
         'Web Application Security Assignment Help' => 'Premium Web Application Security Assignment Help | OWASP Coursework',
-        'Incident Response Assignment Help' => 'Premium Incident Response Assignment Help | Reports & Playbooks',
         'Cyber Threat Intelligence Assignment Help' => 'Premium Cyber Threat Intelligence Assignment Help | CTI Coursework',
     ];
     $metaTitle = $page['meta_title'] ?? ($metaTitles[$page['h1']] ?? ('Premium ' . $page['title']));

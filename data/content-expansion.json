@@ -335,48 +335,6 @@
       ]
     ]
   },
-  "incident-response-assignment-help": {
-    "intent_heading": "Incident Response Homework Help",
-    "intent_intro": "Incident response coursework asks students to turn security events into a structured decision process. The report should show how alerts and evidence were prioritised, what containment and recovery actions were selected, how business impact was considered, and which lessons should improve future detection, logging, identity controls or response procedures.",
-    "intent_cards": [
-      [
-        "Triage and severity",
-        "Explain which assets are affected, what evidence is reliable, how severe the incident may be and why certain actions take priority."
-      ],
-      [
-        "Containment decisions",
-        "Compare short-term containment with longer-term remediation and explain the effect on business continuity and evidence preservation."
-      ],
-      [
-        "Recovery evidence",
-        "Document what must be restored, verified or monitored before the incident can be considered contained and services returned safely."
-      ],
-      [
-        "Lessons learned",
-        "Turn root causes and control gaps into specific improvements for monitoring, access, patching, backups, communication and playbooks."
-      ]
-    ],
-    "questions_heading": "Incident Response Assignment Questions",
-    "questions_intro": "Good incident-response writing makes each decision traceable to evidence, risk and operational priorities.",
-    "questions": [
-      [
-        "How should I build an incident timeline?",
-        "Use verified timestamps and evidence sources, identify important actions or changes, and distinguish confirmed facts from assumptions."
-      ],
-      [
-        "What should I include in containment?",
-        "State the objective, affected systems, chosen action, expected risk reduction, operational impact and any evidence-preservation considerations."
-      ],
-      [
-        "How is recovery different from eradication?",
-        "Eradication removes the cause or malicious presence; recovery restores services safely and includes validation and monitoring for recurrence."
-      ],
-      [
-        "What belongs in lessons learned?",
-        "Summarise root causes, process gaps, detection weaknesses, communication issues and practical improvements that reduce the chance or impact of recurrence."
-      ]
-    ]
-  },
   "cyber-threat-intelligence-assignment-help": {
     "intent_heading": "Threat Intelligence Coursework Help",
     "intent_intro": "Threat intelligence coursework is strongest when raw information is converted into defensible judgements. Students should define the intelligence question, evaluate source reliability, distinguish indicators from behaviour, use frameworks such as MITRE ATT&CK appropriately, and explain what the intelligence means for monitoring, hardening and security priorities.",
@@ -416,6 +374,90 @@
       [
         "What makes a strong CTI conclusion?",
         "Present the key judgement, evidence, confidence level, limitations and the most important defensive implication without overstating certainty."
+      ]
+    ]
+  },
+  "cloud-computing-assignment-help": {
+    "intent_heading": "Cloud Computing Assignment Help",
+    "intent_intro": "Cloud computing coursework often combines theory with architecture and platform decisions. Students may need to compare IaaS, PaaS and SaaS, evaluate public and private cloud models, design scalable architectures, explain virtualisation, and use AWS or Azure examples to support the technical discussion.",
+    "intent_cards": [
+      [
+        "Cloud service models",
+        "Compare IaaS, PaaS and SaaS in terms of control, responsibility, flexibility and the type of workload each model supports."
+      ],
+      [
+        "Cloud architecture",
+        "Explain how compute, storage, networking, databases and availability components work together in the proposed solution."
+      ],
+      [
+        "Virtualisation and deployment",
+        "Discuss virtual machines, containers, serverless services and deployment models in relation to scalability and management."
+      ],
+      [
+        "AWS and Azure coursework",
+        "Use platform services as evidence or examples while keeping the report focused on the underlying cloud computing concept."
+      ]
+    ],
+    "questions_heading": "Cloud Computing Assignment Rubric",
+    "questions_intro": "A strong cloud computing submission should map technical content directly to the assessment criteria, with each diagram, comparison and recommendation serving a clear purpose in the final report.",
+    "questions": [
+      [
+        "How do I answer a cloud computing assignment rubric?",
+        "Convert each criterion into a checklist for the report, then make sure the required architecture, comparison, evidence, analysis and recommendations are visible in the relevant section."
+      ],
+      [
+        "What makes a cloud architecture explanation strong?",
+        "Explain why each component is present, what requirement it addresses and how it affects availability, scalability, performance or management."
+      ],
+      [
+        "Should I compare AWS and Azure in an assignment?",
+        "Only when the brief or scenario requires comparison. Use equivalent services and compare features that matter to the stated requirement rather than listing unrelated platform features."
+      ],
+      [
+        "How much practical evidence should I include?",
+        "Include only the screenshots, configurations or service outputs that support the learning outcome, then explain what each item demonstrates."
+      ]
+    ]
+  },
+  "information-security-assignment-help": {
+    "intent_heading": "Information Security Homework Help",
+    "intent_intro": "Information security coursework requires students to connect technical and management concepts. A useful answer identifies what information needs protection, evaluates threats and vulnerabilities, assesses risk, applies the CIA triad, and recommends policies and controls that fit the organisation and its business priorities.",
+    "intent_cards": [
+      [
+        "CIA analysis",
+        "Use confidentiality, integrity and availability to explain the security requirements of specific information assets and business processes."
+      ],
+      [
+        "Risk assessment",
+        "Build a traceable relationship between assets, threats, vulnerabilities, likelihood, impact and recommended treatment."
+      ],
+      [
+        "Security policy",
+        "Explain how policies, standards, procedures, roles and awareness support consistent information security practice."
+      ],
+      [
+        "Governance and controls",
+        "Connect management responsibility and control selection to risk ownership, compliance and business objectives."
+      ]
+    ],
+    "questions_heading": "Information Security Assignment Questions",
+    "questions_intro": "Information security answers become stronger when concepts are applied to a realistic organisation or scenario instead of being presented as isolated definitions.",
+    "questions": [
+      [
+        "How do I apply the CIA triad to a case study?",
+        "Identify the information asset first, then explain what confidentiality, integrity and availability mean for that asset and the impact of losing each property."
+      ],
+      [
+        "What should a risk table include?",
+        "A useful risk table normally includes the asset, threat, vulnerability, existing controls, likelihood, impact, risk level and recommended treatment."
+      ],
+      [
+        "How do policies differ from technical controls?",
+        "Policies define expected behaviour and responsibilities, while technical controls enforce or support those requirements through systems and configurations."
+      ],
+      [
+        "What makes a security recommendation credible?",
+        "Link the recommendation to a specific risk, explain how it reduces likelihood or impact, and consider cost, usability, operational constraints and residual risk where relevant."
       ]
     ]
   }
