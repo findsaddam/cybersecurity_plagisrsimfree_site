@@ -3,7 +3,7 @@ function renderHeader(array $subjects): void {
     ?>
 <div class="topbar">
     <div class="container topbar__inner">
-        <div class="topbar__message"><span class="pulse"></span> Student-focused cybersecurity academic support</div>
+        <div class="topbar__message"><span class="pulse"></span> Cyber security assignment support for university students</div>
         <div class="topbar__right">
             <span class="topbar__trust"><?= icon('lock', 16) ?> Private & confidential</span>
             <a href="<?= e(waLink()) ?>" target="_blank" rel="noopener">WhatsApp <?= e(WHATSAPP_LABEL) ?></a>
@@ -24,8 +24,8 @@ function renderHeader(array $subjects): void {
                 </button>
                 <div class="dropdown-panel" data-dropdown-panel>
                     <div class="dropdown-head">
-                        <div><span class="mini-label">Most requested</span><strong>Cybersecurity Subjects</strong></div>
-                        <span class="dropdown-badge">6 focused pages</span>
+                        <div><span class="mini-label">Subject areas</span><strong>Cybersecurity Assignment Help</strong></div>
+                        <span class="dropdown-badge">Theory, labs &amp; reports</span>
                     </div>
                     <div class="dropdown-grid">
                         <?php foreach ($subjects as $slug => $subject): ?>

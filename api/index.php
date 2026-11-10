@@ -19,6 +19,35 @@ const WHATSAPP_LABEL = '+44 7949 817583';
 $home = require dirname(__DIR__) . '/data/home.php';
 $subjectJson = gzdecode(file_get_contents(dirname(__DIR__) . '/data/subjects.json.gz'));
 $subjects = json_decode($subjectJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
+$extraSubjectJson = file_get_contents(dirname(__DIR__) . '/data/subjects-extra.json');
+$extraSubjects = json_decode($extraSubjectJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
+$subjects = array_merge($subjects, $extraSubjects);
+
+$subjectOrder = [
+    'network-security-assignment-help',
+    'ethical-hacking-assignment-help',
+    'digital-forensics-assignment-help',
+    'penetration-testing-assignment-help',
+    'cryptography-assignment-help',
+    'malware-analysis-assignment-help',
+    'cloud-security-assignment-help',
+    'web-application-security-assignment-help',
+    'incident-response-assignment-help',
+    'cyber-threat-intelligence-assignment-help',
+];
+$orderedSubjects = [];
+foreach ($subjectOrder as $subjectSlug) {
+    if (isset($subjects[$subjectSlug])) $orderedSubjects[$subjectSlug] = $subjects[$subjectSlug];
+}
+$subjects = $orderedSubjects + $subjects;
+
+header_remove('X-Powered-By');
+$host = strtolower($_SERVER['HTTP_HOST'] ?? '');
+$isPreviewHost = str_ends_with($host, '.vercel.app');
+header('Content-Language: en');
+header('Vary: Host');
+header('Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800');
+if ($isPreviewHost) header('X-Robots-Tag: noindex, nofollow, noarchive');
 
 require dirname(__DIR__) . '/includes/helpers.php';
 require dirname(__DIR__) . '/includes/head.php';
@@ -39,7 +68,21 @@ if ($path === 'sitemap.xml') {
 }
 if ($path === 'robots.txt') {
     header('Content-Type: text/plain; charset=UTF-8');
-    echo "User-agent: *\nAllow: /\nSitemap: " . SITE_URL . "/sitemap.xml\n";
+    if ($isPreviewHost) {
+        echo "User-agent: *\nDisallow: /\n";
+    } else {
+        echo "User-agent: *\nAllow: /\nSitemap: " . SITE_URL . "/sitemap.xml\n";
+    }
+    exit;
+}
+if ($path === 'llms.txt') {
+    header('Content-Type: text/plain; charset=UTF-8');
+    echo "# " . SITE_NAME . "\n\n";
+    echo "> Student-oriented cyber security coursework guidance covering theory, authorised labs, reports and practical assignments.\n\n";
+    echo "## Main page\n- " . SITE_URL . "/\n\n## Subject pages\n";
+    foreach ($subjects as $slug => $subject) {
+        echo "- " . SITE_URL . "/" . $slug . " — " . $subject['h1'] . "\n";
+    }
     exit;
 }
 if ($path !== '' && !isset($subjects[$path])) {

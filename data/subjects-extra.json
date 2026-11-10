@@ -1,0 +1,458 @@
+{
+  "cloud-security-assignment-help": {
+    "title": "Cloud Security Assignment Help | AWS, Azure & IAM Coursework",
+    "h1": "Cloud Security Assignment Help",
+    "description": "Cloud security assignment help for university students covering IAM, shared responsibility, logging, storage security, cloud risk, AWS, Azure, reports and practical coursework.",
+    "primary": "cloud security assignment help",
+    "secondary": [
+      "cloud security homework help",
+      "cloud security coursework help",
+      "AWS security assignment help",
+      "Azure security assignment help",
+      "cloud computing security assignment help"
+    ],
+    "longtails": [
+      "cloud security assignment help for university students",
+      "help with IAM and cloud security coursework",
+      "AWS and Azure security lab report help"
+    ],
+    "nav": "Cloud Security",
+    "name": "Cloud Security",
+    "eyebrow": "IAM, shared responsibility, logging & cloud risk",
+    "icon": "shield",
+    "intro": "Understand cloud security models, identity controls, logging, storage protection and risk analysis, then explain how each control relates to the cloud service, threat and assignment scenario.",
+    "problems": [
+      {
+        "title": "Shared responsibility",
+        "text": "Separate provider responsibilities from customer responsibilities and apply the model to IaaS, PaaS and SaaS scenarios."
+      },
+      {
+        "title": "Identity and access",
+        "text": "Explain IAM roles, least privilege, MFA, federation and access-policy decisions without treating permissions as a simple checklist."
+      },
+      {
+        "title": "Cloud evidence",
+        "text": "Turn logs, configuration screenshots and security findings into evidence that supports a clear academic argument."
+      },
+      {
+        "title": "Risk and remediation",
+        "text": "Connect exposed storage, weak identities, missing logging or network controls to realistic impact and practical remediation."
+      }
+    ],
+    "topics": [
+      "Shared responsibility model",
+      "Identity and access management",
+      "Cloud logging and monitoring",
+      "Storage and data protection",
+      "Network security groups",
+      "Encryption and key management",
+      "Cloud risk assessment",
+      "AWS and Azure security controls"
+    ],
+    "workflow": [
+      [
+        "Define the cloud scenario",
+        "Identify the service model, assets, users, data and security responsibilities in the assignment."
+      ],
+      [
+        "Map threats to controls",
+        "Connect likely threats to IAM, network, encryption, logging, backup and configuration controls."
+      ],
+      [
+        "Review authorised evidence",
+        "Interpret screenshots, logs, policies or lab results from the approved cloud environment."
+      ],
+      [
+        "Explain risk and impact",
+        "Describe what the finding means for confidentiality, integrity, availability, privacy or compliance."
+      ],
+      [
+        "Write justified recommendations",
+        "Prioritise controls and explain why each recommendation reduces the identified risk."
+      ]
+    ],
+    "tools": [
+      "AWS IAM",
+      "AWS CloudTrail",
+      "Azure RBAC",
+      "Microsoft Defender for Cloud",
+      "CloudWatch",
+      "Azure Monitor",
+      "Security Groups",
+      "Key Management Services"
+    ],
+    "structure": [
+      "Introduction and cloud scenario",
+      "Assets and shared responsibility",
+      "Security requirements and threats",
+      "Methodology and evidence",
+      "Findings and risk analysis",
+      "Recommended cloud controls",
+      "Conclusion and references"
+    ],
+    "faqs": [
+      [
+        "What topics are common in cloud security assignments?",
+        "Common topics include shared responsibility, IAM, storage security, logging, encryption, cloud networking, misconfiguration risk, monitoring and security governance."
+      ],
+      [
+        "Can you help with AWS or Azure security coursework?",
+        "Yes. Guidance can cover academic AWS and Azure scenarios, including IAM or RBAC, logging, storage controls, network rules, encryption and risk reporting."
+      ],
+      [
+        "How should cloud security screenshots be used in a report?",
+        "Use screenshots as evidence, then explain what configuration or event they show, why it matters, what risk it creates or reduces, and how it relates to the assignment question."
+      ],
+      [
+        "Can a cloud security assignment include risk assessment?",
+        "Yes. Many assignments require students to identify assets, threats, vulnerabilities, likelihood, impact and controls, then justify the priority of recommended improvements."
+      ],
+      [
+        "Is cloud lab guidance limited to authorised environments?",
+        "Yes. Practical guidance should be applied only to your own cloud account, university lab environments, training platforms or systems you have permission to assess."
+      ]
+    ]
+  },
+  "web-application-security-assignment-help": {
+    "title": "Web Application Security Assignment Help | OWASP Coursework",
+    "h1": "Web Application Security Assignment Help",
+    "description": "Web application security assignment help for university students covering OWASP risks, authentication, access control, secure coding, authorised testing, evidence and remediation reports.",
+    "primary": "web application security assignment help",
+    "secondary": [
+      "application security assignment help",
+      "OWASP assignment help",
+      "web security coursework help",
+      "secure coding assignment help",
+      "web application security homework help"
+    ],
+    "longtails": [
+      "web application security assignment help for university students",
+      "OWASP Top 10 coursework and lab report help",
+      "help with authorised web security testing assignments"
+    ],
+    "nav": "Web Application Security",
+    "name": "Web Application Security",
+    "eyebrow": "OWASP, authentication, secure coding & remediation",
+    "icon": "terminal",
+    "intro": "Learn how web application risks are identified, evidenced and explained in authorised coursework, with emphasis on secure design, OWASP concepts, risk interpretation and practical remediation.",
+    "problems": [
+      {
+        "title": "OWASP concepts",
+        "text": "Move beyond naming an OWASP category by explaining the weakness, affected component, security impact and suitable control."
+      },
+      {
+        "title": "Authorised testing",
+        "text": "Keep practical work scoped to university labs, training applications and systems where testing permission is explicit."
+      },
+      {
+        "title": "Evidence quality",
+        "text": "Use requests, responses, screenshots and application behaviour as evidence, then explain what each item demonstrates."
+      },
+      {
+        "title": "Remediation",
+        "text": "Connect findings to secure coding, access control, validation, session management, configuration and monitoring improvements."
+      }
+    ],
+    "topics": [
+      "OWASP Top 10",
+      "Authentication and session security",
+      "Access control",
+      "Input validation",
+      "Secure coding principles",
+      "Security headers",
+      "Web vulnerability reporting",
+      "Risk and remediation"
+    ],
+    "workflow": [
+      [
+        "Read the application scenario",
+        "Identify the application, users, trust boundaries, sensitive data and assignment scope."
+      ],
+      [
+        "Select relevant security concepts",
+        "Map the scenario to OWASP risks, authentication, access control, validation and secure design principles."
+      ],
+      [
+        "Collect authorised evidence",
+        "Record only the requests, responses, screenshots and observations required by the approved lab task."
+      ],
+      [
+        "Analyse security impact",
+        "Explain affected assets, risk and the reason the weakness matters without going beyond the authorised lab scope."
+      ],
+      [
+        "Recommend secure controls",
+        "Link each finding to realistic coding, configuration, identity or monitoring improvements."
+      ]
+    ],
+    "tools": [
+      "OWASP ZAP",
+      "Burp Suite Community",
+      "WebGoat",
+      "DVWA",
+      "Browser DevTools",
+      "OWASP Cheat Sheets",
+      "Security Headers",
+      "Local test environments"
+    ],
+    "structure": [
+      "Introduction and scope",
+      "Application and threat context",
+      "Methodology and authorisation",
+      "Evidence and findings",
+      "Risk and OWASP mapping",
+      "Remediation recommendations",
+      "Conclusion and references"
+    ],
+    "faqs": [
+      [
+        "What is usually included in a web application security assignment?",
+        "Assignments often cover OWASP risks, authentication, access control, input validation, secure design, authorised testing evidence, risk assessment and remediation."
+      ],
+      [
+        "Can you help with OWASP Top 10 coursework?",
+        "Yes. Guidance can help students explain the relevant OWASP category, security impact, evidence, risk and suitable defensive controls in an academic report."
+      ],
+      [
+        "Can Burp Suite or OWASP ZAP be used in coursework?",
+        "Yes, when the assignment uses an authorised training application or lab environment. The report should explain the purpose of the tool, relevant evidence and defensive meaning of the result."
+      ],
+      [
+        "How should web security findings be written?",
+        "A useful finding normally includes the affected feature, evidence, security impact, risk level, relevant security principle and a practical remediation recommendation."
+      ],
+      [
+        "Do you provide guidance for secure coding assignments?",
+        "Yes. Coursework can include validation, authentication, authorisation, session management, error handling, secrets management and other defensive software security principles."
+      ]
+    ]
+  },
+  "incident-response-assignment-help": {
+    "title": "Incident Response Assignment Help | IR Reports & Playbooks",
+    "h1": "Incident Response Assignment Help",
+    "description": "Incident response assignment help for university students covering triage, containment, eradication, recovery, evidence, playbooks, lessons learned and incident reports.",
+    "primary": "incident response assignment help",
+    "secondary": [
+      "cyber incident response assignment help",
+      "incident response coursework help",
+      "incident response report help",
+      "incident handling assignment help",
+      "DFIR assignment help"
+    ],
+    "longtails": [
+      "incident response assignment help for university students",
+      "help with cyber incident response reports and playbooks",
+      "digital forensics and incident response coursework help"
+    ],
+    "nav": "Incident Response",
+    "name": "Incident Response",
+    "eyebrow": "Triage, containment, recovery & lessons learned",
+    "icon": "file",
+    "intro": "Work through the incident lifecycle from preparation and triage to containment, recovery and lessons learned, while keeping evidence, timelines, communication and recommendations clear in the final report.",
+    "problems": [
+      {
+        "title": "Incident timeline",
+        "text": "Organise alerts, logs, user reports and forensic observations into a sequence that explains what happened and when."
+      },
+      {
+        "title": "Triage decisions",
+        "text": "Prioritise affected assets, likely impact and immediate actions instead of treating every alert as equally important."
+      },
+      {
+        "title": "Containment and recovery",
+        "text": "Explain why a containment or recovery action is appropriate and how it balances business continuity with risk."
+      },
+      {
+        "title": "Lessons learned",
+        "text": "Turn incident findings into improvements for logging, access control, patching, backups, monitoring and response procedures."
+      }
+    ],
+    "topics": [
+      "Incident lifecycle",
+      "Triage and prioritisation",
+      "Containment strategies",
+      "Eradication and recovery",
+      "Incident timelines",
+      "Evidence handling",
+      "Communication and escalation",
+      "Post-incident review"
+    ],
+    "workflow": [
+      [
+        "Establish the incident context",
+        "Identify the affected service, business impact, available evidence and assumptions in the case study or lab."
+      ],
+      [
+        "Build the timeline",
+        "Order the relevant alerts, logs, actions and observations so the incident can be explained chronologically."
+      ],
+      [
+        "Analyse response decisions",
+        "Justify triage, containment, eradication and recovery actions using risk and operational impact."
+      ],
+      [
+        "Document evidence and communication",
+        "Record what evidence supports each conclusion and who should be informed or escalated to."
+      ],
+      [
+        "Produce lessons learned",
+        "Recommend improvements that address the root causes, control gaps and response weaknesses revealed by the incident."
+      ]
+    ],
+    "tools": [
+      "Splunk",
+      "Security Onion",
+      "Sysmon",
+      "SIEM dashboards",
+      "Windows Event Logs",
+      "Linux logs",
+      "Wireshark",
+      "Incident response playbooks"
+    ],
+    "structure": [
+      "Executive summary",
+      "Incident scope and timeline",
+      "Evidence and data sources",
+      "Triage and analysis",
+      "Containment and recovery",
+      "Lessons learned and controls",
+      "Conclusion and references"
+    ],
+    "faqs": [
+      [
+        "What should an incident response assignment include?",
+        "A strong assignment commonly includes incident context, a timeline, evidence sources, triage decisions, containment, eradication, recovery, communication and lessons learned."
+      ],
+      [
+        "How is incident response different from digital forensics?",
+        "Incident response focuses on managing and recovering from a security event, while digital forensics focuses more deeply on preserving, examining and interpreting evidence. University tasks often combine both."
+      ],
+      [
+        "Can you help with incident response playbooks?",
+        "Yes. Guidance can cover playbook structure, roles, triggers, decision points, evidence requirements, containment actions, escalation and post-incident review."
+      ],
+      [
+        "How should an incident timeline be written?",
+        "Use verified timestamps and evidence sources, distinguish facts from assumptions, and explain how key events change the understanding of the incident."
+      ],
+      [
+        "Can incident response coursework use SIEM evidence?",
+        "Yes. Alerts, event logs and SIEM dashboards can support analysis when the report explains what the evidence shows, why it is relevant and what response action it justifies."
+      ]
+    ]
+  },
+  "cyber-threat-intelligence-assignment-help": {
+    "title": "Cyber Threat Intelligence Assignment Help | CTI Coursework",
+    "h1": "Cyber Threat Intelligence Assignment Help",
+    "description": "Cyber threat intelligence assignment help for university students covering threat actors, indicators, MITRE ATT&CK, intelligence lifecycle, source evaluation and CTI reports.",
+    "primary": "cyber threat intelligence assignment help",
+    "secondary": [
+      "threat intelligence assignment help",
+      "CTI assignment help",
+      "cyber threat intelligence coursework help",
+      "MITRE ATT&CK assignment help",
+      "threat analysis assignment help"
+    ],
+    "longtails": [
+      "cyber threat intelligence assignment help for university students",
+      "help with MITRE ATT&CK and threat intelligence coursework",
+      "cyber threat intelligence report writing help"
+    ],
+    "nav": "Cyber Threat Intelligence",
+    "name": "Cyber Threat Intelligence",
+    "eyebrow": "Threat actors, indicators, ATT&CK & intelligence reports",
+    "icon": "search",
+    "intro": "Learn how to turn security data and open-source information into useful intelligence by evaluating sources, separating indicators from conclusions, mapping behaviour and communicating what defenders should do next.",
+    "problems": [
+      {
+        "title": "Source evaluation",
+        "text": "Assess reliability, relevance and recency before using a source as evidence for a threat intelligence judgement."
+      },
+      {
+        "title": "Indicators and behaviour",
+        "text": "Distinguish indicators of compromise from tactics, techniques and procedures so the report does not overstate what the evidence proves."
+      },
+      {
+        "title": "ATT&CK mapping",
+        "text": "Use MITRE ATT&CK to describe observed or reported behaviour clearly and connect it to defensive visibility."
+      },
+      {
+        "title": "Intelligence writing",
+        "text": "Turn raw information into concise judgements, confidence statements, implications and practical defensive recommendations."
+      }
+    ],
+    "topics": [
+      "Intelligence lifecycle",
+      "Threat actor analysis",
+      "Indicators of compromise",
+      "Tactics, techniques and procedures",
+      "MITRE ATT&CK mapping",
+      "Source reliability",
+      "Strategic and tactical intelligence",
+      "Threat intelligence reporting"
+    ],
+    "workflow": [
+      [
+        "Define the intelligence question",
+        "State what the assignment needs to know about a threat, actor, campaign, sector or defensive problem."
+      ],
+      [
+        "Collect relevant information",
+        "Use approved datasets and credible public sources, keeping notes on provenance, date and reliability."
+      ],
+      [
+        "Evaluate and correlate",
+        "Compare sources, separate confirmed facts from assumptions and identify patterns across indicators and behaviour."
+      ],
+      [
+        "Map behaviour and impact",
+        "Connect relevant activity to ATT&CK techniques, affected assets and likely defensive implications."
+      ],
+      [
+        "Write the intelligence assessment",
+        "Present key judgements, confidence, supporting evidence, limitations and recommended defensive actions."
+      ]
+    ],
+    "tools": [
+      "MITRE ATT&CK",
+      "MISP",
+      "OpenCTI",
+      "VirusTotal",
+      "Security Onion",
+      "SIEM platforms",
+      "WHOIS and passive data",
+      "Threat reports"
+    ],
+    "structure": [
+      "Intelligence requirement",
+      "Sources and methodology",
+      "Threat context",
+      "Evidence and behavioural analysis",
+      "ATT&CK or IOC mapping",
+      "Key judgements and confidence",
+      "Defensive implications and references"
+    ],
+    "faqs": [
+      [
+        "What is cyber threat intelligence coursework about?",
+        "CTI coursework commonly covers the intelligence lifecycle, threat actors, indicators, tactics and techniques, source evaluation, MITRE ATT&CK and communicating defensive implications."
+      ],
+      [
+        "Can you help with MITRE ATT&CK mapping?",
+        "Yes. Guidance can help students map reported behaviour to relevant ATT&CK techniques and explain why the mapping is supported by the available evidence."
+      ],
+      [
+        "What is the difference between an IOC and a TTP?",
+        "An indicator of compromise is an observable artefact such as a hash or domain, while a tactic, technique or procedure describes behaviour. CTI reports often use both but should not treat them as interchangeable."
+      ],
+      [
+        "How should sources be evaluated in a threat intelligence report?",
+        "Consider source reliability, access to the information, corroboration, recency, possible bias and whether the evidence actually supports the judgement being made."
+      ],
+      [
+        "Can CTI assignments include defensive recommendations?",
+        "Yes. Strong CTI writing usually explains what the intelligence means for monitoring, detection, hardening, prioritisation or other defensive decisions."
+      ]
+    ]
+  }
+}

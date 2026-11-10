@@ -92,22 +92,23 @@ function renderSubject(string $slug, array $page, array $subjects): void {
     <section class="section">
         <div class="container content-split">
             <article class="long-copy reveal">
-                <span class="section-kicker">Student guide</span>
-                <h2><?= e(ucfirst($page['primary'])) ?> for University Coursework</h2>
-                <p>Students usually look for <strong><?= e($page['primary']) ?></strong> when the task combines unfamiliar terminology, practical evidence and a report that must satisfy a detailed marking rubric. The useful starting point is to separate the assignment into three questions: what concept must be understood, what evidence must be produced, and what analysis must be written around that evidence.</p>
+                <span class="section-kicker">Coursework guide</span>
+                <h2>How to Approach a <?= e($page['nav']) ?> Assignment</h2>
+                <p>A <?= e($page['nav']) ?> assignment can combine unfamiliar terminology, practical evidence and a report that must satisfy a detailed marking rubric. A useful starting point is to separate the work into three questions: what concept must be understood, what evidence must be produced, and what analysis must be written around that evidence.</p>
                 <p>For technical sections, clarity matters more than volume. A small number of well-chosen screenshots, diagrams or result extracts can be stronger than pages of raw output when each item has a caption and an explanation. The reader should be able to see what was done, what the result means and how it answers the assessment question.</p>
                 <p>For academic sections, definitions should lead into comparison and judgement. Explain why a security control, method or interpretation is appropriate for the scenario, where it has limitations, and what alternative might be considered. This is where a student moves from describing cybersecurity to analysing it.</p>
-                <p>The final review should check alignment with the rubric. Every major section should have a reason to exist, every figure should be referenced in the text, and every recommendation should connect to a finding or stated risk. That approach makes <strong><?= e($page['nav']) ?></strong> coursework easier to follow and easier to assess.</p>
+                <p>The final review should check alignment with the rubric. Every major section should have a reason to exist, every figure should be referenced in the text, and every recommendation should connect to a finding or stated risk. This makes the coursework easier to follow, verify and assess.</p>
             </article>
             <aside class="keyword-box reveal">
-                <span class="mini-label">Related search topics</span>
-                <h3>Useful <?= e($page['nav']) ?> Keywords</h3>
-                <div class="keyword-stack">
-                    <span><?= e($page['primary']) ?></span>
-                    <?php foreach ($page['secondary'] as $keyword): ?><span><?= e($keyword) ?></span><?php endforeach; ?>
-                    <?php foreach ($page['longtails'] as $keyword): ?><span><?= e($keyword) ?></span><?php endforeach; ?>
+                <span class="mini-label">Before you start</span>
+                <h3>Assignment Checklist</h3>
+                <div class="feature-list">
+                    <div><?= icon('check', 18) ?><span><strong>Assignment question</strong><small>Keep the exact task and learning outcomes visible while you work.</small></span></div>
+                    <div><?= icon('check', 18) ?><span><strong>Marking rubric</strong><small>Match report sections and evidence to the criteria that carry marks.</small></span></div>
+                    <div><?= icon('check', 18) ?><span><strong>Lab requirements</strong><small>Confirm the permitted environment, tools, screenshots and evidence format.</small></span></div>
+                    <div><?= icon('check', 18) ?><span><strong>Submission rules</strong><small>Check word count, referencing style, file format and deadline.</small></span></div>
                 </div>
-                <a href="<?= e(waLink($page['primary'])) ?>" class="text-link" target="_blank" rel="noopener">Ask about your exact brief <?= icon('arrow', 16) ?></a>
+                <a href="<?= e(waLink($page['primary'])) ?>" class="text-link" target="_blank" rel="noopener">Ask about your assignment <?= icon('arrow', 16) ?></a>
             </aside>
         </div>
     </section>
@@ -124,7 +125,7 @@ function renderSubject(string $slug, array $page, array $subjects): void {
 
     <section class="related-section">
         <div class="container">
-            <div class="section-head section-head--split reveal"><div><span class="section-kicker">Continue learning</span><h2>Related Cybersecurity Assignment Subjects</h2></div><p>If your brief crosses more than one security area, these pages can help you find the closest subject focus.</p></div>
+            <div class="section-head section-head--split reveal"><div><span class="section-kicker">Continue learning</span><h2>Related Cybersecurity Assignment Subjects</h2></div><p>Cybersecurity assignments often connect several areas. These related pages cover topics that commonly overlap with this subject.</p></div>
             <div class="related-grid">
                 <?php $shown = 0; foreach ($subjects as $relatedSlug => $subject): if ($relatedSlug === $slug) continue; $shown++; if ($shown > 3) break; ?>
                     <a class="related-card reveal" href="/<?= e($relatedSlug) ?>"><span><?= icon($subject['icon'], 22) ?></span><div><h3><?= e($subject['nav']) ?></h3><p><?= e($subject['eyebrow']) ?></p></div><?= icon('arrow', 17) ?></a>
@@ -135,7 +136,7 @@ function renderSubject(string $slug, array $page, array $subjects): void {
 
     <section class="cta-section">
         <div class="container cta-box reveal">
-            <div><span class="section-kicker section-kicker--light">Your brief comes first</span><h2>Need <?= e($page['nav']) ?> Assignment Help?</h2><p>Share the exact task, deadline and rubric for focused support around your module requirements.</p></div>
+            <div><span class="section-kicker section-kicker--light">Your brief comes first</span><h2>Need <?= e($page['nav']) ?> Assignment Help?</h2><p>Share the task, deadline and rubric for guidance based on your assignment requirements.</p></div>
             <a class="btn btn--white" href="<?= e(waLink($page['primary'])) ?>" target="_blank" rel="noopener">Send Brief on WhatsApp <?= icon('arrow', 18) ?></a>
         </div>
     </section>
