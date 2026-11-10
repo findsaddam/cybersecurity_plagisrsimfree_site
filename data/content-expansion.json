@@ -84,7 +84,7 @@
     ]
   },
   "digital-forensics-assignment-help": {
-    "intent_heading": "Digital Forensics Coursework Help",
+    "intent_heading": "Digital Forensics Homework Help",
     "intent_intro": "Digital forensics coursework usually combines evidence handling, technical examination and formal reporting. Students need to show how evidence was acquired or provided, how integrity was maintained, what artefacts were examined, and how each conclusion is supported. This also overlaps with information security assignment help when the task asks how forensic findings affect security controls or incident response.",
     "intent_cards": [
       [
@@ -168,7 +168,7 @@
     ]
   },
   "cryptography-assignment-help": {
-    "intent_heading": "Cryptography Coursework Help",
+    "intent_heading": "Cryptography Homework Help",
     "intent_intro": "Cryptography assignment help has strong visibility in the Search Console data, so the page should answer more than definitions. Students commonly need to compare algorithms, explain key management, evaluate hashing or encryption choices, discuss PKI, and show why a cryptographic control is suitable for a particular security requirement.",
     "intent_cards": [
       [
@@ -210,7 +210,7 @@
     ]
   },
   "malware-analysis-assignment-help": {
-    "intent_heading": "Malware Analysis Coursework Help",
+    "intent_heading": "Malware Analysis Homework Help",
     "intent_intro": "Malware analysis coursework should focus on safe observation, evidence interpretation and defensive understanding. A strong report separates static indicators from runtime behaviour, explains what the evidence suggests about persistence or communication, and turns findings into detection and containment recommendations without moving beyond the authorised laboratory environment.",
     "intent_cards": [
       [
@@ -336,7 +336,7 @@
     ]
   },
   "incident-response-assignment-help": {
-    "intent_heading": "Incident Response Coursework Help",
+    "intent_heading": "Incident Response Homework Help",
     "intent_intro": "Incident response coursework asks students to turn security events into a structured decision process. The report should show how alerts and evidence were prioritised, what containment and recovery actions were selected, how business impact was considered, and which lessons should improve future detection, logging, identity controls or response procedures.",
     "intent_cards": [
       [
