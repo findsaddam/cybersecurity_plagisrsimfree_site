@@ -1,7 +1,7 @@
 <?php
-function renderHome(array $home, array $subjects): void {
+function renderHome(array $home, array $subjects, array $caseStudies = []): void {
     renderHead($home, SITE_URL . '/', $subjects);
-    renderHeader($subjects);
+    renderHeader($subjects, $caseStudies);
     ?>
 <main>
     <section class="hero hero--home">
@@ -106,6 +106,19 @@ function renderHome(array $home, array $subjects): void {
             </div>
         </div>
     </section>
+
+    <?php if($caseStudies): $featuredSlug=array_key_first($caseStudies); $featured=$caseStudies[$featuredSlug]; ?>
+    <section class="section section--light" id="case-studies">
+        <div class="container">
+            <div class="section-head section-head--split reveal"><div><span class="section-kicker">Solved assignment portfolio</span><h2>Cybersecurity Assignment Case Studies</h2></div><p>See how assignment requirements can be translated into structured technical analysis, practical evidence and clear academic reporting.</p></div>
+            <a class="home-case-card reveal" href="/case-studies/<?=e($featuredSlug)?>">
+                <div><span class="mini-label"><?=e($featured['category'])?></span><h3><?=e($featured['h1'])?></h3><p><?=e($featured['summary'])?></p><span class="card-link">Read the case study <?=icon('arrow',17)?></span></div>
+                <div class="home-case-score"><strong><?=e((string)$featured['similarity'])?>%</strong><span>Turnitin similarity</span><small><?=e(number_format($featured['word_count']))?>-word solution</small></div>
+            </a>
+            <a class="text-link case-index-link" href="/case-studies">Browse all case studies <?=icon('arrow',17)?></a>
+        </div>
+    </section>
+    <?php endif; ?>
 
     <section class="section" id="faq">
         <div class="container faq-layout">

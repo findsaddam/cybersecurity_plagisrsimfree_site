@@ -52,6 +52,16 @@ function renderSignatureBlock(array $page): void {
         <div class="insight-grid"><?php foreach(($s['items']??[]) as $i=>$item): ?><div class="insight-card reveal" style="--delay:<?=($i+1)*55?>ms"><span><?=e($item[0])?></span><h3><?=e($item[1])?></h3><p><?=e($item[2])?></p></div><?php endforeach; ?></div>
     </div></section><?php
 }
+function renderCaseStudyPromoBlock(array $page): void {
+    $c=$page['architecture']['case_study']??[];
+    if(empty($c)) return; ?>
+    <section class="section section--soft"><div class="container">
+        <a class="subject-case-promo reveal" href="<?=e($c['url'])?>">
+            <div><span class="section-kicker"><?=e($c['kicker']??'Solved assignment case study')?></span><h2><?=e($c['title'])?></h2><p><?=e($c['intro'])?></p><span class="card-link">View solved case study <?=icon('arrow',17)?></span></div>
+            <div class="subject-case-promo__meta"><strong><?=e($c['badge']??'Case Study')?></strong><span><?=e($c['meta']??'')?></span></div>
+        </a>
+    </div></section><?php
+}
 function renderLongCopyBlock(array $page): void {
     $s=subjectSection($page,'long_copy'); ?>
     <section class="section"><div class="container content-split">
@@ -78,10 +88,10 @@ function renderRelatedBlock(string $slug,array $page,array $subjects): void {
         <div class="related-grid"><?php $relatedSlugs=$page['architecture']['related_slugs']??[]; if(!$relatedSlugs){$relatedSlugs=array_values(array_filter(array_keys($subjects),fn($k)=>$k!==$slug));$relatedSlugs=array_slice($relatedSlugs,0,3);} foreach($relatedSlugs as $relatedSlug): if(!isset($subjects[$relatedSlug])) continue; $subject=$subjects[$relatedSlug]; ?><a class="related-card reveal" href="/<?=e($relatedSlug)?>"><span><?=icon($subject['icon'],22)?></span><div><h3><?=e($subject['nav'])?></h3><p><?=e($subject['eyebrow'])?></p></div><?=icon('arrow',17)?></a><?php endforeach; ?></div>
     </div></section><?php
 }
-function renderSubject(string $slug,array $page,array $subjects): void {
+function renderSubject(string $slug,array $page,array $subjects,array $caseStudies = []): void {
     $canonical=SITE_URL.'/'.$slug;
     renderHead($page,$canonical,$subjects);
-    renderHeader($subjects);
+    renderHeader($subjects,$caseStudies);
     $a=$page['architecture']??[];
     $hero=$a['hero_card']??[];
     ?>
@@ -100,6 +110,7 @@ foreach($order as $block){
     elseif($block==='intent') renderIntentBlock($page);
     elseif($block==='questions') renderQuestionsBlock($page);
     elseif($block==='signature') renderSignatureBlock($page);
+    elseif($block==='case_study') renderCaseStudyPromoBlock($page);
     elseif($block==='long_copy') renderLongCopyBlock($page);
 }
 renderFaqBlock($page);

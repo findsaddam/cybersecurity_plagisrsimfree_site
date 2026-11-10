@@ -409,6 +409,7 @@
       "intent",
       "problems",
       "signature",
+      "case_study",
       "long_copy",
       "questions",
       "workflow",
@@ -502,6 +503,14 @@
           "Explain how certificates and trust chains help bind identities to public keys."
         ]
       ]
+    },
+    "case_study": {
+      "kicker": "Solved cryptography assignment",
+      "title": "Double Ratchet Encryption & GPG Digital Signature Verification",
+      "intro": "See a completed case study that combines Double Ratchet security analysis with practical GPG verification of three candidate product files. The submitted work recorded 7% Turnitin similarity.",
+      "url": "/case-studies/double-ratchet-digital-signature-assignment",
+      "badge": "7% similarity",
+      "meta": "1,039-word solved assignment"
     }
   },
   "malware-analysis-assignment-help": {

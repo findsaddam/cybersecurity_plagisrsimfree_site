@@ -17,6 +17,7 @@ const WHATSAPP_NUMBER = '447949817583';
 const WHATSAPP_LABEL = '+44 7949 817583';
 
 $home = require dirname(__DIR__) . '/data/home.php';
+$caseStudies = require dirname(__DIR__) . '/data/case-studies.php';
 $subjectJson = gzdecode(file_get_contents(dirname(__DIR__) . '/data/subjects.json.gz'));
 $subjects = json_decode($subjectJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
 $extraSubjectJson = file_get_contents(dirname(__DIR__) . '/data/subjects-extra.json');
@@ -69,6 +70,7 @@ require dirname(__DIR__) . '/includes/header.php';
 require dirname(__DIR__) . '/includes/footer.php';
 require dirname(__DIR__) . '/includes/home.php';
 require dirname(__DIR__) . '/includes/subject.php';
+require dirname(__DIR__) . '/includes/case-studies.php';
 require dirname(__DIR__) . '/includes/error.php';
 
 $path = trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/', '/');
@@ -77,7 +79,10 @@ $path = $path === 'index' ? '' : $path;
 
 if ($path === 'sitemap.xml') {
     header('Content-Type: application/xml; charset=UTF-8');
-    echo buildSitemap(array_keys($subjects));
+    $sitemapPaths = array_keys($subjects);
+    $sitemapPaths[] = 'case-studies';
+    foreach (array_keys($caseStudies) as $caseSlug) $sitemapPaths[] = 'case-studies/' . $caseSlug;
+    echo buildSitemap($sitemapPaths);
     exit;
 }
 if ($path === 'robots.txt') {
@@ -97,15 +102,30 @@ if ($path === 'llms.txt') {
     foreach ($subjects as $slug => $subject) {
         echo "- " . SITE_URL . "/" . $slug . " — " . $subject['h1'] . "\n";
     }
+    echo "\n## Case studies\n- " . SITE_URL . "/case-studies — Cybersecurity Assignment Case Studies\n";
+    foreach ($caseStudies as $slug => $case) {
+        echo "- " . SITE_URL . "/case-studies/" . $slug . " — " . $case['h1'] . "\n";
+    }
     exit;
+}
+if ($path === 'case-studies') {
+    renderCaseStudiesIndex($caseStudies, $subjects);
+    exit;
+}
+if (str_starts_with($path, 'case-studies/')) {
+    $caseSlug = substr($path, strlen('case-studies/'));
+    if (isset($caseStudies[$caseSlug])) {
+        renderCaseStudy($caseSlug, $caseStudies[$caseSlug], $caseStudies, $subjects);
+        exit;
+    }
 }
 if ($path !== '' && !isset($subjects[$path])) {
     http_response_code(404);
-    render404($subjects);
+    render404($subjects, $caseStudies);
     exit;
 }
 
 $page = $path === '' ? $home : $subjects[$path];
 $isHome = $path === '';
-if ($isHome) renderHome($home, $subjects);
-else renderSubject($path, $page, $subjects);
+if ($isHome) renderHome($home, $subjects, $caseStudies);
+else renderSubject($path, $page, $subjects, $caseStudies);
