@@ -57,7 +57,7 @@ function renderCaseStudyPromoBlock(array $page): void {
     if(empty($c)) return; ?>
     <section class="section section--soft"><div class="container">
         <a class="subject-case-promo reveal" href="<?=e($c['url'])?>">
-            <div><span class="section-kicker"><?=e($c['kicker']??'Solved assignment case study')?></span><h2><?=e($c['title'])?></h2><p><?=e($c['intro'])?></p><span class="card-link">View solved case study <?=icon('arrow',17)?></span></div>
+            <div><span class="section-kicker"><?=e($c['kicker']??'Solved Assignment')?></span><h2><?=e($c['title'])?></h2><p><?=e($c['intro'])?></p><span class="card-link">Read assignment <?=icon('arrow',17)?></span></div>
             <div class="subject-case-promo__meta"><strong><?=e($c['badge']??'Case Study')?></strong><span><?=e($c['meta']??'')?></span></div>
         </a>
     </div></section><?php

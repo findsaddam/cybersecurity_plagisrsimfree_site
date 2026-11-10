@@ -2,44 +2,33 @@
 function renderCaseStudiesIndex(array $caseStudies, array $subjects): void {
     $page = [
         'page_type' => 'case_study_index',
-        'title' => 'Cybersecurity Assignment Case Studies',
-        'meta_title' => 'Cybersecurity Assignment Case Studies | Cyber Assignment Pro',
-        'h1' => 'Cybersecurity Assignment Case Studies',
-        'description' => 'Explore solved cybersecurity assignment case studies covering cryptography, security analysis, authorised practical work, technical evidence and report writing.',
-        'primary' => 'cybersecurity assignment case studies',
+        'title' => 'Solved Assignments',
+        'meta_title' => 'Solved Cybersecurity Assignments | Cyber Assignment Pro',
+        'h1' => 'Solved Cybersecurity Assignments',
+        'description' => 'Solved cybersecurity assignments.',
+        'primary' => 'solved cybersecurity assignments',
         'nav' => 'Case Studies',
     ];
     renderHead($page, SITE_URL . '/case-studies', $subjects);
     renderHeader($subjects, $caseStudies); ?>
-<main>
-    <section class="hero hero--subject case-hero">
-        <div class="hero-glow hero-glow--one"></div><div class="hero-glow hero-glow--two"></div>
-        <div class="container case-index-hero">
-            <div class="hero__copy reveal">
-                <div class="breadcrumbs"><a href="/">Home</a><span>/</span><span>Case Studies</span></div>
-                <div class="eyebrow"><span class="eyebrow__icon"><?=icon('file',17)?></span> Solved assignment portfolio</div>
-                <h1>Cybersecurity Assignment Case Studies</h1>
-                <p class="hero__lead">See how real cybersecurity coursework can be organised from requirements through technical analysis, evidence interpretation and final reporting. Each case study summarizes the work without publishing a copy-ready submission.</p>
-            </div>
-            <div class="case-count-card reveal">
-                <strong><?=count($caseStudies)?></strong>
-                <span>Published case <?=count($caseStudies)===1?'study':'studies'?></span>
-                <small>More solved assignments can be added to this library over time.</small>
-            </div>
+<main class="blog-index-page">
+    <section class="blog-index-head">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><span>Case Studies</span></div>
+            <span class="section-kicker">Solved Assignments</span>
+            <h1>Solved Cybersecurity Assignments</h1>
         </div>
     </section>
-    <section class="section section--light">
-        <div class="container">
-            <div class="section-head section-head--split reveal"><div><span class="section-kicker">Solved work</span><h2>Featured Cybersecurity Assignment Case Studies</h2></div><p>Each page focuses on the assignment challenge, technical approach, evidence, result and learning outcomes.</p></div>
-            <div class="case-grid">
+    <section class="blog-list-section">
+        <div class="container blog-shell">
+            <div class="blog-list">
                 <?php foreach($caseStudies as $slug=>$case): ?>
-                <a class="case-card reveal" href="/case-studies/<?=e($slug)?>">
-                    <div class="case-card__top"><span><?=e($case['category'])?></span><b><?=e((string)$case['similarity'])?>% similarity</b></div>
-                    <h3><?=e($case['h1'])?></h3>
-                    <p><?=e($case['summary'])?></p>
-                    <div class="case-card__meta"><span><?=e(number_format($case['word_count']))?> words</span><span><?=count($case['topics'])?> topic areas</span></div>
-                    <span class="card-link">View case study <?=icon('arrow',17)?></span>
-                </a>
+                <article class="blog-list-card">
+                    <span class="blog-list-card__label"><?=e($case['eyebrow'])?></span>
+                    <h2><a href="/case-studies/<?=e($slug)?>"><?=e($case['nav'])?></a></h2>
+                    <p><?=e($case['topic_q2'])?> · <?=e($case['topic_q3'])?> · <?=e($case['tool_q3'])?></p>
+                    <a class="text-link" href="/case-studies/<?=e($slug)?>">Read assignment <?=icon('arrow',16)?></a>
+                </article>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -49,129 +38,111 @@ function renderCaseStudiesIndex(array $caseStudies, array $subjects): void {
 }
 
 function renderCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
-    $canonical = SITE_URL . '/case-studies/' . $slug;
-    renderHead($case, $canonical, $subjects);
-    renderHeader($subjects, $caseStudies); ?>
-<main>
-    <section class="hero hero--subject case-hero">
-        <div class="hero-glow hero-glow--one"></div><div class="hero-glow hero-glow--two"></div>
-        <div class="container subject-hero__grid">
-            <div class="hero__copy reveal">
-                <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span>Cryptography</span></div>
-                <div class="eyebrow"><span class="eyebrow__icon"><?=icon('check',17)?></span> <?=e($case['eyebrow'])?></div>
-                <h1><?=e($case['h1'])?></h1>
-                <p class="hero__lead"><?=e($case['summary'])?></p>
-                <div class="hero__actions">
-                    <a class="btn btn--primary" href="/cryptography-assignment-help">Explore Cryptography Help <?=icon('arrow',18)?></a>
-                    <a class="btn btn--ghost" href="#verification-results">View Verification Results</a>
-                </div>
-                <div class="keyword-pills"><?php foreach(array_slice($case['topics'],0,3) as $topic): ?><span><?=e($topic)?></span><?php endforeach; ?></div>
-            </div>
-            <div class="case-result-card reveal">
-                <span class="mini-label">Case study result</span>
-                <div class="similarity-score"><strong><?=e((string)$case['similarity'])?>%</strong><span>Turnitin overall similarity</span></div>
-                <div class="case-result-grid">
-                    <div><b><?=e(number_format($case['word_count']))?></b><span>solution words</span></div>
-                    <div><b>2</b><span>assignment questions</span></div>
-                    <div><b>3</b><span>files verified</span></div>
-                    <div><b>1</b><span>valid signed file</span></div>
-                </div>
-                <p>Similarity is reported exactly as shown in the supplied Turnitin report; it is not presented as a plagiarism score.</p>
-            </div>
+    $canonical=SITE_URL . '/case-studies/' . $slug;
+    renderHead($case,$canonical,$subjects);
+    renderHeader($subjects,$caseStudies); ?>
+<main class="blog-page">
+    <section class="blog-article-head">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
+            <span class="blog-label"><?=e($case['eyebrow'])?></span>
+            <h1><?=e($case['h1'])?></h1>
+            <div class="blog-topic-line"><?=e($case['topic_q2'])?> <span>•</span> <?=e($case['topic_q3'])?> <span>•</span> <?=e($case['tool_q3'])?></div>
         </div>
     </section>
 
-    <section class="section section--light">
-        <div class="container">
-            <div class="section-head section-head--split reveal"><div><span class="section-kicker">Assignment overview</span><h2>What This Cybersecurity Assignment Covered</h2></div><p>The work combined conceptual cryptography with a practical authenticity test using a detached digital signature and supplier public key.</p></div>
-            <div class="case-brief-grid">
-                <?php foreach($case['brief'] as $i=>$item): ?><article class="case-brief-card reveal"><span>0<?=$i+1?></span><h3><?=e($item['title'])?></h3><p><?=e($item['text'])?></p></article><?php endforeach; ?>
-            </div>
-        </div>
-    </section>
+    <section class="blog-body-section">
+        <div class="container blog-layout">
+            <article class="blog-article">
+                <section id="question-2">
+                    <h2>Question 2 — End-to-End Encryption</h2>
+                    <p class="source-meta"><strong><?=e($case['topic_q2'])?></strong> | <?=e($case['reference_q2'])?></p>
 
-    <section class="section section--dark-split">
-        <div class="container">
-            <div class="section-head section-head--split reveal"><div><span class="section-kicker section-kicker--light">Question 2</span><h2>Double Ratchet Encryption Analysis</h2></div><p class="body-large--light">The solution explained how the Double Ratchet combines asymmetric key refresh with per-message symmetric key evolution to support secure end-to-end messaging.</p></div>
-            <div class="case-concept-grid">
-                <?php foreach($case['ratchet'] as $i=>$item): ?><div class="case-concept reveal"><span><?=str_pad((string)($i+1),2,'0',STR_PAD_LEFT)?></span><h3><?=e($item[0])?></h3><p><?=e($item[1])?></p></div><?php endforeach; ?>
-            </div>
-            <p class="case-inline-link reveal">Related topic: <a href="/cryptography-assignment-help">Cryptography Assignment Help</a> for encryption, hashing, PKI and key-management coursework.</p>
-        </div>
-    </section>
+                    <h3>a) Architecture and Design of the Double Ratchet Algorithm</h3>
+                    <p><?=e($case['q2_intro'])?></p>
 
-    <section class="section">
-        <div class="container two-col two-col--balanced">
-            <div class="reveal">
-                <span class="section-kicker">Question 3</span>
-                <h2>GPG Digital Signature Verification Workflow</h2>
-                <p class="body-large">The practical task did not rely on visible product text alone. It imported the supplier key, checked each candidate against the supplied detached signature, and interpreted the cryptographic verification output.</p>
-                <div class="case-command"><code>gpg --import supplier_public_key.asc</code></div>
-                <div class="case-command"><code>gpg --verify product.txt.sig product_3.txt</code></div>
-            </div>
-            <div class="timeline case-timeline">
-                <?php foreach($case['workflow'] as $i=>$step): ?><div class="timeline__item reveal"><div class="timeline__marker"><?=$i+1?></div><div><h3><?=e($step[0])?></h3><p><?=e($step[1])?></p></div></div><?php endforeach; ?>
-            </div>
-        </div>
-    </section>
+                    <h4>1. Diffie-Hellman (DH) Ratchet</h4>
+                    <p><?=e($case['dh_ratchet'])?></p>
 
-    <section class="section section--soft" id="verification-results">
-        <div class="container">
-            <div class="section-head section-head--split reveal"><div><span class="section-kicker">Practical result</span><h2>Digital Signature Verification Results</h2></div><p>Only one of the three candidate files produced a valid signature. This made the cryptographic result more reliable than comparing filenames or product descriptions by eye.</p></div>
-            <div class="verification-table-wrap reveal">
-                <table class="verification-table">
-                    <thead><tr><th>File</th><th>Product</th><th>GPG result</th><th>Interpretation</th></tr></thead>
-                    <tbody><?php foreach($case['verification'] as $row): ?><tr><td><code><?=e($row[0])?></code></td><td><?=e($row[1])?></td><td><span class="status-pill <?=$row[2]==='VALID'?'status-pill--valid':'status-pill--invalid'?>"><?=e($row[2])?></span></td><td><?=e($row[3])?></td></tr><?php endforeach; ?></tbody>
-                </table>
-            </div>
-            <div class="case-result-callout reveal"><?=icon('check',24)?><div><strong>Final finding: product_3.txt was the authentic signed candidate.</strong><p>The two 1.2.335 candidates returned invalid signatures, while product_3.txt identified Security Scanner 1.5.335 and produced the valid signature result.</p></div></div>
-        </div>
-    </section>
+                    <h4>2. Symmetric-Key Ratchet</h4>
+                    <p><?=e($case['symmetric_ratchet'])?></p>
 
-    <section class="section">
-        <div class="container content-split">
-            <article class="long-copy reveal">
-                <span class="section-kicker">Critical distinction</span>
-                <h2>Signature Validity vs Public-Key Trust</h2>
-                <?php foreach($case['validity_trust'] as $item): ?><h3><?=e($item[0])?></h3><p><?=e($item[1])?></p><?php endforeach; ?>
-                <p>A cautious real-world workflow would therefore verify the supplier key fingerprint through a separate trusted channel before relying on the identity claim, even when the file signature itself is mathematically valid.</p>
+                    <h4>How messages flow (Alice → Bob)</h4>
+                    <p><?=e($case['message_flow'])?></p>
+
+                    <h4>Diagram</h4>
+                    <pre class="assignment-diagram"><code><?=e($case['diagram'])?></code></pre>
+
+                    <h3>b) Security Properties</h3>
+                    <h4>Forward Secrecy</h4>
+                    <p><?=e($case['forward_secrecy'])?></p>
+
+                    <h4>Post-Compromise Security</h4>
+                    <p><?=e($case['post_compromise'])?></p>
+                </section>
+
+                <section id="question-3">
+                    <h2>Question 3 — Digital Signature Analysis</h2>
+                    <p class="source-meta"><strong><?=e($case['topic_q3'])?></strong> | <?=e($case['tool_q3'])?></p>
+
+                    <h3>a) Authenticity Analysis of Product Files</h3>
+                    <p><?=e($case['q3_intro'])?></p>
+
+                    <?php foreach($case['commands'] as $i=>$command): ?>
+                        <?php if($command[0]): ?><h4><?=e($command[0])?></h4><?php endif; ?>
+                        <?php if($i===0): ?><p><?=e($case['import_text'])?></p><?php elseif($i===1): ?><p><?=e($case['confirm_key_text'])?></p><?php endif; ?>
+                        <pre class="assignment-command"><code><?=e($command[1])?></code></pre>
+                        <?php if($command[2]): ?><p class="assignment-result <?=str_contains($command[2],'VALID') && !str_contains($command[2],'INVALID')?'assignment-result--valid':'assignment-result--invalid'?>"><?=e($command[2])?></p><?php endif; ?>
+                        <?php if($i===4): ?><pre class="assignment-output"><code><?=e($case['good_signature_output'])?></code></pre><?php endif; ?>
+                    <?php endforeach; ?>
+
+                    <h4>Summary Table</h4>
+                    <div class="article-table-wrap">
+                        <table class="article-table">
+                            <thead><tr><th>File</th><th>Product Name</th><th>Status</th></tr></thead>
+                            <tbody><?php foreach($case['verification'] as $row): ?><tr><td><?=e($row[0])?></td><td><?=e($row[1])?></td><td><strong><?=e($row[2])?></strong></td></tr><?php endforeach; ?></tbody>
+                        </table>
+                    </div>
+
+                    <h4>What does this mean?</h4>
+                    <ul><?php foreach($case['what_it_means'] as $item): ?><li><?=e($item)?></li><?php endforeach; ?></ul>
+                    <p><strong><?=e($case['conclusion'])?></strong></p>
+
+                    <h3>b) Signature Validity vs Key Trust</h3>
+                    <p><?=e($case['validity_intro'])?></p>
+
+                    <h4>Signature Validity</h4>
+                    <ul><?php foreach($case['signature_validity'] as $item): ?><li><?=e($item)?></li><?php endforeach; ?></ul>
+
+                    <h4>Key Trust</h4>
+                    <ul>
+                        <?php foreach($case['key_trust'] as $i=>$item): ?>
+                            <?php if($i===3): ?><ul class="nested-list"><?php endif; ?>
+                            <li><?=e($item)?></li>
+                            <?php if($i===5): ?></ul><?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+
+                    <p><strong>Simple way to remember:</strong><br><?=e($case['remember'][0])?><br><?=e($case['remember'][1])?></p>
+                    <p><?=e($case['final_note'])?></p>
+                </section>
             </article>
-            <aside class="keyword-box case-similarity-box reveal">
-                <span class="mini-label">Turnitin check</span>
-                <div class="similarity-score similarity-score--light"><strong><?=e((string)$case['similarity'])?>%</strong><span>overall similarity</span></div>
-                <p>The supplied report recorded 7% overall similarity and showed the bibliography as filtered from the report.</p>
-                <div class="safe-note"><?=icon('file',20)?><p><strong>Privacy-first publishing:</strong> the public case study summarizes the evidence without publishing the Turnitin submission ID or the full submitted solution.</p></div>
+
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">On this page</span>
+                    <a href="#question-2">Question 2 — End-to-End Encryption</a>
+                    <a href="#question-3">Question 3 — Digital Signature Analysis</a>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Related</span>
+                    <a href="/cryptography-assignment-help">Cryptography Assignment Help</a>
+                    <a href="/network-security-assignment-help">Network Security Assignment Help</a>
+                    <a href="/case-studies">Solved Assignments</a>
+                </div>
             </aside>
         </div>
     </section>
-
-    <section class="section section--light">
-        <div class="container">
-            <div class="section-head section-head--center reveal"><span class="section-kicker">Skills demonstrated</span><h2>Technical Skills Used in This Assignment</h2><p>This case study demonstrates both cryptographic theory and practical evidence interpretation.</p></div>
-            <div class="case-skill-list reveal"><?php foreach($case['skills'] as $skill): ?><span><?=icon('check',15)?> <?=e($skill)?></span><?php endforeach; ?></div>
-        </div>
-    </section>
-
-    <section class="related-section">
-        <div class="container">
-            <div class="section-head section-head--split reveal"><div><span class="section-kicker">Continue learning</span><h2>Related Cybersecurity Assignment Help</h2></div><p>Explore subject pages that connect directly with the encryption and authentication concepts demonstrated in this solved assignment.</p></div>
-            <div class="related-grid">
-                <?php foreach($case['related_subjects'] as $relatedSlug=>$label): if(!isset($subjects[$relatedSlug])) continue; $subject=$subjects[$relatedSlug]; ?>
-                <a class="related-card reveal" href="/<?=e($relatedSlug)?>"><span><?=icon($subject['icon'],22)?></span><div><h3><?=e($label)?></h3><p><?=e($subject['eyebrow'])?></p></div><?=icon('arrow',17)?></a>
-                <?php endforeach; ?>
-                <a class="related-card reveal" href="/case-studies"><span><?=icon('file',22)?></span><div><h3>More Case Studies</h3><p>Browse solved cybersecurity assignment examples.</p></div><?=icon('arrow',17)?></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--light" id="faq">
-        <div class="container faq-layout">
-            <div class="faq-intro reveal"><span class="section-kicker">Case study questions</span><h2>Assignment Case Study FAQs</h2><p>Short answers about the result, similarity report and cryptographic verification.</p></div>
-            <div class="faq-list reveal"><?php foreach($case['faqs'] as $faq): ?><div class="faq-item"><button type="button" aria-expanded="false"><span><?=e($faq[0])?></span><b>+</b></button><div class="faq-answer"><p><?=e($faq[1])?></p></div></div><?php endforeach; ?></div>
-        </div>
-    </section>
-
-    <section class="cta-section"><div class="container cta-box reveal"><div><span class="section-kicker section-kicker--light">Have a similar assignment?</span><h2>Get Help With Your Cybersecurity Assignment</h2><p>Share your assignment brief, marking rubric and deadline for a focused review of the requirements.</p></div><a class="btn btn--white" href="<?=e(waLink('cryptography or digital signature assignment'))?>" target="_blank" rel="noopener">Send Brief on WhatsApp <?=icon('arrow',18)?></a></div></section>
 </main>
 <?php renderFooter($subjects);
 }

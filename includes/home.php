@@ -110,12 +110,11 @@ function renderHome(array $home, array $subjects, array $caseStudies = []): void
     <?php if($caseStudies): $featuredSlug=array_key_first($caseStudies); $featured=$caseStudies[$featuredSlug]; ?>
     <section class="section section--light" id="case-studies">
         <div class="container">
-            <div class="section-head section-head--split reveal"><div><span class="section-kicker">Solved assignment portfolio</span><h2>Cybersecurity Assignment Case Studies</h2></div><p>See how assignment requirements can be translated into structured technical analysis, practical evidence and clear academic reporting.</p></div>
-            <a class="home-case-card reveal" href="/case-studies/<?=e($featuredSlug)?>">
-                <div><span class="mini-label"><?=e($featured['category'])?></span><h3><?=e($featured['h1'])?></h3><p><?=e($featured['summary'])?></p><span class="card-link">Read the case study <?=icon('arrow',17)?></span></div>
-                <div class="home-case-score"><strong><?=e((string)$featured['similarity'])?>%</strong><span>Turnitin similarity</span><small><?=e(number_format($featured['word_count']))?>-word solution</small></div>
+            <div class="section-head section-head--split reveal"><div><span class="section-kicker">Solved Assignment</span><h2><?=e($featured['nav'])?></h2></div><p><?=e($featured['topic_q2'])?> · <?=e($featured['topic_q3'])?> · <?=e($featured['tool_q3'])?></p></div>
+            <a class="home-case-card home-case-card--blog reveal" href="/case-studies/<?=e($featuredSlug)?>">
+                <div><span class="mini-label"><?=e($featured['eyebrow'])?></span><h3><?=e($featured['nav'])?></h3><p><?=e($featured['q2_intro'])?></p><span class="card-link">Read assignment <?=icon('arrow',17)?></span></div>
             </a>
-            <a class="text-link case-index-link" href="/case-studies">Browse all case studies <?=icon('arrow',17)?></a>
+            <a class="text-link case-index-link" href="/case-studies">Solved Assignments <?=icon('arrow',17)?></a>
         </div>
     </section>
     <?php endif; ?>

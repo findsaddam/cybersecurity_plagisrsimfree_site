@@ -505,12 +505,12 @@
       ]
     },
     "case_study": {
-      "kicker": "Solved cryptography assignment",
-      "title": "Double Ratchet Encryption & GPG Digital Signature Verification",
-      "intro": "See a completed case study that combines Double Ratchet security analysis with practical GPG verification of three candidate product files. The submitted work recorded 7% Turnitin similarity.",
+      "kicker": "Solved Assignment",
+      "title": "End-to-End Encryption & Digital Signature Analysis",
+      "intro": "The Double Ratchet Algorithm is what apps like Signal, WhatsApp, and Facebook Messenger use for end-to-end encryption. The main idea is simple: every single message gets its own unique key. It does this by combining two ratchets.",
       "url": "/case-studies/double-ratchet-digital-signature-assignment",
-      "badge": "7% similarity",
-      "meta": "1,039-word solved assignment"
+      "badge": "Double Ratchet Algorithm",
+      "meta": "GPG (Command Line)"
     }
   },
   "malware-analysis-assignment-help": {
