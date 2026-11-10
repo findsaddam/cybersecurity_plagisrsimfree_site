@@ -361,7 +361,7 @@
     "nav": "Cloud Computing",
     "name": "Cloud Computing",
     "eyebrow": "Architecture, service models, AWS, Azure & deployment",
-    "icon": "cloud",
+    "icon": "network",
     "intro": "Understand cloud computing models, architecture, virtualisation, storage, networking and scalable service design, then apply those concepts to university assignments, technical reports and practical cloud scenarios.",
     "problems": [
       {
