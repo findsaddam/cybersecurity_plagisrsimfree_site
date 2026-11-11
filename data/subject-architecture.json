@@ -12,7 +12,7 @@
     ],
     "hero_card": {
       "label": "Network coursework",
-      "intro": "Build a network-security answer around architecture, traffic evidence, security controls and justified risk decisions.",
+      "intro": "Construct a network security solution based on architectural components, traffic evidence, security controls, and risk decisions.",
       "bullets": [
         "Network diagrams and trust zones",
         "Firewall, VPN and segmentation analysis",
@@ -24,12 +24,12 @@
       "topics": {
         "kicker": "Core network concepts",
         "title": "Network Security Assignment Topics",
-        "intro": "Network security coursework commonly combines architecture, protocols and defensive controls. The strongest answers explain how those elements work together rather than treating each technology as a separate definition."
+        "intro": "Network security assignments include a mixture of architecture, protocols and defensive controls. The best answers do not simply present each of these technologies as a definition, but rather explain how these elements operate as a whole."
       },
       "problems": {
         "kicker": "Common coursework challenges",
         "title": "Network Security Coursework Challenges",
-        "intro": "Students often lose marks when diagrams, packet evidence or firewall choices are shown without explaining the security purpose behind them."
+        "intro": "Students regularly lose marks if diagrams, packet evidence or firewall selections are displayed without explaining the security purpose."
       },
       "workflow": {
         "kicker": "From brief to report",
@@ -46,9 +46,9 @@
         "kicker": "Writing the analysis",
         "title": "Network Security Report Writing Help",
         "paragraphs": [
-          "A network security report should make the architecture easy to understand before discussing individual controls. Start with the important assets, users, network segments and trust boundaries, then explain how traffic is expected to move between them. A labelled diagram is useful when the text refers back to it and explains why each boundary matters.",
-          "Packet captures and configuration screenshots should be selective. A Wireshark frame, firewall rule or routing output is evidence only when the report explains what it shows, why it is relevant and how it supports the security judgement. Raw output without interpretation adds volume but little academic value.",
-          "Recommendations should follow directly from the identified risk. Segmentation, secure remote access, monitoring, access control and firewall changes become stronger recommendations when the report explains the affected asset, threat, expected benefit and any operational trade-off."
+          "The architecture should be easy to understand before the discussion of individual controls in a network security report. Begin with key assets, users, network segments and trust boundaries, and describe the traffic flow expected to occur between them. A labelled diagram will be helpful when the text includes for the reference and explains the significance of each boundary.",
+          "Capture packets and screenshots of configurations must be selective. A Wireshark frame, report and output of firewall rule or a router supports the evidence if it is explained, why it is relevant and how it contributes to the security judgement. No interpretation means no weight for output.",
+          "The recommendation should directly follow the identified risks. When the report provides a description of the asset affected, threat, benefit, and any operations trade-offs, then segmentation, secure remote access, monitoring, access control and firewall changes become strong recommendations."
         ]
       },
       "faq": {
@@ -59,7 +59,7 @@
       "related": {
         "kicker": "Related security modules",
         "title": "Related Network Security Subjects",
-        "intro": "Network security often overlaps with penetration testing, cloud security, cryptography and incident response."
+        "intro": "There is often overlap between network security, penetration testing, cloud security, cryptography and incident response."
       },
       "cta": {
         "kicker": "Network security support",
@@ -68,8 +68,8 @@
       }
     },
     "related_slugs": [
-      "information-security-assignment-help",
-      "cloud-computing-assignment-help",
+      "penetration-testing-assignment-help",
+      "cloud-security-assignment-help",
       "cryptography-assignment-help"
     ],
     "signature": {

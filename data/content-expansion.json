@@ -1,23 +1,23 @@
 {
   "network-security-assignment-help": {
     "intent_heading": "Computer Network Assignment Help",
-    "intent_intro": "Computer network assignment help often overlaps with network security because students must explain how traffic flows, where trust boundaries exist, and how controls such as firewalls, segmentation, VPNs and monitoring reduce risk. A strong submission connects the network design to the threat model instead of listing technologies without explaining why they are needed.",
+    "intent_intro": "Computer network assignment help usually runs concurrently with network security for students to describe how traffic is sent in the network, the trust zones and how different controls like firewall, segmentation, VPNs and monitoring will minimize risks. The best submission ties the network design to the threat model rather than just providing technologies without justification of why they are required.",
     "intent_cards": [
       [
         "Networking coursework",
-        "Explain addressing, routing, switching, VLANs and segmentation in a way that supports the security requirements of the scenario."
+        "Describe addressing, routing, switching, VLANs and segmentation that how they support the security requirements of the scenario."
       ],
       [
         "Firewall and VPN reports",
-        "Describe rule purpose, traffic direction, remote-access requirements and the security trade-offs behind the selected configuration."
+        "Explain the purpose of the rules, direction of traffic, need for remote access and security considerations in the selection of configuration."
       ],
       [
         "Network security evidence",
-        "Use diagrams, packet captures, logs and configuration screenshots as evidence, then explain what each item proves."
+        "Provide and explain evidence from diagrams, packet captures, logs and configuration screenshots with proof."
       ],
       [
         "Risk-based recommendations",
-        "Link weaknesses to realistic threats and prioritise improvements such as segmentation, monitoring, access control and secure remote connectivity."
+        "Relate vulnerabilities to realistic threats and focus on enhancements like segmentation, monitoring, access control and secure remote connections."
       ]
     ],
     "questions_heading": "Network Security Assignment Questions",
@@ -39,6 +39,25 @@
         "What makes a good network security recommendation?",
         "The recommendation should address a specific risk, be realistic for the environment, and explain how it improves confidentiality, integrity, availability or monitoring."
       ]
+    ],
+    "intro": "Network security assignments tend to combine protocol theory with diagrams, configuration evidence, packet captures, and written risk analysis. The best submissions not only include a list of technologies, but will clarify why this control is appropriate, the path of traffic through the design, what the traffic test result would indicate, and how the recommendation would reduce a specific risk.",
+    "problems": [
+      {
+        "title": "Topology & segmentation",
+        "text": "Convert a scenario into a well-defined network design with subnets, VLANs, trust zones, DMZs and controlled traffic flows."
+      },
+      {
+        "title": "Firewall & ACL logic",
+        "text": "Describe the following rules, least privilege, allowed services, blocked traffic and why they are blocked."
+      },
+      {
+        "title": "VPN & secure access",
+        "text": "Relate encryption, authentication and remote access options to the practical aspects of confidentiality and access control."
+      },
+      {
+        "title": "Packet evidence",
+        "text": "Make Wireshark captures, fields and test results reflect meaning, not decoration, by interpreting them."
+      }
     ]
   },
   "ethical-hacking-assignment-help": {
