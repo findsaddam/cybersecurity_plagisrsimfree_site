@@ -62,23 +62,23 @@
   },
   "ethical-hacking-assignment-help": {
     "intent_heading": "Ethical Hacking Homework Help",
-    "intent_intro": "Ethical hacking homework and coursework should demonstrate authorised security testing, clear methodology and responsible reporting. Students usually earn stronger marks when they explain why a test was selected, what evidence was observed, what the result means for the system, and how the weakness should be remediated rather than presenting tool output alone.",
+    "intent_intro": "Ethical hacking homework must show authorised security testing; methodology and responsible reporting. Students tend to receive better grades when they include their explanation of why a test was used, the evidence they saw, the significance of the test result for the system, and how the weakness can be mitigated rather than just incorporating the results of the tests themselves.",
     "intent_cards": [
       [
         "Authorised lab methodology",
-        "Define the permitted target, test objective, assumptions and sequence of activities before discussing any technical result."
+        "Discuss any technical result after defining the allowed target, test objective, assumptions and sequence of activities."
       ],
       [
         "Vulnerability evidence",
-        "Present only the evidence needed to support the finding and explain the security impact in plain academic language."
+        "Present only the evidence required to support finding and to explain in the plain academic language the impact of the security."
       ],
       [
         "Risk and remediation",
-        "Use a consistent risk approach and connect every finding to practical defensive actions such as patching, hardening or access-control changes."
+        "Follow a consistent risk approach and link each item to the corresponding defensive measures like patching, hardening, and/or changes to access."
       ],
       [
         "Professional reporting",
-        "Separate observations, findings and recommendations so the final report reads like a security assessment rather than a collection of screenshots."
+        "Make observations, findings and recommendations distinct to read as a security assessment instead of screenshots."
       ]
     ],
     "questions_heading": "Ethical Hacking Assignment Questions",
@@ -100,6 +100,25 @@
         "How should I discuss vulnerabilities safely?",
         "Keep the discussion inside the authorised coursework context and focus on evidence, risk, root cause and remediation rather than operational misuse."
       ]
+    ],
+    "intro": "Ethical hacking assignments emphasize method, evidence. interpretation and remediation, rather than running just the tools. A good report begins with a definition of Permission and Scope, followed by a documentation of a repeatable process, an interpretation of the findings, and a conclusion with practical defensive improvements.",
+    "problems": [
+      {
+        "title": "Scope before tools",
+        "text": "Before describing testing activity, provide definition of authorised target, lab boundaries, objectives and prohibited actions."
+      },
+      {
+        "title": "Methodology that is easy to understand",
+        "text": "Organise reconnaissance, validation and analysis into a defensible workflow that another student could understand."
+      },
+      {
+        "title": "Evidence with interpretation",
+        "text": "Include simple screenshots and information from the output; provide explanation of what is displayed and why it is important."
+      },
+      {
+        "title": "Remediation that fits",
+        "text": "Relate every issue to actual solutions like patching, hardening, access control, validation, logging and user awareness."
+      }
     ]
   },
   "digital-forensics-assignment-help": {

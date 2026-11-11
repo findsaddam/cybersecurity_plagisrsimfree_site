@@ -113,7 +113,7 @@
     ],
     "hero_card": {
       "label": "Authorised lab work",
-      "intro": "Plan ethical hacking coursework around scope, methodology, evidence, risk and responsible remediation.",
+      "intro": "Design scope, methodology, evidence, risk and responsible remediation-based ethics hacking coursework.",
       "bullets": [
         "Authorised testing methodology",
         "Vulnerability evidence and risk",
@@ -125,7 +125,7 @@
       "problems": {
         "kicker": "Where ethical hacking reports fail",
         "title": "Ethical Hacking Coursework Challenges",
-        "intro": "The difficult part is usually not running a tool; it is showing why the test was appropriate, what the evidence proves and how the finding should be remediated."
+        "intro": "Running a tool is not a challenge, the hard part is usually showing why the test was appropriate, what the evidence proves and how the finding should be remediated."
       },
       "workflow": {
         "kicker": "Authorised testing process",
@@ -147,9 +147,9 @@
         "kicker": "Professional reporting",
         "title": "Ethical Hacking Report Writing Help",
         "paragraphs": [
-          "An ethical hacking report should open with scope and authorisation. State what environment was approved for testing, what the assessment was intended to examine and any important limitations. This gives the technical evidence a clear academic and ethical context.",
-          "Findings should be written consistently. Identify the affected component, describe the observed weakness, present concise evidence, explain the security impact and justify the risk rating. Screenshots should support the explanation rather than replace it.",
-          "The remediation section is where technical testing becomes defensive security analysis. Recommendations should address the root cause and explain how patching, hardening, access-control changes, secure configuration or monitoring would reduce the identified risk."
+          "The report on ethical hacking or cyber security should start with scope and authorisation. Describe the environment under which the test is approved, what it was designed to test and any significant restrictions. This provides a clear academic and ethical context to the technical evidence.",
+          "Findings should be written in a consistent manner. State what component is compromised, describe the weakness observed, provide succinct evidence, articulate the impact to security and explain the risk rating. Screenshots should be used to back up the explanation, not as a substitute for it.",
+          "The remediation section is the part of a technical test where it turns into defensive security analysis. Recommendations should be tied to the cause of the risk and should describe how patching, configuration changes, access control changes, secure configuration or monitoring would mitigate the risk identified."
         ]
       },
       "faq": {
