@@ -12,7 +12,7 @@
     ],
     "hero_card": {
       "label": "Network coursework",
-      "intro": "Construct a network security solution based on architectural components, traffic evidence, security controls, and risk decisions.",
+      "intro": "Construct a network security project solution based on architectural components, traffic evidence, security controls, and risk decisions.",
       "bullets": [
         "Network diagrams and trust zones",
         "Firewall, VPN and segmentation analysis",
@@ -24,7 +24,7 @@
       "topics": {
         "kicker": "Core network concepts",
         "title": "Network Security Assignment Topics",
-        "intro": "Network security assignments include a mixture of architecture, protocols and defensive controls. The best answers do not simply present each of these technologies as a definition, but rather explain how these elements operate as a whole."
+        "intro": "Network security homework include a mixture of architecture, protocols and defensive controls. The best answers do not simply present each of these technologies as a definition, but rather explain how these elements operate as a whole."
       },
       "problems": {
         "kicker": "Common coursework challenges",
