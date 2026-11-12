@@ -123,10 +123,15 @@ function renderHome(array $home, array $subjects, array $caseStudies = []): void
     <?php if($caseStudies): $featuredSlug=array_key_first($caseStudies); $featured=$caseStudies[$featuredSlug]; ?>
     <section class="section section--light" id="case-studies">
         <div class="container">
-            <?php $featuredMeta = array_values(array_filter([$featured['topic_q2'] ?? null, $featured['topic_q3'] ?? null, $featured['tool_q3'] ?? null])); ?>
-            <div class="section-head section-head--split reveal"><div><span class="section-kicker">Solved Assignment</span><h2><?=e($featured['nav'])?></h2></div><p><?=e($featuredMeta ? implode(' · ', $featuredMeta) : ($featured['menu_meta'] ?? $featured['eyebrow'] ?? 'Solved cybersecurity assignment case study'))?></p></div>
+            <?php
+            $featuredMeta = array_values(array_filter([$featured['topic_q2'] ?? null, $featured['topic_q3'] ?? null, $featured['tool_q3'] ?? null]));
+            $featuredTitle = $featured['nav'] ?? $featured['h1'] ?? 'Cybersecurity Case Study';
+            $featuredEyebrow = $featured['eyebrow'] ?? 'Solved Cybersecurity Assignment';
+            $featuredSummary = $featured['q2_intro'] ?? $featured['description'] ?? ($featured['solution_summary'][0] ?? 'Read this solved cybersecurity assignment case study and review the supplied solution, evidence and technical approach.');
+            ?>
+            <div class="section-head section-head--split reveal"><div><span class="section-kicker">Solved Assignment</span><h2><?=e($featuredTitle)?></h2></div><p><?=e($featuredMeta ? implode(' · ', $featuredMeta) : ($featured['menu_meta'] ?? $featuredEyebrow))?></p></div>
             <a class="home-case-card home-case-card--blog reveal" href="/case-studies/<?=e($featuredSlug)?>">
-                <div><span class="mini-label"><?=e($featured['eyebrow'])?></span><h3><?=e($featured['nav'])?></h3><p><?=e($featured['q2_intro'])?></p><span class="card-link">Read assignment <?=icon('arrow',17)?></span></div>
+                <div><span class="mini-label"><?=e($featuredEyebrow)?></span><h3><?=e($featuredTitle)?></h3><p><?=e($featuredSummary)?></p><span class="card-link">Read assignment <?=icon('arrow',17)?></span></div>
             </a>
             <a class="text-link case-index-link" href="/case-studies">Solved Assignments <?=icon('arrow',17)?></a>
         </div>
