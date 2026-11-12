@@ -60,10 +60,10 @@ function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStu
             'num' => '01',
             'title' => 'Setup the VM',
             'requirement' => $case['requirements'][0][1],
-            'solution' => $case['solution_steps'][0][1],
-            'evidence' => 'The supplied Red Hat VM, getscore.c and score.txt were prepared in the authorised lab environment.',
-            'meaning' => 'This establishes the exact environment expected by the assignment before any security testing begins.',
-            'result' => 'The lab environment was ready for compilation and permission testing.'
+            'solution' => $case['safe_commands'][0][1] . ' | ' . $case['safe_commands'][1][1],
+            'evidence' => $case['target'],
+            'meaning' => $case['solution_steps'][0][1],
+            'result' => $case['solution_steps'][0][1]
         ],
         [
             'num' => '02',
@@ -78,19 +78,19 @@ function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStu
             'num' => '03',
             'title' => 'Trigger the Crash and Inspect GDB Evidence',
             'requirement' => $case['requirements'][2][1],
-            'solution' => $case['solution_steps'][1][1] . ' ' . $case['solution_steps'][2][1],
-            'evidence' => 'GDB showed EIP as 0x41414141 after the repeated A input. The later cyclic-pattern crash identified the saved EIP position at 134 bytes.',
-            'meaning' => '0x41 is the ASCII value for A, so 0x41414141 shows that user-controlled input reached the saved instruction pointer. The cyclic pattern then replaces guesswork with an exact offset.',
-            'result' => 'Control of the saved return address was demonstrated and the EIP offset was calculated as 134 bytes.'
+            'solution' => 'EIP = 0x41414141',
+            'evidence' => $case['safe_commands'][2][1] . ' | ' . $case['safe_commands'][3][1] . ' | ' . $case['safe_commands'][4][1] . ' | ' . $case['safe_commands'][5][1],
+            'meaning' => $case['eip_finding'],
+            'result' => 'Saved EIP offset: 134 bytes'
         ],
         [
             'num' => '04',
             'title' => 'Build and Validate the Lab Exploit',
             'requirement' => $case['requirements'][3][1],
-            'solution' => $case['solution_steps'][3][1] . ' ' . $case['solution_steps'][4][1],
-            'evidence' => 'The final report records successful privilege escalation from the guest account to a root shell in the deliberately vulnerable VM.',
-            'meaning' => 'The result connects the three assignment questions: enough input to reach EIP, the exact overwrite position, and a lab-specific control-flow redirection.',
-            'result' => 'The authorised lab exploit achieved root privileges. Reusable shellcode bytes and the exact jump address are intentionally omitted here.'
+            'solution' => $case['result'],
+            'evidence' => $case['result'],
+            'meaning' => $case['payload_explanation'],
+            'result' => $case['result']
         ],
     ];
     ?>
