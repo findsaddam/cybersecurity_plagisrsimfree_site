@@ -1535,8 +1535,8 @@ This is because the program name (argv[0]) is stored on the stack, directly befo
             'When retlib runs, bof returns and jumps to execv. execv looks at bash_addr, sees "/bin/bash", then looks at argv_addr, sees ["/bin/bash", "-p", NULL], and executes it.',
         ],
         'evidence_sheets' => [
-            '/assets/case-studies/return-to-libc-attack-lab/evidence-1.jpg',
-            '/assets/case-studies/return-to-libc-attack-lab/evidence-2.jpg'
+            '/assets/case-studies/return-to-libc-attack-lab/evidence-1.jpg?v=2',
+            '/assets/case-studies/return-to-libc-attack-lab/evidence-2.jpg?v=2'
         ],
         'source_files' => [
             ['name' => 'retlib.c', 'language' => 'C', 'code' => '#include <stdlib.h>
