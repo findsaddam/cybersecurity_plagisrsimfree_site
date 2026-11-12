@@ -733,7 +733,117 @@ function renderPfsenseVpnCaseStudy(string $slug, array $case, array $caseStudies
 <?php renderFooter($subjects);
 }
 
+function renderRedTeamCapstoneCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    $canonical = SITE_URL . '/case-studies/' . $slug;
+    renderHead($case, $canonical, $subjects);
+    renderHeader($subjects, $caseStudies);
+    ?>
+<main class="blog-page case-study-learning-page red-team-capstone-case-study">
+    <section class="blog-article-head case-learning-hero">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
+            <span class="blog-label"><?=e($case['eyebrow'])?></span>
+            <h1><?=e($case['h1'])?></h1>
+            <p class="case-learning-intro">This case study publishes the supplied Part 6 requirement, the expert-written Red Team Capstone summary, and the supporting lab evidence in a student-friendly reading order.</p>
+            <div class="blog-topic-line"><?=e($case['part'])?> <span>•</span> <?=e($case['room'])?></div>
+        </div>
+    </section>
+
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <div class="case-snapshot-card"><span>Assessment</span><strong><?=e($case['assessment'])?></strong></div>
+                <div class="case-snapshot-card"><span>Assessment part</span><strong>Part 6</strong></div>
+                <div class="case-snapshot-card"><span>Platform</span><strong>TryHackMe</strong></div>
+                <div class="case-snapshot-card"><span>Challenge</span><strong>Red Team Capstone</strong></div>
+                <div class="case-snapshot-card"><span>Primary focus</span><strong>Attack Lifecycle</strong></div>
+                <div class="case-snapshot-card"><span>Defensive focus</span><strong>Incident Response</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-body-section">
+        <div class="container blog-layout">
+            <article class="blog-article">
+                <section id="requirements">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">01</span>
+                        <div><span class="mini-label">Assignment requirement</span><h2>What Part 6 Asked the Student to Complete</h2></div>
+                    </div>
+                    <div class="capstone-requirement-grid">
+                        <?php foreach($case['requirements'] as $i=>$requirement): ?>
+                        <div class="learning-panel learning-panel--requirement"><span class="learning-panel__label">Requirement <?=e((string)($i+1))?></span><p><?=e($requirement)?></p></div>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+
+                <section id="solution-flow">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">02</span>
+                        <div><span class="mini-label">Challenge sequence</span><h2>How the Supplied Solution Organises the Red Team Exercise</h2></div>
+                    </div>
+                    <div class="requirement-map">
+                        <?php foreach($case['flow'] as $i=>$item): ?>
+                        <div class="requirement-map-row">
+                            <span class="requirement-map-row__num"><?=e(str_pad((string)($i+1),2,'0',STR_PAD_LEFT))?></span>
+                            <div><strong><?=e($item[0])?></strong><small><?=e($item[1])?></small></div>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+
+                <section id="evidence">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">03</span>
+                        <div><span class="mini-label">Source evidence</span><h2>Practical Lab Evidence</h2></div>
+                    </div>
+                    <p>The supplied screenshot shows the Metasploit lab environment with the MS17-010 EternalBlue module selected, a Windows x64 reverse TCP payload, SMB target port 445, target settings and listener settings. The public version removes the student-identifying overlay while preserving the technical evidence.</p>
+                    <figure class="source-screenshot capstone-evidence">
+                        <img src="<?=e($case['evidence_image'])?>" alt="Red Team Capstone Metasploit lab evidence" loading="lazy" decoding="async">
+                        <figcaption><?=e($case['evidence_caption'])?></figcaption>
+                    </figure>
+                </section>
+
+                <section id="source-summary">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">04</span>
+                        <div><span class="mini-label">Expert-written solution</span><h2>Red Team Capstone Challenge Summary and Incident Response Relevance</h2></div>
+                    </div>
+                    <div class="capstone-source-copy">
+                        <?php foreach($case['solution_summary'] as $i=>$paragraph): ?>
+                            <p><?=e($paragraph)?></p>
+                            <?php if($i===2): ?><?php renderCaseStudyCTA('mid'); ?><?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+
+                <?php renderCaseStudyCTA('footer'); ?>
+            </article>
+
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">On this page</span>
+                    <a href="#requirements">Part 6 Requirements</a>
+                    <a href="#solution-flow">Challenge Sequence</a>
+                    <a href="#evidence">Practical Evidence</a>
+                    <a href="#source-summary">Source-Written Summary</a>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Related</span>
+                    <?php foreach($case['related_links'] as $link): ?><a href="<?=e($link[0])?>"><?=e($link[1])?></a><?php endforeach; ?>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+<?php renderFooter($subjects);
+}
+
 function renderCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    if(($case['template'] ?? '') === 'red_team_capstone'){
+        renderRedTeamCapstoneCaseStudy($slug,$case,$caseStudies,$subjects);
+        return;
+    }
     if(($case['template'] ?? '') === 'squid_proxy_lab'){
         renderSquidProxyCaseStudy($slug,$case,$caseStudies,$subjects);
         return;

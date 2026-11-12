@@ -1,6 +1,66 @@
 <?php
 return [
+    'red-team-capstone-incident-response-case-study' => [
+        'menu_featured' => false,
+        'template' => 'red_team_capstone',
+        'page_type' => 'case_study',
+        'title' => 'Red Team Capstone Challenge and Incident Response Case Study',
+        'meta_title' => 'Red Team Capstone Challenge & Incident Response Case Study | Cyber Assignment Pro',
+        'h1' => 'Red Team Capstone Challenge and Incident Response Case Study',
+        'nav' => 'Red Team Capstone Challenge and Incident Response',
+        'description' => 'Solved Part 6 case study based on a TryHackMe Red Team Capstone Challenge, showing the attack lifecycle and its relevance to incident response.',
+        'primary' => 'red team capstone challenge case study',
+        'eyebrow' => 'Solved Cybersecurity Assessment',
+        'menu_meta' => 'Red Team · TryHackMe · Incident Response',
+        'topics' => [
+            'Red Team',
+            'TryHackMe',
+            'Incident Response',
+            'Reconnaissance',
+            'Privilege Escalation',
+            'Lateral Movement',
+            'Active Directory',
+            'Kerberoasting',
+            'DCSync',
+            'Red Team Capstone'
+        ],
+        'assessment' => 'Assessment Task 2 - Portfolio of Evidence',
+        'part' => 'Part 6 - Incident Response Team (IRT) Challenge',
+        'room' => 'Red Team Capstone Challenge (THM)',
+        'requirements' => [
+            '6.0 For this module (Red Team Capstone Challenge), work through the practical tasks and capture screenshots of your progress and provide a visual summary of the complete challenge.',
+            '6.1 Provide a detailed written summary of the Red Team Capstone Challenge, and how it relates to incident response. This should be a minimum of 200 words.'
+        ],
+        'solution_summary' => [
+            'The TryHackMe Red Team Capstone Challenge is a comprehensive simulation of a real-world cyber attack against a banking environment. The objective is to emulate a full red team engagement, starting from external reconnaissance and progressing to internal compromise, privilege escalation, and ultimately achieving domain-wide control to demonstrate business impact.',
+            'The challenge begins with reconnaissance, where exposed services and user information are identified through scanning and enumeration techniques. This phase helps attackers understand the attack surface and identify potential entry points. Initial access is then achieved through password-based attacks and exploitation of weak authentication mechanisms, allowing entry into the internal network environment via VPN access.',
+            'Once inside, the attacker establishes persistence and begins privilege escalation by exploiting misconfigurations and extracting credentials. Techniques such as credential dumping enable movement from a low-privileged user to higher-level access. Lateral movement is then performed across systems using protocols like SMB and RDP, allowing the attacker to expand control within the network.',
+            'A key phase of the challenge is Active Directory compromise. Techniques such as Kerberoasting and DCSync are used to extract sensitive credentials and gain Domain Admin privileges. This provides full control over the organization’s identity infrastructure. Finally, the attacker demonstrates impact by executing a simulated fraudulent financial transaction, proving the severity of the breach.',
+            'From an Incident Response (IR) perspective, this challenge directly reflects real-world attack scenarios. Each step of the attack corresponds to activities that security teams must detect, investigate, and respond to. For example, password spraying attempts can trigger brute-force alerts, while unusual Kerberos activity may indicate credential abuse.',
+            'Incident responders use such patterns to investigate compromised systems, trace attacker movement, and identify affected accounts. Containment actions include isolating infected machines, resetting credentials, and securing critical systems like domain controllers. The challenge also highlights the importance of post-incident analysis, where organizations identify weaknesses such as poor password policies and lack of network segmentation.',
+            'Overall, the Red Team Capstone Challenge demonstrates how attackers operate across the entire attack lifecycle and emphasizes the critical role of Incident Response in detecting, containing, and preventing such threats. It also reinforces the value of collaboration between red and blue teams to strengthen organizational security.'
+        ],
+        'flow' => [
+            ['Reconnaissance', 'Identify exposed services, users and potential entry points.'],
+            ['Initial Access', 'Weak authentication and password-based attacks provide entry to the lab environment.'],
+            ['Privilege Escalation', 'Misconfigurations and credential extraction move access from low privilege to higher privilege.'],
+            ['Lateral Movement', 'SMB and RDP are used to expand control across systems.'],
+            ['Active Directory', 'Kerberoasting and DCSync are part of the domain-compromise phase described by the supplied solution.'],
+            ['Business Impact', 'The challenge ends by demonstrating the severity of compromise in the simulated banking environment.'],
+            ['Incident Response', 'Detection, investigation, containment and post-incident analysis are connected back to each attack phase.']
+        ],
+        'evidence_image' => '/assets/case-studies/red-team-capstone-incident-response/evidence.svg',
+        'evidence_caption' => 'Privacy-safe evidence excerpt based on the supplied solution screenshot. Student-identifying information has been removed for public publication.',
+        'related_links' => [
+            ['/penetration-testing-assignment-help', 'Penetration Testing Assignment Help'],
+            ['/ethical-hacking-assignment-help', 'Ethical Hacking Assignment Help'],
+            ['/cyber-threat-intelligence-assignment-help', 'Cyber Threat Intelligence Assignment Help'],
+            ['/information-security-assignment-help', 'Information Security Assignment Help']
+        ]
+    ],
+
     'squid-proxy-implementation-acl-lab' => [
+        'menu_featured' => true,
         'template' => 'squid_proxy_lab',
         'page_type' => 'case_study',
         'title' => 'Squid Proxy Implementation Lab: Configuration, ACLs and Access Rules',
@@ -722,6 +782,7 @@ return [
         ]
     ],
     'windows-server-2022-active-directory-domain-lab' => [
+        'menu_featured' => true,
         'template' => 'active_directory_lab',
         'page_type' => 'case_study',
         'title' => 'Windows Server 2022 Domain Environment with Windows 11 and Fedora Clients',
@@ -946,6 +1007,7 @@ return [
         ],
     ],
     'buffer-overflow-attack-demo-getscore' => [
+        'menu_featured' => true,
         'template' => 'buffer_overflow_getscore',
         'page_type' => 'case_study',
         'title' => 'Buffer Overflow Attack Demo: getscore Privilege Escalation Case Study',
@@ -1037,6 +1099,7 @@ TXT,
         ],
     ],
     'double-ratchet-digital-signature-assignment' => [
+        'menu_featured' => true,
         'page_type' => 'case_study',
         'title' => 'Question 2: End to End Encryption and Question 3: Digital Signature Analysis',
         'meta_title' => 'End to End Encryption and Digital Signature Analysis | Cyber Assignment Pro',
@@ -1161,6 +1224,7 @@ TXT,
         'final_note' => 'So you could have a file with a valid signature but from an untrusted key. In that case, you should verify the key\'s fingerprint through another trusted method before trusting the file. In our assignment, product_3.txt is valid, but we would still want to confirm the key\'s fingerprint with the supplier directly to be completely certain.',
     ],
     'pfsense-openvpn-radius-vpn-lab' => [
+        'menu_featured' => true,
         'template' => 'pfsense_vpn_lab',
         'page_type' => 'case_study',
         'title' => 'pfSense VPN Server with RADIUS and OpenVPN Lab Solution',

