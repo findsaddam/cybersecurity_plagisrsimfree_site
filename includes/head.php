@@ -90,7 +90,7 @@ function renderHead(array $page, string $canonical, array $subjects): void {
     <meta name="twitter:title" content="<?= e($metaTitle) ?>">
     <meta name="twitter:description" content="<?= e($page['description']) ?>">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-    <link rel="stylesheet" href="/assets/styles.css?v=2.7.0">
+    <link rel="stylesheet" href="/assets/styles.css?v=2.8.0">
     <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 </head>
 <body>

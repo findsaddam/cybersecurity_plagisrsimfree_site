@@ -190,3 +190,22 @@
 .case-detail-grid>div{padding:17px;border:1px solid #e0e9ed;border-radius:13px;background:#fff}
 .case-detail-grid ul{margin-bottom:0}
 @media(max-width:760px){.case-conversion-cta{padding:23px 20px}.case-conversion-cta h2{font-size:25px!important}.case-conversion-cta__actions{display:grid}.case-conversion-cta__actions .btn{width:100%}.case-detail-grid{grid-template-columns:1fr}}
+
+/* v2.8: pfSense VPN lab source solution */
+.pfsense-case-study .case-learning-hero h1{max-width:900px}
+.vpn-question{margin:0 0 32px;border:1px solid #dce7ec;border-radius:18px;overflow:hidden;background:#fff;scroll-margin-top:110px}
+.vpn-question__head{display:grid;grid-template-columns:54px 1fr;gap:15px;align-items:start;padding:20px;background:#f5f9fa;border-bottom:1px solid #dce7ec}
+.vpn-question__number{display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#0b2638;color:#fff;font-size:13px;font-weight:900;letter-spacing:.05em}
+.vpn-question__head small{display:block;margin:1px 0 5px;color:#168579;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.vpn-question__head h3{margin:0!important;font-size:20px!important;line-height:1.4}
+.vpn-question__answer{padding:22px}
+.vpn-question__answer>p:first-child{margin-top:0}
+.vpn-question__answer>p:last-child{margin-bottom:0}
+.source-screenshot{margin:22px 0 2px;border:1px solid #d8e3e8;border-radius:14px;overflow:hidden;background:#f7fafb}
+.source-screenshot a{display:block;background:#eef3f5}
+.source-screenshot img{display:block;width:100%;height:auto;background:#fff}
+.source-screenshot figcaption{padding:11px 13px;color:#496372;font-size:12px;font-weight:800;line-height:1.5}
+.vpn-path{margin:16px 0;padding:15px 17px;border-left:4px solid #0b9c8d;border-radius:10px;background:#f0faf8;color:#164d4a;font-weight:800;line-height:1.6}
+.vpn-source-list{margin:12px 0 18px;padding-left:22px}
+.vpn-source-list li{margin:7px 0}
+@media(max-width:760px){.vpn-question__head{grid-template-columns:44px 1fr;padding:16px}.vpn-question__number{width:40px;height:40px}.vpn-question__head h3{font-size:17px!important}.vpn-question__answer{padding:17px}}

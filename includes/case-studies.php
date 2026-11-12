@@ -496,7 +496,125 @@ function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStu
 <?php renderFooter($subjects);
 }
 
+
+function renderPfsenseVpnCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    $canonical = SITE_URL . '/case-studies/' . $slug;
+    renderHead($case, $canonical, $subjects);
+    renderHeader($subjects, $caseStudies);
+    ?>
+<main class="blog-page case-study-learning-page pfsense-case-study">
+    <section class="blog-article-head case-learning-hero">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
+            <span class="blog-label"><?=e($case['eyebrow'])?></span>
+            <h1><?=e($case['h1'])?></h1>
+            <div class="blog-topic-line"><?=e($case['topic_q2'])?> <span>•</span> <?=e($case['topic_q3'])?> <span>•</span> <?=e($case['tool_q3'])?></div>
+        </div>
+    </section>
+
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <div class="case-snapshot-card"><span>Program</span><strong><?=e($case['program'])?></strong></div>
+                <div class="case-snapshot-card"><span>Course</span><strong><?=e($case['course'])?></strong></div>
+                <div class="case-snapshot-card"><span>VPN platform</span><strong>pfSense + OpenVPN</strong></div>
+                <div class="case-snapshot-card"><span>Authentication</span><strong>RADIUS / FreeRADIUS</strong></div>
+                <div class="case-snapshot-card"><span>VPN client network</span><strong>192.168.55.0/26</strong></div>
+                <div class="case-snapshot-card"><span>Intranet</span><strong>192.168.50.0/24</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-body-section">
+        <div class="container blog-layout">
+            <article class="blog-article">
+                <section id="overview">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">00</span>
+                        <div><span class="mini-label">Assignment requirement</span><h2><?=e($case['lab'])?></h2></div>
+                    </div>
+                    <?php foreach($case['setup'] as $paragraph): ?><p><?=e($paragraph)?></p><?php endforeach; ?>
+                    <details class="case-command-box">
+                        <summary>View all 14 assignment questions</summary>
+                        <div><ol><?php foreach($case['questions'] as $item): ?><li><a href="#question-<?=e((string)$item['n'])?>"><?=e($item['question'])?></a></li><?php endforeach; ?></ol></div>
+                    </details>
+                </section>
+
+                <section id="source-solution">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">01</span>
+                        <div><span class="mini-label">Completed solution</span><h2>Lab 5 Questions and Source Answers</h2></div>
+                    </div>
+
+                    <?php foreach($case['questions'] as $item): ?>
+                    <section class="vpn-question" id="question-<?=e((string)$item['n'])?>">
+                        <div class="vpn-question__head">
+                            <span class="vpn-question__number"><?=e(str_pad((string)$item['n'],2,'0',STR_PAD_LEFT))?></span>
+                            <div><small>Question <?=e((string)$item['n'])?></small><h3><?=e($item['question'])?></h3></div>
+                        </div>
+                        <div class="vpn-question__answer">
+                            <?php foreach($item['answer'] as $idx=>$paragraph): ?>
+                                <p><?=e($paragraph)?></p>
+                                <?php if(isset($item['code']) && (($item['code_after'] ?? 1) === $idx+1)): ?>
+                                    <pre class="assignment-command"><code><?=e($item['code'])?></code></pre>
+                                <?php endif; ?>
+                                <?php if(isset($item['highlight']) && (($item['highlight_after'] ?? 1) === $idx+1)): ?>
+                                    <div class="vpn-path"><?=e($item['highlight'])?></div>
+                                <?php endif; ?>
+                                <?php if(isset($item['bullets']) && (($item['bullets_after'] ?? 1) === $idx+1)): ?>
+                                    <ul class="vpn-source-list"><?php foreach($item['bullets'] as $bullet): ?><li><?=e($bullet)?></li><?php endforeach; ?></ul>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+
+                            <?php if(isset($item['code']) && !isset($item['code_after'])): ?>
+                                <pre class="assignment-command"><code><?=e($item['code'])?></code></pre>
+                            <?php endif; ?>
+
+                            <?php if(!empty($item['image'])): ?>
+                            <figure class="source-screenshot">
+                                <a href="<?=e($item['image'])?>" target="_blank" rel="noopener">
+                                    <img src="<?=e($item['image'])?>" alt="<?=e($item['caption'])?>" loading="lazy" decoding="async">
+                                </a>
+                                <figcaption><?=e($item['caption'])?></figcaption>
+                            </figure>
+                            <?php endif; ?>
+                        </div>
+                    </section>
+
+                    <?php if($item['n']===7): ?><?php renderCaseStudyCTA('mid'); ?><?php endif; ?>
+                    <?php endforeach; ?>
+                </section>
+
+                <?php renderCaseStudyCTA('footer'); ?>
+            </article>
+
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">On this page</span>
+                    <a href="#overview">Lab Requirement</a>
+                    <a href="#source-solution">Source Solution</a>
+                    <a href="#question-1">Q1 · RADIUS Settings</a>
+                    <a href="#question-6">Q6 · radtest Verification</a>
+                    <a href="#question-9">Q9 · Remote Connectivity</a>
+                    <a href="#question-10">Q10 · Encrypted Segments</a>
+                    <a href="#question-14">Q14 · OpenVPN Logs</a>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Related</span>
+                    <?php foreach($case['related_links'] as $link): ?><a href="<?=e($link[0])?>"><?=e($link[1])?></a><?php endforeach; ?>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+<?php renderFooter($subjects);
+}
+
 function renderCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    if(($case['template'] ?? '') === 'pfsense_vpn_lab'){
+        renderPfsenseVpnCaseStudy($slug,$case,$caseStudies,$subjects);
+        return;
+    }
     if(($case['template'] ?? '') === 'active_directory_lab'){
         renderActiveDirectoryCaseStudy($slug,$case,$caseStudies,$subjects);
         return;
