@@ -29,7 +29,7 @@
       "problems": {
         "kicker": "Common coursework challenges",
         "title": "Network Security Coursework Challenges",
-        "intro": "Students regularly lose marks if diagrams, packet evidence or firewall selections are displayed without explaining the security purpose."
+        "intro": "Students regularly lose marks if diagrams, packet evidence or firewall selections are displayed without explaining the security purpose in network security coursework help."
       },
       "workflow": {
         "kicker": "From brief to report",
@@ -125,7 +125,7 @@
       "problems": {
         "kicker": "Where ethical hacking reports fail",
         "title": "Ethical Hacking Coursework Challenges",
-        "intro": "Running a tool is not a challenge, the hard part is usually showing why the test was appropriate, what the evidence proves and how the finding should be remediated."
+        "intro": "Running a tool is not a challenge, the hard part is usually showing why the test was appropriate, what the evidence proves and how the finding should be remediated in ethical hacking coursework help."
       },
       "workflow": {
         "kicker": "Authorised testing process",
@@ -214,7 +214,7 @@
     ],
     "hero_card": {
       "label": "Forensic evidence",
-      "intro": "Turn digital evidence into a defensible timeline, interpretation and formal forensic report.",
+      "intro": "Provide a defensible digital evidence timeline, interpretation and formal forensic report.",
       "bullets": [
         "Evidence integrity and chain of custody",
         "Timeline and artefact analysis",
@@ -226,31 +226,31 @@
       "workflow": {
         "kicker": "Investigation sequence",
         "title": "Digital Forensics Investigation Workflow",
-        "intro": "Forensic coursework is easier to follow when evidence handling, examination, interpretation and reporting are separated into clear stages."
+        "intro": "In Forensic investigation workflow, evidence handling, examination, interpretation and reporting should be broken down into distinct stages within digital forensics coursework help."
       },
       "problems": {
         "kicker": "Evidence and interpretation",
         "title": "Digital Forensics Evidence Challenges",
-        "intro": "Strong forensic work distinguishes what the evidence actually shows from what the student infers about the event or user activity."
+        "intro": "Good forensic evidence practice highlights actual evidence from what the student infers from the evidence about the event or evidence about the use of the evidence."
       },
       "topics": {
         "kicker": "Forensic investigation areas",
         "title": "Digital Forensics Assignment Topics",
-        "intro": "Common topics include evidence preservation, file-system artefacts, timelines, logs, browser activity, metadata and forensic reporting."
+        "intro": "These are typically things such as evidence preservation, file system artefacts, timelines, logs, browser activities, metadata and forensic reporting."
       },
       "tools_report": {
         "kicker": "Forensic lab tools",
         "title": "Digital Forensics Lab Tools",
-        "intro": "Forensic tools should support reproducible examination. Record what source was examined, what artefact was identified and how integrity was maintained.",
+        "intro": "Examination should be reproducible using forensic tools. Write down the source that was studied, the artefact that was recognised and how the integrity was preserved.",
         "report_heading": "Digital Forensics Report Structure"
       },
       "long_copy": {
         "kicker": "Evidence-led writing",
         "title": "Digital Forensics Report Writing Help",
         "paragraphs": [
-          "A forensic report should distinguish evidence from interpretation. File metadata, log entries, browser records or timestamps are observations; the explanation of what those observations suggest belongs in the analysis. Keeping the two separate makes conclusions easier to defend.",
-          "Timelines require particular care. State the source of each timestamp, note time-zone or clock issues when relevant, and avoid presenting uncertain events as confirmed facts. The most useful timeline entries are those that change the understanding of the case.",
-          "The conclusion should be proportionate to the available evidence. Summarise the strongest supported findings, identify important limitations and avoid claims that cannot be traced back to an artefact, log, image or documented examination step."
+          "Evidence should be separated from interpretation in a forensic report. Observations are items in the file metadata, log entries, browser records or times, but the explanation of what those records mean should be part of the analysis. Separating the two allows for easier conclusions to be made for digital forensics lab report help.",
+          "Special attention should be given to timelines. Identify each of the time-stamps; do not report events with uncertainty as proven facts when time zone or clock issues are involved. The most helpful timeline entries are those that alter the knowledge about the case.",
+          "The conclusion should be appropriate to the evidence provided. Summarise the most solidly supported findings and outline important limitations but refrain from claims that cannot be linked to an artefact, log, image or documented examination step."
         ]
       },
       "faq": {
@@ -261,7 +261,7 @@
       "related": {
         "kicker": "Related investigation modules",
         "title": "Related Digital Forensics Subjects",
-        "intro": "Digital forensics connects naturally with incident response, malware analysis, threat intelligence and network security."
+        "intro": "Digital forensics naturally links with incident response, malware analysis, threat intelligence and network security."
       },
       "cta": {
         "kicker": "Forensics coursework support",
@@ -276,27 +276,27 @@
     "signature": {
       "kicker": "Forensic reasoning",
       "title": "From Evidence to Conclusion",
-      "intro": "Forensic reports become easier to defend when every conclusion follows a visible reasoning chain.",
+      "intro": "All conclusions follow a visible reasoning chain in forensic reports, making it easier to defend them.",
       "items": [
         [
-          "Acquire",
           "Evidence source",
-          "Record where the artefact came from and how integrity was maintained."
+          "Evidence source",
+          "Document the source of the artefact and how integrity was ensured."
         ],
         [
-          "Examine",
           "Observable artefact",
-          "Identify the file, log, metadata, timestamp or activity that can be verified."
+          "Observable artefact",
+          "Determine which file, log, metadata, and/or timestamp/activity can be verified."
         ],
         [
-          "Interpret",
           "Meaning and context",
-          "Explain what the artefact suggests while separating fact from inference."
+          "Meaning and context",
+          "Describe the implications it implies, making a distinction between fact and inference."
         ],
         [
-          "Conclude",
           "Supported judgement",
-          "State only the conclusion that the available evidence can reasonably support."
+          "Supported judgement",
+          "State the conclusion that can reasonably be drawn from the available evidence."
         ]
       ]
     }
@@ -314,7 +314,7 @@
     ],
     "hero_card": {
       "label": "Scoped security testing",
-      "intro": "Build penetration testing coursework around rules of engagement, evidence, risk ratings and remediation.",
+      "intro": "Develop the coursework for \"Build the Penetration Tests\" based on rules of engagement, evidence, risk ratings and remediation.",
       "bullets": [
         "Scope and rules of engagement",
         "Finding evidence and severity",
@@ -326,31 +326,31 @@
       "problems": {
         "kicker": "Reporting challenges",
         "title": "Penetration Testing Reporting Challenges",
-        "intro": "Penetration testing coursework is judged on the quality of the assessment narrative as much as the technical evidence."
+        "intro": "Assessment narrative quality is as much a part of the grade for the Penetration Testing course as is the technical evidence."
       },
       "workflow": {
         "kicker": "Assessment process",
         "title": "Penetration Testing Assessment Workflow",
-        "intro": "A disciplined sequence from scope to remediation keeps the report consistent and prevents findings from becoming disconnected tool output."
+        "intro": "A scope to remediation sequence ensures a consistent report and avoids making findings disconnected outputs of a tool."
       },
       "topics": {
         "kicker": "Testing and reporting topics",
         "title": "Penetration Testing Assignment Topics",
-        "intro": "Typical university work covers scope, reconnaissance concepts, vulnerability validation, evidence, risk ratings, remediation and professional reporting."
+        "intro": "Common university tasks include scope, reconnaissance ideas, vulnerability checking, evidence, risk ratings, remediation and professional reporting."
       },
       "tools_report": {
         "kicker": "Authorised testing tools",
         "title": "Penetration Testing Lab Tools",
-        "intro": "Use testing tools only inside the approved environment and document the evidence needed to support each finding.",
+        "intro": "Only use testing tools in the approved environment and record the evidence supporting each finding for authorised penetration testing lab help.",
         "report_heading": "Penetration Testing Report Structure"
       },
       "long_copy": {
         "kicker": "Finding-by-finding writing",
         "title": "Penetration Testing Report Writing Help",
         "paragraphs": [
-          "A penetration testing report should make scope visible before any findings are discussed. Identify authorised targets, exclusions, assumptions and rules of engagement so the reader understands exactly what the evidence represents.",
-          "Each finding should follow a consistent pattern: affected asset, observed condition, evidence, security impact, risk rating and remediation. This format makes it easier to compare findings and helps the assessor see how technical observations lead to professional judgement.",
-          "Remediation should be specific enough to act on. Address the root cause, identify the control or configuration change, explain priority and describe how the organisation could verify that the weakness has been reduced after the fix."
+          "A scope of the penetration test should be displayed prior to any findings. Explain the authorisation, the exclusions, assumptions and rules of engagement to enable the reader to comprehend the nature of the evidence.",
+          "The pattern for each finding should be the same: Affected asset, observed condition, evidence, security impact, risk rating and remediation. This format facilitates comparison of findings and allows the assessor to observe the relationship between the technical observations and the professional judgements.",
+          "Remediation should be actionable. Explain why the weakness is the root cause, identify the control or configuration change and explain its priority and describe how the organisation could confirm the weakness is reduced after the control or configuration change had been implemented."
         ]
       },
       "faq": {
@@ -361,7 +361,7 @@
       "related": {
         "kicker": "Related testing modules",
         "title": "Related Penetration Testing Subjects",
-        "intro": "Penetration testing frequently overlaps with ethical hacking, web application security, network security and cryptography."
+        "intro": "Often penetration testing is related to ethical hacking, web application security, network security and cryptography."
       },
       "cta": {
         "kicker": "Penetration testing support",
@@ -377,27 +377,27 @@
     "signature": {
       "kicker": "Finding quality",
       "title": "Penetration Test Finding Anatomy",
-      "intro": "Use a consistent structure so each technical observation becomes a professional assessment finding.",
+      "intro": "Ensure that the structure is the same for all of the technical observations so that each becomes a professional assessment finding for penetration testing lab report help.",
       "items": [
         [
-          "Asset",
           "Affected component",
-          "Name the authorised target or service clearly enough for the reader to locate the issue."
+          "Affected component",
+          "The name of the authorised target/service should be clear and succinct enough for the reader to find the problem."
         ],
         [
-          "Proof",
           "Finding evidence",
-          "Show the minimum evidence required to demonstrate the observed weakness."
+          "Finding evidence",
+          "Demonstrate the least amount of evidence needed to prove the observed weakness."
         ],
         [
-          "Severity",
           "Risk rating",
-          "Explain likelihood and impact using the same rating method across the report."
+          "Risk rating",
+          "Use the same likelihood and impact rating in the report."
         ],
         [
-          "Action",
           "Remediation",
-          "Address the root cause, priority and how the fix should be verified."
+          "Remediation",
+          "Solve the cause, prioritize and confirm how to fix it."
         ]
       ]
     }
@@ -416,7 +416,7 @@
     ],
     "hero_card": {
       "label": "Cryptographic concepts",
-      "intro": "Explain encryption, hashing, PKI and key management by linking each method to a real security requirement.",
+      "intro": "Describe encryption, hashing, PKI and key management and relate each to an authentic security need.",
       "bullets": [
         "Encryption algorithm comparison",
         "Hashing and integrity",
@@ -428,31 +428,31 @@
       "topics": {
         "kicker": "Core cryptography concepts",
         "title": "Cryptography Assignment Concepts",
-        "intro": "Cryptography coursework usually asks students to compare methods, explain security properties and justify why a particular approach suits a scenario."
+        "intro": "Typical coursework on cryptography requires students to compare techniques, describe the security properties and explain why a certain technique is appropriate for a situation for applied cryptography assignment help."
       },
       "problems": {
         "kicker": "Where students lose marks",
         "title": "Cryptography Coursework Challenges",
-        "intro": "A common weakness is describing algorithms accurately but never explaining why one method is appropriate for the requirement or what limitations it introduces."
+        "intro": "A frequent missing element is to adequately define an algorithm without providing an explanation of why it is suitable to the requirement or what constraints it places on the requirement."
       },
       "workflow": {
         "kicker": "Analysis process",
         "title": "Cryptography Assignment Workflow",
-        "intro": "Move from the security requirement to the cryptographic property, compare suitable methods, then justify implementation and key-management decisions."
+        "intro": "Solve from security requirement to cryptographic property, discuss appropriate approaches, explain implementation and key management decisions."
       },
       "tools_report": {
         "kicker": "Cryptography tools",
         "title": "Cryptography Tools and Examples",
-        "intro": "Practical examples should demonstrate a concept such as encryption, hashing, certificate validation or key handling without replacing the academic explanation.",
+        "intro": "There should be practical examples to illustrate a concept, e.g., encryption, hashing, certificate validation and key handling, but not in place of the academic explanation.",
         "report_heading": "Cryptography Report Structure"
       },
       "long_copy": {
         "kicker": "Comparative analysis",
         "title": "Cryptography Report Writing Help",
         "paragraphs": [
-          "Cryptography assignments become stronger when they begin with the security requirement rather than the algorithm name. Identify whether the task needs confidentiality, integrity, authentication, non-repudiation or a combination of these properties before evaluating suitable methods.",
-          "Comparisons should use meaningful criteria such as key distribution, performance, security assumptions, maturity and implementation context. Symmetric and asymmetric methods solve different problems, so a good answer explains where they complement one another rather than declaring one universally better.",
-          "Key management deserves its own analysis. Generation, storage, distribution, rotation, backup and revocation can determine whether a cryptographic design is secure in practice. A strong recommendation therefore considers both the algorithm and the lifecycle of its keys."
+          "Cryptography assignments are better if they start with the security requirement and then proceed to the algorithm name. Before considering appropriate methods determine if the task requires confidentiality, integrity, authentication, non-repudiation or a combination of these for applied cryptography coursework help.",
+          "Useful criteria for comparison – key distribution, performance, security assumptions, maturity, implementation context. No answer is required to choose one method or the other as \"the best\" answers to different problems; a good answer will identify points of symmetry and points of asymmetry, or the domains for their application.",
+          "Key management is a topic in its own right. Whether a cryptographic design is secure in practice can be determined by its use of generation, storage, distribution, rotation, backup and revocation. So a strong recommendation takes into account the algorithm as well as the lifecycle of the algorithm's keys."
         ]
       },
       "faq": {
@@ -463,7 +463,7 @@
       "related": {
         "kicker": "Related security modules",
         "title": "Related Cryptography Subjects",
-        "intro": "Cryptography supports network security, cloud security, web application security and secure authentication."
+        "intro": "The applications of cryptography can be used in network security, cloud security, web application security, and secure authentication."
       },
       "cta": {
         "kicker": "Cryptography support",
@@ -479,34 +479,34 @@
     "signature": {
       "kicker": "Choose the right method",
       "title": "Encryption, Hashing and Signatures",
-      "intro": "These methods solve different security problems, so a cryptography assignment should explain the required property before choosing the technique.",
+      "intro": "The methods address distinct security issues and a cryptography assignment should also describe the property required before selecting a method.",
       "items": [
         [
-          "Encryption",
           "Confidentiality",
-          "Protect readable data using a key and explain who must be able to decrypt it."
+          "Confidentiality",
+          "Secure readable information with a key and who should be allowed to decrypted the information."
         ],
         [
-          "Hashing",
           "Integrity",
-          "Create a one-way digest for verification and explain why hashing is not encryption."
+          "Integrity",
+          "Produce a one way digest for verification purposes, explain why hashing is not encryption."
         ],
         [
-          "Signatures",
           "Authenticity",
-          "Use private/public-key operations to support integrity and signer verification."
+          "Authenticity",
+          "Include integrity and signer verification via private/public-key operations."
         ],
         [
-          "PKI",
           "Trust",
-          "Explain how certificates and trust chains help bind identities to public keys."
+          "Trust",
+          "Describe the uses of certificates and chains of certificates to tie identities to public keys."
         ]
       ]
     },
     "case_study": {
       "kicker": "Solved Assignment",
       "title": "End to End Encryption and Digital Signature Analysis",
-      "intro": "The Double Ratchet Algorithm is what apps like Signal, WhatsApp, and Facebook Messenger use for end to end encryption. The main idea is simple: every single message gets its own unique key. It does this by combining two ratchets.",
+      "intro": "The Double Ratchet Algorithm is used for end to end encryption in apps such as Signal, WhatsApp, and Facebook Messenger.The key idea here is pretty straightforward: Each and every message has its very own key. It does this, by using two ratchets.",
       "url": "/case-studies/double-ratchet-digital-signature-assignment",
       "badge": "Double Ratchet Algorithm",
       "meta": "GPG (Command Line)"
@@ -525,7 +525,7 @@
     ],
     "hero_card": {
       "label": "Safe malware analysis",
-      "intro": "Separate static evidence from runtime behaviour and turn lab observations into defensive conclusions.",
+      "intro": "Distinguish static and dynamic evidence, and make defensive conclusions from lab observations.",
       "bullets": [
         "Static artefact analysis",
         "Behavioural observations",
@@ -537,31 +537,31 @@
       "problems": {
         "kicker": "Analysis challenges",
         "title": "Malware Analysis Coursework Challenges",
-        "intro": "Malware coursework requires careful wording because the report must distinguish observed behaviour from assumptions about capability or intent."
+        "intro": "When writing about malware, care must be taken with the wording, as the report needs to differentiate between observation of a behavior and an assumption about a capability or intent within malware analysis coursework help."
       },
       "topics": {
         "kicker": "Malware analysis areas",
         "title": "Malware Analysis Assignment Topics",
-        "intro": "Common areas include file properties, strings, hashes, process behaviour, persistence artefacts, network observations, indicators and defensive response."
+        "intro": "Common areas are file properties, strings, hashes, process behaviour, persistence artefacts, network observations, indicators and defensive response."
       },
       "workflow": {
         "kicker": "Safe analysis process",
         "title": "Malware Analysis Lab Workflow",
-        "intro": "Keep the investigation inside the authorised sandbox or university environment and record evidence in a sequence that can be reproduced."
+        "intro": "Ensure the investigation remains within the scope of the authorised sandbox or University environment and evidence is captured in a repeatable sequence."
       },
       "tools_report": {
         "kicker": "Analysis environment",
         "title": "Malware Analysis Lab Tools",
-        "intro": "Use tools to observe safely, document what changed and extract defensive evidence without moving beyond the approved laboratory scope.",
+        "intro": "Observe safely, document changes and collect defensive evidence using tools without going beyond the scope of the laboratory for malware analysis lab report help.",
         "report_heading": "Malware Analysis Report Structure"
       },
       "long_copy": {
         "kicker": "From artefacts to defence",
         "title": "Malware Analysis Report Writing Help",
         "paragraphs": [
-          "A malware analysis report should separate static observations from behavioural evidence. Hashes, metadata and strings describe the sample before execution, while processes, file changes, registry activity or network events describe what happened inside the safe lab environment.",
-          "Indicators should be presented with context. A domain, file path or hash may be useful for detection, but the report should explain how reliable the indicator is, what it represents and whether defenders would need additional context to avoid false positives.",
-          "Defensive recommendations should come directly from observed behaviour. Monitoring, containment, endpoint controls, access restrictions or incident-response actions are more persuasive when the report shows which behaviour or artefact each recommendation addresses."
+          "A malware analysis should be split into static and behavioural observations. Hashes, metadata and strings describe the sample prior to its execution, while processes, file changes, registry access or network events describe the activity that occurred in the safe lab environment.",
+          "It is a good idea to present indicators with context. The domain, file path or hash might be helpful to the detection, but the report should include information on the reliability of the indicator, what the indicator is, and if defenders would need additional context to avoid false positives.",
+          "Defensive recommendations should be derived from observed behaviour. Having a report that details which behaviour or artefact each recommendation covers is more convincing for monitoring, containment, endpoint controls and access restrictions, and for incident response actions."
         ]
       },
       "faq": {
@@ -587,27 +587,27 @@
     "signature": {
       "kicker": "Two evidence perspectives",
       "title": "Static vs Behavioural Malware Analysis",
-      "intro": "The report should show how pre-execution artefacts and safe runtime observations complement each other.",
+      "intro": "The report should present how pre-execution artefacts and observations of the safe runtime complement each other for static and dynamic malware analysis coursework help.",
       "items": [
         [
-          "Static",
           "Before execution",
-          "Review hashes, metadata, strings and file properties without running the sample."
+          "Before execution",
+          "View hashes, metadata, strings and file properties without executing the sample."
         ],
         [
-          "Behavioural",
           "During execution",
-          "Observe processes, files, registry activity and network events inside the safe lab."
+          "During execution",
+          "Monitor processes, files, registry and network inside the safe lab."
         ],
         [
-          "Correlation",
           "Combine evidence",
-          "Use several observations together before making a judgement about likely behaviour."
+          "Combine evidence",
+          "Make a judgement about likely behaviour after making several observations."
         ],
         [
-          "Defence",
           "Turn evidence into action",
-          "Extract useful indicators and connect them to detection, containment or monitoring."
+          "Turn evidence into action",
+          "Identify and link to detection, containment or monitoring indicators."
         ]
       ]
     }
@@ -928,7 +928,7 @@
     ],
     "hero_card": {
       "label": "Cloud architecture coursework",
-      "intro": "Design and explain cloud solutions using service models, deployment models, virtualisation, scalable architecture and platform evidence.",
+      "intro": "Identify, create and describe cloud solutions based on service and deployment models, virtualisation, scalable architecture and platform evidence.",
       "bullets": [
         "IaaS, PaaS and SaaS comparisons",
         "AWS and Azure architecture",
@@ -940,31 +940,31 @@
       "topics": {
         "kicker": "Core cloud computing concepts",
         "title": "Cloud Computing Assignment Topics",
-        "intro": "Cloud computing assignments often move from service models into architecture, platform selection, virtualisation, scalability and practical deployment decisions."
+        "intro": "Cloud Computing assignments frequently delve into service design, platform choices, virtualisation, scalability, and real-world implementation choices."
       },
       "problems": {
         "kicker": "Common cloud coursework challenges",
         "title": "Cloud Computing Coursework Challenges",
-        "intro": "The main challenge is usually turning broad cloud terminology into a justified architecture that matches the scenario and marking rubric."
+        "intro": "However, most often, the biggest hurdle is translating general cloud jargon into an appropriate architecture that aligns with the scenario and marking rubric."
       },
       "workflow": {
         "kicker": "From scenario to architecture",
         "title": "Cloud Computing Assignment Workflow",
-        "intro": "A clear cloud workflow starts with the workload and requirements, selects an appropriate service model, designs the architecture and then evaluates scalability, availability and platform choices."
+        "intro": "A good cloud workflow begins with the workload and requirements and then moves to picking a suitable service model and designing the architecture; it then evaluates the scalability, availability, and platform options."
       },
       "tools_report": {
         "kicker": "Cloud platforms and practical evidence",
         "title": "Cloud Computing Tools and Platforms",
-        "intro": "Use AWS, Azure, Docker and architecture diagrams to demonstrate the required cloud concept rather than filling the report with unrelated platform screenshots.",
+        "intro": "Include architecture diagrams and AWS/Azure images to show the concept of cloud, not unrelated screenshots of platforms in the report.",
         "report_heading": "Cloud Computing Report Structure"
       },
       "long_copy": {
         "kicker": "Writing the cloud analysis",
         "title": "Cloud Computing Report Writing Help",
         "paragraphs": [
-          "A cloud computing report should make the workload and requirements clear before recommending a platform or service. Explain the users, data, performance needs, expected scale and availability requirements so the architecture choices can be judged against a defined problem.",
-          "Service model comparisons should focus on responsibility and control. IaaS gives more infrastructure control, PaaS reduces platform management, and SaaS delivers a complete application service. The strongest comparison explains which model best fits the scenario and why.",
-          "Architecture diagrams should support the written analysis. Compute, storage, networking, databases and scaling components should be labelled clearly, and the report should explain how those components work together to provide availability, performance and manageable cloud operations."
+          "Before recommending a platform or service, a cloud computing report should state the workload and requirements. Describe the users, data, performance requirements, expected scale and availability requirements in order to evaluate architecture options to a problem for cloud architecture assignment help.",
+          "The responsibility and control are the aspects that should be compared to service models. IaaS provides increased infrastructure management, PaaS provides decreased platform management and SaaS provides a full application service. The strongest comparison will give the explanation of which model is the best for the given scenario, and why.",
+          "The written analysis should be supplemented with architecture diagrams. Compute, storage, networking, databases and scaling elements should be clearly named and the report should explain how those elements operate together to ensure cloud operations are manageable and provide availability and performance."
         ]
       },
       "faq": {
@@ -975,7 +975,7 @@
       "related": {
         "kicker": "Related cloud and security modules",
         "title": "Related Cloud Computing Subjects",
-        "intro": "Cloud computing connects directly with cloud security, information security, network security and web application security."
+        "intro": "Cloud computing is closely related with cloud security, information security, network security and web application security."
       },
       "cta": {
         "kicker": "Cloud computing support",
@@ -991,27 +991,27 @@
     "signature": {
       "kicker": "Architecture decision framework",
       "title": "Cloud Model to Architecture Map",
-      "intro": "Use this sequence to turn a cloud computing scenario into a justified technical design.",
+      "intro": "Follow this sequence to transform an idea for cloud computing into a valid technical design.",
       "items": [
         [
           "01",
           "Workload requirement",
-          "Define users, data, scale, performance and availability before choosing cloud services."
+          "Before selecting cloud services, it is important to define a user, define data, scale, performance and availability."
         ],
         [
           "02",
           "Service model",
-          "Select IaaS, PaaS or SaaS according to the level of control and management the scenario requires."
+          "Choose IaaS, PaaS or SaaS based on the level of control and management in the scenario."
         ],
         [
           "03",
           "Architecture components",
-          "Map compute, storage, networking and data services to the required workload."
+          "Match compute, storage, networking and data services with the compute workload."
         ],
         [
           "04",
           "Evaluation",
-          "Explain scalability, availability, cost or management trade offs and justify the final architecture."
+          "Make sense of scalability, availability, cost/management considerations and defend architecture."
         ]
       ]
     }

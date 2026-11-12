@@ -26,7 +26,7 @@ function renderWorkflowBlock(array $page): void {
 function renderToolsReportBlock(array $page): void {
     $s=subjectSection($page,'tools_report'); ?>
     <section class="section section--soft"><div class="container two-col">
-        <div class="tool-panel reveal"><span class="section-kicker"><?=e($s['kicker']??'Tools & platforms')?></span><h2><?=e($s['title']??($page['nav'].' Tools and Labs'))?></h2><p><?=e($s['intro']??'')?></p><div class="tool-tags"><?php foreach($page['tools'] as $tool): ?><span><?=icon('terminal',15)?> <?=e($tool)?></span><?php endforeach; ?></div><div class="safe-note"><?=icon('shield',21)?><p><strong>Safe academic use:</strong> practical security activity should only be performed on systems you own or have explicit permission to test.</p></div></div>
+        <div class="tool-panel reveal"><span class="section-kicker"><?=e($s['kicker']??'Tools & platforms')?></span><h2><?=e($s['title']??($page['nav'].' Tools and Labs'))?></h2><p><?=e($s['intro']??'')?></p><div class="tool-tags"><?php foreach($page['tools'] as $tool): ?><span><?=icon('terminal',15)?> <?=e($tool)?></span><?php endforeach; ?></div><div class="safe-note"><?=icon('shield',21)?><p><?=!empty($page['safe_note'])?e($page['safe_note']):'<strong>Safe academic use:</strong> practical security activity should only be performed on systems you own or have explicit permission to test.'?></p></div></div>
         <div class="report-panel reveal"><span class="mini-label">Report structure</span><h3><?=e($s['report_heading']??($page['nav'].' Report Structure'))?></h3><ol><?php foreach($page['structure'] as $section): ?><li><span></span><?=e($section)?></li><?php endforeach; ?></ol></div>
     </div></section><?php
 }
@@ -67,10 +67,12 @@ function renderLongCopyBlock(array $page): void {
     <section class="section"><div class="container content-split">
         <article class="long-copy reveal"><span class="section-kicker"><?=e($s['kicker']??'Coursework guide')?></span><h2><?=e($s['title']??($page['nav'].' Report Writing Help'))?></h2><?php foreach(($s['paragraphs']??[]) as $p): ?><p><?=e($p)?></p><?php endforeach; ?></article>
         <aside class="keyword-box reveal"><span class="mini-label">Before you start</span><h3><?=e($page['nav'])?> Assignment Checklist</h3><div class="feature-list">
-            <div><?=icon('check',18)?><span><strong>Assignment question</strong><small>Keep the exact task and learning outcomes visible while you work.</small></span></div>
-            <div><?=icon('check',18)?><span><strong>Marking rubric</strong><small>Match report sections and evidence to the criteria that carry marks.</small></span></div>
-            <div><?=icon('check',18)?><span><strong>Evidence requirements</strong><small>Confirm the permitted environment, tools, screenshots and evidence format.</small></span></div>
-            <div><?=icon('check',18)?><span><strong>Submission rules</strong><small>Check word count, referencing style, file format and deadline.</small></span></div>
+            <?php $checklist=$page['checklist']??[
+                ['Assignment question','Keep the exact task and learning outcomes visible while you work.'],
+                ['Marking rubric','Match report sections and evidence to the criteria that carry marks.'],
+                ['Evidence requirements','Confirm the permitted environment, tools, screenshots and evidence format.'],
+                ['Submission rules','Check word count, referencing style, file format and deadline.'],
+            ]; foreach($checklist as $item): ?><div><?=icon('check',18)?><span><strong><?=e($item[0])?></strong><small><?=e($item[1])?></small></span></div><?php endforeach; ?>
         </div><a href="<?=e(waLink($page['primary']))?>" class="text-link" target="_blank" rel="noopener">Ask about your assignment <?=icon('arrow',16)?></a></aside>
     </div></section><?php
 }
