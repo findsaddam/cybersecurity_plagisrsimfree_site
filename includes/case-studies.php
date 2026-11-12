@@ -41,14 +41,68 @@ function renderCaseStudiesIndex(array $caseStudies, array $subjects): void {
 function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
     $canonical=SITE_URL . '/case-studies/' . $slug;
     renderHead($case,$canonical,$subjects);
-    renderHeader($subjects,$caseStudies); ?>
-<main class="blog-page">
-    <section class="blog-article-head">
+    renderHeader($subjects,$caseStudies);
+
+    $learningSteps = [
+        [
+            'num' => '01',
+            'title' => 'Setup the VM',
+            'requirement' => $case['requirements'][0][1],
+            'solution' => $case['solution_steps'][0][1],
+            'evidence' => 'The supplied Red Hat VM, getscore.c and score.txt were prepared in the authorised lab environment.',
+            'meaning' => 'This establishes the exact environment expected by the assignment before any security testing begins.',
+            'result' => 'The lab environment was ready for compilation and permission testing.'
+        ],
+        [
+            'num' => '02',
+            'title' => 'Compile and Configure getscore',
+            'requirement' => $case['requirements'][1][1],
+            'solution' => $case['solution_steps'][0][1],
+            'evidence' => 'The program was compiled, the required permissions were applied and the guest account was used to verify the setuid behaviour.',
+            'meaning' => 'This proves why a later memory-safety failure has a much larger security impact: the vulnerable program executes with root effective privileges.',
+            'result' => 'The setuid-root execution context was confirmed.'
+        ],
+        [
+            'num' => '03',
+            'title' => 'Trigger the Crash and Inspect GDB Evidence',
+            'requirement' => $case['requirements'][2][1],
+            'solution' => $case['solution_steps'][1][1] . ' ' . $case['solution_steps'][2][1],
+            'evidence' => 'GDB showed EIP as 0x41414141 after the repeated A input. The later cyclic-pattern crash identified the saved EIP position at 134 bytes.',
+            'meaning' => '0x41 is the ASCII value for A, so 0x41414141 shows that user-controlled input reached the saved instruction pointer. The cyclic pattern then replaces guesswork with an exact offset.',
+            'result' => 'Control of the saved return address was demonstrated and the EIP offset was calculated as 134 bytes.'
+        ],
+        [
+            'num' => '04',
+            'title' => 'Build and Validate the Lab Exploit',
+            'requirement' => $case['requirements'][3][1],
+            'solution' => $case['solution_steps'][3][1] . ' ' . $case['solution_steps'][4][1],
+            'evidence' => 'The final report records successful privilege escalation from the guest account to a root shell in the deliberately vulnerable VM.',
+            'meaning' => 'The result connects the three assignment questions: enough input to reach EIP, the exact overwrite position, and a lab-specific control-flow redirection.',
+            'result' => 'The authorised lab exploit achieved root privileges. Reusable shellcode bytes and the exact jump address are intentionally omitted here.'
+        ],
+    ];
+    ?>
+<main class="blog-page case-study-learning-page">
+    <section class="blog-article-head case-learning-hero">
         <div class="container blog-shell">
             <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
             <span class="blog-label"><?=e($case['eyebrow'])?></span>
             <h1><?=e($case['h1'])?></h1>
+            <p class="case-learning-intro">Understand the assignment first, then follow the completed solution step by step. Each stage below shows what was required, what evidence was produced, what that evidence means, and how it contributes to the final result.</p>
             <div class="blog-topic-line"><?=e($case['topic_q2'])?> <span>•</span> <?=e($case['topic_q3'])?> <span>•</span> <?=e($case['tool_q3'])?></div>
+        </div>
+    </section>
+
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <div class="case-snapshot-card"><span>Course</span><strong><?=e($case['course'])?></strong></div>
+                <div class="case-snapshot-card"><span>Lab target</span><strong><?=e($case['target'])?></strong></div>
+                <div class="case-snapshot-card"><span>Main finding</span><strong>Stack buffer overflow</strong></div>
+                <div class="case-snapshot-card"><span>Extra finding</span><strong>OS command injection</strong></div>
+                <div class="case-snapshot-card"><span>Key evidence</span><strong>EIP overwrite + 134-byte offset</strong></div>
+                <div class="case-snapshot-card"><span>Final lab result</span><strong>Guest to root privilege escalation</strong></div>
+            </div>
         </div>
     </section>
 
@@ -56,80 +110,157 @@ function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStu
         <div class="container blog-layout">
             <article class="blog-article">
                 <section id="overview">
-                    <h2>Project Overview</h2>
-                    <p class="source-meta"><strong><?=e($case['course'])?></strong> | Target: <?=e($case['target'])?></p>
+                    <div class="case-section-heading">
+                        <span class="case-section-number">00</span>
+                        <div><span class="mini-label">Start here</span><h2>Project Overview</h2></div>
+                    </div>
                     <p><?=e($case['description'])?></p>
-                    <div class="case-study-callout case-study-callout--safe"><strong>Public lab note</strong><p><?=e($case['public_safety_note'])?></p></div>
+                    <div class="case-study-callout case-study-callout--safe"><strong>Authorised lab only</strong><p><?=e($case['public_safety_note'])?></p></div>
                 </section>
 
-                <section id="requirements">
-                    <h2>Assignment Requirements</h2>
-                    <p><?=e($case['requirements_intro'])?></p>
-                    <?php foreach($case['requirements'] as $step): ?>
-                    <div class="case-step">
-                        <h3><?=e($step[0])?></h3>
-                        <p><?=e($step[1])?></p>
+                <section id="requirement-map">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">01</span>
+                        <div><span class="mini-label">Understand the brief</span><h2>Requirement → Solution Map</h2></div>
                     </div>
-                    <?php endforeach; ?>
+                    <p><?=e($case['requirements_intro'])?></p>
+                    <div class="requirement-map">
+                        <?php foreach($learningSteps as $step): ?>
+                        <a class="requirement-map-row" href="#step-<?=e($step['num'])?>">
+                            <span class="requirement-map-row__num"><?=e($step['num'])?></span>
+                            <div><strong><?=e($step['title'])?></strong><small><?=e($step['requirement'])?></small></div>
+                            <span class="requirement-map-row__arrow"><?=icon('arrow',17)?></span>
+                        </a>
+                        <?php endforeach; ?>
+                    </div>
 
                     <h3>Grading Breakdown</h3>
-                    <div class="article-table-wrap"><table class="article-table">
-                        <thead><tr><th>Requirement</th><th>Weight</th></tr></thead>
-                        <tbody><?php foreach($case['grading'] as $row): ?><tr><td><?=e($row[0])?></td><td><strong><?=e($row[1])?></strong></td></tr><?php endforeach; ?></tbody>
-                    </table></div>
-                    <p><strong>Report requirement:</strong> <?=e($case['report_requirement'])?></p>
+                    <div class="case-grade-grid">
+                        <?php foreach($case['grading'] as $row): ?>
+                        <div class="case-grade-card"><span><?=e($row[0])?></span><strong><?=e($row[1])?></strong></div>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="case-study-callout"><strong>What the report must contain</strong><p><?=e($case['report_requirement'])?></p></div>
                 </section>
 
-                <section id="solution">
-                    <h2>Completed Solution</h2>
-                    <p><?=e($case['solution_intro'])?></p>
-                    <?php foreach($case['solution_steps'] as $step): ?>
-                    <div class="case-step">
-                        <h3><?=e($step[0])?></h3>
-                        <p><?=e($step[1])?></p>
+                <section id="step-by-step">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">02</span>
+                        <div><span class="mini-label">Requirement + solution together</span><h2>Step-by-Step Assignment Solution</h2></div>
                     </div>
+                    <p><?=e($case['solution_intro'])?></p>
+
+                    <?php foreach($learningSteps as $step): ?>
+                    <section class="learning-step" id="step-<?=e($step['num'])?>">
+                        <div class="learning-step__head">
+                            <span><?=e($step['num'])?></span>
+                            <div><small>Lab step</small><h3><?=e($step['title'])?></h3></div>
+                        </div>
+
+                        <div class="learning-step__grid">
+                            <div class="learning-panel learning-panel--requirement">
+                                <span class="learning-panel__label">What the assignment asked</span>
+                                <p><?=e($step['requirement'])?></p>
+                            </div>
+                            <div class="learning-panel learning-panel--solution">
+                                <span class="learning-panel__label">What the solution did</span>
+                                <p><?=e($step['solution'])?></p>
+                            </div>
+                            <div class="learning-panel learning-panel--evidence">
+                                <span class="learning-panel__label">Evidence</span>
+                                <p><?=e($step['evidence'])?></p>
+                            </div>
+                            <div class="learning-panel learning-panel--meaning">
+                                <span class="learning-panel__label">Why this matters</span>
+                                <p><?=e($step['meaning'])?></p>
+                            </div>
+                        </div>
+                        <div class="learning-step__result"><strong>Result</strong><span><?=e($step['result'])?></span></div>
+
+                        <?php if($step['num']==='02'): ?>
+                        <details class="case-command-box">
+                            <summary>View the setup commands used in this lab</summary>
+                            <div>
+                                <?php foreach(array_slice($case['safe_commands'],0,2) as $cmd): ?>
+                                <h4><?=e($cmd[0])?></h4>
+                                <pre class="assignment-command"><code><?=e($cmd[1])?></code></pre>
+                                <?php endforeach; ?>
+                            </div>
+                        </details>
+                        <?php elseif($step['num']==='03'): ?>
+                        <details class="case-command-box" open>
+                            <summary>View the GDB evidence commands</summary>
+                            <div>
+                                <?php foreach(array_slice($case['safe_commands'],2) as $cmd): ?>
+                                <h4><?=e($cmd[0])?></h4>
+                                <pre class="assignment-command"><code><?=e($cmd[1])?></code></pre>
+                                <?php endforeach; ?>
+                            </div>
+                        </details>
+                        <div class="case-key-finding"><span>Key finding</span><strong>EIP = 0x41414141 → user input reached the saved instruction pointer</strong><p><?=e($case['eip_finding'])?></p></div>
+                        <?php elseif($step['num']==='04'): ?>
+                        <div class="case-concept-diagram" aria-label="Conceptual payload layout">
+                            <span class="case-concept-diagram__padding">Controlled padding</span>
+                            <span class="case-concept-diagram__eip">Saved EIP</span>
+                            <span class="case-concept-diagram__landing">Landing space</span>
+                            <span class="case-concept-diagram__code">Lab shellcode</span>
+                        </div>
+                        <p><?=e($case['payload_explanation'])?></p>
+                        <?php endif; ?>
+                    </section>
                     <?php endforeach; ?>
-
-                    <h3>Safe Diagnostic Commands Used in the Lab</h3>
-                    <?php foreach($case['safe_commands'] as $cmd): ?>
-                    <h4><?=e($cmd[0])?></h4>
-                    <pre class="assignment-command"><code><?=e($cmd[1])?></code></pre>
-                    <?php endforeach; ?>
-
-                    <h3>How the EIP Offset Was Identified</h3>
-                    <p><?=e($case['eip_finding'])?></p>
-
-                    <h3>Payload Reasoning</h3>
-                    <p><?=e($case['payload_explanation'])?></p>
-
-                    <div class="case-study-callout"><strong>Lab result</strong><p><?=e($case['result'])?></p></div>
                 </section>
 
                 <section id="analysis">
-                    <h2>Why the Exploit Worked</h2>
+                    <div class="case-section-heading">
+                        <span class="case-section-number">03</span>
+                        <div><span class="mini-label">Understand the vulnerability</span><h2>Why the Exploit Worked</h2></div>
+                    </div>
                     <div class="case-grid">
                         <?php foreach($case['why_worked'] as $item): ?>
                         <div class="case-grid-card"><h3><?=e($item[0])?></h3><p><?=e($item[1])?></p></div>
                         <?php endforeach; ?>
                     </div>
+                </section>
 
-                    <h2 class="case-subheading">Defenses That Would Have Prevented It</h2>
-                    <div class="article-table-wrap"><table class="article-table">
-                        <thead><tr><th>Defense</th><th>Effect</th></tr></thead>
-                        <tbody><?php foreach($case['defenses'] as $row): ?><tr><td><strong><?=e($row[0])?></strong></td><td><?=e($row[1])?></td></tr><?php endforeach; ?></tbody>
-                    </table></div>
+                <section id="defenses">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">04</span>
+                        <div><span class="mini-label">Turn the exploit into defensive analysis</span><h2>Defenses That Would Have Prevented It</h2></div>
+                    </div>
+                    <div class="defense-list">
+                        <?php foreach($case['defenses'] as $i=>$row): ?>
+                        <div class="defense-row"><span><?=str_pad((string)($i+1),2,'0',STR_PAD_LEFT)?></span><div><strong><?=e($row[0])?></strong><p><?=e($row[1])?></p></div></div>
+                        <?php endforeach; ?>
+                    </div>
                 </section>
 
                 <section id="extra-credit">
-                    <h2>Extra Credit: OS Command Injection Vulnerability</h2>
+                    <div class="case-section-heading">
+                        <span class="case-section-number">05</span>
+                        <div><span class="mini-label">Separate vulnerability path</span><h2>Extra Credit: OS Command Injection Vulnerability</h2></div>
+                    </div>
                     <p><?=e($case['extra_credit_intro'])?></p>
-                    <pre class="assignment-output"><code><?=e($case['extra_credit_code'])?></code></pre>
-                    <p><?=e($case['extra_credit_risk'])?></p>
+                    <div class="case-evidence-block">
+                        <span class="learning-panel__label">Vulnerable logging path</span>
+                        <pre class="assignment-output"><code><?=e($case['extra_credit_code'])?></code></pre>
+                    </div>
+                    <div class="learning-step__grid learning-step__grid--compact">
+                        <div class="learning-panel learning-panel--requirement"><span class="learning-panel__label">Root cause</span><p>User-controlled values are inserted into a shell command and then passed to system().</p></div>
+                        <div class="learning-panel learning-panel--meaning"><span class="learning-panel__label">Security impact</span><p><?=e($case['extra_credit_risk'])?></p></div>
+                    </div>
                 </section>
 
                 <section id="takeaways">
-                    <h2>What Students Should Learn From This Project</h2>
-                    <ul><?php foreach($case['student_takeaways'] as $item): ?><li><?=e($item)?></li><?php endforeach; ?></ul>
+                    <div class="case-section-heading">
+                        <span class="case-section-number">06</span>
+                        <div><span class="mini-label">Revision notes</span><h2>What Students Should Learn From This Project</h2></div>
+                    </div>
+                    <div class="student-takeaway-list">
+                        <?php foreach($case['student_takeaways'] as $i=>$item): ?>
+                        <div><span><?=str_pad((string)($i+1),2,'0',STR_PAD_LEFT)?></span><p><?=e($item)?></p></div>
+                        <?php endforeach; ?>
+                    </div>
                 </section>
             </article>
 
@@ -137,11 +268,16 @@ function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStu
                 <div class="blog-sidebar-card">
                     <span class="mini-label">On this page</span>
                     <a href="#overview">Project Overview</a>
-                    <a href="#requirements">Assignment Requirements</a>
-                    <a href="#solution">Completed Solution</a>
-                    <a href="#analysis">Why It Worked & Defenses</a>
-                    <a href="#extra-credit">Extra Credit Vulnerability</a>
+                    <a href="#requirement-map">Requirement → Solution Map</a>
+                    <a href="#step-by-step">Step-by-Step Solution</a>
+                    <a href="#analysis">Why It Worked</a>
+                    <a href="#defenses">Defenses</a>
+                    <a href="#extra-credit">Extra Credit Finding</a>
                     <a href="#takeaways">Student Takeaways</a>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Jump to lab step</span>
+                    <?php foreach($learningSteps as $step): ?><a href="#step-<?=e($step['num'])?>"><?=e($step['num'])?> · <?=e($step['title'])?></a><?php endforeach; ?>
                 </div>
                 <div class="blog-sidebar-card">
                     <span class="mini-label">Related</span>
