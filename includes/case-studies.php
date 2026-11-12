@@ -497,6 +497,129 @@ function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStu
 }
 
 
+
+function renderSquidProxyCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    $canonical = SITE_URL . '/case-studies/' . $slug;
+    renderHead($case, $canonical, $subjects);
+    renderHeader($subjects, $caseStudies);
+    ?>
+<main class="blog-page case-study-learning-page squid-case-study">
+    <section class="blog-article-head case-learning-hero">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
+            <span class="blog-label"><?=e($case['eyebrow'])?></span>
+            <h1><?=e($case['h1'])?></h1>
+            <div class="blog-topic-line"><?=e($case['topic_q2'])?> <span>•</span> <?=e($case['topic_q3'])?> <span>•</span> <?=e($case['tool_q3'])?></div>
+        </div>
+    </section>
+
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <div class="case-snapshot-card"><span>Program</span><strong><?=e($case['program'])?></strong></div>
+                <div class="case-snapshot-card"><span>Course</span><strong><?=e($case['course'])?></strong></div>
+                <div class="case-snapshot-card"><span>Proxy platform</span><strong>Squid on Linux</strong></div>
+                <div class="case-snapshot-card"><span>Client</span><strong>Windows 10</strong></div>
+                <div class="case-snapshot-card"><span>Default proxy port</span><strong>3128</strong></div>
+                <div class="case-snapshot-card"><span>Access log</span><strong>/var/log/squid/access.log</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-body-section">
+        <div class="container blog-layout">
+            <article class="blog-article">
+                <section id="overview">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">00</span>
+                        <div><span class="mini-label">Assignment requirement</span><h2><?=e($case['lab'])?></h2></div>
+                    </div>
+                    <?php foreach($case['setup'] as $paragraph): ?><p><?=e($paragraph)?></p><?php endforeach; ?>
+
+                    <div class="case-study-callout case-study-callout--safe">
+                        <strong>References supplied with the assignment</strong>
+                        <?php foreach($case['references'] as $ref): ?>
+                            <p><a href="<?=e($ref[1])?>" target="_blank" rel="noopener noreferrer"><?=e($ref[0])?></a></p>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <details class="case-command-box">
+                        <summary>View all 20 assignment questions</summary>
+                        <div><ol><?php foreach($case['questions'] as $item): ?><li><a href="#question-<?=e((string)$item['n'])?>"><?=e($item['question'])?></a></li><?php endforeach; ?></ol></div>
+                    </details>
+                </section>
+
+                <section id="source-solution">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">01</span>
+                        <div><span class="mini-label">Completed expert solution</span><h2>Lab 6 Questions and Source Answers</h2></div>
+                    </div>
+
+                    <?php $currentPart=''; foreach($case['questions'] as $item): ?>
+                        <?php if($item['part'] !== $currentPart): $currentPart=$item['part'];
+                            $partId = $item['n'] <= 2 ? 'part-a' : ($item['n'] <= 7 ? 'part-b' : ($item['n'] <= 11 ? 'part-c' : 'part-d')); ?>
+                            <div class="squid-part-heading" id="<?=e($partId)?>">
+                                <span><?=e(substr($currentPart,0,6))?></span>
+                                <h2><?=e($currentPart)?></h2>
+                            </div>
+                        <?php endif; ?>
+
+                        <section class="vpn-question squid-question" id="question-<?=e((string)$item['n'])?>">
+                            <div class="vpn-question__head">
+                                <span class="vpn-question__number"><?=e(str_pad((string)$item['n'],2,'0',STR_PAD_LEFT))?></span>
+                                <div><small>Question <?=e((string)$item['n'])?></small><h3><?=e($item['question'])?></h3></div>
+                            </div>
+                            <div class="vpn-question__answer">
+                                <?php foreach($item['blocks'] as $block): ?>
+                                    <?php if($block['type']==='code'): ?>
+                                        <pre class="assignment-command"><code><?=e($block['text'])?></code></pre>
+                                    <?php else: ?>
+                                        <p><?=e($block['text'])?></p>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+
+                                <?php if(!empty($item['evidence'])): $ev=$item['evidence']; ?>
+                                <figure class="source-screenshot squid-source-screenshot">
+                                    <a href="<?=e($case['evidence_sheet'])?>" target="_blank" rel="noopener" aria-label="Open the complete source screenshot sheet">
+                                        <div class="squid-evidence-crop" role="img" aria-label="<?=e($ev['caption'])?>" style="--col:<?=e((string)$ev['col'])?>;--row:<?=e((string)$ev['row'])?>">
+                                            <img src="<?=e($case['evidence_sheet'])?>" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                                        </div>
+                                    </a>
+                                    <figcaption><?=e($ev['caption'])?></figcaption>
+                                </figure>
+                                <?php endif; ?>
+                            </div>
+                        </section>
+
+                        <?php if($item['n']===10): ?><?php renderCaseStudyCTA('mid'); ?><?php endif; ?>
+                    <?php endforeach; ?>
+                </section>
+
+                <?php renderCaseStudyCTA('footer'); ?>
+            </article>
+
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">On this page</span>
+                    <a href="#overview">Lab Requirement</a>
+                    <a href="#source-solution">Source Solution</a>
+                    <a href="#part-a">Part A · Environment</a>
+                    <a href="#part-b">Part B · Squid Configuration</a>
+                    <a href="#part-c">Part C · Client Configuration</a>
+                    <a href="#part-d">Part D · Access Rules</a>
+                    <a href="#question-20">Q20 · Access Log Verification</a>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Related</span>
+                    <?php foreach($case['related_links'] as $link): ?><a href="<?=e($link[0])?>"><?=e($link[1])?></a><?php endforeach; ?>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+<?php renderFooter($subjects);
+}
+
 function renderPfsenseVpnCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
     $canonical = SITE_URL . '/case-studies/' . $slug;
     renderHead($case, $canonical, $subjects);
@@ -611,6 +734,10 @@ function renderPfsenseVpnCaseStudy(string $slug, array $case, array $caseStudies
 }
 
 function renderCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    if(($case['template'] ?? '') === 'squid_proxy_lab'){
+        renderSquidProxyCaseStudy($slug,$case,$caseStudies,$subjects);
+        return;
+    }
     if(($case['template'] ?? '') === 'pfsense_vpn_lab'){
         renderPfsenseVpnCaseStudy($slug,$case,$caseStudies,$subjects);
         return;

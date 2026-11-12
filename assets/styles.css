@@ -209,3 +209,14 @@
 .vpn-source-list{margin:12px 0 18px;padding-left:22px}
 .vpn-source-list li{margin:7px 0}
 @media(max-width:760px){.vpn-question__head{grid-template-columns:44px 1fr;padding:16px}.vpn-question__number{width:40px;height:40px}.vpn-question__head h3{font-size:17px!important}.vpn-question__answer{padding:17px}}
+
+
+/* v3.0: Squid proxy case-study source evidence */
+.squid-part-heading{margin:42px 0 18px;padding:18px 20px;border:1px solid #dbe6ea;border-radius:16px;background:#f7fafb}
+.squid-part-heading span{display:block;margin-bottom:4px;color:#0b8b7c;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.squid-part-heading h2{margin:0!important;font-size:24px!important}
+.squid-source-screenshot{margin-top:20px}
+.squid-evidence-crop{position:relative;overflow:hidden;width:100%;aspect-ratio:4/3;border-radius:12px;background:#edf2f4}
+.squid-evidence-crop img{position:absolute;left:0;top:0;width:300%;max-width:none;height:auto;transform:translate(calc(var(--col) * -33.333333%),calc(var(--row) * -20%));transform-origin:top left}
+.squid-source-screenshot a{display:block}
+@media(max-width:760px){.squid-part-heading{margin-top:34px;padding:16px}.squid-part-heading h2{font-size:21px!important}}
