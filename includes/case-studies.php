@@ -131,9 +131,9 @@ function renderActiveDirectoryCaseStudy(string $slug, array $case, array $caseSt
                         <span class="case-section-number">02</span>
                         <div><span class="mini-label">Solution from the supplied implementation file</span><h2>Build the Virtual Lab and Domain Controller</h2></div>
                     </div>
-                    <?php foreach(array_slice($case['implementation_steps'],0,4) as $step): ?>
+                    <?php foreach(array_slice($case['implementation_steps'],0,4) as $i=>$step): ?>
                     <section class="learning-step">
-                        <div class="learning-step__head"><span><?=e(substr($step['title'],5,2))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
+                        <div class="learning-step__head"><span><?=e(str_pad((string)($i+1),2,'0',STR_PAD_LEFT))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
                         <div class="case-detail-block"><ul><?php foreach($step['lines'] as $line): ?><li><?=e($line)?></li><?php endforeach; ?></ul></div>
                     </section>
                     <?php endforeach; ?>
@@ -146,9 +146,9 @@ function renderActiveDirectoryCaseStudy(string $slug, array $case, array $caseSt
                         <span class="case-section-number">03</span>
                         <div><span class="mini-label">Active Directory administration</span><h2>Create the OU, Users and Shared Folder</h2></div>
                     </div>
-                    <?php foreach(array_slice($case['implementation_steps'],4,3) as $step): ?>
+                    <?php foreach(array_slice($case['implementation_steps'],4,3) as $i=>$step): ?>
                     <section class="learning-step">
-                        <div class="learning-step__head"><span><?=e(substr($step['title'],5,2))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
+                        <div class="learning-step__head"><span><?=e(str_pad((string)($i+5),2,'0',STR_PAD_LEFT))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
                         <div class="case-detail-block"><ul><?php foreach($step['lines'] as $line): ?><li><?=e($line)?></li><?php endforeach; ?></ul></div>
                     </section>
                     <?php endforeach; ?>
@@ -159,9 +159,9 @@ function renderActiveDirectoryCaseStudy(string $slug, array $case, array $caseSt
                         <span class="case-section-number">04</span>
                         <div><span class="mini-label">Windows client</span><h2>Install Windows 11 and Join the Domain</h2></div>
                     </div>
-                    <?php foreach(array_slice($case['implementation_steps'],7,2) as $step): ?>
+                    <?php foreach(array_slice($case['implementation_steps'],7,2) as $i=>$step): ?>
                     <section class="learning-step">
-                        <div class="learning-step__head"><span><?=e(substr($step['title'],5,2))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
+                        <div class="learning-step__head"><span><?=e(str_pad((string)($i+8),2,'0',STR_PAD_LEFT))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
                         <div class="case-detail-block"><ul><?php foreach($step['lines'] as $line): ?><li><?=e($line)?></li><?php endforeach; ?></ul></div>
                     </section>
                     <?php endforeach; ?>
@@ -172,9 +172,9 @@ function renderActiveDirectoryCaseStudy(string $slug, array $case, array $caseSt
                         <span class="case-section-number">05</span>
                         <div><span class="mini-label">Linux client</span><h2>Install Fedora and Join Active Directory</h2></div>
                     </div>
-                    <?php foreach(array_slice($case['implementation_steps'],9,2) as $step): ?>
+                    <?php foreach(array_slice($case['implementation_steps'],9,2) as $i=>$step): ?>
                     <section class="learning-step">
-                        <div class="learning-step__head"><span><?=e(substr($step['title'],5,2))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
+                        <div class="learning-step__head"><span><?=e(str_pad((string)($i+10),2,'0',STR_PAD_LEFT))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
                         <div class="case-detail-block"><ul><?php foreach($step['lines'] as $line): ?><li><?=e($line)?></li><?php endforeach; ?></ul></div>
                     </section>
                     <?php endforeach; ?>
@@ -185,9 +185,9 @@ function renderActiveDirectoryCaseStudy(string $slug, array $case, array $caseSt
                         <span class="case-section-number">06</span>
                         <div><span class="mini-label">Cross-platform verification</span><h2>Verify AuditFile Access from Both Clients</h2></div>
                     </div>
-                    <?php foreach(array_slice($case['implementation_steps'],11,2) as $step): ?>
+                    <?php foreach(array_slice($case['implementation_steps'],11,2) as $i=>$step): ?>
                     <section class="learning-step">
-                        <div class="learning-step__head"><span><?=e(substr($step['title'],5,2))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
+                        <div class="learning-step__head"><span><?=e(str_pad((string)($i+12),2,'0',STR_PAD_LEFT))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
                         <div class="case-detail-block"><ul><?php foreach($step['lines'] as $line): ?><li><?=e($line)?></li><?php endforeach; ?></ul></div>
                     </section>
                     <?php endforeach; ?>
