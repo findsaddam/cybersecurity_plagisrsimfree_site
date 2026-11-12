@@ -733,6 +733,206 @@ function renderPfsenseVpnCaseStudy(string $slug, array $case, array $caseStudies
 <?php renderFooter($subjects);
 }
 
+
+function renderRetlibEvidenceShot(array $case, int $index, string $caption): void {
+    $sheetIndex = $index <= 12 ? 0 : 1;
+    $localIndex = $index <= 12 ? $index - 1 : $index - 13;
+    $col = $localIndex % 3;
+    $row = intdiv($localIndex, 3);
+    $sheet = $case['evidence_sheets'][$sheetIndex] ?? '';
+    if(!$sheet) return; ?>
+    <figure class="retlib-source-shot">
+        <div class="retlib-evidence-crop" style="--col:<?=$col?>;--row:<?=$row?>">
+            <img src="<?=e($sheet)?>" alt="<?=e($caption)?>" loading="lazy" decoding="async">
+        </div>
+        <figcaption><?=e($caption)?></figcaption>
+    </figure>
+<?php }
+
+function renderReturnToLibcCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    $canonical = SITE_URL . '/case-studies/' . $slug;
+    renderHead($case, $canonical, $subjects);
+    renderHeader($subjects, $caseStudies);
+    ?>
+<main class="blog-page case-study-learning-page return-libc-case-study">
+    <section class="blog-article-head case-learning-hero">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
+            <span class="blog-label"><?=e($case['eyebrow'])?></span>
+            <h1><?=e($case['h1'])?></h1>
+            <p class="case-learning-intro">This case study keeps the supplied lab report and source code intact, then places the requirement, evidence and code together so students can understand what each completed step demonstrates.</p>
+            <div class="blog-topic-line"><?=e($case['course'])?> <span>•</span> <?=e($case['environment'])?> <span>•</span> GDB + Python + libc</div>
+        </div>
+    </section>
+
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <div class="case-snapshot-card"><span>Course</span><strong><?=e($case['course'])?></strong></div>
+                <div class="case-snapshot-card"><span>Lab</span><strong><?=e($case['lab'])?></strong></div>
+                <div class="case-snapshot-card"><span>Environment</span><strong><?=e($case['environment'])?></strong></div>
+                <div class="case-snapshot-card"><span>Architecture</span><strong><?=e($case['architecture'])?></strong></div>
+                <div class="case-snapshot-card"><span>BUF_SIZE</span><strong><?=e($case['buf_size'])?></strong></div>
+                <div class="case-snapshot-card"><span>Source files</span><strong>6 exact C/Python files</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-body-section">
+        <div class="container blog-layout">
+            <article class="blog-article">
+                <section id="overview">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">00</span>
+                        <div><span class="mini-label">Assignment overview</span><h2>What the Return-to-libc Lab Requires</h2></div>
+                    </div>
+                    <p>The supplied CSCE 5552 lab is a controlled SEED Labs exercise about a return-to-libc variant of a buffer-overflow attack. The lab uses a vulnerable Set-UID program and asks the student to study stack layout, non-executable-stack protection, libc function addresses, attack variations and the shell countermeasure inside the provided Ubuntu VM.</p>
+                    <div class="case-study-callout case-study-callout--safe">
+                        <strong>Controlled lab scope</strong>
+                        <p>The commands, addresses and source code below are reproduced from the supplied completed assignment and are presented in the context of the SEED Ubuntu 20.04 lab environment.</p>
+                    </div>
+                    <div class="requirement-map">
+                        <?php foreach($case['requirement_map'] as $item): ?>
+                        <a class="requirement-map-row" href="#step-<?=e($item[0])?>">
+                            <span class="requirement-map-row__num"><?=e($item[0])?></span>
+                            <div><strong><?=e($item[1])?></strong><small><?=e($item[2])?></small></div>
+                            <span class="requirement-map-row__arrow"><?=icon('arrow',17)?></span>
+                        </a>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+
+                <section id="concept">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">01</span>
+                        <div><span class="mini-label">Lab 3 diagram</span><h2>Return-to-libc Stack Layout Used in the Assignment</h2></div>
+                    </div>
+                    <p>The supplied diagram shows the intended stack relationship between the saved EBP, saved EIP, the libc function entry address, the libc return address and the argument pointing to <code>/bin/sh</code>.</p>
+                    <?php renderRetlibEvidenceShot($case,22,'Lab 3 stack-layout diagram supplied with the solved assignment.'); ?>
+                </section>
+
+                <section id="step-01">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">02</span>
+                        <div><span class="mini-label">Expert-written solution</span><h2>Environment Setup</h2></div>
+                    </div>
+                    <div class="retlib-solution-copy">
+                        <?php foreach($case['setup_commands'] as $line): ?><pre class="assignment-command"><code><?=e($line)?></code></pre><?php endforeach; ?>
+                    </div>
+                    <div class="retlib-evidence-grid">
+                        <?php renderRetlibEvidenceShot($case,1,'ASLR disabled and kernel.randomize_va_space verified in the supplied solution.'); ?>
+                        <?php renderRetlibEvidenceShot($case,2,'The supplied solution links /bin/sh to /bin/zsh for the initial tasks.'); ?>
+                        <?php renderRetlibEvidenceShot($case,3,'Compilation, root ownership and Set-UID permission evidence from the supplied solution.'); ?>
+                    </div>
+                </section>
+
+                <section id="step-02">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">03</span>
+                        <div><span class="mini-label">Task 1</span><h2>Finding libc Addresses and the Return-Address Offset</h2></div>
+                    </div>
+                    <div class="retlib-solution-copy">
+                        <?php foreach($case['task1_lines'] as $line): ?><p><?=nl2br(e($line))?></p><?php endforeach; ?>
+                    </div>
+                    <div class="retlib-evidence-grid">
+                        <?php for($i=4;$i<=8;$i++) renderRetlibEvidenceShot($case,$i,'Task 1 GDB and stack-address evidence from the completed solution (screenshot '.$i.').'); ?>
+                    </div>
+                </section>
+
+                <section id="step-03">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">04</span>
+                        <div><span class="mini-label">Task 2 and initial payload</span><h2>Finding the Shell Address and Verifying the Result</h2></div>
+                    </div>
+                    <div class="retlib-solution-copy">
+                        <?php foreach($case['task2_lines'] as $line): ?><p><?=nl2br(e($line))?></p><?php endforeach; ?>
+                    </div>
+                    <div class="retlib-evidence-grid">
+                        <?php renderRetlibEvidenceShot($case,9,'prtenv.c helper program shown in the supplied solution.'); ?>
+                        <?php renderRetlibEvidenceShot($case,10,'MYSHELL export and /bin/sh address evidence from the supplied solution.'); ?>
+                        <?php renderRetlibEvidenceShot($case,11,'Payload execution evidence from the completed solution.'); ?>
+                        <?php renderRetlibEvidenceShot($case,12,'Root verification using id in the completed lab solution.'); ?>
+                    </div>
+                </section>
+
+                <?php renderCaseStudyCTA('mid'); ?>
+
+                <section id="step-04">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">05</span>
+                        <div><span class="mini-label">Task 3 variations</span><h2>Attack Variation 1: Without exit()</h2></div>
+                    </div>
+                    <div class="retlib-solution-copy">
+                        <?php foreach($case['variation1_lines'] as $line): ?><p><?=nl2br(e($line))?></p><?php endforeach; ?>
+                    </div>
+                    <div class="retlib-evidence-grid">
+                        <?php renderRetlibEvidenceShot($case,13,'Source-code change for the without-exit variation in the supplied solution.'); ?>
+                        <?php renderRetlibEvidenceShot($case,14,'Variation 1 result: root shell followed by the observed segmentation fault after exit.'); ?>
+                    </div>
+
+                    <h2>Attack Variation 2: Changing the Program Name</h2>
+                    <div class="retlib-solution-copy">
+                        <?php foreach($case['variation2_lines'] as $line): ?><p><?=nl2br(e($line))?></p><?php endforeach; ?>
+                    </div>
+                    <?php renderRetlibEvidenceShot($case,15,'Renamed-program variation and segmentation-fault evidence from the supplied solution.'); ?>
+                </section>
+
+                <section id="step-05">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">06</span>
+                        <div><span class="mini-label">Task 4</span><h2>Defeating the dash Countermeasure in the Lab</h2></div>
+                    </div>
+                    <div class="retlib-solution-copy">
+                        <?php foreach($case['task4_lines'] as $line): ?>
+                            <?php if(str_starts_with($line,'sudo ')): ?><pre class="assignment-command"><code><?=e($line)?></code></pre>
+                            <?php else: ?><p><?=nl2br(e($line))?></p><?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="retlib-evidence-grid">
+                        <?php for($i=16;$i<=21;$i++) renderRetlibEvidenceShot($case,$i,'Task 4 dash-countermeasure evidence from the completed solution (screenshot '.$i.').'); ?>
+                    </div>
+                </section>
+
+                <section id="step-06">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">07</span>
+                        <div><span class="mini-label">Exact files from Solution.zip</span><h2>Source Code Used in the Completed Solution</h2></div>
+                    </div>
+                    <p>The following files are reproduced from the supplied solution ZIP without rewriting the code.</p>
+                    <?php foreach($case['source_files'] as $file): ?>
+                    <details class="retlib-source-file" open>
+                        <summary><span><?=e($file['name'])?></span><small><?=e($file['language'])?></small></summary>
+                        <pre><code><?=e($file['code'])?></code></pre>
+                    </details>
+                    <?php endforeach; ?>
+                </section>
+
+                <?php renderCaseStudyCTA('footer'); ?>
+            </article>
+
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">On this page</span>
+                    <a href="#overview">Assignment Overview</a>
+                    <a href="#concept">Stack Layout</a>
+                    <a href="#step-01">Environment Setup</a>
+                    <a href="#step-02">Task 1 · libc Addresses</a>
+                    <a href="#step-03">Task 2 · Shell Address</a>
+                    <a href="#step-04">Task 3 · Variations</a>
+                    <a href="#step-05">Task 4 · dash Countermeasure</a>
+                    <a href="#step-06">Exact Source Code</a>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Related</span>
+                    <?php foreach($case['related_links'] as $link): ?><a href="<?=e($link[0])?>"><?=e($link[1])?></a><?php endforeach; ?>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+<?php renderFooter($subjects);
+}
+
 function renderRedTeamCapstoneCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
     $canonical = SITE_URL . '/case-studies/' . $slug;
     renderHead($case, $canonical, $subjects);
@@ -840,6 +1040,10 @@ function renderRedTeamCapstoneCaseStudy(string $slug, array $case, array $caseSt
 }
 
 function renderCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    if(($case['template'] ?? '') === 'return_to_libc_lab'){
+        renderReturnToLibcCaseStudy($slug,$case,$caseStudies,$subjects);
+        return;
+    }
     if(($case['template'] ?? '') === 'red_team_capstone'){
         renderRedTeamCapstoneCaseStudy($slug,$case,$caseStudies,$subjects);
         return;
