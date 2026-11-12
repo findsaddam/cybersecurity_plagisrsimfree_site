@@ -38,6 +38,18 @@ function renderCaseStudiesIndex(array $caseStudies, array $subjects): void {
 }
 
 
+function renderCaseStudyCTA(string $placement='mid'): void { ?>
+<section class="case-conversion-cta case-conversion-cta--<?=e($placement)?>">
+    <span class="case-conversion-cta__kicker">Need support with a similar task?</span>
+    <h2>Need help with a similar assignment or project?</h2>
+    <p>Send your assignment brief, marking rubric or existing work for originality-focused support, technical review, troubleshooting and project guidance tailored to your requirements.</p>
+    <div class="case-conversion-cta__actions">
+        <a class="btn btn--primary" href="<?=e(waLink('similar cybersecurity assignment or project'))?>" target="_blank" rel="noopener">Discuss Your Assignment <?=icon('arrow',17)?></a>
+        <a class="btn btn--ghost" href="/#subjects">Explore Subjects</a>
+    </div>
+</section>
+<?php }
+
 function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
     $canonical=SITE_URL . '/case-studies/' . $slug;
     renderHead($case,$canonical,$subjects);
@@ -211,6 +223,8 @@ function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStu
                     <?php endforeach; ?>
                 </section>
 
+                <?php renderCaseStudyCTA('mid'); ?>
+
                 <section id="analysis">
                     <div class="case-section-heading">
                         <span class="case-section-number">03</span>
@@ -262,6 +276,8 @@ function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStu
                         <?php endforeach; ?>
                     </div>
                 </section>
+
+                <?php renderCaseStudyCTA('footer'); ?>
             </article>
 
             <aside class="blog-sidebar">
@@ -295,116 +311,200 @@ function renderCaseStudy(string $slug, array $case, array $caseStudies, array $s
         renderBufferOverflowCaseStudy($slug,$case,$caseStudies,$subjects);
         return;
     }
+
     $canonical=SITE_URL . '/case-studies/' . $slug;
     renderHead($case,$canonical,$subjects);
-    renderHeader($subjects,$caseStudies); ?>
-<main class="blog-page">
-    <section class="blog-article-head">
+    renderHeader($subjects,$caseStudies);
+
+    $learningSteps = [
+        [
+            'num' => '01',
+            'title' => 'Explain the Double Ratchet Architecture',
+            'requirement' => 'Explain the architecture and design of the Double Ratchet Algorithm, including the Diffie Hellman ratchet, symmetric key ratchet and message flow.',
+            'solution' => $case['q2_intro'],
+            'evidence' => 'The solution separates the design into the Diffie Hellman ratchet and the symmetric key ratchet, then shows the Alice-to-Bob message flow and a complete text diagram.',
+            'meaning' => 'This makes it clear how root keys, chain keys and one-time message keys work together instead of treating the algorithm as a single black box.',
+            'result' => 'The architecture is explained as two coordinated ratchets that continually derive new key material.'
+        ],
+        [
+            'num' => '02',
+            'title' => 'Explain the Security Properties',
+            'requirement' => 'Explain how the design provides Forward Secrecy and Post Compromise Security.',
+            'solution' => $case['forward_secrecy'] . ' ' . $case['post_compromise'],
+            'evidence' => 'The solution connects deletion of old message keys to Forward Secrecy and a fresh Diffie Hellman exchange to recovery after compromise.',
+            'meaning' => 'The answer does more than name the properties. It explains which ratchet behaviour creates each security property.',
+            'result' => 'The report distinguishes protection of past messages from recovery of future messages after a compromise.'
+        ],
+        [
+            'num' => '03',
+            'title' => 'Verify the Product Files with GPG',
+            'requirement' => 'Use the supplier public key and detached signature to determine which of the three product files is authentic.',
+            'solution' => $case['q3_intro'],
+            'evidence' => 'The public key is imported, each file is checked against the same detached signature, and only product_3.txt produces a valid signature.',
+            'meaning' => 'The verification result proves which file matches the exact content that was signed with the corresponding private key.',
+            'result' => $case['conclusion']
+        ],
+        [
+            'num' => '04',
+            'title' => 'Separate Signature Validity from Key Trust',
+            'requirement' => 'Explain the difference between a mathematically valid digital signature and trust in the identity behind the public key.',
+            'solution' => $case['validity_intro'],
+            'evidence' => $case['remember'][0] . '. ' . $case['remember'][1] . '.',
+            'meaning' => 'A valid signature can prove that a file matches a key, while key trust asks whether that key really belongs to the claimed supplier.',
+            'result' => 'product_3.txt is cryptographically valid, but the public-key fingerprint should still be verified through a trusted channel.'
+        ],
+    ];
+    ?>
+<main class="blog-page case-study-learning-page">
+    <section class="blog-article-head case-learning-hero">
         <div class="container blog-shell">
             <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
             <span class="blog-label"><?=e($case['eyebrow'])?></span>
             <h1><?=e($case['h1'])?></h1>
+            <p class="case-learning-intro">Read the requirement first, then follow the completed solution. Each part below shows what the question expects, how the supplied answer addresses it, what evidence supports the answer, and what a student should understand from the result.</p>
             <div class="blog-topic-line"><?=e($case['topic_q2'])?> <span>•</span> <?=e($case['topic_q3'])?> <span>•</span> <?=e($case['tool_q3'])?></div>
+        </div>
+    </section>
+
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <div class="case-snapshot-card"><span>Question 2 topic</span><strong>Double Ratchet Algorithm</strong></div>
+                <div class="case-snapshot-card"><span>Question 2 focus</span><strong>End to End Encryption</strong></div>
+                <div class="case-snapshot-card"><span>Security properties</span><strong>Forward Secrecy + Post Compromise Security</strong></div>
+                <div class="case-snapshot-card"><span>Question 3 tool</span><strong>GPG Command Line</strong></div>
+                <div class="case-snapshot-card"><span>Authentic file</span><strong>product_3.txt</strong></div>
+                <div class="case-snapshot-card"><span>Key lesson</span><strong>Validity is not the same as trust</strong></div>
+            </div>
         </div>
     </section>
 
     <section class="blog-body-section">
         <div class="container blog-layout">
             <article class="blog-article">
-                <section id="question-2">
-                    <h2>Question 2: End to End Encryption</h2>
+                <section id="overview">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">00</span>
+                        <div><span class="mini-label">Start here</span><h2>Assignment Overview</h2></div>
+                    </div>
+                    <p>This solved assignment covers two different cybersecurity tasks. Question 2 explains the Double Ratchet Algorithm and its security properties. Question 3 uses GPG to determine which supplied product file is authentic and then explains why signature validity and public-key trust are separate decisions.</p>
                     <p class="source-meta"><strong><?=e($case['topic_q2'])?></strong> | <?=e($case['reference_q2'])?></p>
-
-                    <h3>a) Architecture and Design of the Double Ratchet Algorithm</h3>
-                    <p><?=e($case['q2_intro'])?></p>
-
-                    <h4>1. Diffie Hellman (DH) Ratchet</h4>
-                    <p><?=e($case['dh_ratchet'])?></p>
-
-                    <h4>2. Symmetric Key Ratchet</h4>
-                    <p><?=e($case['symmetric_ratchet'])?></p>
-
-                    <h4>How messages flow (Alice → Bob)</h4>
-                    <p><?=e($case['message_flow'])?></p>
-
-                    <h4>Diagram</h4>
-                    <pre class="assignment-diagram"><code><?=e($case['diagram'])?></code></pre>
-
-                    <h3>b) Security Properties</h3>
-                    <h4>Forward Secrecy</h4>
-                    <p><?=e($case['forward_secrecy'])?></p>
-
-                    <h4>Post Compromise Security</h4>
-                    <p><?=e($case['post_compromise'])?></p>
                 </section>
 
-                <section id="question-3">
-                    <h2>Question 3: Digital Signature Analysis</h2>
-                    <p class="source-meta"><strong><?=e($case['topic_q3'])?></strong> | <?=e($case['tool_q3'])?></p>
-
-                    <h3>a) Authenticity Analysis of Product Files</h3>
-                    <p><?=e($case['q3_intro'])?></p>
-
-                    <h4>Product Files</h4>
-                    <div class="product-file-grid">
-                        <?php foreach($case['product_files'] as $fileName=>$fileContent): ?>
-                        <section class="product-file-card">
-                            <div class="product-file-card__head"><strong><?=e($fileName)?></strong></div>
-                            <pre class="product-file-content"><code><?=e($fileContent)?></code></pre>
-                        </section>
+                <section id="requirement-map">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">01</span>
+                        <div><span class="mini-label">Understand the questions</span><h2>Requirement → Solution Map</h2></div>
+                    </div>
+                    <div class="requirement-map">
+                        <?php foreach($learningSteps as $step): ?>
+                        <a class="requirement-map-row" href="#step-<?=e($step['num'])?>">
+                            <span class="requirement-map-row__num"><?=e($step['num'])?></span>
+                            <div><strong><?=e($step['title'])?></strong><small><?=e($step['requirement'])?></small></div>
+                            <span class="requirement-map-row__arrow"><?=icon('arrow',17)?></span>
+                        </a>
                         <?php endforeach; ?>
                     </div>
+                </section>
 
-                    <?php foreach($case['commands'] as $i=>$command): ?>
-                        <?php if($command[0]): ?><h4><?=e($command[0])?></h4><?php endif; ?>
-                        <?php if($i===0): ?><p><?=e($case['import_text'])?></p><?php elseif($i===1): ?><p><?=e($case['confirm_key_text'])?></p><?php endif; ?>
-                        <pre class="assignment-command"><code><?=e($command[1])?></code></pre>
-                        <?php if($command[2]): ?><p class="assignment-result <?=str_contains($command[2],'VALID') && !str_contains($command[2],'INVALID')?'assignment-result--valid':'assignment-result--invalid'?>"><?=e($command[2])?></p><?php endif; ?>
-                        <?php if($i===4): ?><pre class="assignment-output"><code><?=e($case['good_signature_output'])?></code></pre><?php endif; ?>
-                    <?php endforeach; ?>
-
-                    <h4>Summary Table</h4>
-                    <div class="article-table-wrap">
-                        <table class="article-table">
-                            <thead><tr><th>File</th><th>Product Name</th><th>Status</th></tr></thead>
-                            <tbody><?php foreach($case['verification'] as $row): ?><tr><td><?=e($row[0])?></td><td><?=e($row[1])?></td><td><strong><?=e($row[2])?></strong></td></tr><?php endforeach; ?></tbody>
-                        </table>
+                <section id="step-by-step">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">02</span>
+                        <div><span class="mini-label">Requirement + answer together</span><h2>Step-by-Step Solved Assignment</h2></div>
                     </div>
 
-                    <h4>What does this mean?</h4>
-                    <ul><?php foreach($case['what_it_means'] as $item): ?><li><?=e($item)?></li><?php endforeach; ?></ul>
-                    <p><strong><?=e($case['conclusion'])?></strong></p>
+                    <?php foreach($learningSteps as $step): ?>
+                    <section class="learning-step" id="step-<?=e($step['num'])?>">
+                        <div class="learning-step__head">
+                            <span><?=e($step['num'])?></span>
+                            <div><small>Assignment part</small><h3><?=e($step['title'])?></h3></div>
+                        </div>
+                        <div class="learning-step__grid">
+                            <div class="learning-panel learning-panel--requirement"><span class="learning-panel__label">What the assignment asked</span><p><?=e($step['requirement'])?></p></div>
+                            <div class="learning-panel learning-panel--solution"><span class="learning-panel__label">What the solution did</span><p><?=e($step['solution'])?></p></div>
+                            <div class="learning-panel learning-panel--evidence"><span class="learning-panel__label">Evidence</span><p><?=e($step['evidence'])?></p></div>
+                            <div class="learning-panel learning-panel--meaning"><span class="learning-panel__label">Why this matters</span><p><?=e($step['meaning'])?></p></div>
+                        </div>
+                        <div class="learning-step__result"><strong>Result</strong><span><?=e($step['result'])?></span></div>
 
-                    <h3>b) Signature Validity vs Key Trust</h3>
-                    <p><?=e($case['validity_intro'])?></p>
+                        <?php if($step['num']==='01'): ?>
+                            <div class="case-detail-block">
+                                <h4>1. Diffie Hellman (DH) Ratchet</h4><p><?=e($case['dh_ratchet'])?></p>
+                                <h4>2. Symmetric Key Ratchet</h4><p><?=e($case['symmetric_ratchet'])?></p>
+                                <h4>How messages flow (Alice → Bob)</h4><p><?=e($case['message_flow'])?></p>
+                                <details class="case-command-box" open><summary>View the Double Ratchet diagram</summary><div><pre class="assignment-diagram"><code><?=e($case['diagram'])?></code></pre></div></details>
+                            </div>
+                        <?php elseif($step['num']==='02'): ?>
+                            <div class="case-detail-block case-detail-grid">
+                                <div><span class="learning-panel__label">Forward Secrecy</span><p><?=e($case['forward_secrecy'])?></p></div>
+                                <div><span class="learning-panel__label">Post Compromise Security</span><p><?=e($case['post_compromise'])?></p></div>
+                            </div>
+                        <?php elseif($step['num']==='03'): ?>
+                            <div class="case-detail-block">
+                                <h4>Product Files</h4>
+                                <details class="case-command-box"><summary>View the three supplied product files</summary><div>
+                                    <div class="product-file-grid">
+                                        <?php foreach($case['product_files'] as $fileName=>$fileContent): ?>
+                                        <section class="product-file-card"><div class="product-file-card__head"><strong><?=e($fileName)?></strong></div><pre class="product-file-content"><code><?=e($fileContent)?></code></pre></section>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div></details>
 
-                    <h4>Signature Validity</h4>
-                    <ul><?php foreach($case['signature_validity'] as $item): ?><li><?=e($item)?></li><?php endforeach; ?></ul>
+                                <h4>GPG Verification</h4>
+                                <?php foreach($case['commands'] as $i=>$command): ?>
+                                    <?php if($command[0]): ?><h4><?=e($command[0])?></h4><?php endif; ?>
+                                    <?php if($i===0): ?><p><?=e($case['import_text'])?></p><?php elseif($i===1): ?><p><?=e($case['confirm_key_text'])?></p><?php endif; ?>
+                                    <pre class="assignment-command"><code><?=e($command[1])?></code></pre>
+                                    <?php if($command[2]): ?><p class="assignment-result <?=str_contains($command[2],'VALID') && !str_contains($command[2],'INVALID')?'assignment-result--valid':'assignment-result--invalid'?>"><?=e($command[2])?></p><?php endif; ?>
+                                    <?php if($i===4): ?><pre class="assignment-output"><code><?=e($case['good_signature_output'])?></code></pre><?php endif; ?>
+                                <?php endforeach; ?>
 
-                    <h4>Key Trust</h4>
-                    <ul>
-                        <li><?=e($case['key_trust'][0])?></li>
-                        <li><?=e($case['key_trust'][1])?></li>
-                        <li><?=e($case['key_trust'][2])?>
-                            <ul class="nested-list">
-                                <li><?=e($case['key_trust'][3])?></li>
-                                <li><?=e($case['key_trust'][4])?></li>
-                                <li><?=e($case['key_trust'][5])?></li>
-                            </ul>
-                        </li>
-                        <li><?=e($case['key_trust'][6])?></li>
-                    </ul>
-
-                    <p><strong>Simple way to remember:</strong><br><?=e($case['remember'][0])?><br><?=e($case['remember'][1])?></p>
-                    <p><?=e($case['final_note'])?></p>
+                                <h4>Verification Summary</h4>
+                                <div class="article-table-wrap"><table class="article-table"><thead><tr><th>File</th><th>Product Name</th><th>Status</th></tr></thead><tbody><?php foreach($case['verification'] as $row): ?><tr><td><?=e($row[0])?></td><td><?=e($row[1])?></td><td><strong><?=e($row[2])?></strong></td></tr><?php endforeach; ?></tbody></table></div>
+                                <ul><?php foreach($case['what_it_means'] as $item): ?><li><?=e($item)?></li><?php endforeach; ?></ul>
+                            </div>
+                        <?php elseif($step['num']==='04'): ?>
+                            <div class="case-detail-block case-detail-grid">
+                                <div><span class="learning-panel__label">Signature Validity</span><ul><?php foreach($case['signature_validity'] as $item): ?><li><?=e($item)?></li><?php endforeach; ?></ul></div>
+                                <div><span class="learning-panel__label">Key Trust</span><ul><li><?=e($case['key_trust'][0])?></li><li><?=e($case['key_trust'][1])?></li><li><?=e($case['key_trust'][2])?><ul class="nested-list"><li><?=e($case['key_trust'][3])?></li><li><?=e($case['key_trust'][4])?></li><li><?=e($case['key_trust'][5])?></li></ul></li><li><?=e($case['key_trust'][6])?></li></ul></div>
+                            </div>
+                            <div class="case-key-finding"><span>Simple way to remember</span><strong><?=e($case['remember'][0])?></strong><p><?=e($case['remember'][1])?></p></div>
+                            <p><?=e($case['final_note'])?></p>
+                        <?php endif; ?>
+                    </section>
+                    <?php endforeach; ?>
                 </section>
+
+                <?php renderCaseStudyCTA('mid'); ?>
+
+                <section id="takeaways">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">03</span>
+                        <div><span class="mini-label">Revision notes</span><h2>What Students Should Learn From This Assignment</h2></div>
+                    </div>
+                    <div class="student-takeaway-list">
+                        <div><span>01</span><p>The Double Ratchet should be explained as two linked key-evolution processes, not only as a definition.</p></div>
+                        <div><span>02</span><p>Forward Secrecy protects earlier messages, while Post Compromise Security explains how future messages can become secure again after fresh Diffie Hellman material is introduced.</p></div>
+                        <div><span>03</span><p>Digital signatures should be verified against the exact file content. A small content change is enough to invalidate the signature.</p></div>
+                        <div><span>04</span><p>A valid signature proves that the mathematics checks out for a key, but it does not by itself prove that the key belongs to the claimed organisation.</p></div>
+                        <div><span>05</span><p>Good technical answers connect command output or diagrams to an explanation of what the evidence proves.</p></div>
+                    </div>
+                </section>
+
+                <?php renderCaseStudyCTA('footer'); ?>
             </article>
 
             <aside class="blog-sidebar">
                 <div class="blog-sidebar-card">
                     <span class="mini-label">On this page</span>
-                    <a href="#question-2">Question 2: End to End Encryption</a>
-                    <a href="#question-3">Question 3: Digital Signature Analysis</a>
+                    <a href="#overview">Assignment Overview</a>
+                    <a href="#requirement-map">Requirement → Solution Map</a>
+                    <a href="#step-by-step">Step-by-Step Solution</a>
+                    <a href="#takeaways">Student Takeaways</a>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Jump to assignment part</span>
+                    <?php foreach($learningSteps as $step): ?><a href="#step-<?=e($step['num'])?>"><?=e($step['num'])?> · <?=e($step['title'])?></a><?php endforeach; ?>
                 </div>
                 <div class="blog-sidebar-card">
                     <span class="mini-label">Related</span>

@@ -174,3 +174,19 @@
 .student-takeaway-list p{margin:5px 0 0;font-size:14px}
 @media(max-width:900px){.case-snapshot-grid{grid-template-columns:1fr 1fr}.case-grade-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.case-snapshot-grid{grid-template-columns:1fr}.learning-step__grid{grid-template-columns:1fr}.learning-panel{border-right:0}.learning-panel:nth-last-child(-n+2){border-bottom:1px solid #e3ebef}.learning-panel:last-child{border-bottom:0}.case-grid{grid-template-columns:1fr}.case-concept-diagram{display:grid;grid-template-columns:1fr 1fr}.case-grade-grid{grid-template-columns:1fr 1fr}.requirement-map-row{grid-template-columns:42px 1fr}.requirement-map-row__arrow{display:none}}
+
+/* v2.7: shared case-study conversion CTA + crypto case details */
+.case-conversion-cta{margin:46px 0;padding:28px;border-radius:20px;background:linear-gradient(135deg,#082437,#0b4c57);color:#fff;box-shadow:0 18px 42px rgba(7,17,31,.13)}
+.case-conversion-cta--footer{margin-top:58px}
+.case-conversion-cta__kicker{display:inline-flex;margin-bottom:10px;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.1);color:#9de4db;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.case-conversion-cta h2{margin:0 0 10px!important;color:#fff!important;font-size:30px!important}
+.case-conversion-cta p{max-width:680px;margin:0;color:#d3e3e8}
+.case-conversion-cta__actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:19px}
+.case-conversion-cta .btn--ghost{border-color:rgba(255,255,255,.28);color:#fff;background:transparent}
+.case-conversion-cta .btn--ghost:hover{background:rgba(255,255,255,.08)}
+.case-detail-block{padding:20px;border-top:1px solid #e4ecef;background:#fcfefe}
+.case-detail-block>h4:first-child{margin-top:0}
+.case-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.case-detail-grid>div{padding:17px;border:1px solid #e0e9ed;border-radius:13px;background:#fff}
+.case-detail-grid ul{margin-bottom:0}
+@media(max-width:760px){.case-conversion-cta{padding:23px 20px}.case-conversion-cta h2{font-size:25px!important}.case-conversion-cta__actions{display:grid}.case-conversion-cta__actions .btn{width:100%}.case-detail-grid{grid-template-columns:1fr}}
