@@ -145,6 +145,12 @@ function renderHead(array $page, string $canonical, array $subjects): void {
 <!doctype html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-NXMWJC5P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= e($metaTitle) ?></title>
