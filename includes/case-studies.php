@@ -50,6 +50,196 @@ function renderCaseStudyCTA(string $placement='mid'): void { ?>
 </section>
 <?php }
 
+function renderActiveDirectoryCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    $canonical=SITE_URL . '/case-studies/' . $slug;
+    renderHead($case,$canonical,$subjects);
+    renderHeader($subjects,$caseStudies);
+
+    $phases = [
+        ['01','Build the Virtual Lab','Requirements 1 to 6','Steps 1 to 4'],
+        ['02','Create OU, Users and Shared Folder','Requirements 11 to 15','Steps 5 to 7'],
+        ['03','Join Windows 11 to the Domain','Requirements 7, 9, 10 and 17','Steps 8 to 9'],
+        ['04','Join Fedora to Active Directory','Requirements 8, 9, 10 and 18','Steps 10 to 11'],
+        ['05','Verify Shared Folder Access','Requirements 16, 19 and 20','Steps 12 to 13'],
+    ];
+    ?>
+<main class="blog-page case-study-learning-page">
+    <section class="blog-article-head case-learning-hero">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
+            <span class="blog-label"><?=e($case['eyebrow'])?></span>
+            <h1><?=e($case['h1'])?></h1>
+            <p class="case-learning-intro"><?=e($case['objective'])?></p>
+            <div class="blog-topic-line"><?=e($case['topic_q2'])?> <span>•</span> <?=e($case['topic_q3'])?> <span>•</span> <?=e($case['tool_q3'])?></div>
+        </div>
+    </section>
+
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <div class="case-snapshot-card"><span>Server</span><strong>Windows Server 2022 Datacenter GUI</strong></div>
+                <div class="case-snapshot-card"><span>Windows client</span><strong>Windows 11 Pro</strong></div>
+                <div class="case-snapshot-card"><span>Linux client</span><strong>Fedora Workstation</strong></div>
+                <div class="case-snapshot-card"><span>Domain used in solution</span><strong>college.local</strong></div>
+                <div class="case-snapshot-card"><span>Organizational Unit</span><strong>Accounts</strong></div>
+                <div class="case-snapshot-card"><span>Shared folder</span><strong>AuditFile</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-body-section">
+        <div class="container blog-layout">
+            <article class="blog-article">
+                <section id="overview">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">00</span>
+                        <div><span class="mini-label">Start here</span><h2>Assignment Overview</h2></div>
+                    </div>
+                    <p><?=e($case['objective'])?></p>
+
+                    <h3>Marking Scheme</h3>
+                    <div class="case-grade-grid">
+                        <?php foreach($case['grading'] as $row): ?>
+                        <div class="case-grade-card"><span><?=e($row[0])?></span><strong><?=e($row[1])?></strong></div>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+
+                <section id="requirement-map">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">01</span>
+                        <div><span class="mini-label">Understand the brief</span><h2>Requirement → Solution Map</h2></div>
+                    </div>
+                    <div class="requirement-map">
+                        <?php foreach($phases as $phase): ?>
+                        <a class="requirement-map-row" href="#phase-<?=e($phase[0])?>">
+                            <span class="requirement-map-row__num"><?=e($phase[0])?></span>
+                            <div><strong><?=e($phase[1])?></strong><small><?=e($phase[2])?> → <?=e($phase[3])?></small></div>
+                            <span class="requirement-map-row__arrow"><?=icon('arrow',17)?></span>
+                        </a>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <details class="case-command-box">
+                        <summary>View all 20 assignment requirements</summary>
+                        <div><ol><?php foreach($case['requirements'] as $item): ?><li><?=e($item)?></li><?php endforeach; ?></ol></div>
+                    </details>
+                </section>
+
+                <section id="phase-01">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">02</span>
+                        <div><span class="mini-label">Solution from the supplied implementation file</span><h2>Build the Virtual Lab and Domain Controller</h2></div>
+                    </div>
+                    <?php foreach(array_slice($case['implementation_steps'],0,4) as $step): ?>
+                    <section class="learning-step">
+                        <div class="learning-step__head"><span><?=e(substr($step['title'],5,2))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
+                        <div class="case-detail-block"><ul><?php foreach($step['lines'] as $line): ?><li><?=e($line)?></li><?php endforeach; ?></ul></div>
+                    </section>
+                    <?php endforeach; ?>
+                </section>
+
+                <?php renderCaseStudyCTA('mid'); ?>
+
+                <section id="phase-02">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">03</span>
+                        <div><span class="mini-label">Active Directory administration</span><h2>Create the OU, Users and Shared Folder</h2></div>
+                    </div>
+                    <?php foreach(array_slice($case['implementation_steps'],4,3) as $step): ?>
+                    <section class="learning-step">
+                        <div class="learning-step__head"><span><?=e(substr($step['title'],5,2))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
+                        <div class="case-detail-block"><ul><?php foreach($step['lines'] as $line): ?><li><?=e($line)?></li><?php endforeach; ?></ul></div>
+                    </section>
+                    <?php endforeach; ?>
+                </section>
+
+                <section id="phase-03">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">04</span>
+                        <div><span class="mini-label">Windows client</span><h2>Install Windows 11 and Join the Domain</h2></div>
+                    </div>
+                    <?php foreach(array_slice($case['implementation_steps'],7,2) as $step): ?>
+                    <section class="learning-step">
+                        <div class="learning-step__head"><span><?=e(substr($step['title'],5,2))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
+                        <div class="case-detail-block"><ul><?php foreach($step['lines'] as $line): ?><li><?=e($line)?></li><?php endforeach; ?></ul></div>
+                    </section>
+                    <?php endforeach; ?>
+                </section>
+
+                <section id="phase-04">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">05</span>
+                        <div><span class="mini-label">Linux client</span><h2>Install Fedora and Join Active Directory</h2></div>
+                    </div>
+                    <?php foreach(array_slice($case['implementation_steps'],9,2) as $step): ?>
+                    <section class="learning-step">
+                        <div class="learning-step__head"><span><?=e(substr($step['title'],5,2))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
+                        <div class="case-detail-block"><ul><?php foreach($step['lines'] as $line): ?><li><?=e($line)?></li><?php endforeach; ?></ul></div>
+                    </section>
+                    <?php endforeach; ?>
+                </section>
+
+                <section id="phase-05">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">06</span>
+                        <div><span class="mini-label">Cross-platform verification</span><h2>Verify AuditFile Access from Both Clients</h2></div>
+                    </div>
+                    <?php foreach(array_slice($case['implementation_steps'],11,2) as $step): ?>
+                    <section class="learning-step">
+                        <div class="learning-step__head"><span><?=e(substr($step['title'],5,2))?></span><div><small>Implementation</small><h3><?=e($step['title'])?></h3></div></div>
+                        <div class="case-detail-block"><ul><?php foreach($step['lines'] as $line): ?><li><?=e($line)?></li><?php endforeach; ?></ul></div>
+                    </section>
+                    <?php endforeach; ?>
+
+                    <h3>Required Screenshot Evidence</h3>
+                    <div class="student-takeaway-list">
+                        <?php foreach($case['deliverables'] as $i=>$item): ?>
+                        <div><span><?=str_pad((string)($i+1),2,'0',STR_PAD_LEFT)?></span><p><?=e($item)?></p></div>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+
+                <section id="verification">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">07</span>
+                        <div><span class="mini-label">Answers from the completed solution</span><h2>Verification Questions and Answers</h2></div>
+                    </div>
+                    <?php foreach($case['verification'] as $i=>$qa): ?>
+                    <div class="case-key-finding">
+                        <span>Question <?=e((string)($i+1))?></span>
+                        <strong><?=e($qa[0])?></strong>
+                        <p><?=e($qa[1])?></p>
+                    </div>
+                    <?php endforeach; ?>
+                </section>
+
+                <?php renderCaseStudyCTA('footer'); ?>
+            </article>
+
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">On this page</span>
+                    <a href="#overview">Assignment Overview</a>
+                    <a href="#requirement-map">Requirement → Solution Map</a>
+                    <a href="#phase-01">Server & Domain Controller</a>
+                    <a href="#phase-02">OU, Users & Shared Folder</a>
+                    <a href="#phase-03">Windows 11 Domain Join</a>
+                    <a href="#phase-04">Fedora Domain Join</a>
+                    <a href="#phase-05">Shared Folder Verification</a>
+                    <a href="#verification">Verification Q&A</a>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Related</span>
+                    <?php foreach($case['related_links'] as $link): ?><a href="<?=e($link[0])?>"><?=e($link[1])?></a><?php endforeach; ?>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+<?php renderFooter($subjects);
+}
+
 function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
     $canonical=SITE_URL . '/case-studies/' . $slug;
     renderHead($case,$canonical,$subjects);
@@ -307,6 +497,10 @@ function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStu
 }
 
 function renderCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    if(($case['template'] ?? '') === 'active_directory_lab'){
+        renderActiveDirectoryCaseStudy($slug,$case,$caseStudies,$subjects);
+        return;
+    }
     if(($case['template'] ?? '') === 'buffer_overflow_getscore'){
         renderBufferOverflowCaseStudy($slug,$case,$caseStudies,$subjects);
         return;
