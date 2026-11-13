@@ -29,11 +29,10 @@ function icon(string $name, int $size = 24): string {
 function buildSitemap(array $slugs): string {
     $urls = [SITE_URL . '/'];
     foreach ($slugs as $slug) $urls[] = SITE_URL . '/' . $slug;
-    $date = date('Y-m-d');
     $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
-    foreach ($urls as $i => $url) {
-        $xml .= "  <url>\n    <loc>" . htmlspecialchars($url, ENT_XML1) . "</loc>\n    <lastmod>{$date}</lastmod>\n    <changefreq>" . ($i === 0 ? 'weekly' : 'monthly') . "</changefreq>\n    <priority>" . ($i === 0 ? '1.0' : '0.9') . "</priority>\n  </url>\n";
+    foreach ($urls as $url) {
+        $xml .= "  <url>\n    <loc>" . htmlspecialchars($url, ENT_XML1) . "</loc>\n  </url>\n";
     }
     $xml .= '</urlset>';
     return $xml;

@@ -93,6 +93,8 @@ function renderHead(array $page, string $canonical, array $subjects): void {
 
     $metaTitle = $seoMeta[$seoPath]['title'] ?? ($page['meta_title'] ?? ('Premium ' . ($page['title'] ?? $page['h1'] ?? SITE_NAME)));
     $metaDescription = $seoMeta[$seoPath]['description'] ?? ($page['description'] ?? '');
+    $socialImage = SITE_URL . '/assets/cyberassignment-social-share.png';
+    $socialImageAlt = 'CyberAssignment - Cyber Security Assignment Help';
 
     $organizationId = SITE_URL . '/#organization';
     $websiteId = SITE_URL . '/#website';
@@ -101,13 +103,46 @@ function renderHead(array $page, string $canonical, array $subjects): void {
     $pageType = $page['page_type'] ?? 'service';
 
     $graph = [
-        ['@type'=>'Organization','@id'=>$organizationId,'name'=>SITE_NAME,'url'=>SITE_URL . '/'],
-        ['@type'=>'WebSite','@id'=>$websiteId,'url'=>SITE_URL . '/','name'=>SITE_NAME,'publisher'=>['@id'=>$organizationId],'inLanguage'=>'en'],
+        [
+            '@type'=>'Organization',
+            '@id'=>$organizationId,
+            'name'=>SITE_NAME,
+            'alternateName'=>SITE_ALT_NAME,
+            'url'=>SITE_URL . '/',
+            'logo'=>[
+                '@type'=>'ImageObject',
+                'url'=>SITE_URL . '/assets/favicon.svg'
+            ]
+        ],
+        [
+            '@type'=>'WebSite',
+            '@id'=>$websiteId,
+            'url'=>SITE_URL . '/',
+            'name'=>SITE_NAME,
+            'alternateName'=>SITE_ALT_NAME,
+            'publisher'=>['@id'=>$organizationId],
+            'inLanguage'=>'en'
+        ],
     ];
     if ($pageType === 'case_study') {
         $articleId = $canonical . '#article';
         $graph[] = ['@type'=>'WebPage','@id'=>$webPageId,'url'=>$canonical,'name'=>$page['h1'],'description'=>$metaDescription,'isPartOf'=>['@id'=>$websiteId],'mainEntity'=>['@id'=>$articleId],'inLanguage'=>'en'];
-        $graph[] = ['@type'=>'Article','@id'=>$articleId,'headline'=>$page['h1'],'description'=>$metaDescription,'url'=>$canonical,'author'=>['@id'=>$organizationId],'publisher'=>['@id'=>$organizationId],'about'=>array_map(static fn($topic)=>['@type'=>'Thing','name'=>$topic],$page['topics']??[]),'inLanguage'=>'en'];
+        $article = [
+            '@type'=>'Article',
+            '@id'=>$articleId,
+            'headline'=>$page['h1'],
+            'description'=>$metaDescription,
+            'url'=>$canonical,
+            'mainEntityOfPage'=>['@id'=>$webPageId],
+            'image'=>[$socialImage],
+            'author'=>['@id'=>$organizationId],
+            'publisher'=>['@id'=>$organizationId],
+            'about'=>array_map(static fn($topic)=>['@type'=>'Thing','name'=>$topic],$page['topics']??[]),
+            'inLanguage'=>'en'
+        ];
+        if (!empty($page['date_published'])) $article['datePublished'] = $page['date_published'];
+        if (!empty($page['date_modified'])) $article['dateModified'] = $page['date_modified'];
+        $graph[] = $article;
     } elseif ($pageType === 'case_study_index') {
         $graph[] = ['@type'=>'CollectionPage','@id'=>$webPageId,'url'=>$canonical,'name'=>$page['h1'],'description'=>$metaDescription,'isPartOf'=>['@id'=>$websiteId],'inLanguage'=>'en'];
     } else {
@@ -157,15 +192,21 @@ function renderHead(array $page, string $canonical, array $subjects): void {
     <meta name="description" content="<?= e($metaDescription) ?>">
     <meta name="robots" content="<?= e($robots) ?>">
     <link rel="canonical" href="<?= e($canonical) ?>">
-    <meta name="theme-color" content="#07111f">
+    <meta name="theme-color" content="#241332">
     <meta property="og:type" content="<?= $pageType === 'case_study' ? 'article' : 'website' ?>">
     <meta property="og:title" content="<?= e($metaTitle) ?>">
     <meta property="og:description" content="<?= e($metaDescription) ?>">
     <meta property="og:url" content="<?= e($canonical) ?>">
     <meta property="og:site_name" content="<?= e(SITE_NAME) ?>">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="<?= e($socialImage) ?>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="<?= e($socialImageAlt) ?>">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?= e($metaTitle) ?>">
     <meta name="twitter:description" content="<?= e($metaDescription) ?>">
+    <meta name="twitter:image" content="<?= e($socialImage) ?>">
+    <meta name="twitter:image:alt" content="<?= e($socialImageAlt) ?>">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="stylesheet" href="/assets/styles.css?v=3.3.0">
     <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>

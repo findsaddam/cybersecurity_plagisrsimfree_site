@@ -11,7 +11,8 @@ if (PHP_SAPI === 'cli-server') {
     if ($requested !== '/' && is_file($assetPath)) return false;
 }
 
-const SITE_NAME = 'Cyber Security Assignment Help';
+const SITE_NAME = 'CyberAssignment';
+const SITE_ALT_NAME = 'Cyber Security Assignment Help';
 const SITE_URL = 'https://cyberassignment.com';
 const WHATSAPP_NUMBER = '447949817583';
 const WHATSAPP_LABEL = '+44 7949 817583';
