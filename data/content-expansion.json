@@ -474,127 +474,127 @@
   },
   "cloud-security-assignment-help": {
     "intent_heading": "Cloud Computing Assignment Help",
-    "intent_intro": "Cloud computing assignments often combine architecture with security decisions. A strong answer explains shared responsibility, IAM, storage protection, logging, encryption and network controls in the context of AWS, Azure or another cloud scenario rather than discussing cloud services only at a general level.",
+    "intent_intro": "Cloud computing tasks more frequently involve architecture and security choices. A good answer covers concepts of shared responsibility, IAM, storage protection, logging, encryption, and network controls in the context of AWS, Azure or another cloud scenario, not just as part of a cloud service in general.",
     "intent_cards": [
       [
         "Shared responsibility",
-        "Identify which security duties belong to the cloud provider and which remain with the customer for the service model used."
+        "Determine the responsibilities for security with the cloud provider and with the customer with regard to the service model that is being used."
       ],
       [
-        "IAM and least privilege",
-        "Explain users, roles, policies, MFA and access decisions in terms of business need and the risk of excessive permissions."
+        "IAM and least privilege.",
+        "Describe the purpose of users, roles, policies, and MFA and why it's important not to over-permission users."
       ],
       [
         "Cloud evidence",
-        "Use configuration screenshots, logs and security findings as evidence, then explain why the setting is secure or risky."
+        "Take screenshots of the configuration, security findings and logs, then explain the risks or security of the setting."
       ],
       [
         "Cloud risk controls",
-        "Connect misconfiguration, identity weaknesses, exposed data or missing logging to practical controls and monitoring improvements."
+        "Relate misconfigurations, identity vulnerabilities, exposure of data, or lack of logging back to the actions that can be taken and the enhancements that can be implemented."
       ]
     ],
     "questions_heading": "Cloud Computing Assignment Rubric",
-    "questions_intro": "Cloud computing rubrics commonly reward clear understanding of the service model, security responsibilities, evidence quality, IAM decisions and realistic platform-specific recommendations.",
+    "questions_intro": "The rubrics typically found in cloud computing assignments favor clarity around the cloud service model, the security issues to address, quality of evidence, IAM determinations, and practical platform-specific suggestions.",
     "questions": [
       [
-        "Does the report explain the cloud model?",
-        "State the platform and service model, identify important assets and users, and explain how shared responsibility affects the security design."
+        "Does the report provide an explanation of the cloud model?",
+        "Describe the platform and service model, and identify key assets and users and discuss implications of shared responsibility for security design."
       ],
       [
-        "Is the evidence linked to security risk?",
-        "Every screenshot or configuration should be followed by an explanation of what it shows, why it matters and which risk or control it supports."
+        "Does the evidence relate to a security threat?",
+        "Each screen capture should be accompanied by a description of what it displays, why it is important, and the type of risk/control it addresses."
       ],
       [
         "Are IAM decisions justified?",
-        "Do more than list permissions. Explain why access is required, where least privilege applies and how authentication or role design reduces risk."
+        "Provide more detailed permissions. Describe the need for access, the concept of least privilege and the benefits of authentication or role design to mitigate risk."
       ],
       [
-        "Are recommendations specific to the cloud environment?",
-        "Prioritise realistic changes such as policy correction, encryption, logging, network restriction, backup or monitoring rather than generic security advice."
+        "Do recommendations apply to the cloud environment?",
+        "Focus on concrete solutions like policy fixes, encryption, logging, network limits, backup or monitoring, not on general security recommendations."
       ]
     ]
   },
   "web-application-security-assignment-help": {
     "intent_heading": "Web Security Coursework Help",
-    "intent_intro": "Web application security coursework often combines secure development concepts with evidence from an authorised training environment. Students need to connect OWASP risks, authentication, access control, validation, session management and configuration issues to the application scenario, then explain how secure design or coding changes reduce the identified risk.",
+    "intent_intro": "Web application security coursework often includes concepts for secure development along with evidence from an authorised web development environment. Students should map OWASP risks, authentication, access control, validation and session management and configuration problems to the application scenario and describe how making the application more secure will mitigate the identified risk.",
     "intent_cards": [
       [
         "OWASP risk analysis",
-        "Use OWASP categories as a framework, but explain the actual weakness, affected feature and impact in the specific application."
+        "Use OWASP categories as a framework and in the specific application explain the weakness, feature affected, impact."
       ],
       [
         "Authentication and access",
-        "Discuss login, session and authorisation controls separately so the report shows how identity and permissions protect different resources."
+        "Have a separate discussion on login, session time and authorisation controls and have the report display the protection of different resources."
       ],
       [
         "Secure coding evidence",
-        "Explain how validation, output handling, error management, secrets and security headers reduce application risk."
+        "Describe the benefits of validation, output handling, error management, secrets and security headers on the risk of an application."
       ],
       [
         "Remediation quality",
-        "Recommend code, configuration or architecture changes that address the root cause and can be verified after implementation."
+        "Provide suggestions for code, configuration or architecture modifications that resolve the root cause and can be proven post modification."
       ]
     ],
     "questions_heading": "Web Security Assignment Questions",
-    "questions_intro": "Web security reports should show that the student understands both the application weakness and the defensive principle behind the fix.",
+    "questions_intro": "The student should be aware of the vulnerability of the application and the security measure used to prevent the vulnerability in the web security reports.",
     "questions": [
       [
-        "How should I use the OWASP Top 10 in an assignment?",
-        "Map relevant findings to OWASP categories where appropriate, but keep the explanation centred on the evidence, security impact and application context."
+        "What should I do in an assignment with OWASP Top 10?",
+        "Where appropriate, map relevant findings to OWASP categories, but focus the explanation on the evidence, security impact and context of the application."
       ],
       [
-        "What should an application-security finding contain?",
-        "Include the affected feature, evidence, risk, relevant security principle, limitations and a practical remediation recommendation."
+        "What should be included in an application-security finding?",
+        "Make sure to include the affected feature, evidence, risk, relevant security principle, limitations and a practical remediation recommendation"
       ],
       [
-        "How do I write about authentication securely?",
-        "Explain credential handling, MFA, session management, reset processes and access control at a defensive design level."
+        "How to write about authentication safely?",
+        "Understand and explain the defensive design of handling credentials, MFA, session management, reset processes and access control."
       ],
       [
-        "What makes remediation more academic?",
-        "Justify why the control addresses the root cause and explain any trade-offs, implementation constraints or verification steps."
+        "What is more academic about remediation?",
+        "Give reasons for the root cause of the issue being handled by the control as well as any trade-offs, implementation constraints or verification steps."
       ]
     ]
   },
   "cyber-threat-intelligence-assignment-help": {
     "intent_heading": "Threat Intelligence Coursework Help",
-    "intent_intro": "Threat intelligence coursework is strongest when raw information is converted into defensible judgements. Students should define the intelligence question, evaluate source reliability, distinguish indicators from behaviour, use frameworks such as MITRE ATT&CK appropriately, and explain what the intelligence means for monitoring, hardening and security priorities.",
+    "intent_intro": "The best Threat Intelligence classes are those that translate raw information into defensible judgements. Students will be able to define the intelligence question, assess source reliability, identify indicators and behaviour, apply frameworks like MITRE ATT&CK in an appropriate manner, and understand the meaning of the intelligence to monitoring, hardening, and security priorities.",
     "intent_cards": [
       [
         "Intelligence requirements",
-        "Start with the decision or question the analysis must support so collection remains relevant instead of becoming a list of threat data."
+        "Begin with a decision or question that the analysis should address and continue the collection process, rather than collecting threat data."
       ],
       [
         "Source evaluation",
-        "Consider reliability, recency, access, corroboration and potential bias before treating a source as evidence for a judgement."
+        "Before using a source to make a judgement, remember to consider reliability, recency, access, corroboration and possible bias."
       ],
       [
-        "IOC and TTP analysis",
-        "Separate observable indicators from tactics, techniques and procedures and explain what each type of evidence can and cannot prove."
+        "IOC/TTP analysis.",
+        "Identify observable indicators, TTPs and TPs, and explain the nature of the evidence that each prove and what they do not."
       ],
       [
         "Defensive implications",
-        "Translate intelligence into monitoring, detection, hardening or prioritisation recommendations that are clearly linked to the assessed threat."
+        "Convert intelligence into clearly tied monitoring, detection, hardening/prioritisation recommendations."
       ]
     ],
     "questions_heading": "Threat Intelligence Assignment Questions",
-    "questions_intro": "CTI assignments usually reward disciplined reasoning more than the number of indicators or threat reports collected.",
+    "questions_intro": "The typical way to earn CTI rewards is to provide well-structured thinking, not necessarily a lot of indicators or threat reports.",
     "questions": [
       [
-        "How do I write a threat intelligence requirement?",
-        "Define the subject, decision, audience, time frame and information needed so the research has a clear purpose and stopping point."
+        "How to write a threat intelligence requirement?",
+        "Make the subject, decision, audience, time frame and the information required clear, so that the research will be purposeful and have a logical end."
       ],
       [
-        "How should I evaluate threat sources?",
-        "Compare reliability, recency, corroboration, possible bias and whether the source had direct access to the information being reported."
+        "What are some good ways to assess threat sources?",
+        "Analyze reliability, freshness, corroboration, potential bias, and source's firsthand access to the facts being reported."
       ],
       [
-        "When should I use MITRE ATT&CK?",
-        "Use ATT&CK when observed or reported behaviour can be mapped to a supported technique and the mapping helps explain defensive visibility or controls."
+        "When to Use MITRE ATT&CK?",
+        "Use the ATT&CK when observed/Reported behaviour can be correlated to a supported technique, and such mapping can explain the visibility or controls."
       ],
       [
-        "What makes a strong CTI conclusion?",
-        "Present the key judgement, evidence, confidence level, limitations and the most important defensive implication without overstating certainty."
+        "What are the characteristics of a good conclusion for a CTI?",
+        "Develop key judgement, evidence, confidence, limitations and defensive implication of greatest importance, but not by over-stating certainty."
       ]
     ]
   },
@@ -683,43 +683,43 @@
   },
   "information-security-assignment-help": {
     "intent_heading": "Information Security Homework Help",
-    "intent_intro": "Information security coursework requires students to connect technical and management concepts. A useful answer identifies what information needs protection, evaluates threats and vulnerabilities, assesses risk, applies the CIA triad, and recommends policies and controls that fit the organisation and its business priorities.",
+    "intent_intro": "Students have to correlate the technical and management concepts in their information security coursework. A good response will include identification of what needs to be protected, the assessment of threats and vulnerabilities, the assessment of risk, the application of the CIA triad and the recommendation of policies and controls appropriate to the organisation and their business priorities.",
     "intent_cards": [
       [
         "CIA analysis",
-        "Use confidentiality, integrity and availability to explain the security requirements of specific information assets and business processes."
+        "Explain the security needs of particular information assets and business processes in terms of confidentiality, integrity and availability."
       ],
       [
         "Risk assessment",
-        "Build a traceable relationship between assets, threats, vulnerabilities, likelihood, impact and recommended treatment."
+        "Establish a link from assets, threats, vulnerabilities, probability, consequences and suggested response."
       ],
       [
         "Security policy",
-        "Explain how policies, standards, procedures, roles and awareness support consistent information security practice."
+        "Describe the purpose of policies, standards, procedures, roles and awareness to ensure consistent information security practice."
       ],
       [
         "Governance and controls",
-        "Connect management responsibility and control selection to risk ownership, compliance and business objectives."
+        "Relate management responsibility and selection of control to risk ownership, compliance and business objectives."
       ]
     ],
     "questions_heading": "Information Security Assignment Questions",
-    "questions_intro": "Information security answers become stronger when concepts are applied to a realistic organisation or scenario instead of being presented as isolated definitions.",
+    "questions_intro": "Information security solutions are more robust when presented in the context of a real organisation or scenario, rather than a set of terms defined separately.",
     "questions": [
       [
-        "How do I apply the CIA triad to a case study?",
-        "Identify the information asset first, then explain what confidentiality, integrity and availability mean for that asset and the impact of losing each property."
+        "How to use the CIA triad in a case study?",
+        "Say what information asset it is first, then explain in what way the following hold true for that information asset: - confidentiality - integrity - availability - what happens if it is lost?"
       ],
       [
-        "What should a risk table include?",
-        "A useful risk table normally includes the asset, threat, vulnerability, existing controls, likelihood, impact, risk level and recommended treatment."
+        "What ought to a risk table contain?",
+        "A typical risk table will contain the asset, threats, vulnerabilities, current controls, probability of occurrence, potential losses, risk rating and possible actions to mitigate risk."
       ],
       [
-        "How do policies differ from technical controls?",
-        "Policies define expected behaviour and responsibilities, while technical controls enforce or support those requirements through systems and configurations."
+        "What is the difference between policy and technical controls?",
+        "Policies are used to set out expected behaviour and responsibilities; technical controls are used to enforce or support behaviour via systems and configurations."
       ],
       [
-        "What makes a security recommendation credible?",
-        "Link the recommendation to a specific risk, explain how it reduces likelihood or impact, and consider cost, usability, operational constraints and residual risk where relevant."
+        "How to make a security recommendation seem credible?",
+        "Tie the recommendation to a particular risk, describe how it helps to decrease risk likelihood or impact, and when appropriate, include consideration of cost, usability, operational considerations, and residual risk."
       ]
     ]
   }
