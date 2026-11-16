@@ -1134,6 +1134,32 @@ function renderSit716WeekCaseStudy(string $slug, array $case, array $caseStudies
                         </div>
                     </section>
                     <?php endforeach; ?>
+
+                    <?php
+                    $evidenceSheet = null;
+                    if ($slug === 'sit716-mqtt-protocol-publish-flood-week-2') {
+                        $evidenceSheet = [
+                            'src' => '/assets/case-studies/sit716-week-2/source-evidence.webp',
+                            'alt' => 'Original SIT716 Week 2 MQTT solution screenshots',
+                            'caption' => 'Original Week 2 solution evidence from the supplied Task 2.2C, Task 2.3D and Task 2.4HD files: MQTT architecture, Mosquitto broker status, normal Wireshark MQTT traffic and the controlled publish-flood capture.'
+                        ];
+                    } elseif ($slug === 'sit716-security-onion-malware-analysis-week-5') {
+                        $evidenceSheet = [
+                            'src' => '/assets/case-studies/sit716-week-5/source-evidence.webp',
+                            'alt' => 'Original SIT716 Week 5 Security Onion and Wireshark malware analysis screenshots',
+                            'caption' => 'Original Week 5 solution evidence from the supplied Security Onion, Sguil and Wireshark malware-analysis file.'
+                        ];
+                    }
+                    ?>
+                    <?php if($evidenceSheet): ?>
+                    <div class="sit716-source-gallery">
+                        <h3>Original Solution Screenshots</h3>
+                        <figure class="source-screenshot sit716-source-image">
+                            <img src="<?=e($evidenceSheet['src'])?>" alt="<?=e($evidenceSheet['alt'])?>" loading="lazy" decoding="async">
+                            <figcaption><?=e($evidenceSheet['caption'])?></figcaption>
+                        </figure>
+                    </div>
+                    <?php endif; ?>
                 </section>
 
                 <section id="related">
