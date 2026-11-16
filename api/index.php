@@ -19,11 +19,21 @@ const WHATSAPP_LABEL = '+44 7949 817583';
 
 $home = require dirname(__DIR__) . '/data/home.php';
 $caseStudies = require dirname(__DIR__) . '/data/case-studies.php';
-$sit716CaseRaw = file_get_contents(dirname(__DIR__) . '/data/sit716-case-studies.json.gz');
-$sit716CaseJson = $sit716CaseRaw !== false ? gzdecode($sit716CaseRaw) : false;
-$sit716CaseStudies = $sit716CaseJson !== false
-    ? json_decode($sit716CaseJson, true, 512, JSON_THROW_ON_ERROR)
-    : [];
+$sit716CaseStudies = [];
+foreach ([
+    dirname(__DIR__) . '/data/sit716-week-2.json.gz',
+    dirname(__DIR__) . '/data/sit716-week-4.json.gz',
+    dirname(__DIR__) . '/data/sit716-week-5.json.gz',
+] as $sit716CasePath) {
+    $sit716CaseRaw = file_get_contents($sit716CasePath);
+    $sit716CaseJson = $sit716CaseRaw !== false ? gzdecode($sit716CaseRaw) : false;
+    if ($sit716CaseJson !== false) {
+        $sit716CaseData = json_decode($sit716CaseJson, true, 512, JSON_THROW_ON_ERROR);
+        if (is_array($sit716CaseData)) {
+            $sit716CaseStudies = array_merge($sit716CaseStudies, $sit716CaseData);
+        }
+    }
+}
 $caseStudies = array_merge($caseStudies, $sit716CaseStudies);
 
 $subjectJson = gzdecode(file_get_contents(dirname(__DIR__) . '/data/subjects.json.gz'));
