@@ -128,10 +128,6 @@ if ($path === 'llms.txt') {
     }
     exit;
 }
-if ($path === 'case-studies/mqtt-protocol-vulnerabilities-cyberattack-demonstration') {
-    header('Location: ' . SITE_URL . '/case-studies/sit716-mqtt-protocol-publish-flood-week-2', true, 301);
-    exit;
-}
 if ($path === 'incident-response-assignment-help') {
     header('Location: ' . SITE_URL . '/information-security-assignment-help', true, 301);
     exit;

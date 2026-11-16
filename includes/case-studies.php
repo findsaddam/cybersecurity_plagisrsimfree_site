@@ -1048,7 +1048,10 @@ function renderSit716SourceBlock(array $block): void {
         return;
     }
     if ($type === 'image') {
-        $imageSrc = preg_replace('/\\.jpg$/i', '.webp', (string)($block['src'] ?? ''));
+        $rawImageSrc = (string)($block['src'] ?? '');
+        $imageSrc = str_contains($rawImageSrc, '/sit716-week-2/')
+            ? preg_replace('/\\.jpg$/i', '-clean.webp', $rawImageSrc)
+            : preg_replace('/\\.jpg$/i', '.webp', $rawImageSrc);
         echo '<figure class="source-screenshot sit716-source-image"><a href="' . e($imageSrc) . '" target="_blank" rel="noopener"><img src="' . e($imageSrc) . '" alt="' . e($block['alt'] ?? 'Source solution screenshot') . '" loading="lazy" decoding="async"></a><figcaption>Original screenshot from the supplied solution file.</figcaption></figure>';
         return;
     }
