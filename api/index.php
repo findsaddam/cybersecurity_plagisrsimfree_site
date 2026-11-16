@@ -19,12 +19,13 @@ const WHATSAPP_LABEL = '+44 7949 817583';
 
 $home = require dirname(__DIR__) . '/data/home.php';
 $caseStudies = require dirname(__DIR__) . '/data/case-studies.php';
-$sit716CasePath = dirname(__DIR__) . '/data/sit716-case-studies.json.gz';
-if (is_file($sit716CasePath)) {
-    $sit716Json = gzdecode(file_get_contents($sit716CasePath));
-    $sit716Cases = json_decode($sit716Json ?: '{}', true, 512, JSON_THROW_ON_ERROR);
-    $caseStudies = array_merge($caseStudies, $sit716Cases);
-}
+$sit716CaseRaw = file_get_contents(dirname(__DIR__) . '/data/sit716-case-studies.json.gz');
+$sit716CaseJson = $sit716CaseRaw !== false ? gzdecode($sit716CaseRaw) : false;
+$sit716CaseStudies = $sit716CaseJson !== false
+    ? json_decode($sit716CaseJson, true, 512, JSON_THROW_ON_ERROR)
+    : [];
+$caseStudies = array_merge($caseStudies, $sit716CaseStudies);
+
 $subjectJson = gzdecode(file_get_contents(dirname(__DIR__) . '/data/subjects.json.gz'));
 $subjects = json_decode($subjectJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
 $extraSubjectJson = file_get_contents(dirname(__DIR__) . '/data/subjects-extra.json');
