@@ -1039,7 +1039,141 @@ function renderRedTeamCapstoneCaseStudy(string $slug, array $case, array $caseSt
 <?php renderFooter($subjects);
 }
 
+
+function renderSit716SourceBlock(array $block): void {
+    $type = $block['type'] ?? 'paragraph';
+    if ($type === 'heading') {
+        $level = min(4, max(3, (int)($block['level'] ?? 3)));
+        echo '<h' . $level . '>' . e($block['text'] ?? '') . '</h' . $level . '>';
+        return;
+    }
+    if ($type === 'image') {
+        echo '<figure class="source-screenshot sit716-source-image"><img src="' . e($block['src'] ?? '') . '" alt="' . e($block['alt'] ?? 'Source solution screenshot') . '" loading="lazy" decoding="async"><figcaption>Original screenshot from the supplied solution file.</figcaption></figure>';
+        return;
+    }
+    if ($type === 'table') {
+        echo '<div class="case-table-wrap"><table class="case-table">';
+        foreach (($block['rows'] ?? []) as $ri => $row) {
+            echo '<tr>';
+            foreach ($row as $cell) {
+                $tag = $ri === 0 ? 'th' : 'td';
+                echo '<' . $tag . '>' . e((string)$cell) . '</' . $tag . '>';
+            }
+            echo '</tr>';
+        }
+        echo '</table></div>';
+        return;
+    }
+    echo '<p>' . nl2br(e($block['text'] ?? '')) . '</p>';
+}
+
+function renderSit716WeekCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    $canonical = SITE_URL . '/case-studies/' . $slug;
+    renderHead($case, $canonical, $subjects);
+    renderHeader($subjects, $caseStudies);
+    ?>
+<main class="blog-page case-study-learning-page sit716-week-case">
+    <section class="blog-article-head case-learning-hero">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
+            <span class="blog-label"><?=e($case['eyebrow'])?></span>
+            <h1><?=e($case['h1'])?></h1>
+            <p class="case-learning-intro"><?=e($case['intro'])?></p>
+            <div class="blog-topic-line"><?=e($case['topic_q2'])?> <span>•</span> <?=e($case['topic_q3'])?> <span>•</span> <?=e($case['tool_q3'])?></div>
+        </div>
+    </section>
+
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <?php foreach(($case['snapshots'] ?? []) as $item): ?>
+                <div class="case-snapshot-card"><span><?=e($item[0])?></span><strong><?=e($item[1])?></strong></div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-body-section">
+        <div class="container blog-layout">
+            <article class="blog-article">
+                <section id="overview">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">00</span>
+                        <div><span class="mini-label">Source-first case study</span><h2>Assignment Overview</h2></div>
+                    </div>
+                    <p><?=e($case['description'])?></p>
+                    <div class="case-study-callout case-study-callout--safe"><strong>Source integrity</strong><p>The requirement summary is provided for context. The solution text and screenshots below are reproduced from the supplied human-written solution files without rewriting the source answers.</p></div>
+                </section>
+
+                <section id="requirements">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">01</span>
+                        <div><span class="mini-label">What the assignment required</span><h2>Requirement Summary</h2></div>
+                    </div>
+                    <?php foreach(($case['requirements'] ?? []) as $group): ?>
+                    <div class="learning-panel learning-panel--requirement">
+                        <span class="learning-panel__label"><?=e($group['title'])?></span>
+                        <ul><?php foreach(($group['items'] ?? []) as $item): ?><li><?=e($item)?></li><?php endforeach; ?></ul>
+                    </div>
+                    <?php endforeach; ?>
+                </section>
+
+                <?php renderCaseStudyCTA('mid'); ?>
+
+                <section id="solution">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">02</span>
+                        <div><span class="mini-label">Human-written source solution</span><h2>Completed Solution and Evidence</h2></div>
+                    </div>
+                    <?php foreach(($case['source_tasks'] ?? []) as $ti => $task): ?>
+                    <section class="learning-step sit716-source-task" id="source-task-<?=e((string)($ti+1))?>">
+                        <div class="learning-step__head"><span><?=e(str_pad((string)($ti+1),2,'0',STR_PAD_LEFT))?></span><div><small><?=e($task['code'])?></small><h3><?=e($task['title'])?></h3></div></div>
+                        <div class="case-detail-block sit716-source-copy">
+                            <?php foreach(($task['blocks'] ?? []) as $block) renderSit716SourceBlock($block); ?>
+                        </div>
+                    </section>
+                    <?php endforeach; ?>
+                </section>
+
+                <section id="related">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">03</span>
+                        <div><span class="mini-label">Internal learning paths</span><h2>Related Cybersecurity Subjects</h2></div>
+                    </div>
+                    <div class="related-subjects-grid">
+                        <?php foreach(($case['related_links'] ?? []) as $link): ?>
+                        <a class="related-subject-card" href="<?=e($link[0])?>"><strong><?=e($link[1])?></strong><span>Explore related subject support <?=icon('arrow',16)?></span></a>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+
+                <?php renderCaseStudyCTA('footer'); ?>
+            </article>
+
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">On this page</span>
+                    <a href="#overview">Assignment Overview</a>
+                    <a href="#requirements">Requirement Summary</a>
+                    <a href="#solution">Completed Solution</a>
+                    <a href="#related">Related Subjects</a>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Related</span>
+                    <?php foreach(($case['related_links'] ?? []) as $link): ?><a href="<?=e($link[0])?>"><?=e($link[1])?></a><?php endforeach; ?>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+<?php renderFooter($subjects);
+}
+
 function renderCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    if(($case['template'] ?? '') === 'sit716_week_case'){
+        renderSit716WeekCaseStudy($slug,$case,$caseStudies,$subjects);
+        return;
+    }
     if(($case['template'] ?? '') === 'return_to_libc_lab'){
         renderReturnToLibcCaseStudy($slug,$case,$caseStudies,$subjects);
         return;
