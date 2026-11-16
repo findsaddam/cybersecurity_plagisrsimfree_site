@@ -207,8 +207,9 @@ function renderHead(array $page, string $canonical, array $subjects): void {
     <meta name="twitter:description" content="<?= e($metaDescription) ?>">
     <meta name="twitter:image" content="<?= e($socialImage) ?>">
     <meta name="twitter:image:alt" content="<?= e($socialImageAlt) ?>">
-    <link rel="icon" href="/favicon.ico" sizes="any">\n    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-    <link rel="stylesheet" href="/assets/styles.css?v=3.3.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="stylesheet" href="/assets/styles.css?v=3.4.0">
     <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 </head>
 <body>

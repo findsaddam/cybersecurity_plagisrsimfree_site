@@ -250,3 +250,125 @@
 
 /* v3.3: CyberAssignment brand palette refresh — colors only
    Deep plum + warm ivory + copper/gold. Layout and content unchanged. */
+
+
+/* v3.4: SIT716 Week 2/4/5 case-study presentation fixes */
+.sit716-week-case .case-detail-block{overflow:visible}
+.sit716-week-case .sit716-source-copy>p{font-size:16px;line-height:1.8}
+.sit716-week-case .sit716-source-image{
+  margin:24px 0;
+  border:1px solid #e2d7df;
+  border-radius:16px;
+  overflow:hidden;
+  background:#f8f4f1;
+  box-shadow:0 8px 24px rgba(36,19,50,.04)
+}
+.sit716-week-case .sit716-source-image a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  padding:14px;
+  background:#f8f4f1
+}
+.sit716-week-case .sit716-source-image img{
+  display:block;
+  width:auto;
+  max-width:100%;
+  height:auto;
+  margin:0 auto;
+  object-fit:contain;
+  image-rendering:auto;
+  background:#fff
+}
+.sit716-week-case .sit716-source-image figcaption{
+  padding:12px 15px;
+  border-top:1px solid #e9dfe5;
+  background:#fff;
+  color:#756878;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.55
+}
+.sit716-week-case .case-table-wrap{
+  width:100%;
+  overflow-x:auto;
+  margin:20px 0 30px;
+  border:1px solid #dccfd9;
+  border-radius:14px;
+  background:#fff
+}
+.sit716-week-case .case-table{
+  width:100%;
+  min-width:640px;
+  border-collapse:collapse;
+  border-spacing:0;
+  table-layout:auto;
+  color:#544655;
+  font-size:13px;
+  line-height:1.55
+}
+.sit716-week-case .case-table th,
+.sit716-week-case .case-table td{
+  padding:13px 15px;
+  border-right:1px solid #e4d9e1;
+  border-bottom:1px solid #e4d9e1;
+  text-align:left;
+  vertical-align:top;
+  overflow-wrap:anywhere
+}
+.sit716-week-case .case-table th{background:#321844;color:#fff;font-weight:800}
+.sit716-week-case .case-table tr:nth-child(even) td{background:#fcf8f4}
+.sit716-week-case .case-table th:last-child,
+.sit716-week-case .case-table td:last-child{border-right:0}
+.sit716-week-case .case-table tr:last-child td{border-bottom:0}
+.sit716-week-case .related-subjects-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:22px
+}
+.sit716-week-case .related-subject-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:132px;
+  padding:20px;
+  border:1px solid #dfd4dc;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(36,19,50,.035);
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease
+}
+.sit716-week-case .related-subject-card:hover{
+  transform:translateY(-2px);
+  border-color:#d6a78e;
+  box-shadow:0 14px 30px rgba(36,19,50,.07)
+}
+.sit716-week-case .related-subject-card strong{
+  display:block;
+  margin:0 0 14px;
+  color:#513f52;
+  font-size:16px;
+  line-height:1.35
+}
+.sit716-week-case .related-subject-card span{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  color:#9f4926;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.4
+}
+.sit716-week-case .related-subject-card span svg{flex:0 0 auto}
+@media(max-width:760px){
+  .sit716-week-case .sit716-source-image a{padding:8px}
+  .sit716-week-case .sit716-source-image img{width:100%;max-width:100%}
+  .sit716-week-case .case-table{min-width:560px}
+  .sit716-week-case .case-table th,
+  .sit716-week-case .case-table td{padding:11px 12px}
+  .sit716-week-case .related-subjects-grid{grid-template-columns:1fr}
+  .sit716-week-case .related-subject-card{min-height:auto}
+}
