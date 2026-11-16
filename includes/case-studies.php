@@ -1048,7 +1048,8 @@ function renderSit716SourceBlock(array $block): void {
         return;
     }
     if ($type === 'image') {
-        echo '<figure class="source-screenshot sit716-source-image"><img src="' . e($block['src'] ?? '') . '" alt="' . e($block['alt'] ?? 'Source solution screenshot') . '" loading="lazy" decoding="async"><figcaption>Original screenshot from the supplied solution file.</figcaption></figure>';
+        $imageSrc = preg_replace('/\\.jpg$/i', '.webp', (string)($block['src'] ?? ''));
+        echo '<figure class="source-screenshot sit716-source-image"><a href="' . e($imageSrc) . '" target="_blank" rel="noopener"><img src="' . e($imageSrc) . '" alt="' . e($block['alt'] ?? 'Source solution screenshot') . '" loading="lazy" decoding="async"></a><figcaption>Original screenshot from the supplied solution file.</figcaption></figure>';
         return;
     }
     if ($type === 'table') {
