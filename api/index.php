@@ -24,6 +24,7 @@ foreach ([
     dirname(__DIR__) . '/data/sit716-week-2.json.gz',
     dirname(__DIR__) . '/data/sit716-week-4.json.gz',
     dirname(__DIR__) . '/data/sit716-week-5.json.gz',
+    dirname(__DIR__) . '/data/sit716-week-6.json.gz',
 ] as $sit716CasePath) {
     $sit716CaseRaw = file_get_contents($sit716CasePath);
     $sit716CaseJson = $sit716CaseRaw !== false ? gzdecode($sit716CaseRaw) : false;
