@@ -602,7 +602,7 @@ function renderSquidProxyCaseStudy(string $slug, array $case, array $caseStudies
                 <div class="blog-sidebar-card">
                     <span class="mini-label">On this page</span>
                     <a href="#overview">Lab Requirement</a>
-                    <a href="#source-solution">Source Solution</a>
+                    <a href="#source-solution">Completed Solution</a>
                     <a href="#part-a">Part A · Environment</a>
                     <a href="#part-b">Part B · Squid Configuration</a>
                     <a href="#part-c">Part C · Client Configuration</a>
@@ -715,7 +715,7 @@ function renderPfsenseVpnCaseStudy(string $slug, array $case, array $caseStudies
                 <div class="blog-sidebar-card">
                     <span class="mini-label">On this page</span>
                     <a href="#overview">Lab Requirement</a>
-                    <a href="#source-solution">Source Solution</a>
+                    <a href="#source-solution">Completed Solution</a>
                     <a href="#question-1">Q1 · RADIUS Settings</a>
                     <a href="#question-6">Q6 · radtest Verification</a>
                     <a href="#question-9">Q9 · Remote Connectivity</a>
@@ -820,9 +820,9 @@ function renderReturnToLibcCaseStudy(string $slug, array $case, array $caseStudi
                         <?php foreach($case['setup_commands'] as $line): ?><pre class="assignment-command"><code><?=e($line)?></code></pre><?php endforeach; ?>
                     </div>
                     <div class="retlib-evidence-grid">
-                        <?php renderRetlibEvidenceShot($case,1,'ASLR disabled and kernel.randomize_va_space verified in the supplied solution.'); ?>
-                        <?php renderRetlibEvidenceShot($case,2,'The supplied solution links /bin/sh to /bin/zsh for the initial tasks.'); ?>
-                        <?php renderRetlibEvidenceShot($case,3,'Compilation, root ownership and Set-UID permission evidence from the supplied solution.'); ?>
+                        <?php renderRetlibEvidenceShot($case,1,'ASLR disabled and kernel.randomize_va_space verified during the completed project.'); ?>
+                        <?php renderRetlibEvidenceShot($case,2,'The completed project links /bin/sh to /bin/zsh for the initial tasks.'); ?>
+                        <?php renderRetlibEvidenceShot($case,3,'Compilation, root ownership and Set-UID permission evidence from the completed project.'); ?>
                     </div>
                 </section>
 
@@ -848,8 +848,8 @@ function renderReturnToLibcCaseStudy(string $slug, array $case, array $caseStudi
                         <?php foreach($case['task2_lines'] as $line): ?><p><?=nl2br(e($line))?></p><?php endforeach; ?>
                     </div>
                     <div class="retlib-evidence-grid">
-                        <?php renderRetlibEvidenceShot($case,9,'prtenv.c helper program shown in the supplied solution.'); ?>
-                        <?php renderRetlibEvidenceShot($case,10,'MYSHELL export and /bin/sh address evidence from the supplied solution.'); ?>
+                        <?php renderRetlibEvidenceShot($case,9,'prtenv.c helper program used in the completed project.'); ?>
+                        <?php renderRetlibEvidenceShot($case,10,'MYSHELL export and /bin/sh address evidence from the completed project.'); ?>
                         <?php renderRetlibEvidenceShot($case,11,'Payload execution evidence from the completed solution.'); ?>
                         <?php renderRetlibEvidenceShot($case,12,'Root verification using id in the completed lab solution.'); ?>
                     </div>
@@ -866,7 +866,7 @@ function renderReturnToLibcCaseStudy(string $slug, array $case, array $caseStudi
                         <?php foreach($case['variation1_lines'] as $line): ?><p><?=nl2br(e($line))?></p><?php endforeach; ?>
                     </div>
                     <div class="retlib-evidence-grid">
-                        <?php renderRetlibEvidenceShot($case,13,'Source-code change for the without-exit variation in the supplied solution.'); ?>
+                        <?php renderRetlibEvidenceShot($case,13,'Source-code change for the without-exit variation in the completed project.'); ?>
                         <?php renderRetlibEvidenceShot($case,14,'Variation 1 result: root shell followed by the observed segmentation fault after exit.'); ?>
                     </div>
 
@@ -874,7 +874,7 @@ function renderReturnToLibcCaseStudy(string $slug, array $case, array $caseStudi
                     <div class="retlib-solution-copy">
                         <?php foreach($case['variation2_lines'] as $line): ?><p><?=nl2br(e($line))?></p><?php endforeach; ?>
                     </div>
-                    <?php renderRetlibEvidenceShot($case,15,'Renamed-program variation and segmentation-fault evidence from the supplied solution.'); ?>
+                    <?php renderRetlibEvidenceShot($case,15,'Renamed-program variation and segmentation-fault evidence from the completed project.'); ?>
                 </section>
 
                 <section id="step-05">
@@ -898,7 +898,7 @@ function renderReturnToLibcCaseStudy(string $slug, array $case, array $caseStudi
                         <span class="case-section-number">07</span>
                         <div><span class="mini-label">Exact files from Solution.zip</span><h2>Source Code Used in the Completed Solution</h2></div>
                     </div>
-                    <p>The following files are reproduced from the supplied solution ZIP without rewriting the code.</p>
+                    <p>The following project files contain the completed implementation and supporting code.</p>
                     <?php foreach($case['source_files'] as $file): ?>
                     <details class="retlib-source-file" open>
                         <summary><span><?=e($file['name'])?></span><small><?=e($file['language'])?></small></summary>
@@ -980,7 +980,7 @@ function renderRedTeamCapstoneCaseStudy(string $slug, array $case, array $caseSt
                 <section id="solution-flow">
                     <div class="case-section-heading">
                         <span class="case-section-number">02</span>
-                        <div><span class="mini-label">Challenge sequence</span><h2>How the Supplied Solution Organises the Red Team Exercise</h2></div>
+                        <div><span class="mini-label">Challenge sequence</span><h2>How the Red Team Exercise Was Organised</h2></div>
                     </div>
                     <div class="requirement-map">
                         <?php foreach($case['flow'] as $i=>$item): ?>
@@ -1026,7 +1026,7 @@ function renderRedTeamCapstoneCaseStudy(string $slug, array $case, array $caseSt
                     <a href="#requirements">Part 6 Requirements</a>
                     <a href="#solution-flow">Challenge Sequence</a>
                     <a href="#evidence">Practical Evidence</a>
-                    <a href="#source-summary">Source-Written Summary</a>
+                    <a href="#source-summary">Project Summary</a>
                 </div>
                 <div class="blog-sidebar-card">
                     <span class="mini-label">Related</span>
@@ -1052,11 +1052,12 @@ function renderSit716SourceBlock(array $block): void {
         if (str_contains($rawImageSrc, '/sit716-week-2/')) {
             $imageSrc = preg_replace('/\\.jpg$/i', '-clean.webp', $rawImageSrc);
         } elseif (str_contains($rawImageSrc, '/sit716-week-6/')) {
-            $imageSrc = preg_replace('/\\.webp$/i', '-v2.webp', preg_replace('/\\.jpg$/i', '.webp', $rawImageSrc));
+            $imageSrc = $rawImageSrc;
         } else {
             $imageSrc = preg_replace('/\\.jpg$/i', '.webp', $rawImageSrc);
         }
-        echo '<figure class="source-screenshot sit716-source-image"><a href="' . e($imageSrc) . '" target="_blank" rel="noopener"><img src="' . e($imageSrc) . '" alt="' . e($block['alt'] ?? 'Source solution screenshot') . '" loading="lazy" decoding="async"></a><figcaption>Original screenshot from the supplied solution file.</figcaption></figure>';
+        $imageCaption = (string)($block['alt'] ?? 'Project evidence screenshot');
+        echo '<figure class="source-screenshot sit716-source-image"><a href="' . e($imageSrc) . '" target="_blank" rel="noopener"><img src="' . e($imageSrc) . '" alt="' . e($imageCaption) . '" loading="lazy" decoding="async"></a><figcaption>' . e($imageCaption) . '</figcaption></figure>';
         return;
     }
     if ($type === 'table') {
@@ -1107,10 +1108,10 @@ function renderSit716WeekCaseStudy(string $slug, array $case, array $caseStudies
                 <section id="overview">
                     <div class="case-section-heading">
                         <span class="case-section-number">00</span>
-                        <div><span class="mini-label">Source-first case study</span><h2>Assignment Overview</h2></div>
+                        <div><span class="mini-label">Completed project case study</span><h2>Assignment Overview</h2></div>
                     </div>
                     <p><?=e($case['description'])?></p>
-                    <div class="case-study-callout case-study-callout--safe"><strong>Source integrity</strong><p>The requirement summary is provided for context. The solution text and screenshots below are reproduced from the supplied human-written solution files without rewriting the source answers.</p></div>
+                    <div class="case-study-callout case-study-callout--safe"><strong>Project summary</strong><p>This case study presents the completed project, including the requirement summary, implementation approach, analysis and practical evidence.</p></div>
                 </section>
 
                 <section id="requirements">
@@ -1131,7 +1132,7 @@ function renderSit716WeekCaseStudy(string $slug, array $case, array $caseStudies
                 <section id="solution">
                     <div class="case-section-heading">
                         <span class="case-section-number">02</span>
-                        <div><span class="mini-label">Human-written source solution</span><h2>Completed Solution and Evidence</h2></div>
+                        <div><span class="mini-label">Completed project work</span><h2>Completed Solution and Evidence</h2></div>
                     </div>
                     <?php foreach(($case['source_tasks'] ?? []) as $ti => $task): ?>
                     <section class="learning-step sit716-source-task" id="source-task-<?=e((string)($ti+1))?>">

