@@ -129,7 +129,7 @@ function renderActiveDirectoryCaseStudy(string $slug, array $case, array $caseSt
                 <section id="phase-01">
                     <div class="case-section-heading">
                         <span class="case-section-number">02</span>
-                        <div><span class="mini-label">Solution from the supplied implementation file</span><h2>Build the Virtual Lab and Domain Controller</h2></div>
+                        <div><span class="mini-label">Completed implementation</span><h2>Build the Virtual Lab and Domain Controller</h2></div>
                     </div>
                     <?php foreach(array_slice($case['implementation_steps'],0,4) as $i=>$step): ?>
                     <section class="learning-step">
@@ -203,7 +203,7 @@ function renderActiveDirectoryCaseStudy(string $slug, array $case, array $caseSt
                 <section id="verification">
                     <div class="case-section-heading">
                         <span class="case-section-number">07</span>
-                        <div><span class="mini-label">Answers from the completed solution</span><h2>Verification Questions and Answers</h2></div>
+                        <div><span class="mini-label">Completed verification</span><h2>Verification Questions and Answers</h2></div>
                     </div>
                     <?php foreach($case['verification'] as $i=>$qa): ?>
                     <div class="case-key-finding">
@@ -290,7 +290,7 @@ function renderBufferOverflowCaseStudy(string $slug, array $case, array $caseStu
             <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
             <span class="blog-label"><?=e($case['eyebrow'])?></span>
             <h1><?=e($case['h1'])?></h1>
-            <p class="case-learning-intro">Understand the assignment first, then follow the completed solution step by step. Each stage below shows what was required, what evidence was produced, what that evidence means, and how it contributes to the final result.</p>
+            <p class="case-learning-intro">Understand the assignment first, then follow our completed solution step by step. Each stage below shows what was required, what evidence was produced, what that evidence means, and how it contributes to the final result.</p>
             <div class="blog-topic-line"><?=e($case['topic_q2'])?> <span>•</span> <?=e($case['topic_q3'])?> <span>•</span> <?=e($case['tool_q3'])?></div>
         </div>
     </section>
@@ -537,7 +537,7 @@ function renderSquidProxyCaseStudy(string $slug, array $case, array $caseStudies
                     <?php foreach($case['setup'] as $paragraph): ?><p><?=e($paragraph)?></p><?php endforeach; ?>
 
                     <div class="case-study-callout case-study-callout--safe">
-                        <strong>References supplied with the assignment</strong>
+                        <strong>Assignment references</strong>
                         <?php foreach($case['references'] as $ref): ?>
                             <p><a href="<?=e($ref[1])?>" target="_blank" rel="noopener noreferrer"><?=e($ref[0])?></a></p>
                         <?php endforeach; ?>
@@ -760,7 +760,7 @@ function renderReturnToLibcCaseStudy(string $slug, array $case, array $caseStudi
             <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
             <span class="blog-label"><?=e($case['eyebrow'])?></span>
             <h1><?=e($case['h1'])?></h1>
-            <p class="case-learning-intro">This case study keeps the supplied lab report and source code intact, then places the requirement, evidence and code together so students can understand what each completed step demonstrates.</p>
+            <p class="case-learning-intro">This case study presents our completed lab work and source code alongside the requirements and evidence so students can understand what each completed step demonstrates.</p>
             <div class="blog-topic-line"><?=e($case['course'])?> <span>•</span> <?=e($case['environment'])?> <span>•</span> GDB + Python + libc</div>
         </div>
     </section>
@@ -786,10 +786,10 @@ function renderReturnToLibcCaseStudy(string $slug, array $case, array $caseStudi
                         <span class="case-section-number">00</span>
                         <div><span class="mini-label">Assignment overview</span><h2>What the Return-to-libc Lab Requires</h2></div>
                     </div>
-                    <p>The supplied CSCE 5552 lab is a controlled SEED Labs exercise about a return-to-libc variant of a buffer-overflow attack. The lab uses a vulnerable Set-UID program and asks the student to study stack layout, non-executable-stack protection, libc function addresses, attack variations and the shell countermeasure inside the provided Ubuntu VM.</p>
+                    <p>This CSCE 5552 lab is a controlled SEED Labs exercise about a return-to-libc variant of a buffer-overflow attack. The lab uses a vulnerable Set-UID program and asks the student to study stack layout, non-executable-stack protection, libc function addresses, attack variations and the shell countermeasure inside the provided Ubuntu VM.</p>
                     <div class="case-study-callout case-study-callout--safe">
                         <strong>Controlled lab scope</strong>
-                        <p>The commands, addresses and source code below are reproduced from the supplied completed assignment and are presented in the context of the SEED Ubuntu 20.04 lab environment.</p>
+                        <p>The commands, addresses and source code below are part of our completed work in the SEED Ubuntu 20.04 lab environment.</p>
                     </div>
                     <div class="requirement-map">
                         <?php foreach($case['requirement_map'] as $item): ?>
@@ -807,8 +807,8 @@ function renderReturnToLibcCaseStudy(string $slug, array $case, array $caseStudi
                         <span class="case-section-number">01</span>
                         <div><span class="mini-label">Lab 3 diagram</span><h2>Return-to-libc Stack Layout Used in the Assignment</h2></div>
                     </div>
-                    <p>The supplied diagram shows the intended stack relationship between the saved EBP, saved EIP, the libc function entry address, the libc return address and the argument pointing to <code>/bin/sh</code>.</p>
-                    <?php renderRetlibEvidenceShot($case,22,'Lab 3 stack-layout diagram supplied with the solved assignment.'); ?>
+                    <p>The project diagram shows the intended stack relationship between the saved EBP, saved EIP, the libc function entry address, the libc return address and the argument pointing to <code>/bin/sh</code>.</p>
+                    <?php renderRetlibEvidenceShot($case,22,'Lab 3 stack-layout diagram used in the completed project.'); ?>
                 </section>
 
                 <section id="step-01">
@@ -896,7 +896,7 @@ function renderReturnToLibcCaseStudy(string $slug, array $case, array $caseStudi
                 <section id="step-06">
                     <div class="case-section-heading">
                         <span class="case-section-number">07</span>
-                        <div><span class="mini-label">Exact files from Solution.zip</span><h2>Source Code Used in the Completed Solution</h2></div>
+                        <div><span class="mini-label">Project source files</span><h2>Completed Project Source Code</h2></div>
                     </div>
                     <p>The following project files contain the completed implementation and supporting code.</p>
                     <?php foreach($case['source_files'] as $file): ?>
@@ -944,7 +944,7 @@ function renderRedTeamCapstoneCaseStudy(string $slug, array $case, array $caseSt
             <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
             <span class="blog-label"><?=e($case['eyebrow'])?></span>
             <h1><?=e($case['h1'])?></h1>
-            <p class="case-learning-intro">This case study publishes the supplied Part 6 requirement, the expert-written Red Team Capstone summary, and the supporting lab evidence in a student-friendly reading order.</p>
+            <p class="case-learning-intro">This case study presents our completed Part 6 Red Team Capstone work, including the project summary and supporting lab evidence in a student-friendly reading order.</p>
             <div class="blog-topic-line"><?=e($case['part'])?> <span>•</span> <?=e($case['room'])?></div>
         </div>
     </section>
@@ -995,9 +995,9 @@ function renderRedTeamCapstoneCaseStudy(string $slug, array $case, array $caseSt
                 <section id="evidence">
                     <div class="case-section-heading">
                         <span class="case-section-number">03</span>
-                        <div><span class="mini-label">Source evidence</span><h2>Practical Lab Evidence</h2></div>
+                        <div><span class="mini-label">Practical evidence</span><h2>Practical Lab Evidence</h2></div>
                     </div>
-                    <p>The supplied screenshot shows the Metasploit lab environment with the MS17-010 EternalBlue module selected, a Windows x64 reverse TCP payload, SMB target port 445, target settings and listener settings. The public version removes the student-identifying overlay while preserving the technical evidence.</p>
+                    <p>The project screenshot shows the Metasploit lab environment with the MS17-010 EternalBlue module selected, a Windows x64 reverse TCP payload, SMB target port 445, target settings and listener settings. The public version removes the student-identifying overlay while preserving the technical evidence.</p>
                     <figure class="source-screenshot capstone-evidence">
                         <img src="<?=e($case['evidence_image'])?>" alt="Red Team Capstone Metasploit lab evidence" loading="lazy" decoding="async">
                         <figcaption><?=e($case['evidence_caption'])?></figcaption>
@@ -1057,6 +1057,25 @@ function renderSit716SourceBlock(array $block): void {
             $imageSrc = preg_replace('/\\.jpg$/i', '.webp', $rawImageSrc);
         }
         $imageCaption = (string)($block['alt'] ?? 'Project evidence screenshot');
+        $imageCaption = str_ireplace(
+            [
+                'Original screenshot from the supplied solution file.',
+                'Original screenshot from supplied solution file.',
+                'Screenshot from the supplied solution file.',
+                'Screenshot from supplied solution file.',
+                'Human-written source solution',
+                'Source solution'
+            ],
+            [
+                'Project evidence screenshot.',
+                'Project evidence screenshot.',
+                'Project evidence screenshot.',
+                'Project evidence screenshot.',
+                'Completed project solution',
+                'Completed solution'
+            ],
+            $imageCaption
+        );
         echo '<figure class="source-screenshot sit716-source-image"><a href="' . e($imageSrc) . '" target="_blank" rel="noopener"><img src="' . e($imageSrc) . '" alt="' . e($imageCaption) . '" loading="lazy" decoding="async"></a><figcaption>' . e($imageCaption) . '</figcaption></figure>';
         return;
     }
@@ -1259,7 +1278,7 @@ function renderCaseStudy(string $slug, array $case, array $caseStudies, array $s
             <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
             <span class="blog-label"><?=e($case['eyebrow'])?></span>
             <h1><?=e($case['h1'])?></h1>
-            <p class="case-learning-intro">Read the requirement first, then follow the completed solution. Each part below shows what the question expects, how the supplied answer addresses it, what evidence supports the answer, and what a student should understand from the result.</p>
+            <p class="case-learning-intro">Read the requirement first, then follow our completed solution. Each part below shows what the question expects, how the completed work addresses it, what evidence supports the answer, and what a student should understand from the result.</p>
             <div class="blog-topic-line"><?=e($case['topic_q2'])?> <span>•</span> <?=e($case['topic_q3'])?> <span>•</span> <?=e($case['tool_q3'])?></div>
         </div>
     </section>
