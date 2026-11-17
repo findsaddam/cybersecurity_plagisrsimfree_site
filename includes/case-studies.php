@@ -1199,7 +1199,139 @@ function renderSit716WeekCaseStudy(string $slug, array $case, array $caseStudies
 <?php renderFooter($subjects);
 }
 
+function renderSit716ProposalCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    $canonical = SITE_URL . '/case-studies/' . $slug;
+    renderHead($case, $canonical, $subjects);
+    renderHeader($subjects, $caseStudies);
+    ?>
+<main class="blog-page case-study-learning-page">
+    <section class="blog-article-head case-learning-hero">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
+            <span class="blog-label"><?=e($case['eyebrow'])?></span>
+            <h1><?=e($case['h1'])?></h1>
+            <p class="case-learning-intro"><?=e($case['objective'])?></p>
+            <div class="blog-topic-line"><?=e($case['topic_q2'])?> <span>•</span> <?=e($case['topic_q3'])?> <span>•</span> <?=e($case['tool_q3'])?></div>
+        </div>
+    </section>
+
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <?php foreach($case['snapshot'] as $item): ?>
+                <div class="case-snapshot-card"><span><?=e($item[0])?></span><strong><?=e($item[1])?></strong></div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-body-section">
+        <div class="container blog-layout">
+            <article class="blog-article">
+                <section id="overview">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">00</span>
+                        <div><span class="mini-label">Completed project work</span><h2>Project Proposal Overview</h2></div>
+                    </div>
+                    <p><?=e($case['project_description'][0])?></p>
+                    <p><?=e($case['project_description'][1])?></p>
+                </section>
+
+                <section id="requirements">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">01</span>
+                        <div><span class="mini-label">Assignment requirements</span><h2>What the Project Proposal Required</h2></div>
+                    </div>
+                    <p><?=e($case['requirement_intro'])?></p>
+                    <div class="student-takeaway-list">
+                        <?php foreach($case['requirements'] as $i=>$item): ?>
+                        <div><span><?=str_pad((string)($i+1),2,'0',STR_PAD_LEFT)?></span><p><?=e($item)?></p></div>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+
+                <section id="dependencies">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">02</span>
+                        <div><span class="mini-label">Resources and tooling</span><h2>Project Dependencies</h2></div>
+                    </div>
+                    <p><?=e($case['dependencies'])?></p>
+                </section>
+
+                <?php renderCaseStudyCTA('mid'); ?>
+
+                <section id="plan">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">03</span>
+                        <div><span class="mini-label">Analysis workflow</span><h2>Project Plan</h2></div>
+                    </div>
+                    <p><?=e($case['plan_intro'])?></p>
+                    <div class="requirement-map">
+                        <?php foreach($case['plan_steps'] as $i=>$step): ?>
+                        <div class="requirement-map-row">
+                            <span class="requirement-map-row__num"><?=str_pad((string)($i+1),2,'0',STR_PAD_LEFT)?></span>
+                            <div><strong><?=e($step[0])?></strong><small><?=e($step[1])?></small></div>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+
+                <section id="ulos">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">04</span>
+                        <div><span class="mini-label">Advanced learning outcomes</span><h2>How the Proposal Addresses the Unit Learning Outcomes</h2></div>
+                    </div>
+                    <?php foreach($case['ulos'] as $ulo): ?>
+                    <div class="case-key-finding">
+                        <span><?=e($ulo[0])?></span>
+                        <strong><?=e($ulo[1])?></strong>
+                        <p><?=e($ulo[2])?></p>
+                    </div>
+                    <?php endforeach; ?>
+                    <p><?=e($case['ulo_summary'])?></p>
+                </section>
+
+                <section id="takeaways">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">05</span>
+                        <div><span class="mini-label">Project direction</span><h2>Key Takeaways From the Proposal</h2></div>
+                    </div>
+                    <div class="student-takeaway-list">
+                        <?php foreach($case['takeaways'] as $i=>$item): ?>
+                        <div><span><?=str_pad((string)($i+1),2,'0',STR_PAD_LEFT)?></span><p><?=e($item)?></p></div>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
+
+                <?php renderCaseStudyCTA('footer'); ?>
+            </article>
+
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">On this page</span>
+                    <a href="#overview">Project Proposal Overview</a>
+                    <a href="#requirements">Assignment Requirements</a>
+                    <a href="#dependencies">Project Dependencies</a>
+                    <a href="#plan">Project Plan</a>
+                    <a href="#ulos">Unit Learning Outcomes</a>
+                    <a href="#takeaways">Key Takeaways</a>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Related</span>
+                    <?php foreach(($case['related_links'] ?? []) as $link): ?><a href="<?=e($link[0])?>"><?=e($link[1])?></a><?php endforeach; ?>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+<?php renderFooter($subjects);
+}
+
 function renderCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    if(($case['template'] ?? '') === 'sit716_proposal'){
+        renderSit716ProposalCaseStudy($slug,$case,$caseStudies,$subjects);
+        return;
+    }
     if(($case['template'] ?? '') === 'sit716_week_case'){
         renderSit716WeekCaseStudy($slug,$case,$caseStudies,$subjects);
         return;
