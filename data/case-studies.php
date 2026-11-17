@@ -1,5 +1,83 @@
 <?php
 return [
+    'sit716-mqtt-under-attack-project-proposal' => [
+        'menu_featured' => false,
+        'template' => 'sit716_proposal',
+        'page_type' => 'case_study',
+        'title' => 'SIT716 MQTT Under Attack Project Proposal: Wireshark-Based IoT Network Attack Analysis',
+        'meta_title' => 'SIT716 MQTT Under Attack Project Proposal | Cyber Assignment',
+        'h1' => 'SIT716 MQTT Under Attack Project Proposal: Wireshark-Based IoT Network Attack Analysis',
+        'nav' => 'SIT716 MQTT Under Attack Project Proposal',
+        'description' => 'Completed SIT716 project proposal for MQTT Under Attack, covering Wireshark analysis of normal and malicious IoT traffic, project dependencies, security controls and Unit Learning Outcomes.',
+        'primary' => 'SIT716 MQTT Under Attack project proposal',
+        'eyebrow' => 'Solved SIT716 Project Proposal',
+        'menu_meta' => 'MQTT · Wireshark · IoT Security',
+        'topics' => [
+            'SIT716',
+            'MQTT',
+            'Wireshark',
+            'IoT Security',
+            'Network Analysis',
+            'Network Security',
+            'Packet Analysis',
+            'PCAP',
+            'Anomalous Traffic'
+        ],
+        'topic_q2' => 'SIT716 Computer Networks and Security',
+        'topic_q3' => 'High Distinction Task 1.2HDplus',
+        'tool_q3' => 'MQTT · Wireshark · PCAP',
+        'objective' => 'This completed project proposal defines an MQTT security investigation that compares normal IoT communication with malicious traffic at packet level using Wireshark, then evaluates practical detection, prevention and mitigation controls.',
+        'snapshot' => [
+            ['Unit', 'SIT716 Computer Networks and Security'],
+            ['Assessment', 'High Distinction Task 1.2HDplus'],
+            ['Project', 'MQTT Under Attack'],
+            ['Primary tool', 'Wireshark'],
+            ['Traffic source', 'MQTT PCAP / PCAPNG'],
+            ['Security focus', 'Normal vs malicious MQTT traffic']
+        ],
+        'requirement_intro' => 'The task required a concise project proposal that explains the proposed project, the resources needed to complete it, the planned workflow, and how the project will demonstrate the unit learning outcomes at an advanced level.',
+        'requirements' => [
+            'Give the project a clear title.',
+            'Provide a general project description.',
+            'Briefly discuss the resources and dependencies required to complete the project and how they will be obtained.',
+            'Describe the project plan, including the problems that need to be solved.',
+            'Explain how the project is expected to demonstrate each of the three Unit Learning Outcomes at an advanced level.'
+        ],
+        'project_description' => [
+            'This project investigates the behaviour and security of the Message Queuing Telemetry Transport (MQTT) protocol in Internet of Things (IoT) environments. MQTT is a lightweight publish-subscribe protocol used to exchange messages between IoT clients and brokers. The project will examine how normal MQTT communication differs from traffic generated during an attack.',
+            'An appropriate MQTT network capture with both legitimate and malicious traffic will be examined using Wireshark. Regular communication will initially be analyzed to set a baseline, encompassing pertinent MQTT messages and interaction patterns. The chosen attack will subsequently be recognized and analyzed at the packet level to assess its traits and impact on network communication. Wireshark\'s Conversation Statistics and packet-level analysis will be employed to differentiate between normal and abnormal traffic, pinpointing quantifiable signs of the attack. The project will also take into account the importance of the attack in actual IoT settings and suitable security measures for detection, prevention, and mitigation.'
+        ],
+        'dependencies' => 'The project requires a suitable MQTT dataset or PCAP/PCAPNG capture containing both normal and malicious traffic. Wireshark will be used for packet inspection, filtering, and traffic statistics. A Linux-based MQTT broker and client environment may also be used to reproduce normal communication and validate selected observations. MQTT technical documentation, academic research, and reliable cybersecurity sources will support the protocol analysis and security evaluation.',
+        'plan_intro' => 'The project begins by selecting a suitable MQTT capture and attack scenario, then establishes a normal-traffic baseline before examining malicious traffic and evaluating practical security controls.',
+        'plan_steps' => [
+            ['Select the MQTT capture and attack scenario', 'Choose a suitable dataset or packet capture containing both legitimate and malicious MQTT traffic.'],
+            ['Establish a normal-traffic baseline', 'Examine typical MQTT messages, interaction patterns and communication behaviour before comparing attack traffic.'],
+            ['Analyze malicious packets in Wireshark', 'Identify significant packets, unusual patterns and attack characteristics using packet-level inspection.'],
+            ['Measure normal and abnormal traffic', 'Use packet-level measurements and Wireshark Conversation Statistics to compare legitimate and attack behaviour.'],
+            ['Assess IoT security impact', 'Evaluate how the observed attack could affect real IoT applications and communication.'],
+            ['Evaluate controls and mitigation', 'Consider firewalls, filtering, access controls, rate limiting and intrusion detection, then propose a practical mitigation strategy grounded in the observed traffic behaviour.']
+        ],
+        'ulos' => [
+            ['ULO 1', 'Network Protocols', 'The project demonstrates advanced understanding of network protocols by analysing MQTT operation, message exchange, and communication behaviour within an IoT environment.'],
+            ['ULO 2', 'Network Analysis', 'The project demonstrates advanced practical analysis through Wireshark-based packet inspection and comparison of normal and abnormal MQTT traffic using measurable traffic characteristics and Conversation Statistics.'],
+            ['ULO 3', 'Network Security', 'The project demonstrates the application of security principles by identifying an MQTT attack, assessing its impact, and evaluating appropriate controls for detecting, preventing, and mitigating the threat.']
+        ],
+        'ulo_summary' => 'Overall, the project combines protocol knowledge, practical network analysis, attack investigation, and security evaluation to demonstrate achievement of the three ULOs at an advanced level.',
+        'takeaways' => [
+            'A strong network-security proposal connects protocol theory with observable packet-level evidence.',
+            'Normal MQTT traffic should be baselined before malicious traffic is classified as anomalous.',
+            'Wireshark Conversation Statistics can support measurable comparisons between legitimate and attack traffic.',
+            'The final analysis should connect observed attack behaviour to realistic IoT security controls and mitigation.',
+            'The proposal aligns protocol knowledge, practical network analysis and security evaluation with the three SIT716 Unit Learning Outcomes.'
+        ],
+        'related_links' => [
+            ['/network-security-assignment-help', 'Network Security Assignment Help'],
+            ['/information-security-assignment-help', 'Information Security Assignment Help'],
+            ['/cyber-threat-intelligence-assignment-help', 'Cyber Threat Intelligence Assignment Help'],
+            ['/ethical-hacking-assignment-help', 'Ethical Hacking Assignment Help']
+        ]
+    ],
+
     'red-team-capstone-incident-response-case-study' => [
         'menu_featured' => false,
         'template' => 'red_team_capstone',
