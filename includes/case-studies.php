@@ -814,7 +814,7 @@ function renderReturnToLibcCaseStudy(string $slug, array $case, array $caseStudi
                 <section id="step-01">
                     <div class="case-section-heading">
                         <span class="case-section-number">02</span>
-                        <div><span class="mini-label">Expert-written solution</span><h2>Environment Setup</h2></div>
+                        <div><span class="mini-label">Completed project work</span><h2>Environment Setup</h2></div>
                     </div>
                     <div class="retlib-solution-copy">
                         <?php foreach($case['setup_commands'] as $line): ?><pre class="assignment-command"><code><?=e($line)?></code></pre><?php endforeach; ?>
@@ -1007,7 +1007,7 @@ function renderRedTeamCapstoneCaseStudy(string $slug, array $case, array $caseSt
                 <section id="source-summary">
                     <div class="case-section-heading">
                         <span class="case-section-number">04</span>
-                        <div><span class="mini-label">Expert-written solution</span><h2>Red Team Capstone Challenge Summary and Incident Response Relevance</h2></div>
+                        <div><span class="mini-label">Completed project work</span><h2>Red Team Capstone Challenge Summary and Incident Response Relevance</h2></div>
                     </div>
                     <div class="capstone-source-copy">
                         <?php foreach($case['solution_summary'] as $i=>$paragraph): ?>
