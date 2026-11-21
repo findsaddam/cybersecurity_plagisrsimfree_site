@@ -58,6 +58,33 @@ foreach ($subjectArchitecture as $architectureSlug => $architectureData) {
     }
 }
 
+$aeoGeoJson = file_get_contents(dirname(__DIR__) . '/data/aeo-geo-content.json');
+$aeoGeoContent = json_decode($aeoGeoJson ?: '{}', true, 512, JSON_THROW_ON_ERROR);
+$mergeFaqs = static function(array $existing, array $additional): array {
+    $seen = [];
+    foreach ($existing as $faq) {
+        if (!empty($faq[0])) $seen[strtolower(trim((string)$faq[0]))] = true;
+    }
+    foreach ($additional as $faq) {
+        if (empty($faq[0]) || empty($faq[1])) continue;
+        $key = strtolower(trim((string)$faq[0]));
+        if (isset($seen[$key])) continue;
+        $existing[] = $faq;
+        $seen[$key] = true;
+    }
+    return $existing;
+};
+if (!empty($aeoGeoContent['home'])) {
+    $home['aeo_geo'] = $aeoGeoContent['home'];
+    $home['faqs'] = $mergeFaqs($home['faqs'] ?? [], $aeoGeoContent['home']['faqs'] ?? []);
+}
+foreach ($subjects as $aeoSlug => &$aeoSubject) {
+    if (empty($aeoGeoContent[$aeoSlug])) continue;
+    $aeoSubject['aeo_geo'] = $aeoGeoContent[$aeoSlug];
+    $aeoSubject['faqs'] = $mergeFaqs($aeoSubject['faqs'] ?? [], $aeoGeoContent[$aeoSlug]['faqs'] ?? []);
+}
+unset($aeoSubject);
+
 $subjectOrder = [
     'network-security-assignment-help',
     'ethical-hacking-assignment-help',
