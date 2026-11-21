@@ -7,7 +7,7 @@
       },
       "HOME-AEO-02": {
         "title": "What Can Students Get Help With in Cyber Security Coursework?",
-        "body": "Cybersecurity studies may include theory, lab activities, technical tools, screenshots, findings, risk analysis, and written explanation. Students might require support to comprehend an assessment brief, select an appropriate method, communicate security ideas, evaluate tools outcomes and organise evidence, and convert technical observations to a coherent academic write-up. These tasks include firewall analysis, packet inspection, vulnerability assessment, encryption and hashing exercises, forensic evidence review, malware behaviour analysis, cloud configuration review and threat intelligence research. A helpful support resource makes sure that it not only tells you what to do, but also why it is important and how the evidence helps draw the conclusion."
+        "body": "Cybersecurity studies may include theory, lab activities, technical tools, screenshots, findings, risk analysis, and written explanation. Students might require support to comprehend an assessment brief, select an appropriate method, communicate security ideas, evaluate tool outputs and organise evidence, and convert technical observations to a coherent academic write-up. These tasks include firewall analysis, packet inspection, vulnerability assessment, encryption and hashing exercises, forensic evidence review, malware behaviour analysis, cloud configuration review and threat intelligence research. A helpful support resource makes sure that it not only tells you what to do, but also why it is important and how the evidence helps draw the conclusion."
       },
       "HOME-AEO-03": {
         "title": "How Cyber Security Subjects Connect",
@@ -19,7 +19,7 @@
       },
       "HOME-AEO-05": {
         "title": "What Makes a Strong Cyber Security Report?",
-        "body": "A good report has a clear line of reasoning from problem to conclusion that usually includes a logical sequence of explanations for scope, method, findings, analysis, risks, and recommendations. Technical output or screenshots should be labelled and discussed, not placed in without comment. Recommendations should be linked to findings and technical terms should be explained if they may not be familiar to the audience. Students should also distinguish facts from assumptions, recognize limitations, and cite authoritative sources for standards, definitions or security advice. A well-organised report demonstrates that the student has an understanding of the technical activity and why it is important."
+        "body": "A good report has a clear line of reasoning from problem to conclusion that usually includes a logical sequence of explanations for scope, method, findings, analysis, risks, and recommendations. Technical output or screenshots should be labelled and discussed, not placed in without comment. Recommendations should be linked to findings and technical terms should be explained if they may not be familiar to the audience. Students should also distinguish facts from assumptions, recognise limitations, and cite authoritative sources for standards, definitions or security advice. A well-organised report demonstrates that the student has an understanding of the technical activity and why it is important."
       }
     },
     "faqs": [
@@ -58,11 +58,11 @@
       },
       "NET-AEO-02": {
         "title": "What Does a Network Security Assignment Usually Involve?",
-        "body": "A network security assignment can include a written scenario and evidence. Students may be asked to recognize assets and threats, draw a small network, look at traffic, test the firewall in an authorised lab, look at IDS/IPS alerts, examine routing or access-control decisions, or look at the security of remote access. The important part is not the number of tools used. The student needs to demonstrate a clear string of reasoning that takes them from the task, through the method, to the evidence, to the meaning of the security result."
+        "body": "A network security assignment can include a written scenario and evidence. Students may be asked to recognise assets and threats, draw a small network, look at traffic, test the firewall in an authorised lab, look at IDS/IPS alerts, examine routing or access-control decisions, or look at the security of remote access. The important part is not the number of tools used. The student needs to demonstrate a clear string of reasoning that takes them from the task, through the method, to the evidence, to the meaning of the security result."
       },
       "NET-AEO-03": {
         "title": "How Should Students Approach a Network Security Assignment?",
-        "body": "First, create the network boundaries and formulate the specific question being addressed. Recognize systems, protocols, users and trust boundaries. Then, determine the evidence required (e.g., packet captures, firewall logs, diagrams, configuration output, or test results). Only gather evidence in the authorised lab or provided dataset. Analyse normal behaviour before deciding that something is suspicious. Organize findings by risk or security goal, and suggest controls that directly address the problem(s) found. Finally, ensure that each screenshot and table, and each command output, is described in the written analysis."
+        "body": "First, create the network boundaries and formulate the specific question being addressed. Recognise systems, protocols, users and trust boundaries. Then, determine the evidence required (e.g., packet captures, firewall logs, diagrams, configuration output, or test results). Only gather evidence in the authorised lab or provided dataset. Analyse normal behaviour before deciding that something is suspicious. Organise findings by risk or security goal, and suggest controls that directly address the problem(s) found. Finally, ensure that each screenshot and table, and each command output, is described in the written analysis."
       },
       "NET-AEO-04": {
         "title": "Example: Interpreting Suspicious Network Traffic",
@@ -156,7 +156,7 @@
     "sections": {
       "DF-AEO-01": {
         "title": "What Is Digital Forensics in University Coursework?",
-        "body": "Digital forensics is the systematic analysis of digital evidence to provide information in response to questions concerning events, activity, files, device or system. Students can use disk images, file systems, logs, browser artifacts, browser timestamps, deleted files, or any other provided evidence in university coursework. The aim is not just to dig up interesting data. A forensic analysis should maintain evidence integrity, record the process, be observed and interpreted, and describe the role of each artefact in supporting the conclusion."
+        "body": "Digital forensics is the systematic analysis of digital evidence to provide information in response to questions concerning events, activity, files, device or system. Students can use disk images, file systems, logs, browser artefacts, browser timestamps, deleted files, or any other provided evidence in university coursework. The aim is not just to dig up interesting data. A forensic analysis should maintain evidence integrity, record the process, be observed and interpreted, and describe the role of each artefact in supporting the conclusion."
       },
       "DF-AEO-02": {
         "title": "What Does a Digital Forensics Assignment Usually Include?",
@@ -237,7 +237,7 @@
       ],
       [
         "Is an open port automatically a vulnerability?",
-        "No. Open port indicates that a service is available. Risk is related to the service, configuration, exposure, authentication, known weaknesses, and environment."
+        "No. An open port indicates that a service is available. Risk is related to the service, configuration, exposure, authentication, known weaknesses, and environment."
       ],
       [
         "How should I rate a finding?",
@@ -261,7 +261,7 @@
         "body": "Cryptography is the field of expertise and practice of applying mathematical methods and security protocols to render information secure. Encryption, hashing, digital signatures, key exchange, certificates, public key infrastructure, and common cryptographic algorithms may be taught in university courses. Students will also be expected to explain how a technique works, as well as what security properties it addresses, what assumptions it relies on, and where it can go wrong if it is not done properly."
       },
       "CRYPTO-AEO-02": {
-        "title": "Encryption, Hashing, and Digital Signatures: What Is the",
+        "title": "Encryption, Hashing, and Digital Signatures: What Is the Difference?",
         "body": "Encryption is primarily used to protect confidentiality by transforming readable data into a form that should be unreadable without the appropriate key, while allowing authorised decryption with the correct key. Hashing produces a fixed-length digest and is commonly used for integrity checking and secure password-storage schemes. Digital signatures use asymmetric cryptography to help provide authenticity and integrity. These techniques solve different security problems and should not be treated as interchangeable in a strong assignment."
       },
       "CRYPTO-AEO-03": {
@@ -309,7 +309,7 @@
     "sections": {
       "MAL-AEO-01": {
         "title": "What Is Malware Analysis in University Coursework?",
-        "body": "Malware analysis coursework involves analysing malware in a controlled setting to gain insights into its characteristics, behavior, red flags, and potential consequences. Students can explore file metadata, strings, imports, hashes, processes, network activity, registry or file-system changes and other artifacts from a secure lab. The goal is to defend. Only use approved samples, isolated environments and procedures outlined in the module to perform work."
+        "body": "Malware analysis coursework involves analysing malware in a controlled setting to gain insights into its characteristics, behavior, red flags, and potential consequences. Students can explore file metadata, strings, imports, hashes, processes, network activity, registry or file-system changes and other artefacts from a secure lab. The goal is to defend. Only use approved samples, isolated environments and procedures outlined in the module to perform work."
       },
       "MAL-AEO-02": {
         "title": "Static Analysis and Dynamic Analysis: What Is the Difference?",
@@ -351,7 +351,7 @@
       ],
       [
         "How do I avoid overclaiming in malware analysis?",
-        "Be careful with language and avoid making assumptions about observations, do not make assumptions about interpretations and say what more evidence would require to build confidence."
+        "Be careful with language and avoid making assumptions about observations, do not make assumptions about interpretations and say what additional evidence would be required to build confidence."
       ]
     ],
     "faq_heading": "Malware Analysis FAQs"
@@ -376,7 +376,7 @@
       },
       "CC-AEO-05": {
         "title": "Common Cloud Computing Assignment Mistakes",
-        "body": "Common pitfalls involve selecting services for popularity instead of because they meet the needs, failing to recognize the shared-responsibility model, assuming that cloud = less expensive or more secure, and creating an architecture diagram without explaining data flow. Students should also note that scalability and availability are not the same – and neither is backup and HA."
+        "body": "Common pitfalls involve selecting services for popularity instead of because they meet the needs, failing to recognise the shared-responsibility model, assuming that cloud = less expensive or more secure, and creating an architecture diagram without explaining data flow. Students should also note that scalability and availability are not the same – and neither is backup and HA."
       },
       "CC-AEO-06": {
         "title": "What Should a Cloud Computing Report Contain?",
@@ -419,7 +419,7 @@
       },
       "IS-AEO-03": {
         "title": "How Should Students Approach an Information Security Risk",
-        "body": "Assessment? Outline the scope first. Recognize critical assets and the business or academic environment in which they are applied. Recognize potential threats and vulnerabilities, and then determine risk according to the method as specified in the assignment. Describe why it is considered likely and impactful instead of giving numbers without context. Assess the current controls for effectiveness, look for gaps and suggest further controls that are commensurate to the risk. Conclude by discussing any remaining risk and/or limitations in assessment."
+        "body": "Assessment? Outline the scope first. Recognise critical assets and the business or academic environment in which they are applied. Recognise potential threats and vulnerabilities, and then determine risk according to the method as specified in the assignment. Describe why it is considered likely and impactful instead of giving numbers without context. Assess the current controls for effectiveness, look for gaps and suggest further controls that are commensurate to the risk. Conclude by discussing any remaining risk and/or limitations in assessment."
       },
       "IS-AEO-04": {
         "title": "Example: Analysing Risk to Sensitive Student Data",
@@ -470,7 +470,7 @@
       },
       "CS-AEO-03": {
         "title": "How Should Students Approach a Cloud Security Assignment?",
-        "body": "Start with assets, identities, data, workloads, and trust boundaries. Recognize the cloud service and associated customer responsibilities. Check access rights, exposed services, storage configuration, network rules, encryption, secrets, logging and backup management requirements based on the scenario. Focus on identifying high risk and provide reasoning behind the findings. Only recommend controls if they address a specific identified weakness (e.g., least privilege, multi-factor authentication, segmentation, encryption, secure configuration, monitoring, key management)."
+        "body": "Start with assets, identities, data, workloads, and trust boundaries. Recognise the cloud service and associated customer responsibilities. Check access rights, exposed services, storage configuration, network rules, encryption, secrets, logging and backup management requirements based on the scenario. Focus on identifying high risk and provide reasoning behind the findings. Only recommend controls if they address a specific identified weakness (e.g., least privilege, multi-factor authentication, segmentation, encryption, secure configuration, monitoring, key management)."
       },
       "CS-AEO-04": {
         "title": "Example: Analysing a Cloud Misconfiguration",
@@ -504,7 +504,7 @@
       ],
       [
         "How do I prioritise cloud findings?",
-        "Take into account the asset, exposure, privileges, sensitivity of the data, probability/likelihood, impact and existing controls."
+        "Take into account the asset, exposure, privileges, sensitivity of the data, likelihood, impact and existing controls."
       ]
     ],
     "faq_heading": "Cloud Security FAQs"
@@ -517,7 +517,7 @@
       },
       "WEB-AEO-02": {
         "title": "What Does a Web Application Security Assignment Usually Include?",
-        "body": "Students might be required to examine a vulnerable training application, and analyse the source code, insecure input handling, HTTP requests and responses, authentication or access control, or write a remediation report. The most effective work relates the application behaviour with the security principle. For instance it provides reasons for server-side validation and/or properly authorizing a site, rather than just stating a vulnerability category."
+        "body": "Students might be required to examine a vulnerable training application, and analyse the source code, insecure input handling, HTTP requests and responses, authentication or access control, or write a remediation report. The most effective work relates the application behaviour with the security principle. For instance it provides reasons for server-side validation and/or properly authorising a site, rather than just stating a vulnerability category."
       },
       "WEB-AEO-03": {
         "title": "How Should Students Approach an Authorised Web Security Lab?",
@@ -543,7 +543,7 @@
       ],
       [
         "Why is server-side validation important?",
-        "Client side controls are modifiable or circumventable. Server-side validation imposes rules in the environment that will process the request."
+        "Client-side controls are modifiable or circumventable. Server-side validation imposes rules in the environment that will process the request."
       ],
       [
         "What evidence is useful in a web security report?",
@@ -606,7 +606,7 @@
       ],
       [
         "How do I avoid weak attribution claims?",
-        "Rely on multiple independent sources to support their claims, explain the evidence presented, recognize other explanations, and do not claim an attribution as certain if there is not enough evidence to support the claim."
+        "Rely on multiple independent sources to support their claims, explain the evidence presented, recognise other explanations, and do not claim an attribution as certain if there is not enough evidence to support the claim."
       ]
     ],
     "faq_heading": "Cyber Threat Intelligence FAQs"
