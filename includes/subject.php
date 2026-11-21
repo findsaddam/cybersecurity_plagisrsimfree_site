@@ -2,6 +2,27 @@
 function subjectSection(array $page, string $key): array {
     return $page['architecture']['sections'][$key] ?? [];
 }
+function renderSubjectAeoBlock(array $page, int $number, string $variant = ''): void {
+    $sections = $page['aeo_geo']['sections'] ?? [];
+    $suffix = '-AEO-' . str_pad((string)$number, 2, '0', STR_PAD_LEFT);
+    $section = [];
+    foreach ($sections as $id => $candidate) {
+        if (str_ends_with((string)$id, $suffix)) {
+            $section = $candidate;
+            break;
+        }
+    }
+    if (empty($section)) return;
+    $classes = trim('section ' . $variant);
+    ?>
+    <section class="<?=e($classes)?>"><div class="container">
+        <div class="section-head section-head--split reveal">
+            <div><span class="section-kicker">Coursework answer</span><h2><?=e($section['title'])?></h2></div>
+            <p><?=e($section['body'])?></p>
+        </div>
+    </div></section>
+    <?php
+}
 function renderProblemsBlock(array $page): void {
     $s=subjectSection($page,'problems'); ?>
     <section class="section section--light" id="support-areas"><div class="container">
@@ -102,19 +123,21 @@ function renderSubject(string $slug,array $page,array $subjects,array $caseStudi
 <div class="hero__copy reveal"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><span><?=e($page['nav'])?></span></div><div class="eyebrow"><span class="eyebrow__icon"><?=icon($page['icon'],17)?></span> <?=e($page['eyebrow'])?></div><h1><?=e($page['h1'])?></h1><p class="hero__lead"><?=e($page['intro'])?></p><div class="hero__actions"><a class="btn btn--primary" href="<?=e(waLink($page['primary']))?>" target="_blank" rel="noopener">Get Subject Help <?=icon('arrow',18)?></a><a class="btn btn--ghost" href="#support-areas">Explore the Topic</a></div><div class="keyword-pills"><?php foreach(array_slice($page['secondary'],0,3) as $keyword): ?><span><?=e($keyword)?></span><?php endforeach; ?></div></div>
 <div class="subject-hero-card reveal"><div class="subject-hero-card__top"><span class="subject-card__icon subject-card__icon--large"><?=icon($page['icon'],34)?></span><span><?=e($hero['label']??'Subject overview')?></span></div><h2><?=e($page['nav'])?></h2><p><?=e($hero['intro']??'')?></p><ul><?php foreach(($hero['bullets']??[]) as $bullet): ?><li><?=icon('check',17)?> <?=e($bullet)?></li><?php endforeach; ?></ul><div class="subject-hero-card__footer"><span><?=icon('file',17)?> Coursework focused</span><span><?=icon('lock',17)?> Private</span></div></div>
 </div></section>
+<?php renderSubjectAeoBlock($page, 1, 'section--soft'); ?>
 <?php
 $order=$a['order']??['problems','topics','workflow','tools_report','intent','questions','long_copy'];
 foreach($order as $block){
-    if($block==='problems') renderProblemsBlock($page);
+    if($block==='problems') { renderProblemsBlock($page); renderSubjectAeoBlock($page, 2); }
     elseif($block==='topics') renderTopicsBlock($page);
-    elseif($block==='workflow') renderWorkflowBlock($page);
-    elseif($block==='tools_report') renderToolsReportBlock($page);
+    elseif($block==='workflow') { renderWorkflowBlock($page); renderSubjectAeoBlock($page, 3, 'section--soft'); renderSubjectAeoBlock($page, 4); }
+    elseif($block==='tools_report') { renderToolsReportBlock($page); renderSubjectAeoBlock($page, 5, 'section--soft'); }
     elseif($block==='intent') renderIntentBlock($page);
     elseif($block==='questions') renderQuestionsBlock($page);
     elseif($block==='signature') renderSignatureBlock($page);
     elseif($block==='case_study') renderCaseStudyPromoBlock($page);
     elseif($block==='long_copy') renderLongCopyBlock($page);
 }
+renderSubjectAeoBlock($page, 6);
 renderFaqBlock($page);
 renderRelatedBlock($slug,$page,$subjects);
 $s=subjectSection($page,'cta');
