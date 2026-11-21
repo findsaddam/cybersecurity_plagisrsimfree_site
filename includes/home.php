@@ -1,4 +1,17 @@
 <?php
+function renderHomeAeoBlock(array $home, string $id, string $variant = ''): void {
+    $section = $home['aeo_geo']['sections'][$id] ?? [];
+    if (empty($section)) return;
+    $classes = trim('section ' . $variant);
+    ?>
+    <section class="<?=e($classes)?>"><div class="container">
+        <div class="section-head section-head--split reveal">
+            <div><span class="section-kicker">Student guide</span><h2><?=e($section['title'])?></h2></div>
+            <p><?=e($section['body'])?></p>
+        </div>
+    </div></section>
+    <?php
+}
 function renderHome(array $home, array $subjects, array $caseStudies = []): void {
     renderHead($home, SITE_URL . '/', $subjects);
     renderHeader($subjects, $caseStudies);
@@ -44,6 +57,8 @@ function renderHome(array $home, array $subjects, array $caseStudies = []): void
         </div>
     </section>
 
+    <?php renderHomeAeoBlock($home, 'HOME-AEO-01', 'section--soft'); ?>
+
     <section class="section section--light" id="subjects">
         <div class="container">
             <div class="section-head section-head--split reveal">
@@ -63,6 +78,9 @@ function renderHome(array $home, array $subjects, array $caseStudies = []): void
             </div>
         </div>
     </section>
+
+    <?php renderHomeAeoBlock($home, 'HOME-AEO-02'); ?>
+    <?php renderHomeAeoBlock($home, 'HOME-AEO-03', 'section--soft'); ?>
 
     <section class="section section--dark-split">
         <div class="container two-col">
@@ -89,6 +107,8 @@ function renderHome(array $home, array $subjects, array $caseStudies = []): void
             </div>
         </div>
     </section>
+
+    <?php renderHomeAeoBlock($home, 'HOME-AEO-04'); ?>
 
     <section class="section" id="how-it-works">
         <div class="container">
@@ -138,9 +158,11 @@ function renderHome(array $home, array $subjects, array $caseStudies = []): void
     </section>
     <?php endif; ?>
 
+    <?php renderHomeAeoBlock($home, 'HOME-AEO-05', 'section--soft'); ?>
+
     <section class="section" id="faq">
         <div class="container faq-layout">
-            <div class="faq-intro reveal"><span class="section-kicker">Common questions</span><h2>Cyber Security Assignment FAQs</h2><p>Quick answers for students planning coursework, reports and authorised practical labs.</p><a class="btn btn--dark" href="<?= e(waLink()) ?>" target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+            <div class="faq-intro reveal"><span class="section-kicker">Common questions</span><h2><?=e($home['aeo_geo']['faq_heading'] ?? 'Cyber Security Assignment FAQs')?></h2><p>Quick answers for students planning coursework, reports and authorised practical labs.</p><a class="btn btn--dark" href="<?= e(waLink()) ?>" target="_blank" rel="noopener">Ask on WhatsApp</a></div>
             <div class="faq-list reveal">
                 <?php foreach ($home['faqs'] as $faq): ?>
                     <div class="faq-item"><button type="button" aria-expanded="false"><span><?= e($faq[0]) ?></span><b>+</b></button><div class="faq-answer"><p><?= e($faq[1]) ?></p></div></div>
