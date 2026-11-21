@@ -26,6 +26,7 @@ function renderFooter(array $subjects): void {
                 <li><a href="/#subjects">Browse subjects</a></li>
                 <li><a href="/#faq">Common questions</a></li>
                 <li><a href="/case-studies">Solved assignment case studies</a></li>
+                <li><a href="/about">About &amp; Editorial Standards</a></li>
                 <li><a href="<?= e(waLink()) ?>" target="_blank" rel="noopener">WhatsApp support</a></li>
             </ul>
         </div>

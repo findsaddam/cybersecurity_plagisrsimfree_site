@@ -18,6 +18,7 @@ const WHATSAPP_NUMBER = '447949817583';
 const WHATSAPP_LABEL = '+44 7949 817583';
 
 $home = require dirname(__DIR__) . '/data/home.php';
+$about = require dirname(__DIR__) . '/data/about.php';
 $caseStudies = require dirname(__DIR__) . '/data/case-studies.php';
 $sit716CaseStudies = [];
 foreach ([
@@ -85,6 +86,11 @@ foreach ($subjects as $aeoSlug => &$aeoSubject) {
 }
 unset($aeoSubject);
 
+$authoritativeReferences = require dirname(__DIR__) . '/data/authoritative-references.php';
+foreach ($authoritativeReferences as $referenceSlug => $references) {
+    if (isset($subjects[$referenceSlug])) $subjects[$referenceSlug]['authoritative_references'] = $references;
+}
+
 $subjectOrder = [
     'network-security-assignment-help',
     'ethical-hacking-assignment-help',
@@ -117,6 +123,7 @@ require dirname(__DIR__) . '/includes/head.php';
 require dirname(__DIR__) . '/includes/header.php';
 require dirname(__DIR__) . '/includes/footer.php';
 require dirname(__DIR__) . '/includes/home.php';
+require dirname(__DIR__) . '/includes/about.php';
 require dirname(__DIR__) . '/includes/subject.php';
 require dirname(__DIR__) . '/includes/case-studies.php';
 require dirname(__DIR__) . '/includes/error.php';
@@ -128,6 +135,7 @@ $path = $path === 'index' ? '' : $path;
 if ($path === 'sitemap.xml') {
     header('Content-Type: application/xml; charset=UTF-8');
     $sitemapPaths = array_keys($subjects);
+    $sitemapPaths[] = 'about';
     $sitemapPaths[] = 'case-studies';
     foreach (array_keys($caseStudies) as $caseSlug) $sitemapPaths[] = 'case-studies/' . $caseSlug;
     echo buildSitemap($sitemapPaths);
@@ -146,6 +154,7 @@ if ($path === 'llms.txt') {
     header('Content-Type: text/plain; charset=UTF-8');
     echo "# " . SITE_NAME . "\n\n";
     echo "> Student-oriented cyber security coursework guidance covering theory, authorised labs, reports and practical assignments.\n\n";
+    echo "## About & editorial standards\n- " . SITE_URL . "/about — About CyberAssignment.com, editorial standards, source policy and academic integrity\n\n";
     echo "## Main page\n- " . SITE_URL . "/\n\n## Subject pages\n";
     foreach ($subjects as $slug => $subject) {
         echo "- " . SITE_URL . "/" . $slug . " — " . $subject['h1'] . "\n";
@@ -160,6 +169,10 @@ if ($path === 'incident-response-assignment-help') {
     header('Location: ' . SITE_URL . '/information-security-assignment-help', true, 301);
     exit;
 }
+if ($path === 'about') {
+    renderAbout($about, $subjects, $caseStudies);
+    exit;
+}
 if ($path === 'case-studies') {
     renderCaseStudiesIndex($caseStudies, $subjects);
     exit;
@@ -171,7 +184,7 @@ if (str_starts_with($path, 'case-studies/')) {
         exit;
     }
 }
-if ($path !== '' && !isset($subjects[$path])) {
+if ($path !== '' && $path !== 'about' && !isset($subjects[$path])) {
     http_response_code(404);
     render404($subjects, $caseStudies);
     exit;

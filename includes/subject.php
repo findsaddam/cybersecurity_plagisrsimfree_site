@@ -97,6 +97,26 @@ function renderLongCopyBlock(array $page): void {
         </div><a href="<?=e(waLink($page['primary']))?>" class="text-link" target="_blank" rel="noopener">Ask about your assignment <?=icon('arrow',16)?></a></aside>
     </div></section><?php
 }
+function renderAuthoritativeReferencesBlock(array $page): void {
+    $references = $page['authoritative_references'] ?? [];
+    if (empty($references)) return; ?>
+    <section class="section section--soft"><div class="container">
+        <div class="section-head section-head--split reveal">
+            <div><span class="section-kicker">Technical references</span><h2>Authoritative Sources for This Topic</h2></div>
+            <p>These primary or recognised technical sources support the concepts and terminology used on this page. Students should follow the referencing rules required by their university when citing external material.</p>
+        </div>
+        <div class="related-grid">
+            <?php foreach($references as $reference): ?>
+            <a class="related-card reveal" href="<?=e($reference[1])?>" target="_blank" rel="noopener">
+                <span><?=icon('book',22)?></span>
+                <div><h3><?=e($reference[0])?></h3><p><?=e($reference[2])?></p></div>
+                <?=icon('arrow',17)?>
+            </a>
+            <?php endforeach; ?>
+        </div>
+        <p class="body-large">Read more about how CyberAssignment.com selects technical sources on our <a class="text-link" href="/about#editorial-standards">About &amp; Editorial Standards</a> page.</p>
+    </div></section><?php
+}
 function renderFaqBlock(array $page): void {
     $s=subjectSection($page,'faq'); ?>
     <section class="section section--light" id="faq"><div class="container faq-layout">
@@ -138,6 +158,7 @@ foreach($order as $block){
     elseif($block==='long_copy') renderLongCopyBlock($page);
 }
 renderSubjectAeoBlock($page, 6);
+renderAuthoritativeReferencesBlock($page);
 renderFaqBlock($page);
 renderRelatedBlock($slug,$page,$subjects);
 $s=subjectSection($page,'cta');

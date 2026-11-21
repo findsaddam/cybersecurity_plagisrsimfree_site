@@ -13,6 +13,10 @@ function renderHead(array $page, string $canonical, array $subjects): void {
             'title' => 'Premium Cyber Security Assignment Help | CyberAssignment',
             'description' => 'Get cyber security assignment help for university coursework, labs, reports and projects covering ethical hacking, forensics, networks, cloud security and more.',
         ],
+        '/about' => [
+            'title' => 'About CyberAssignment | Editorial Standards & Academic Integrity',
+            'description' => 'Learn how CyberAssignment.com prepares cybersecurity coursework guidance, selects technical sources, supports authorised academic work and maintains editorial standards.',
+        ],
         '/network-security-assignment-help' => [
             'title' => 'Network Security Assignment Help | CyberAssignment',
             'description' => 'Network security assignment help for university students covering firewalls, VPNs, IDS/IPS, routing, segmentation, packet analysis, labs and technical reports.',
@@ -112,6 +116,13 @@ function renderHead(array $page, string $canonical, array $subjects): void {
             'logo'=>[
                 '@type'=>'ImageObject',
                 'url'=>SITE_URL . '/assets/favicon.svg'
+            ],
+            'publishingPrinciples'=>SITE_URL . '/about#editorial-standards',
+            'contactPoint'=>[
+                '@type'=>'ContactPoint',
+                'telephone'=>'+' . WHATSAPP_NUMBER,
+                'contactType'=>'customer support',
+                'availableLanguage'=>['English']
             ]
         ],
         [
@@ -124,7 +135,19 @@ function renderHead(array $page, string $canonical, array $subjects): void {
             'inLanguage'=>'en'
         ],
     ];
-    if ($pageType === 'case_study') {
+    if ($pageType === 'about') {
+        $graph[] = [
+            '@type'=>'AboutPage',
+            '@id'=>$webPageId,
+            'url'=>$canonical,
+            'name'=>$page['h1'],
+            'description'=>$metaDescription,
+            'isPartOf'=>['@id'=>$websiteId],
+            'about'=>['@id'=>$organizationId],
+            'mainEntity'=>['@id'=>$organizationId],
+            'inLanguage'=>'en'
+        ];
+    } elseif ($pageType === 'case_study') {
         $articleId = $canonical . '#article';
         $graph[] = ['@type'=>'WebPage','@id'=>$webPageId,'url'=>$canonical,'name'=>$page['h1'],'description'=>$metaDescription,'isPartOf'=>['@id'=>$websiteId],'mainEntity'=>['@id'=>$articleId],'inLanguage'=>'en'];
         $article = [
