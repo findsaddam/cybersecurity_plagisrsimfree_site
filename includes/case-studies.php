@@ -1327,7 +1327,106 @@ function renderSit716ProposalCaseStudy(string $slug, array $case, array $caseStu
 <?php renderFooter($subjects);
 }
 
+function renderWindowsSecuritySourceLab(string $slug, array $case, array $caseStudies, array $subjects): void {
+    $canonical = SITE_URL . '/case-studies/' . $slug;
+    renderHead($case, $canonical, $subjects);
+    renderHeader($subjects, $caseStudies);
+    $source = $case['source'] ?? ['intro'=>[], 'parts'=>[], 'conclusion'=>[]];
+    ?>
+<main class="blog-page case-study-learning-page source-lab-page">
+    <section class="blog-article-head case-learning-hero">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
+            <span class="blog-label"><?=e($case['eyebrow'])?></span>
+            <h1><?=e($case['h1'])?></h1>
+            <div class="blog-topic-line"><?=e($case['course'])?> <span>•</span> <?=e($case['original_lab'])?> <span>•</span> <?=e($case['topic'])?></div>
+        </div>
+    </section>
+
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <div class="case-snapshot-card"><span>Program</span><strong><?=e($case['program'])?></strong></div>
+                <div class="case-snapshot-card"><span>Course</span><strong><?=e($case['course'])?></strong></div>
+                <div class="case-snapshot-card"><span>Case study</span><strong><?=e($case['public_lab'])?></strong></div>
+                <div class="case-snapshot-card"><span>Original course lab</span><strong><?=e($case['original_lab'])?></strong></div>
+                <div class="case-snapshot-card"><span>Topic</span><strong><?=e($case['topic'])?></strong></div>
+                <div class="case-snapshot-card"><span>Source</span><strong>Supplied completed lab solution</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-body-section">
+        <div class="container blog-layout">
+            <article class="blog-article source-lab-document">
+                <?php foreach(($source['intro'] ?? []) as $paragraph): ?><p><?=nl2br(e($paragraph))?></p><?php endforeach; ?>
+
+                <?php foreach(($source['parts'] ?? []) as $partIndex=>$part):
+                    $partId='part-' . ($partIndex+1); ?>
+                    <section id="<?=e($partId)?>" class="source-lab-part">
+                        <div class="case-section-heading">
+                            <span class="case-section-number"><?=e(str_pad((string)($partIndex+1),2,'0',STR_PAD_LEFT))?></span>
+                            <div><span class="mini-label">Source solution</span><h2><?=e($part['title'])?></h2></div>
+                        </div>
+                        <?php foreach(($part['intro'] ?? []) as $paragraph): ?><p><?=nl2br(e($paragraph))?></p><?php endforeach; ?>
+
+                        <?php foreach(($part['questions'] ?? []) as $question): ?>
+                        <section class="vpn-question source-lab-question" id="question-<?=e((string)$partIndex)?>-<?=e((string)$question['n'])?>">
+                            <div class="vpn-question__head">
+                                <span class="vpn-question__number"><?=e(str_pad((string)$question['n'],2,'0',STR_PAD_LEFT))?></span>
+                                <div><small>Question <?=e((string)$question['n'])?></small><h3><?=nl2br(e($question['question']))?></h3></div>
+                            </div>
+                            <div class="vpn-question__answer">
+                                <?php foreach(($question['answer'] ?? []) as $paragraph): ?><p><?=nl2br(e($paragraph))?></p><?php endforeach; ?>
+                            </div>
+                        </section>
+                        <?php endforeach; ?>
+                    </section>
+
+                    <?php if($partIndex===1): ?>
+                        <?php if(!empty($case['evidence_image'])): ?>
+                        <figure class="source-lab-evidence">
+                            <img src="<?=e($case['evidence_image'])?>" alt="<?=e($case['topic'])?> source lab screenshot" loading="lazy">
+                            <figcaption>Screenshot evidence from the supplied completed lab solution.</figcaption>
+                        </figure>
+                        <?php endif; ?>
+                        <?php renderCaseStudyCTA('mid'); ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+
+                <?php if(!empty($source['conclusion'])): ?>
+                <section id="conclusion" class="source-lab-part">
+                    <div class="case-section-heading"><span class="case-section-number">✓</span><div><span class="mini-label">Source conclusion</span><h2>Conclusion</h2></div></div>
+                    <?php foreach($source['conclusion'] as $paragraph): ?><p><?=nl2br(e($paragraph))?></p><?php endforeach; ?>
+                </section>
+                <?php endif; ?>
+
+                <?php renderCaseStudyCTA('footer'); ?>
+            </article>
+
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">On this page</span>
+                    <?php foreach(($source['parts'] ?? []) as $partIndex=>$part): ?><a href="#part-<?=e((string)($partIndex+1))?>"><?=e($part['title'])?></a><?php endforeach; ?>
+                    <?php if(!empty($source['conclusion'])): ?><a href="#conclusion">Conclusion</a><?php endif; ?>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Related</span>
+                    <?php foreach(($case['related_links'] ?? []) as $link): ?><a href="<?=e($link[0])?>"><?=e($link[1])?></a><?php endforeach; ?>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+<?php renderFooter($subjects);
+}
+
 function renderCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    if(($case['template'] ?? '') === 'windows_security_source_lab'){
+        renderWindowsSecuritySourceLab($slug,$case,$caseStudies,$subjects);
+        return;
+    }
+
     if(($case['template'] ?? '') === 'sit716_proposal'){
         renderSit716ProposalCaseStudy($slug,$case,$caseStudies,$subjects);
         return;
