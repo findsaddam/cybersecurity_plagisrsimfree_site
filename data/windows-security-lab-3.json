@@ -20,15 +20,10 @@
       "intro": [],
       "parts": [
         {
-          "title": "Part A: Memory dumping",
+          "title": "Part A: MEMORY DUMPING",
           "intro": [
             "The Local Security Authority (LSA) process holds many credentials an attacker might be interested in harvesting. Not all methods work in all cases, and it depends on the countermeasures established in the target server, including the antivirus engine updated and running."
           ],
-          "questions": []
-        },
-        {
-          "title": "Part A: MEMORY DUMPING",
-          "intro": [],
           "questions": [
             {
               "n": 1,
@@ -198,8 +193,13 @@
               "n": 20,
               "question": "Remove the folder and file you created. Then, recover them from the incremental backup. Show the screenshots for the Select Backup Date and Select Items to Recover steps.",
               "answer": [
-                "I deleted the herzing folder and the text file that I created in Question 19. I then opened the Windows Server Backup recovery process and selected the backup containing the required files. I selected the appropriate backup date and then selected the items that needed to be recovered. The recovery process was then used to restore the deleted folder and file.."
+                "I deleted the herzing folder and the text file that I created in"
               ]
+            },
+            {
+              "n": 19,
+              "question": ". I then opened the Windows Server Backup recovery process and selected the backup containing the required files. I selected the appropriate backup date and then selected the items that needed to be recovered. The recovery process was then used to restore the deleted folder and file..",
+              "answer": []
             },
             {
               "n": 21,
@@ -234,8 +234,13 @@
               "n": 24,
               "question": "Get information about the policy you previously set.",
               "answer": [
-                "I retrieved information about the backup policy that was configured in Question 23. The policy information allows me to verify the current backup configuration and confirm the scheduled backup settings. This provides evidence that the backup policy was successfully configured and can be queried after it has been created."
+                "I retrieved information about the backup policy that was configured in"
               ]
+            },
+            {
+              "n": 23,
+              "question": ". The policy information allows me to verify the current backup configuration and confirm the scheduled backup settings. This provides evidence that the backup policy was successfully configured and can be queried after it has been created.",
+              "answer": []
             }
           ]
         }
