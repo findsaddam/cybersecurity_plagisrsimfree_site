@@ -372,3 +372,14 @@
   .sit716-week-case .related-subjects-grid{grid-template-columns:1fr}
   .sit716-week-case .related-subject-card{min-height:auto}
 }
+
+
+/* Source-faithful Windows Security lab case studies */
+.source-lab-page .blog-topic-line{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}
+.source-lab-document .source-lab-part{margin:0 0 2.4rem}
+.source-lab-question .vpn-question__head h3{white-space:normal;line-height:1.45}
+.source-lab-question .vpn-question__answer p{white-space:normal;line-height:1.78}
+.source-lab-evidence{margin:2rem 0 2.5rem;padding:12px;background:#fff;border:1px solid #e2e8f0;border-radius:18px;box-shadow:0 12px 30px rgba(15,23,42,.08)}
+.source-lab-evidence img{display:block;width:100%;height:auto;border-radius:12px;background:#f8fafc}
+.source-lab-evidence figcaption{margin-top:10px;color:#64748b;font-size:.86rem;line-height:1.5}
+@media(max-width:720px){.source-lab-evidence{padding:8px;border-radius:14px}.source-lab-evidence img{border-radius:9px}}
