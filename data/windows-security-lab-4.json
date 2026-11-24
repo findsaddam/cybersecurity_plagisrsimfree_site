@@ -17,15 +17,10 @@
     "original_lab": "Lab 7: Encryption with BitLocker",
     "topic": "Encryption with BitLocker",
     "source": {
-      "intro": [],
+      "intro": [
+        "Using the Windows Server 2016 Essentials virtual machine available through the course, log in as user “collegeadm” and password “Herzing2021”. Then, respond to the following questions, including relevant screenshots to support your answers:"
+      ],
       "parts": [
-        {
-          "title": "Lab Solution",
-          "intro": [
-            "Using the Windows Server 2016 Essentials virtual machine available through the course, log in as user “collegeadm” and password “Herzing2021”. Then, respond to the following questions, including relevant screenshots to support your answers:"
-          ],
-          "questions": []
-        },
         {
           "title": "Part A: Encryption with itLocker",
           "intro": [],
