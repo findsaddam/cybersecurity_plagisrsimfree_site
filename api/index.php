@@ -20,6 +20,11 @@ const WHATSAPP_LABEL = '+44 7949 817583';
 $home = require dirname(__DIR__) . '/data/home.php';
 $about = require dirname(__DIR__) . '/data/about.php';
 $caseStudies = require dirname(__DIR__) . '/data/case-studies.php';
+$windowsSecurityLab1Json = file_get_contents(dirname(__DIR__) . '/data/windows-security-compliance-lab1.json');
+$windowsSecurityLab1 = json_decode($windowsSecurityLab1Json ?: '{}', true, 512, JSON_THROW_ON_ERROR);
+if (is_array($windowsSecurityLab1)) {
+    $caseStudies = array_merge($caseStudies, $windowsSecurityLab1);
+}
 $sit716CaseStudies = [];
 foreach ([
     dirname(__DIR__) . '/data/sit716-week-2.json.gz',
