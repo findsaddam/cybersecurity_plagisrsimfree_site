@@ -134,6 +134,27 @@ $path = trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/', '/'
 $path = preg_replace('/\\.php$/', '', $path) ?? $path;
 $path = $path === 'index' ? '' : $path;
 
+$labEvidence = [
+    'assets/case-studies/windows-security-lab-1-security-compliance-toolkit/source-evidence.jpg' => ['windows-security-lab-1.jpg.b64', 'image/jpeg'],
+    'assets/case-studies/windows-security-lab-2-access-controls/source-evidence.png' => ['windows-security-lab-2.png.b64', 'image/png'],
+    'assets/case-studies/windows-security-lab-3-credentials-harvesting/source-evidence.png' => ['windows-security-lab-3.png.b64', 'image/png'],
+    'assets/case-studies/windows-security-lab-4-bitlocker-encryption/source-evidence.png' => ['windows-security-lab-4.png.b64', 'image/png'],
+];
+if (isset($labEvidence[$path])) {
+    [$fileName, $contentType] = $labEvidence[$path];
+    $encoded = file_get_contents(dirname(__DIR__) . '/data/evidence/' . $fileName);
+    $binary = $encoded === false ? false : base64_decode(trim($encoded), true);
+    if ($binary === false) {
+        http_response_code(404);
+        exit;
+    }
+    header('Content-Type: ' . $contentType);
+    header('Content-Length: ' . strlen($binary));
+    header('Cache-Control: public, max-age=31536000, immutable');
+    echo $binary;
+    exit;
+}
+
 if ($path === 'sitemap.xml') {
     header('Content-Type: application/xml; charset=UTF-8');
     $sitemapPaths = array_keys($subjects);
