@@ -20,12 +20,16 @@
       "intro": [],
       "parts": [
         {
-          "title": "Part A: Documentation Question 1 What attack was mitigated with the LSA protection?",
-          "intro": [
-            "Answer:",
-            "LSA Protection was introduced as part of the Pass-the-Hash mitigations. It helps protect the Local Security Authority process from unauthorized access and credential theft techniques associated with Pass-the-Hash attacks."
-          ],
+          "title": "Part A: Documentation",
+          "intro": [],
           "questions": [
+            {
+              "n": 1,
+              "question": "What attack was mitigated with the LSA protection?",
+              "answer": [
+                "LSA Protection was introduced as part of the Pass-the-Hash mitigations. It helps protect the Local Security Authority process from unauthorized access and credential theft techniques associated with Pass-the-Hash attacks."
+              ]
+            },
             {
               "n": 2,
               "question": "What change mitigates brute-force authentication attacks?",
@@ -36,11 +40,16 @@
           ]
         },
         {
-          "title": "Part B: Policy Analyzer Question 3 Import the GPO from the Windows 10 version 22H2 Security Baseline. First, open the extracted Policy Analyzer folder and run Policy Analyzer as Administrator. Select: Add → File → Add files from GPO(s)",
-          "intro": [
-            "Browse to the extracted Windows 10 version 22H2 Security Baseline and open the following GPO folder: {816D1B8C-378B-48D9-B2F4-D5E582A57D7C} Select the folder and prepare it for import."
-          ],
+          "title": "Part B: Policy Analyzer",
+          "intro": [],
           "questions": [
+            {
+              "n": 3,
+              "question": "Import the GPO from the Windows 10 version 22H2 Security Baseline. First, open the extracted Policy Analyzer folder and run Policy Analyzer as Administrator. Select: Add → File → Add files from GPO(s)",
+              "answer": [
+                "Browse to the extracted Windows 10 version 22H2 Security Baseline and open the following GPO folder: {816D1B8C-378B-48D9-B2F4-D5E582A57D7C} Select the folder and prepare it for import."
+              ]
+            },
             {
               "n": 4,
               "question": "Import the GPO and name it template-yourstudentID.",
@@ -97,14 +106,19 @@
           ]
         },
         {
-          "title": "Part C: Baselines Question 10 Show the changes that the last two administrative templates would make.",
-          "intro": [
-            "Open: MSFT Windows 10 22H2 - Defender Antivirus.html using Microsoft Edge.",
-            "The report contains the settings that the Defender Antivirus GPO would change. Important settings shown by the Defender Antivirus baseline include, among others:",
-            "• Potentially unwanted application detection — Enabled • Block at First Sight — Enabled • Microsoft MAPS — Enabled • Cloud protection — Enabled",
-            "• Cloud blocking level — High • Scan downloaded files and attachments — Enabled • Behavior monitoring — Enabled • Scan removable drives — Enabled • Attack Surface Reduction rules — Enabled • Dangerous website protection — Enabled • Real-time protection — Not turned off"
-          ],
+          "title": "Part C: Baselines",
+          "intro": [],
           "questions": [
+            {
+              "n": 10,
+              "question": "Show the changes that the last two administrative templates would make.",
+              "answer": [
+                "Open: MSFT Windows 10 22H2 - Defender Antivirus.html using Microsoft Edge.",
+                "The report contains the settings that the Defender Antivirus GPO would change. Important settings shown by the Defender Antivirus baseline include, among others:",
+                "• Potentially unwanted application detection — Enabled • Block at First Sight — Enabled • Microsoft MAPS — Enabled • Cloud protection — Enabled",
+                "• Cloud blocking level — High • Scan downloaded files and attachments — Enabled • Behavior monitoring — Enabled • Scan removable drives — Enabled • Attack Surface Reduction rules — Enabled • Dangerous website protection — Enabled • Real-time protection — Not turned off"
+              ]
+            },
             {
               "n": 11,
               "question": "Which GPO corresponds to Defender Antivirus?",
@@ -117,16 +131,27 @@
               "n": 12,
               "question": "Locate the Defender Antivirus registry.pol file and show its properties.",
               "answer": [
-                "Open the Defender Antivirus GPO folder identified in Question 11 and locate its registry.pol file.",
+                "Open the Defender Antivirus GPO folder identified in"
+              ]
+            },
+            {
+              "n": 11,
+              "question": "and locate its registry.pol file.",
+              "answer": [
                 "Right-click the file and select Properties."
               ]
             }
           ]
         },
         {
-          "title": "Part D: LGPO Question 13 Import the policy settings from the registry.pol file. Open Command Prompt as Administrator. Use LGPO to import the Defender Antivirus policy file. Example command: LGPO.exe /m \"C:\\Path\\To\\registry.pol\" Replace the path with the actual location of the registry.pol file on your VM. The command should complete successfully and display its output in the Command Prompt.",
+          "title": "Part D: LGPO",
           "intro": [],
           "questions": [
+            {
+              "n": 13,
+              "question": "Import the policy settings from the registry.pol file. Open Command Prompt as Administrator. Use LGPO to import the Defender Antivirus policy file. Example command: LGPO.exe /m \"C:\\Path\\To\\registry.pol\" Replace the path with the actual location of the registry.pol file on your VM. The command should complete successfully and display its output in the Command Prompt.",
+              "answer": []
+            },
             {
               "n": 14,
               "question": "Verify the imported Defender Antivirus settings in Local Group Policy Editor.",
@@ -139,12 +164,17 @@
           ]
         },
         {
-          "title": "Part E: Windows Settings Question 15 What is the recommended setting regarding the apps source?",
-          "intro": [
-            "Open: Settings → Apps → Apps & features",
-            "The recommended configuration is to restrict the installation source to trusted applications, preferably Microsoft Store only, where the option is available. This reduces the risk of users installing potentially unsafe applications from unknown sources."
-          ],
+          "title": "Part E: Windows Settings",
+          "intro": [],
           "questions": [
+            {
+              "n": 15,
+              "question": "What is the recommended setting regarding the apps source?",
+              "answer": [
+                "Open: Settings → Apps → Apps & features",
+                "The recommended configuration is to restrict the installation source to trusted applications, preferably Microsoft Store only, where the option is available. This reduces the risk of users installing potentially unsafe applications from unknown sources."
+              ]
+            },
             {
               "n": 16,
               "question": "Choose three Windows permissions that you would toggle on/off to improve privacy.",
@@ -164,7 +194,7 @@
           ]
         },
         {
-          "title": "Part F: Protection Settings Note: The lab specifically requires a screenshot for every question in Part F. Therefore, Questions 18–26 each have their own screenshot marker.",
+          "title": "Part F: . Therefore, Questions 18–26 each have their own screenshot marker.",
           "intro": [],
           "questions": [
             {
@@ -193,7 +223,12 @@
             },
             {
               "n": 21,
-              "question": "Indicate two other settings protected by the option in Question 20.",
+              "question": "Indicate two other settings protected by the option in",
+              "answer": []
+            },
+            {
+              "n": 20,
+              "question": ".",
               "answer": [
                 "Two other important Microsoft Defender settings protected by Tamper Protection are:",
                 "1. Behavior monitoring 2. Cloud-delivered protection",
@@ -241,13 +276,18 @@
           ]
         },
         {
-          "title": "Part G: Protocols Question 27 Verify that NetBIOS over TCP is disabled for all interfaces using PowerShell. Open PowerShell as Administrator and run: Get-CimInstance Win32_NetworkAdapterConfiguration -Filter \"IPEnabled = True\" | Select-Object Description, TcpipNetbiosOptions The TcpipNetbiosOptions value should be:",
-          "intro": [
-            "Value 2 indicates that NetBIOS over TCP/IP is disabled. Check every IP-enabled network interface shown in the output.",
-            "Result:",
-            "If all interfaces show 2, the machine complies with the policy. If any interface shows another value, that interface does not comply with the policy."
-          ],
+          "title": "Part G: Protocols",
+          "intro": [],
           "questions": [
+            {
+              "n": 27,
+              "question": "Verify that NetBIOS over TCP is disabled for all interfaces using PowerShell. Open PowerShell as Administrator and run: Get-CimInstance Win32_NetworkAdapterConfiguration -Filter \"IPEnabled = True\" | Select-Object Description, TcpipNetbiosOptions The TcpipNetbiosOptions value should be:",
+              "answer": [
+                "Value 2 indicates that NetBIOS over TCP/IP is disabled. Check every IP-enabled network interface shown in the output.",
+                "Result:",
+                "If all interfaces show 2, the machine complies with the policy. If any interface shows another value, that interface does not comply with the policy."
+              ]
+            },
             {
               "n": 28,
               "question": "Disable mDNS through the Windows Registry.",
