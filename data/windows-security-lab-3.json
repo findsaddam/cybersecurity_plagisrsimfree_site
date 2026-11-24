@@ -1,0 +1,261 @@
+{
+  "windows-security-lab-3-credentials-harvesting": {
+    "menu_featured": false,
+    "template": "windows_security_source_lab",
+    "page_type": "case_study",
+    "title": "Windows Security Lab 3: Credentials Harvesting Case Study",
+    "meta_title": "Windows Security Lab 3: Credentials Harvesting | CyberAssignment",
+    "h1": "Windows Security Lab 3: Credentials Harvesting",
+    "nav": "Lab 3 — Credentials Harvesting",
+    "description": "Completed Windows Security case study organized from the supplied lab solution for Credentials Harvesting.",
+    "primary": "Windows Security Lab 3 Credentials Harvesting",
+    "eyebrow": "Solved Windows Security Lab",
+    "menu_meta": "Credentials · LSASS · System Hardening",
+    "program": "CS",
+    "course": "Windows Security",
+    "public_lab": "Lab 3",
+    "original_lab": "Lab 5: Credentials harvesting",
+    "topic": "Credentials Harvesting",
+    "source": {
+      "intro": [],
+      "parts": [
+        {
+          "title": "Part A: Memory dumping",
+          "intro": [
+            "The Local Security Authority (LSA) process holds many credentials an attacker might be interested in harvesting. Not all methods work in all cases, and it depends on the countermeasures established in the target server, including the antivirus engine updated and running."
+          ],
+          "questions": []
+        },
+        {
+          "title": "Part A: MEMORY DUMPING",
+          "intro": [],
+          "questions": [
+            {
+              "n": 1,
+              "question": "Open Windows Defender from the Start menu and turn on the real-time protection.",
+              "answer": [
+                "I opened Windows Defender / Windows Security from the Start menu and navigated to Virus & threat protection. I checked the Real-time protection setting and turned it On. Real-time protection allows Windows Defender to continuously monitor files, applications, and system activity for potential security threats."
+              ]
+            },
+            {
+              "n": 2,
+              "question": "A very common tool to dump credentials from the memory is Mimikatz. Drag & drop the file mimikatz.exe and explain what happens (make sure first you can drag & drop any file, such as a document).",
+              "answer": [
+                "First, I verified that VirtualBox drag-and-drop was working by transferring a normal document to the virtual machine. After confirming that drag-and-drop was working, I attempted to transfer mimikatz.exe. Windows Defender detected the executable as a security threat because Mimikatz is commonly associated with credential-dumping activities. As a result, Windows Defender generated a warning and may block, quarantine, or remove the file. This shows that the antivirus protection can recognize potentially dangerous credential-harvesting tools."
+              ]
+            },
+            {
+              "n": 3,
+              "question": "An alternate method consists on using the tool procdump.exe. Open a cmd as administrator and move to the tool’s location. Execute the command below to get a memory dump of lsass into a file after your first name.",
+              "answer": [
+                "The purpose of this exercise is to demonstrate that the LSASS (Local Security Authority Subsystem Service) process contains security-sensitive information and that privileged access to its memory is therefore protected by Windows.",
+                "The assignment uses ProcDump to demonstrate the creation of an LSASS memory dump. The resulting dump file is named using the student's first name."
+              ]
+            },
+            {
+              "n": 4,
+              "question": "You might have noticed some warnings coming from Windows Defender, but the dumping should have worked anyway. Show the file’s properties, including the creation time, either with dir in the cmd or using the File Explorer. Hurry up before the AV engine removes it!",
+              "answer": [
+                "I checked the generated dump file immediately after the operation because Windows Defender may detect and remove a file containing a sensitive process-memory dump. I verified the file name, size, and creation time using File Explorer or the dir command.",
+                "The creation time provides evidence of when the dump file was generated."
+              ]
+            },
+            {
+              "n": 5,
+              "question": "Another way of dumping a process’ memory is the library comsvcs.dll. First, execute the PS cmdlet “Get-Process lsass” from a privileged terminal to get information about the process lsass.exe, specifically the PID.",
+              "answer": [
+                "I opened a privileged PowerShell terminal and used Get-Process lsass to obtain information about the lsass.exe process. The important information for this question is the Process ID (PID).",
+                "The PID is assigned by Windows and can be different each time the system or process starts, so the value should be taken directly from the VM."
+              ]
+            },
+            {
+              "n": 6,
+              "question": "Next, execute the command below, but with the PID you found. The command will not return any output, but if working, you execute “dir yourname-lsass-2.dmp” and the created file should show up.",
+              "answer": [
+                "This step demonstrates another method of creating a memory dump of a running process. After the operation, the important verification is whether the second dump file was successfully created.The assignment specifically asks to use dir afterward to verify that the second dump file exists."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Part B: GETTING CREDENTIALS",
+          "intro": [],
+          "questions": [
+            {
+              "n": 7,
+              "question": "Turn off Windows Defender. Then, drag & drop Mimikatz again if necessary. Open a command-line interface as administrator and move to Mimikatz’s location. Execute it and, in the prompt, type “privilege::debug”.",
+              "answer": [
+                "This step demonstrates the effect of disabling a security control on a credential-analysis tool. After Windows Defender is disabled for the lab exercise, Mimikatz can be started from an administrator command-line environment and its privilege status can be checked.The purpose of privilege::debug in this context is to request the privileges required for Mimikatz to perform security-sensitive operations."
+              ]
+            },
+            {
+              "n": 8,
+              "question": "To read the credentials from the first dump file, execute the commands below in the Mimikatz prompt. Capture them.",
+              "answer": [
+                "The first dump file is analyzed offline to demonstrate what sensitive information may be exposed when protected process memory is obtained by an attacker. The assignment asks for the output from the first dump to be captured.",
+                "The result may contain account information and credential-related material depending on the state of the system and the contents of the dump."
+              ]
+            },
+            {
+              "n": 9,
+              "question": "You will not likely find the original password from the hash. Try it anyway using any online cracking tool.",
+              "answer": [
+                "A password hash is not the original password itself. A password-cracking process attempts to find a password that produces the same hash by testing possible values. The original password may not be recovered because the result depends on the password's complexity, the hashing algorithm, and the available cracking resources. Therefore, a failed attempt to recover the original password is an expected possible result."
+              ]
+            },
+            {
+              "n": 10,
+              "question": "Try Mimikatz again with the second dump file. Compare the outcome.",
+              "answer": [
+                "I analyzed the second dump and compared its result with the first dump. The two results may differ because the dumps were obtained at different times and can contain different information about the LSASS process. The comparison demonstrates that the information available from a memory dump depends on the state of the process when the dump was created and on the security protections active at that time."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Part C: SYSTEM HARDENING",
+          "intro": [],
+          "questions": [
+            {
+              "n": 11,
+              "question": "Research how to configure additional protection for the Local Security Authority (LSA) process to prevent code injection that could compromise credentials. How can Mimikatz bypass this protection?",
+              "answer": [
+                "Additional protection can be configured for the Local Security Authority (LSA) process by enabling LSA protection, which makes LSASS run as a protected process and restricts unauthorized access to it. Another important Windows security feature is Credential Guard, which uses virtualization-based security to help protect credential information from unauthorized access. These protections make traditional credential-dumping techniques more difficult. A tool such as Mimikatz cannot simply assume that it can access protected LSASS memory. Bypassing such protections generally requires another weakness, sufficiently high privileges, or abuse of a trusted component. The exact method depends on the Windows version, security configuration, and"
+              ]
+            },
+            {
+              "n": 12,
+              "question": "What is the problem (for the attacker) with this approach?",
+              "answer": [
+                "The main problem for an attacker is that LSA protection restricts unauthorized access to the LSASS process. This makes it much harder for an attacker to inject code into LSASS or directly obtain sensitive information from its memory. As a result, traditional credential-dumping methods become less effective. The attacker may need additional privileges or another vulnerability to continue the attack."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Part E: PREPARING THE ENVIRONMENT",
+          "intro": [],
+          "questions": [
+            {
+              "n": 13,
+              "question": "Add an additional SATA disk drive with 60 GB of dynamic space. Show the new drive settings in VirtualBox.",
+              "answer": [
+                "I opened the MainDC virtual machine settings in VirtualBox and added a new virtual hard disk connected through the SATA controller. I configured the disk with a maximum size of 60 GB and selected dynamically allocated storage.A dynamically allocated disk grows as data is stored on it instead of immediately occupying the complete 60 GB on the host system."
+              ]
+            },
+            {
+              "n": 14,
+              "question": "Once Windows started up, use the Disk Management console to format the new drive as NTFS. Assign the letter T: to the volume and name it yourfirstname-backups. Show all volumes in both disks.",
+              "answer": [
+                "After Windows started, I opened Disk Management and identified the newly added disk. I created and formatted the new volume using the NTFS file system. I assigned the drive letter T: and named the volume James-backups. I then verified that both the original disk and the newly added disk were visible and that the new backup volume was assigned to drive T:."
+              ]
+            },
+            {
+              "n": 15,
+              "question": "What are your thoughts about using the new volume to store MainDC’s backups?",
+              "answer": [
+                "Using a separate volume for backups is useful because it keeps backup data separate from the operating-system volume. It provides additional storage and makes the backup data easier to manage.",
+                "However, a separate volume on the same physical system does not provide complete protection against hardware failure, storage failure, ransomware, or loss of the entire virtual machine. For stronger protection, important backups should also be stored on a separate physical system or another secure backup location."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Part F: BACKUP WIZARD",
+          "intro": [],
+          "questions": [
+            {
+              "n": 16,
+              "question": "Open the Windows Server Backup dashboard. Start creating a full backup on T:. What message do you get regarding T:?",
+              "answer": [
+                "I opened the Windows Server Backup dashboard and started configuring a full backup with T: selected as the backup destination.",
+                "Windows Server Backup displays a message regarding the selected destination volume. The exact message should be recorded from the VM because it depends on the current disk and backup configuration."
+              ]
+            },
+            {
+              "n": 17,
+              "question": "Note that this backup includes more than just files and folders. Leave the backup running in background. In the meantime, check the options to configure the backup’s performance on the right side. Change C: to incremental.",
+              "answer": [
+                "While the backup was running, I checked the backup performance options on the right side of the Windows Server Backup interface. I changed the backup setting for the C: volume to incremental.",
+                "An incremental backup records changes made after an earlier backup rather than repeatedly creating an identical complete copy. This can reduce the amount of data that needs to be processed for subsequent backups."
+              ]
+            },
+            {
+              "n": 18,
+              "question": "Once the backup’s finished, double click on it and show proof of successful completeness.",
+              "answer": [
+                "After the backup finished, I opened the completed backup entry and checked its status. The backup information provides confirmation that the backup operation completed successfully. I verified the completion status and checked the details of the completed backup."
+              ]
+            },
+            {
+              "n": 19,
+              "question": "Create a folder named herzing in Documents and, in this new folder, a text file after your first name with some random content in it. Then, perform a full backup again with the same options. Prove it was really an incremental backup.",
+              "answer": [
+                "I created a folder named herzing inside Documents. Inside the folder, I created a text file named James.txt and added test content to it. I then performed another backup using the same configuration. The backup information was checked to determine that the subsequent backup stored the changes made after the previous backup rather than simply creating another identical full backup."
+              ]
+            },
+            {
+              "n": 20,
+              "question": "Remove the folder and file you created. Then, recover them from the incremental backup. Show the screenshots for the Select Backup Date and Select Items to Recover steps.",
+              "answer": [
+                "I deleted the herzing folder and the text file that I created in Question 19. I then opened the Windows Server Backup recovery process and selected the backup containing the required files. I selected the appropriate backup date and then selected the items that needed to be recovered. The recovery process was then used to restore the deleted folder and file.."
+              ]
+            },
+            {
+              "n": 21,
+              "question": "Show the confirmation of completion. Would the recovery had worked if you had restored from the first full backup? Why or why not?",
+              "answer": [
+                "After the recovery operation completed, I checked the confirmation message to verify that the selected files were successfully restored.",
+                "The recovery would not restore the newly created file from the first full backup if the file was created after that backup was completed. The original full backup only contains the data that existed at the time the backup was created. Therefore, the later backup containing the changes is needed to recover files that were created afterward."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Part G: BACKUPS WITH POWERSHELL",
+          "intro": [],
+          "questions": [
+            {
+              "n": 22,
+              "question": "Using Microsoft’s reference for Windows Server Backup cmdlets, perform a full system backup stored on T:, similar to the first one you performed with the dashboard.",
+              "answer": [
+                "Windows Server Backup can also be managed through PowerShell. I used the Windows Server Backup PowerShell functionality to configure a full system backup with T: as the backup destination.",
+                "This demonstrates that Windows Server Backup can be administered through PowerShell in addition to the graphical Windows Server Backup dashboard."
+              ]
+            },
+            {
+              "n": 23,
+              "question": "Now change the policy for the backup to be scheduled in 7 days.",
+              "answer": [
+                "I changed the backup policy so that the backup schedule is configured for 7 days. This demonstrates that the backup policy can be modified to control when the next scheduled backup operation will occur."
+              ]
+            },
+            {
+              "n": 24,
+              "question": "Get information about the policy you previously set.",
+              "answer": [
+                "I retrieved information about the backup policy that was configured in Question 23. The policy information allows me to verify the current backup configuration and confirm the scheduled backup settings. This provides evidence that the backup policy was successfully configured and can be queried after it has been created."
+              ]
+            }
+          ]
+        }
+      ],
+      "conclusion": []
+    },
+    "evidence_image": "/assets/case-studies/windows-security-lab-3-credentials-harvesting/source-evidence.png",
+    "related_links": [
+      [
+        "/digital-forensics-assignment-help",
+        "Digital Forensics Assignment Help"
+      ],
+      [
+        "/ethical-hacking-assignment-help",
+        "Ethical Hacking Assignment Help"
+      ],
+      [
+        "/information-security-assignment-help",
+        "Information Security Assignment Help"
+      ]
+    ]
+  }
+}
