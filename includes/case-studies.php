@@ -1327,7 +1327,69 @@ function renderSit716ProposalCaseStudy(string $slug, array $case, array $caseStu
 <?php renderFooter($subjects);
 }
 
+
+function renderWindowsSecurityLabCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    $canonical = SITE_URL . '/case-studies/' . $slug;
+    renderHead($case, $canonical, $subjects);
+    renderHeader($subjects, $caseStudies);
+    ?>
+<main class="blog-page case-study-learning-page windows-security-lab-case-study">
+    <section class="blog-article-head case-learning-hero">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
+            <span class="blog-label"><?=e($case['eyebrow'])?></span>
+            <h1><?=e($case['h1'])?></h1>
+            <div class="blog-topic-line"><?=e($case['program'])?> <span>•</span> <?=e($case['course'])?> <span>•</span> Security Compliance Toolkit</div>
+        </div>
+    </section>
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <div class="case-snapshot-card"><span>Program</span><strong><?=e($case['program'])?></strong></div>
+                <div class="case-snapshot-card"><span>Course</span><strong><?=e($case['course'])?></strong></div>
+                <div class="case-snapshot-card"><span>Lab</span><strong>Lab 1</strong></div>
+                <div class="case-snapshot-card"><span>Questions</span><strong><?=e((string)count($case['questions']))?></strong></div>
+                <div class="case-snapshot-card"><span>Main tool</span><strong>Policy Analyzer</strong></div>
+                <div class="case-snapshot-card"><span>Platform</span><strong>Windows Security</strong></div>
+            </div>
+        </div>
+    </section>
+    <section class="blog-body-section">
+        <div class="container blog-layout">
+            <article class="blog-article">
+                <section id="solution">
+                    <div class="case-section-heading"><span class="case-section-number">01</span><div><span class="mini-label">Completed lab solution</span><h2>Security Compliance Toolkit Questions and Answers</h2></div></div>
+                    <?php $currentPart=''; foreach($case['questions'] as $item): ?>
+                        <?php if($item['part']!==$currentPart): $currentPart=$item['part']; ?>
+                        <div class="squid-part-heading" id="part-<?=e((string)$item['n'])?>"><span>Lab section</span><h2><?=e($currentPart)?></h2></div>
+                        <?php endif; ?>
+                        <section class="vpn-question" id="question-<?=e((string)$item['n'])?>">
+                            <div class="vpn-question__head"><span class="vpn-question__number"><?=e(str_pad((string)$item['n'],2,'0',STR_PAD_LEFT))?></span><div><small>Question <?=e((string)$item['n'])?></small><h3><?=e($item['question'])?></h3></div></div>
+                            <div class="vpn-question__answer">
+                                <?php foreach($item['answer'] as $paragraph): ?><p><?=nl2br(e($paragraph))?></p><?php endforeach; ?>
+                                <?php if(!empty($item['image'])): ?><figure class="source-screenshot"><img src="<?=e($item['image'])?>" alt="Original screenshot for Question <?=e((string)$item['n'])?>" loading="lazy" decoding="async"><figcaption>Original screenshot from the completed Lab 1 solution.</figcaption></figure><?php endif; ?>
+                            </div>
+                        </section>
+                        <?php if($item['n']===14): ?><?php renderCaseStudyCTA('mid'); ?><?php endif; ?>
+                    <?php endforeach; ?>
+                </section>
+                <?php renderCaseStudyCTA('footer'); ?>
+            </article>
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-card"><span class="mini-label">On this page</span><a href="#question-1">Part A · Documentation</a><a href="#question-3">Part B · Policy Analyzer</a><a href="#question-10">Part C · Baselines</a><a href="#question-13">Part D · LGPO</a><a href="#question-15">Part E · Windows Settings</a><a href="#question-18">Part F · Protection Settings</a><a href="#question-27">Part G · Protocols</a></div>
+                <div class="blog-sidebar-card"><span class="mini-label">Related</span><?php foreach(($case['related_links'] ?? []) as $link): ?><a href="<?=e($link[0])?>"><?=e($link[1])?></a><?php endforeach; ?></div>
+            </aside>
+        </div>
+    </section>
+</main>
+<?php renderFooter($subjects);
+}
+
 function renderCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    if(($case['template'] ?? '') === 'windows_security_lab'){
+        renderWindowsSecurityLabCaseStudy($slug,$case,$caseStudies,$subjects);
+        return;
+    }
     if(($case['template'] ?? '') === 'sit716_proposal'){
         renderSit716ProposalCaseStudy($slug,$case,$caseStudies,$subjects);
         return;
