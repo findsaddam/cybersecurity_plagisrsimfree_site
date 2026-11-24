@@ -1327,7 +1327,111 @@ function renderSit716ProposalCaseStudy(string $slug, array $case, array $caseStu
 <?php renderFooter($subjects);
 }
 
+function renderWindowsSecurityComplianceLabCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    $canonical = SITE_URL . '/case-studies/' . $slug;
+    renderHead($case, $canonical, $subjects);
+    renderHeader($subjects, $caseStudies);
+    $questionCount = 0;
+    foreach (($case['parts'] ?? []) as $part) $questionCount += count($part['questions'] ?? []);
+    ?>
+<main class="blog-page case-study-learning-page windows-compliance-case-study">
+    <section class="blog-article-head case-learning-hero">
+        <div class="container blog-shell">
+            <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
+            <span class="blog-label"><?=e($case['eyebrow'])?></span>
+            <h1><?=e($case['h1'])?></h1>
+            <div class="blog-topic-line"><?=e($case['program'])?> <span>•</span> <?=e($case['course'])?> <span>•</span> <?=e($case['lab'])?></div>
+        </div>
+    </section>
+
+    <section class="case-snapshot-section">
+        <div class="container blog-shell">
+            <div class="case-snapshot-grid">
+                <div class="case-snapshot-card"><span>Program</span><strong><?=e($case['program'])?></strong></div>
+                <div class="case-snapshot-card"><span>Course</span><strong><?=e($case['course'])?></strong></div>
+                <div class="case-snapshot-card"><span>Lab</span><strong><?=e($case['lab'])?></strong></div>
+                <div class="case-snapshot-card"><span>Parts</span><strong><?=e((string)count($case['parts'] ?? []))?></strong></div>
+                <div class="case-snapshot-card"><span>Questions</span><strong><?=e((string)$questionCount)?></strong></div>
+                <div class="case-snapshot-card"><span>Tools</span><strong><?=e($case['tool_q3'])?></strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-body-section">
+        <div class="container blog-layout">
+            <article class="blog-article">
+                <section id="overview">
+                    <div class="case-section-heading">
+                        <span class="case-section-number">00</span>
+                        <div><span class="mini-label">Completed lab solution</span><h2><?=e($case['lab'])?></h2></div>
+                    </div>
+                    <div class="case-detail-block">
+                        <p><strong>Program:</strong> <?=e($case['program'])?></p>
+                        <p><strong>Course:</strong> <?=e($case['course'])?></p>
+                        <p><strong>Lab:</strong> <?=e($case['lab'])?></p>
+                    </div>
+                </section>
+
+                <?php foreach(($case['parts'] ?? []) as $partIndex=>$part): ?>
+                <section id="<?=e($part['id'])?>">
+                    <div class="case-section-heading">
+                        <span class="case-section-number"><?=e(str_pad((string)($partIndex+1),2,'0',STR_PAD_LEFT))?></span>
+                        <div><span class="mini-label">Lab solution</span><h2><?=e($part['title'])?></h2></div>
+                    </div>
+
+                    <?php foreach(($part['questions'] ?? []) as $item): ?>
+                    <section class="learning-step" id="question-<?=e((string)$item['n'])?>">
+                        <div class="learning-step__head">
+                            <span><?=e(str_pad((string)$item['n'],2,'0',STR_PAD_LEFT))?></span>
+                            <div><small>Question <?=e((string)$item['n'])?></small><h3><?=e($item['q'])?></h3></div>
+                        </div>
+                        <div class="case-detail-block">
+                            <?php foreach(($item['a'] ?? []) as $paragraph): ?><p><?=e($paragraph)?></p><?php endforeach; ?>
+                            <?php if(!empty($item['code'])): ?><pre class="assignment-command"><code><?=e($item['code'])?></code></pre><?php endif; ?>
+                            <?php if(!empty($item['bullets'])): ?><ul class="vpn-source-list"><?php foreach($item['bullets'] as $bullet): ?><li><?=e($bullet)?></li><?php endforeach; ?></ul><?php endif; ?>
+                            <?php foreach(($item['after'] ?? []) as $paragraph): ?><p><?=e($paragraph)?></p><?php endforeach; ?>
+
+                            <?php if(!empty($item['image'])): ?>
+                            <figure class="source-screenshot">
+                                <a href="<?=e($item['image'])?>" target="_blank" rel="noopener">
+                                    <img src="<?=e($item['image'])?>" alt="Question <?=e((string)$item['n'])?> screenshot" loading="lazy" decoding="async">
+                                </a>
+                                <figcaption>Question <?=e((string)$item['n'])?> — Screenshot</figcaption>
+                            </figure>
+                            <?php endif; ?>
+                        </div>
+                    </section>
+                    <?php if((int)$item['n']===14): ?><?php renderCaseStudyCTA('mid'); ?><?php endif; ?>
+                    <?php endforeach; ?>
+                </section>
+                <?php endforeach; ?>
+
+                <?php renderCaseStudyCTA('footer'); ?>
+            </article>
+
+            <aside class="blog-sidebar">
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">On this page</span>
+                    <a href="#overview"><?=e($case['lab'])?></a>
+                    <?php foreach(($case['parts'] ?? []) as $part): ?><a href="#<?=e($part['id'])?>"><?=e($part['title'])?></a><?php endforeach; ?>
+                </div>
+                <div class="blog-sidebar-card">
+                    <span class="mini-label">Related</span>
+                    <?php foreach(($case['related_links'] ?? []) as $link): ?><a href="<?=e($link[0])?>"><?=e($link[1])?></a><?php endforeach; ?>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+<?php renderFooter($subjects);
+}
+
+
 function renderCaseStudy(string $slug, array $case, array $caseStudies, array $subjects): void {
+    if(($case['template'] ?? '') === 'windows_security_compliance_lab'){
+        renderWindowsSecurityComplianceLabCaseStudy($slug,$case,$caseStudies,$subjects);
+        return;
+    }
     if(($case['template'] ?? '') === 'sit716_proposal'){
         renderSit716ProposalCaseStudy($slug,$case,$caseStudies,$subjects);
         return;
