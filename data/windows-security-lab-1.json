@@ -1,1 +1,281 @@
-{"windows-security-lab-1-security-compliance-toolkit":{"menu_featured":false,"template":"windows_security_source_lab","page_type":"case_study","title":"Windows Security Lab 1: Security Compliance Toolkit Case Study","meta_title":"Windows Security Lab 1: Security Compliance Toolkit | CyberAssignment","h1":"Windows Security Lab 1: Security Compliance Toolkit","nav":"Lab 1 — Security Compliance Toolkit","description":"Completed Windows Security case study for Lab 1: Security Compliance Toolkit, organized from the supplied lab solution with its questions, answers and supporting evidence.","primary":"Windows Security Lab 1 Security Compliance Toolkit","eyebrow":"Solved Windows Security Lab","menu_meta":"Security Compliance · Policy Analyzer · Microsoft Defender","program":"CS","course":"Windows Security","public_lab":"Lab 1","original_lab":"Lab 1: Security Compliance Toolkit","topic":"Security Compliance Toolkit","source":{"intro":[],"parts":[{"title":"Part A: Documentation","intro":[],"questions":[{"n":1,"question":"What attack was mitigated with the LSA protection?","answer":["LSA Protection was introduced as part of the Pass-the-Hash mitigations. It helps protect the Local Security Authority process from unauthorized access and credential theft techniques associated with Pass-the-Hash attacks."]},{"n":2,"question":"What change mitigates brute-force authentication attacks?","answer":["The Allow Administrator account lockout policy was introduced to help mitigate brute-force authentication attacks. It allows the built-in Administrator account to be subject to account lockout controls after repeated failed authentication attempts."]}]},{"title":"Part B: Policy Analyzer","intro":[],"questions":[{"n":3,"question":"Import the GPO from the Windows 10 version 22H2 Security Baseline. \nFirst, open the extracted Policy Analyzer folder and run Policy Analyzer as Administrator. \nSelect: \nAdd → File → Add files from GPO(s)","answer":["Browse to the extracted Windows 10 version 22H2 Security Baseline and open the following GPO folder: \n{816D1B8C-378B-48D9-B2F4-D5E582A57D7C} \nSelect the folder and prepare it for import."]},{"n":4,"question":"Import the GPO and name it template-yourstudentID.","answer":["When Policy Analyzer asks for the name of the imported GPO, enter: templat\nyourstudentID","The imported policy will be stored in the PolicyAnalyzer folder under Documents. \nAfter completing the import, return to the Policy Analyzer dashboard."]},{"n":5,"question":"Compare the template with the actual local policies (Effective State).","answer":["In Policy Analyzer, compare the imported template with the machine's Effective State. The comparison should display the requested 8 items."]},{"n":6,"question":"Why are two of them grayed out in the effective policy? \nAnswer:","answer":["The two entries are grayed out because Policy Analyzer does not have an applicable effective value for those particular settings on the local machine. In other words, the settings are not directly defined or resolved in the effective local policy, so Policy Analyzer displays them as unavailable rather than as active configured values."]},{"n":7,"question":"Add template-herzing.inf to Policy Analyzer. What menu option was used?","answer":["The second template is an INF security template, so it is imported using the security template option rather than the GPO import option. The required menu option is:","Add → File → Add Security Template","Select the provided: template-herzing.inf After importing it, the Policy Analyzer dashboard should show:","Effective State","template-yourstudentID","template-herzing"]},{"n":8,"question":"Does your machine comply with the password complexity policy? Explain it.","answer":["The template-herzing.inf security template requires password complexity to be enabled. The relevant setting is: \nPasswordComplexity = 1","This means password complexity is required. To determine whether the machine complies, the Effective State in Policy Analyzer must be compared with this value. \nFinal result:","If the Effective State shows password complexity enabled, the machine complies with the policy. If it shows that password complexity is disabled or not configured, the machine does not comply."]},{"n":9,"question":"What policy is more stringent in template-herzing.inf compared to the other template? What are their values?","answer":["The relevant comparison should be made in Policy Analyzer between template-herzing.inf and the Windows 10 22H2 security baseline template. \nThe Herzing template specifically defines:","Minimum password length: 14 characters","Minimum password age: 3 days","Maximum password age: 30 days","Password complexity: Enabled","Account lockout threshold: 3 failed attempts","Account lockout duration: 15 minutes","Reset account lockout counter: 15 minutes","The exact policy identified as more stringent should be taken from the Policy Analyzer comparison because it depends on the value contained in the other imported template."]}]},{"title":"Part C: Baselines","intro":[],"questions":[{"n":10,"question":"Show the changes that the last two administrative templates would make.","answer":["Open: MSFT Windows 10 22H2 - Defender Antivirus.html using Microsoft Edge.","The report contains the settings that the Defender Antivirus GPO would change. \nImportant settings shown by the Defender Antivirus baseline include, among others:","Potentially unwanted application detection — Enabled","Block at First Sight — Enabled","Microsoft MAPS — Enabled","Cloud protection — Enabled","Cloud blocking level — High","Scan downloaded files and attachments — Enabled","Behavior monitoring — Enabled","Scan removable drives — Enabled","Attack Surface Reduction rules — Enabled","Dangerous website protection — Enabled","Real-time protection — Not turned off"]},{"n":11,"question":"Which GPO corresponds to Defender Antivirus?","answer":["The Defender Antivirus GPO is: \n{522ED121-0E11-41F6-A205-CC736B4DEE1E} \nTherefore, the GPO folder name to record is:","{522ED121-0E11-41F6-A205-CC736B4DEE1E}"]},{"n":12,"question":"Locate the Defender Antivirus registry.pol file and show its properties.","answer":["Open the Defender Antivirus GPO folder identified in Question 11 and locate its registry.pol file.","Right-click the file and select Properties."]}]},{"title":"Part D: LGPO","intro":[],"questions":[{"n":13,"question":"Import the policy settings from the registry.pol file. \nOpen Command Prompt as Administrator. \nUse LGPO to import the Defender Antivirus policy file. \nExample command: \nLGPO.exe /m \"C:\\Path\\To\\registry.pol\"\nReplace the path with the actual location of the registry.pol file on your VM. \nThe command should complete successfully and display its output in the Command Prompt.","answer":[]},{"n":14,"question":"Verify the imported Defender Antivirus settings in Local Group Policy Editor.","answer":["Open: gpedit.msc \nNavigate to:","Computer Configuration → Administrative Templates → Windows Components → Microsoft Defender Antivirus → Real-Time Protection","Check the policy settings after importing the registry.pol file. \nThe settings should no longer all appear as Not Configured."]}]},{"title":"Part E: Windows Settings","intro":[],"questions":[{"n":15,"question":"What is the recommended setting regarding the apps source?","answer":["Open: Settings → Apps → Apps & features","The recommended configuration is to restrict the installation source to trusted applications, preferably Microsoft Store only, where the option is available. \nThis reduces the risk of users installing potentially unsafe applications from unknown sources."]},{"n":16,"question":"Choose three Windows permissions that you would toggle on/off to improve privacy.","answer":["Three suitable categories are:","Location — Disable access for applications that do not require location information.","Camera — Disable camera access for applications that do not need to use the camera.","Microphone — Disable microphone access for applications that do not require audio input.","These settings reduce unnecessary access to personal information and hardware."]},{"n":17,"question":"Which protection area allows Windows Hello to be enabled?","answer":["Windows Hello can be enabled through the Account protection area of Windows Security, where sign-in and Windows Hello-related options are available. \nThe relevant area is: \nWindows Security → Account protection"]}]},{"title":"Part F: Protection Settings","intro":["Note: The lab specifically requires a screenshot for every question in Part F. Therefore, Questions 18–26 each have their own screenshot marker."],"questions":[{"n":18,"question":"Which option is actively protecting the system from malware being inadvertently installed?","answer":["Check if it is enabled by default.","The relevant protection is Real-time protection in Microsoft Defender Antivirus. \nReal-time protection continuously monitors files, programs, and activities for malware and other threats. On a standard Windows installation, Real-time protection is normally enabled by default unless it has been disabled by the user, administrator, or another security product."]},{"n":19,"question":"Enable the option to control access to folders as protection against ransomware.","answer":["The required feature is: Controlled folder access","It is available under: \nWindows Security → Virus & threat protection → Ransomware protection → Manage ransomware protection \nControlled folder access helps prevent untrusted applications from making unauthorized changes to protected folders. Enable the feature."]},{"n":20,"question":"Which option avoids malicious apps switching real-time protection off?","answer":["The required option is: Tamper Protection","Tamper Protection helps prevent unauthorized applications or malicious software from changing important Microsoft Defender Antivirus settings, including real-time protection."]},{"n":21,"question":"Indicate two other settings protected by the option in Question 20.","answer":["Two other important Microsoft Defender settings protected by Tamper Protection are:","Behavior monitoring","Cloud-delivered protection","Tamper Protection helps prevent unauthorized changes to important Defender security settings."]},{"n":22,"question":"Enable PUP protection in App & browser control.","answer":["PUP means Potentially Unwanted Program.","Open:  Windows Security → App & browser control → Reputation-based protection \nEnable the option for potentially unwanted application protection. \nThis helps prevent users from downloading or installing applications that may be unwanted or potentially harmful even though they may not meet the definition of traditional malware."]},{"n":23,"question":"In Exploit protection, what is DEP used for? Give a specific example or use case.","answer":["Data Execution Prevention (DEP) helps prevent code from being executed from memory areas that are intended to contain data. For example, if a vulnerable application receives more data than a memory buffer can safely hold, an attacker may attempt to place executable code into that buffer and run it. DEP can help block execution from that data memory area, reducing the impact of this type of memory-based attack."]},{"n":24,"question":"Check the only system-overridden setting for PrintDialog.exe.","answer":["Open Exploit protection → Program settings and locate: PrintDialog.exe  Review the system override shown for the process. Record the setting displayed on your VM exactly as shown. \nSystem override:"]},{"n":25,"question":"Where do you find the Memory integrity option?","answer":["The Memory integrity option is located at:","Windows Security → Device security → Core isolation → Core isolation details \nThe setting is called: Memory integrity"]},{"n":26,"question":"Try to enable Memory integrity and explain what happens.","answer":["Attempt to turn Memory integrity on. The result depends on the configuration of the VM. Windows may allow the feature to be enabled, request a restart, or report incompatible drivers that prevent the feature from being enabled.","Answer: After attempting to enable Memory integrity, Windows displayed: After attempting to enable Memory integrity, Windows displayed an incompatible drivers warning. The feature could not be enabled because one or more incompatible drivers were detected. Windows recommended reviewing the incompatible driver information before enabling Memory integrity. If Windows reports incompatible drivers, record the driver information shown in the warning. If Windows successfully enables the feature but requires a restart, mention that instead."]}]},{"title":"Part G: Protocols","intro":[],"questions":[{"n":27,"question":"Verify that NetBIOS over TCP is disabled for all interfaces using PowerShell. \nOpen PowerShell as Administrator and run:  Get-CimInstance Win32_NetworkAdapterConfiguration -Filter \"IPEnabled = True\" | Select-Object Description, TcpipNetbiosOptions  The TcpipNetbiosOptions value should be: \nValue 2 indicates that NetBIOS over TCP/IP is disabled.\nCheck every IP-enabled network interface shown in the output.","answer":["Result:","If all interfaces show 2, the machine complies with the policy. \nIf any interface shows another value, that interface does not comply with the policy."]},{"n":28,"question":"Disable mDNS through the Windows Registry. \n\nOpen Registry Editor as Administrator. \nNavigate to:","answer":["HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Dnscache\\Parameters","Create or modify the following DWORD (32-bit) Value: \nName: EnableMDNS\nValue:","0 \nA value of 0 disables mDNS. \nAfter making the change, verify that the registry entry appears correctly."]}]}],"conclusion":[]},"evidence_image":"/assets/case-studies/windows-security-lab-1-security-compliance-toolkit/source-evidence.jpg","related_links":[["/information-security-assignment-help","Information Security Assignment Help"],["/network-security-assignment-help","Network Security Assignment Help"],["/digital-forensics-assignment-help","Digital Forensics Assignment Help"]]}}
+{
+  "windows-security-lab-1-security-compliance-toolkit": {
+    "menu_featured": false,
+    "template": "windows_security_source_lab",
+    "page_type": "case_study",
+    "title": "Windows Security Lab 1: Security Compliance Toolkit Case Study",
+    "meta_title": "Windows Security Lab 1: Security Compliance Toolkit | CyberAssignment",
+    "h1": "Windows Security Lab 1: Security Compliance Toolkit",
+    "nav": "Lab 1 — Security Compliance Toolkit",
+    "description": "Completed Windows Security case study organized from the supplied lab solution for Security Compliance Toolkit.",
+    "primary": "Windows Security Lab 1 Security Compliance Toolkit",
+    "eyebrow": "Solved Windows Security Lab",
+    "menu_meta": "Security Compliance · Policy Analyzer · Microsoft Defender",
+    "program": "CS",
+    "course": "Windows Security",
+    "public_lab": "Lab 1",
+    "original_lab": "Lab 1: Security Compliance Toolkit",
+    "topic": "Security Compliance Toolkit",
+    "source": {
+      "intro": [],
+      "parts": [
+        {
+          "title": "Part A: Documentation Question 1 What attack was mitigated with the LSA protection?",
+          "intro": [
+            "Answer:",
+            "LSA Protection was introduced as part of the Pass-the-Hash mitigations. It helps protect the Local Security Authority process from unauthorized access and credential theft techniques associated with Pass-the-Hash attacks."
+          ],
+          "questions": [
+            {
+              "n": 2,
+              "question": "What change mitigates brute-force authentication attacks?",
+              "answer": [
+                "The Allow Administrator account lockout policy was introduced to help mitigate brute-force authentication attacks. It allows the built-in Administrator account to be subject to account lockout controls after repeated failed authentication attempts."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Part B: Policy Analyzer Question 3 Import the GPO from the Windows 10 version 22H2 Security Baseline. First, open the extracted Policy Analyzer folder and run Policy Analyzer as Administrator. Select: Add → File → Add files from GPO(s)",
+          "intro": [
+            "Browse to the extracted Windows 10 version 22H2 Security Baseline and open the following GPO folder: {816D1B8C-378B-48D9-B2F4-D5E582A57D7C} Select the folder and prepare it for import."
+          ],
+          "questions": [
+            {
+              "n": 4,
+              "question": "Import the GPO and name it template-yourstudentID.",
+              "answer": [
+                "When Policy Analyzer asks for the name of the imported GPO, enter: templat",
+                "yourstudentID",
+                "The imported policy will be stored in the PolicyAnalyzer folder under Documents. After completing the import, return to the Policy Analyzer dashboard."
+              ]
+            },
+            {
+              "n": 5,
+              "question": "Compare the template with the actual local policies (Effective State).",
+              "answer": [
+                "In Policy Analyzer, compare the imported template with the machine's Effective State. The comparison should display the requested 8 items."
+              ]
+            },
+            {
+              "n": 6,
+              "question": "Why are two of them grayed out in the effective policy? Answer:",
+              "answer": [
+                "The two entries are grayed out because Policy Analyzer does not have an applicable effective value for those particular settings on the local machine. In other words, the settings are not directly defined or resolved in the effective local policy, so Policy Analyzer displays them as unavailable rather than as active configured values."
+              ]
+            },
+            {
+              "n": 7,
+              "question": "Add template-herzing.inf to Policy Analyzer. What menu option was used?",
+              "answer": [
+                "The second template is an INF security template, so it is imported using the security template option rather than the GPO import option. The required menu option is:",
+                "Add → File → Add Security Template",
+                "Select the provided: template-herzing.inf",
+                "After importing it, the Policy Analyzer",
+                "dashboard should show:",
+                "• Effective State • template-yourstudentID • template-herzing"
+              ]
+            },
+            {
+              "n": 8,
+              "question": "Does your machine comply with the password complexity policy? Explain it.",
+              "answer": [
+                "The template-herzing.inf security template requires password complexity to be enabled. The relevant setting is: PasswordComplexity = 1",
+                "This means password complexity is required. To determine whether the machine complies, the Effective State in Policy Analyzer must be compared with this value. Final result:",
+                "If the Effective State shows password complexity enabled, the machine complies with the policy. If it shows that password complexity is disabled or not configured, the machine does not comply."
+              ]
+            },
+            {
+              "n": 9,
+              "question": "What policy is more stringent in template-herzing.inf compared to the other template? What are their values?",
+              "answer": [
+                "The relevant comparison should be made in Policy Analyzer between template-herzing.inf and the Windows 10 22H2 security baseline template. The Herzing template specifically defines:",
+                "• Minimum password length: 14 characters • Minimum password age: 3 days • Maximum password age: 30 days • Password complexity: Enabled • Account lockout threshold: 3 failed attempts • Account lockout duration: 15 minutes • Reset account lockout counter: 15 minutes",
+                "The exact policy identified as more stringent should be taken from the Policy Analyzer comparison because it depends on the value contained in the other imported template."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Part C: Baselines Question 10 Show the changes that the last two administrative templates would make.",
+          "intro": [
+            "Open: MSFT Windows 10 22H2 - Defender Antivirus.html using Microsoft Edge.",
+            "The report contains the settings that the Defender Antivirus GPO would change. Important settings shown by the Defender Antivirus baseline include, among others:",
+            "• Potentially unwanted application detection — Enabled • Block at First Sight — Enabled • Microsoft MAPS — Enabled • Cloud protection — Enabled",
+            "• Cloud blocking level — High • Scan downloaded files and attachments — Enabled • Behavior monitoring — Enabled • Scan removable drives — Enabled • Attack Surface Reduction rules — Enabled • Dangerous website protection — Enabled • Real-time protection — Not turned off"
+          ],
+          "questions": [
+            {
+              "n": 11,
+              "question": "Which GPO corresponds to Defender Antivirus?",
+              "answer": [
+                "The Defender Antivirus GPO is: {522ED121-0E11-41F6-A205-CC736B4DEE1E} Therefore, the GPO folder name to record is:",
+                "{522ED121-0E11-41F6-A205-CC736B4DEE1E}"
+              ]
+            },
+            {
+              "n": 12,
+              "question": "Locate the Defender Antivirus registry.pol file and show its properties.",
+              "answer": [
+                "Open the Defender Antivirus GPO folder identified in Question 11 and locate its registry.pol file.",
+                "Right-click the file and select Properties."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Part D: LGPO Question 13 Import the policy settings from the registry.pol file. Open Command Prompt as Administrator. Use LGPO to import the Defender Antivirus policy file. Example command: LGPO.exe /m \"C:\\Path\\To\\registry.pol\" Replace the path with the actual location of the registry.pol file on your VM. The command should complete successfully and display its output in the Command Prompt.",
+          "intro": [],
+          "questions": [
+            {
+              "n": 14,
+              "question": "Verify the imported Defender Antivirus settings in Local Group Policy Editor.",
+              "answer": [
+                "Open: gpedit.msc Navigate to:",
+                "Computer Configuration → Administrative Templates → Windows Components → Microsoft Defender Antivirus → Real-Time Protection",
+                "Check the policy settings after importing the registry.pol file. The settings should no longer all appear as Not Configured."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Part E: Windows Settings Question 15 What is the recommended setting regarding the apps source?",
+          "intro": [
+            "Open: Settings → Apps → Apps & features",
+            "The recommended configuration is to restrict the installation source to trusted applications, preferably Microsoft Store only, where the option is available. This reduces the risk of users installing potentially unsafe applications from unknown sources."
+          ],
+          "questions": [
+            {
+              "n": 16,
+              "question": "Choose three Windows permissions that you would toggle on/off to improve privacy.",
+              "answer": [
+                "Three suitable categories are:",
+                "1. Location — Disable access for applications that do not require location information. 2. Camera — Disable camera access for applications that do not need to use the camera. 3. Microphone — Disable microphone access for applications that do not require audio input.",
+                "These settings reduce unnecessary access to personal information and hardware."
+              ]
+            },
+            {
+              "n": 17,
+              "question": "Which protection area allows Windows Hello to be enabled?",
+              "answer": [
+                "Windows Hello can be enabled through the Account protection area of Windows Security, where sign-in and Windows Hello-related options are available. The relevant area is: Windows Security → Account protection"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Part F: Protection Settings Note: The lab specifically requires a screenshot for every question in Part F. Therefore, Questions 18–26 each have their own screenshot marker.",
+          "intro": [],
+          "questions": [
+            {
+              "n": 18,
+              "question": "Which option is actively protecting the system from malware being inadvertently installed? Check if it is enabled by default.",
+              "answer": [
+                "The relevant protection is Real-time protection in Microsoft Defender Antivirus. Real-time protection continuously monitors files, programs, and activities for malware and other threats. On a standard Windows installation, Real-time protection is normally enabled by default unless it has been disabled by the user, administrator, or another security product."
+              ]
+            },
+            {
+              "n": 19,
+              "question": "Enable the option to control access to folders as protection against ransomware.",
+              "answer": [
+                "The required feature is: Controlled",
+                "folder access",
+                "It is available under: Windows Security → Virus & threat protection → Ransomware protection → Manage ransomware protection Controlled folder access helps prevent untrusted applications from making unauthorized changes to protected folders. Enable the feature."
+              ]
+            },
+            {
+              "n": 20,
+              "question": "Which option avoids malicious apps switching real-time protection off?",
+              "answer": [
+                "The required option is: Tamper Protection",
+                "Tamper Protection helps prevent unauthorized applications or malicious software from changing important Microsoft Defender Antivirus settings, including real-time protection."
+              ]
+            },
+            {
+              "n": 21,
+              "question": "Indicate two other settings protected by the option in Question 20.",
+              "answer": [
+                "Two other important Microsoft Defender settings protected by Tamper Protection are:",
+                "1. Behavior monitoring 2. Cloud-delivered protection",
+                "Tamper Protection helps prevent unauthorized changes to important Defender security settings."
+              ]
+            },
+            {
+              "n": 22,
+              "question": "Enable PUP protection in App & browser control.",
+              "answer": [
+                "PUP means Potentially Unwanted Program.",
+                "Open: Windows Security → App & browser control → Reputation-based protection Enable the option for potentially unwanted application protection. This helps prevent users from downloading or installing applications that may be unwanted or potentially harmful even though they may not meet the definition of traditional malware."
+              ]
+            },
+            {
+              "n": 23,
+              "question": "In Exploit protection, what is DEP used for? Give a specific example or use case.",
+              "answer": [
+                "Data Execution Prevention (DEP) helps prevent code from being executed from memory areas that are intended to contain data. For example, if a vulnerable application receives more data than a memory buffer can safely hold, an attacker may attempt to place executable code into that buffer and run it. DEP can help block execution from that data memory area, reducing the impact of this type of memory-based attack."
+              ]
+            },
+            {
+              "n": 24,
+              "question": "Check the only system-overridden setting for PrintDialog.exe.",
+              "answer": [
+                "Open Exploit protection → Program settings and locate: PrintDialog.exe Review the system override shown for the process. Record the setting displayed on your VM exactly as shown. System override:"
+              ]
+            },
+            {
+              "n": 25,
+              "question": "Where do you find the Memory integrity option?",
+              "answer": [
+                "The Memory integrity option is located at:",
+                "Windows Security → Device security → Core isolation → Core isolation details The setting is called: Memory integrity"
+              ]
+            },
+            {
+              "n": 26,
+              "question": "Try to enable Memory integrity and explain what happens.",
+              "answer": [
+                "Attempt to turn Memory integrity on. The result depends on the configuration of the VM. Windows may allow the feature to be enabled, request a restart, or report incompatible drivers that prevent the feature from being enabled.",
+                "After attempting to enable Memory integrity, Windows displayed: After attempting to enable Memory integrity, Windows displayed an incompatible drivers warning. The feature could not be enabled because one or more incompatible drivers were detected. Windows recommended reviewing the incompatible driver information before enabling Memory integrity. If Windows reports incompatible drivers, record the driver information shown in the warning. If Windows successfully enables the feature but requires a restart, mention that instead."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Part G: Protocols Question 27 Verify that NetBIOS over TCP is disabled for all interfaces using PowerShell. Open PowerShell as Administrator and run: Get-CimInstance Win32_NetworkAdapterConfiguration -Filter \"IPEnabled = True\" | Select-Object Description, TcpipNetbiosOptions The TcpipNetbiosOptions value should be:",
+          "intro": [
+            "Value 2 indicates that NetBIOS over TCP/IP is disabled. Check every IP-enabled network interface shown in the output.",
+            "Result:",
+            "If all interfaces show 2, the machine complies with the policy. If any interface shows another value, that interface does not comply with the policy."
+          ],
+          "questions": [
+            {
+              "n": 28,
+              "question": "Disable mDNS through the Windows Registry.",
+              "answer": [
+                "Open Registry Editor as Administrator. Navigate to:",
+                "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Dnscache\\Parameters Create or modify the following DWORD (32-bit) Value: Name: EnableMDNS Value:",
+                "0 A value of 0 disables mDNS. After making the change, verify that the registry entry appears correctly."
+              ]
+            }
+          ]
+        }
+      ],
+      "conclusion": []
+    },
+    "evidence_image": "/assets/case-studies/windows-security-lab-1-security-compliance-toolkit/source-evidence.jpg",
+    "related_links": [
+      [
+        "/information-security-assignment-help",
+        "Information Security Assignment Help"
+      ],
+      [
+        "/network-security-assignment-help",
+        "Network Security Assignment Help"
+      ],
+      [
+        "/digital-forensics-assignment-help",
+        "Digital Forensics Assignment Help"
+      ]
+    ]
+  }
+}
