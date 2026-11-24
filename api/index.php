@@ -20,6 +20,8 @@ const WHATSAPP_LABEL = '+44 7949 817583';
 $home = require dirname(__DIR__) . '/data/home.php';
 $about = require dirname(__DIR__) . '/data/about.php';
 $caseStudies = require dirname(__DIR__) . '/data/case-studies.php';
+$windowsSecurityLabs = require dirname(__DIR__) . '/data/windows-security-labs.php';
+$caseStudies = array_merge($windowsSecurityLabs, $caseStudies);
 $sit716CaseStudies = [];
 foreach ([
     dirname(__DIR__) . '/data/sit716-week-2.json.gz',
