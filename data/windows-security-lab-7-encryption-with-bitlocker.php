@@ -1,0 +1,398 @@
+<?php
+/** Source transcription: Windows Security Lab 7 – Encryption with BitLocker. */
+return [
+    'menu_featured' => false,
+    'template' => 'windows_security_lab',
+    'page_type' => 'case_study',
+    'title' => 'Windows Security Lab 7: Encryption with BitLocker',
+    'meta_title' => 'BitLocker Encryption Lab 7 Solution | Windows Security Case Study',
+    'h1' => 'Windows Security Lab 7: Encryption with BitLocker',
+    'nav' => 'BitLocker Encryption Lab',
+    'description' => 'Completed Windows Security Lab 7 case study covering BitLocker and TPM configuration, EFS file encryption, recovery keys, Windows Event Viewer, failed logins, Active Directory delegation, and ACL analysis with Liza.',
+    'primary' => 'BitLocker encryption lab case study',
+    'eyebrow' => 'Completed Windows Security Lab',
+    'menu_meta' => 'Windows Security · BitLocker · Event Viewer · Delegation',
+    'program' => 'CS',
+    'course' => 'Windows Security',
+    'lab' => 'Lab 7: Encryption with BitLocker',
+    'topic_label' => 'BitLocker Encryption',
+    'main_tool' => 'BitLocker & Event Viewer',
+    'section_title' => 'BitLocker Encryption Lab Questions and Answers',
+    'cta_after' => 13,
+    'questions' => [
+        [
+            'n' => 1,
+            'source_n' => 1,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'Install the BitLocker feature using a PowerShell cmdlet.',
+            'answer' => [
+                'To install BitLocker, I opened PowerShell with administrative privileges and used the Windows PowerShell command for installing the BitLocker feature:',
+                'Install-WindowsFeature BitLocker -IncludeAllSubFeature -IncludeManagementTools',
+                'This command installs the BitLocker feature along with its related sub-features and management tools. After executing the command, PowerShell reported the result of the installation. Installing the feature is the first step before BitLocker can be configured and used on the system.'
+            ]
+        ],
+        [
+            'n' => 2,
+            'source_n' => 2,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'What is necessary for the change to be effective? How did you do it from PowerShell?',
+            'answer' => [
+                'After installing a Windows feature such as BitLocker, the server needs to be restarted so that the operating system can complete the installation and load the newly installed components correctly.I restarted the virtual machine from PowerShell by using:',
+                'Restart-Computer',
+                'After the restart, Windows loaded again and the BitLocker feature was available for configuration.'
+            ]
+        ],
+        [
+            'n' => 3,
+            'source_n' => 3,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'Go to File Explorer, then right-click on C: and select “Turn on BitLocker.” Why do you get an error message?',
+            'answer' => [
+                'When I selected Turn on BitLocker for the C: drive, Windows displayed an error because the virtual machine does not have the required TPM configuration.
+A Trusted Platform Module (TPM) is a hardware-based security component that can be used by BitLocker to protect encryption keys and verify the integrity of the system during startup. BitLocker normally uses the TPM to provide a secure way of unlocking the operating-system drive.
+In this virtual machine, a compatible TPM is not available in the required configuration. As a result, Windows cannot use the normal TPM-based BitLocker startup method and reports an error.
+The error therefore does not mean that BitLocker itself is unavailable. It means that the current security configuration of the virtual machine does not meet the normal TPM requirement for encrypting the operating-system drive.'
+            ]
+        ],
+        [
+            'n' => 4,
+            'source_n' => 4,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'Where would the TPM be in a physical machine?',
+            'answer' => [
+                'In a physical computer, a TPM is normally associated with the computer\'s motherboard. It may be implemented as a dedicated security chip or provided through an integrated firmware-based implementation, depending on the computer hardware.
+The TPM is designed to perform security-related operations and protect sensitive cryptographic information. In the case of BitLocker, it can help protect the encryption keys and verify that the computer has not been altered in an unexpected way during the startup process.
+This is why BitLocker can provide stronger startup protection when a compatible TPM is available.'
+            ]
+        ],
+        [
+            'n' => 5,
+            'source_n' => 5,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'Create the Sensitive Data folder and encrypt its contents.',
+            'answer' => [
+                'I opened the Documents folder and created a folder named:Sensitive Data for  Inside the folder, I created a text file containing random information representing private or sensitive data.
+I then opened the properties of the folder and went to:
+Properties → General → Advanced
+In the Advanced Attributes window, I selected Encrypt contents to secure data and applied the changes.
+The purpose of this feature is to protect the contents of the folder so that the encrypted information cannot simply be accessed by an unauthorized user who obtains access to the computer.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image1.webp'
+            ]
+        ],
+        [
+            'n' => 6,
+            'source_n' => 6,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'Do you have to do it with every file in the folder? Show the changes in the icon of the text file. Is this encryption method a good idea for all files in the C: volume?',
+            'answer' => [
+                'No, it is not necessary to manually encrypt every file separately when encryption is applied to the folder and its contents. Windows can apply the encryption attribute to the contents of the selected folder.The encrypted text file also shows a visual change in its icon, which provides an indication that the file has been encrypted.
+This type of encryption is useful when only particular files or folders contain sensitive information. However, it would not be the most practical approach for protecting every file on the C: volume. Encrypting individual files and folders is intended for selected information, while BitLocker is specifically designed to protect an entire volume.
+For example, if a computer contains many system files and applications, individually encrypting every file would be difficult to manage. Full-volume encryption with BitLocker provides a more appropriate solution when the objective is to protect the entire operating-system drive.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image2.webp'
+            ]
+        ],
+        [
+            'n' => 7,
+            'source_n' => 7,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'Go back to the Advanced settings for the folder you created and check what users have access to this encrypted folder.',
+            'answer' => [
+                'The encrypted folder is protected through Windows\' file-encryption mechanism and is associated with the user account that performed the encryption.
+Access to an encrypted file is not determined only by ordinary folder permissions. The encryption itself provides an additional security layer. A user may be able to see that a file exists but still may not be able to read its encrypted contents without the appropriate credentials and encryption information.This demonstrates the difference between file permissions and encryption. Permissions control who is allowed to access a resource, while encryption protects the actual contents of the resource.'
+            ]
+        ],
+        [
+            'n' => 8,
+            'source_n' => 8,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'What Windows-native encryption method would you use for a pendrive or external disk?',
+            'answer' => [
+                'For a pendrive or external disk, I would use BitLocker To Go.BitLocker To Go is the Windows-native encryption technology designed for removable storage devices. It can be used to protect USB flash drives and other removable storage.This is particularly important because removable devices can easily be lost or stolen. Without encryption, someone who obtains the device may be able to access the stored information. With BitLocker To Go, access to the encrypted data requires the appropriate authentication.'
+            ]
+        ],
+        [
+            'n' => 9,
+            'source_n' => 9,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'Research a way to enable BitLocker on the C: volume despite the previous error, and perform the changes.',
+            'answer' => [
+                'The previous error occurred because the virtual machine did not have a compatible TPM available for BitLocker. One way to address this situation is to configure Windows to allow BitLocker to operate without a compatible TPM.
+I opened the Local Group Policy Editor and navigated to:
+Computer Configuration → Administrative Templates → Windows Components → BitLocker Drive Encryption → Operating System DrivesI opened the policy named:Require additional authentication at startup and enabled the policy.
+The relevant configuration allows BitLocker to be used without a compatible TPM. When this configuration is enabled, BitLocker can use another authentication method at startup rather than depending on a TPM.
+After applying the policy, I returned to the BitLocker configuration for the C: drive and was able to continue with the encryption setup.
+This configuration is useful in a virtual-machine environment where a physical TPM is not available. However, the TPM normally provides an additional hardware-based security layer, so using BitLocker without one changes the startup protection model.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image3.webp'
+            ]
+        ],
+        [
+            'n' => 10,
+            'source_n' => 10,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'Try to encrypt the C: volume. Show the options you have, but choose a password.',
+            'answer' => [
+                'After changing the BitLocker policy, I started BitLocker for the C: volume again.
+Windows provided authentication options for protecting the operating-system drive. Because the virtual machine did not have a compatible TPM, I selected the option to use a password.
+I created and confirmed a BitLocker password. This password is used during startup to unlock the encrypted operating-system drive.
+The purpose of requiring authentication before Windows starts is to prevent an unauthorized person from simply starting the computer and accessing the encrypted contents.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image4.webp'
+            ]
+        ],
+        [
+            'n' => 11,
+            'source_n' => 11,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'Why can you not choose a file in your Documents to save the recovery key? Show the error and explain it.',
+            'answer' => [
+                'BitLocker provides a recovery key in case the normal startup authentication cannot be used.
+When I attempted to save the recovery key as a file in the Documents folder, Windows did not allow me to use that location because the Documents folder is located on the same operating-system drive that is being encrypted.
+Storing the recovery key on the same encrypted drive would not provide reliable recovery. If the C: drive becomes locked or inaccessible, the recovery key stored on that same drive could also become inaccessible.
+The recovery key should therefore normally be stored somewhere separate from the encrypted volume, such as a USB flash drive or another secure storage location.
+In this virtual machine, the lab instructions specify saving the recovery key as a PDF in Documents because there are no other available alternatives unless a USB flash drive is connected.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image5.webp'
+            ]
+        ],
+        [
+            'n' => 12,
+            'source_n' => 12,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'Print the recovery key to a PDF file in your Documents.',
+            'answer' => [
+                'Instead of saving the recovery key directly as a normal recovery-key file, I selected the option to print the recovery information and saved it as a PDF file in the Documents folder.
+Although storing the recovery key on the same drive is not recommended from a security perspective, this was the available option in the provided virtual machine.
+After completing the BitLocker configuration, I restarted the virtual machine. During startup, BitLocker displayed a password prompt because the operating-system drive was protected and required the password that I configured earlier.
+I captured the screen before entering the password.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image6.webp'
+            ]
+        ],
+        [
+            'n' => 13,
+            'source_n' => 13,
+            'part' => 'Part A — Encryption with BitLocker',
+            'question' => 'Check the PDF file\'s properties.',
+            'answer' => [
+                'After Windows started, I located the recovery-key PDF in the Documents folder.I opened the file\'s Properties window to examine its information. The Properties window provides information such as the file type, location, size, and other file attributes.This also confirms that the recovery information had been successfully saved as a PDF file.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image7.webp'
+            ]
+        ],
+        [
+            'n' => 14,
+            'source_n' => 1,
+            'part' => 'Part B — Event Viewer',
+            'question' => 'Find the most recent login event.',
+            'answer' => [
+                'I opened Windows Event Viewer by executing:
+eventvwr.msc',
+                'I then examined the Windows security events and located the event corresponding to the most recent successful login.
+After double-clicking the event, I reviewed the detailed information provided by Windows. Security login events are useful because they allow an administrator to determine when authentication occurred and examine information associated with the login.',
+                'Event Viewer is therefore an important Windows security tool because it provides a historical record of activities that can be investigated when troubleshooting or monitoring a system.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image8.webp'
+            ]
+        ],
+        [
+            'n' => 15,
+            'source_n' => 2,
+            'part' => 'Part B — Event Viewer',
+            'question' => 'Create a user in the ITDEPT OU.',
+            'answer' => [
+                'I opened Active Directory Users and Computers and navigated to the ITDEPT organizational unit.',
+                'I created a new user using my real name and completed the required information for the account.
+After creating the account, I verified that the new user appeared inside the ITDEPT OU along with the existing users and computer objects.
+Organizational units are useful because they allow administrators to organize users and computers logically and apply permissions or administrative delegation to specific groups of objects.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image9.webp'
+            ]
+        ],
+        [
+            'n' => 16,
+            'source_n' => 3,
+            'part' => 'Part B — Event Viewer',
+            'question' => 'Attempt a login with the wrong password and find the failed-login event.',
+            'answer' => [
+                'I logged out of the current account and attempted to log in using the newly created user account with an incorrect password.The login attempt failed because the password entered did not match the account credentials.
+I then logged back in as localroot and opened Event Viewer. I located the security event associated with the failed login attempt.
+The event contains information about the failed authentication attempt. Such events are important for security monitoring because repeated failed logins can indicate either a user entering an incorrect password or a possible attempt to gain unauthorized access.
+I enlarged the event information window so that all relevant information was visible.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image10.webp'
+            ]
+        ],
+        [
+            'n' => 17,
+            'source_n' => 3,
+            'part' => 'Part C — Liza',
+            'question' => 'Use Liza to examine information available to authenticated users.',
+            'answer' => [
+                'I placed Liza.zip on the Desktop and extracted the files.After opening Liza, the Active Directory configuration was loaded. I selected Users from the tree on the left side of the application.The application displayed information associated with authenticated users and the permissions available within the Active Directory environment.
+This demonstrates that authentication and authorization are separate concepts. A person can be authenticated as a valid domain user without automatically having administrative control over the domain.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image11.webp'
+            ]
+        ],
+        [
+            'n' => 18,
+            'source_n' => 4,
+            'part' => 'Part C — Liza',
+            'question' => 'What can authenticated users do with information regarding other users? Explain the information shown by Liza.',
+            'answer' => [
+                'Authenticated users can have access to certain directory information about other users. Active Directory needs to make some information available so that normal directory services can operate correctly.
+Depending on the permissions configured in the environment, users may be able to view basic information associated with other accounts. However, being able to view information does not automatically give the user permission to modify that information.
+The information displayed by Liza helps demonstrate the permissions and access relationships that exist within Active Directory. It shows that some information can be visible to authenticated users while administrative actions remain restricted.
+This is an important security concept because Active Directory does not simply operate on an all-or-nothing model. Different users can have different levels of access depending on the permissions assigned to their accounts.'
+            ]
+        ],
+        [
+            'n' => 19,
+            'source_n' => 5,
+            'part' => 'Part C — Liza',
+            'question' => 'Delegate control of the first four tasks to the user created previously.',
+            'answer' => [
+                'I opened Active Directory Users and Computers, right-clicked the ITDEPT organizational unit, and selected Delegate Control. I selected the user that I had created earlier and assigned the first four tasks specified by the lab.',
+                'The Delegation of Control Wizard then displayed a summary of the permissions that would be assigned.
+I reviewed the summary and scrolled to the bottom as required. Delegation allows an administrator to assign selected administrative responsibilities without giving the user complete control over the organizational unit.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image12.webp'
+            ]
+        ],
+        [
+            'n' => 20,
+            'source_n' => 6,
+            'part' => 'Part C — Liza',
+            'question' => 'Check the delegated permissions in Liza.',
+            'answer' => [
+                'After completing the delegation, I returned to Liza and selected the ITDEPT organizational unit.
+The user I had created appeared in the ACL analysis.Some permission entries showed all the relevant checks because the user had received permissions associated with the delegated tasks. Other entries did not show all checks because those permissions had not been delegated.
+This is important because delegation does not normally mean giving the user unrestricted administrative access. Instead, it assigns specific permissions related to specific tasks.
+The ACL analysis therefore provides evidence of how the delegation affected the user\'s access to the organizational unit.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image13.webp'
+            ]
+        ],
+        [
+            'n' => 21,
+            'source_n' => 7,
+            'part' => 'Part C — Liza',
+            'question' => 'Delegate control for the MGMT OU, but only for resetting passwords.',
+            'answer' => [
+                'I opened Active Directory Users and Computers and selected the MGMT organizational unit.I opened the Delegate Control wizard and selected the user created earlier.This time, I configured the delegation so that the user was given only the ability to perform password-reset related tasks.
+After completing the wizard, I reviewed the summary to confirm that the delegation was limited to the required responsibility.
+This demonstrates how Active Directory delegation can be used to give a user a specific administrative function without giving that user broad control over the entire organizational unit.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image14.webp'
+            ]
+        ],
+        [
+            'n' => 22,
+            'source_n' => 8,
+            'part' => 'Part C — Liza',
+            'question' => 'Analyze the user\'s ACLs in Liza.',
+            'answer' => [
+                'I returned to Liza and selected Select trustee for ACL analysis. I selected the user who had received the delegation.
+The ACL analysis showed the permissions associated with the user\'s account. The delegation that had been configured for the MGMT OU appeared in the analysis.',
+                'This confirms that the delegated permission was applied to the user and that the user has the specific access required for the delegated task.',
+                'The results also demonstrate why ACL analysis is useful: it allows an administrator to examine the actual permissions associated with a particular user rather than relying only on the configuration made in the delegation wizard.'
+            ],
+            'images' => [
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image15.webp',
+                '/assets/case-studies/windows-security-lab-7-encryption-with-bitlocker/image16.webp'
+            ]
+        ],
+        [
+            'n' => 23,
+            'source_n' => 9,
+            'part' => 'Part D — Delegation Control',
+            'question' => 'Explain the advantages of delegation control of some tasks to some users.',
+            'answer' => [
+                'Delegation control allows an organization to distribute administrative responsibilities while maintaining control over sensitive resources. One important advantage is least privilege. A user can be given only the permissions necessary to perform their assigned job instead of receiving complete administrative privileges.
+For example, a help-desk employee may need to reset passwords but does not need permission to modify domain-wide security settings. Through delegation, the administrator can provide the required password-reset permissions without giving the employee full control over Active Directory.
+Delegation also improves efficiency. A domain administrator does not have to perform every routine administrative task personally. Specific responsibilities can be assigned to appropriate staff members, allowing routine support work to be handled more quickly.
+Another advantage is better separation of responsibilities. Different employees can be responsible for different administrative functions, reducing unnecessary access to sensitive resources.
+Overall, delegation provides a controlled way to distribute administrative work while maintaining appropriate security boundaries.'
+            ]
+        ],
+        [
+            'n' => 24,
+            'source_n' => 10,
+            'part' => 'Part D — Delegation Control',
+            'question' => 'Provide a specific use-case.',
+            'answer' => [
+                'A practical example would be a company\'s IT help-desk department. Employees may regularly forget their passwords or become locked out of their accounts. The help-desk staff need to be able to reset passwords so they can assist employees.
+Instead of making every help-desk employee a domain administrator, the organization can delegate the specific permission required to reset passwords for the appropriate organizational unit.',
+                'The help-desk employee can then perform the required support task without having unnecessary permissions to change other Active Directory settings. This approach provides the employee with enough access to perform the job while keeping more sensitive administrative responsibilities with authorized domain administrators.'
+            ]
+        ],
+        [
+            'n' => 25,
+            'source_n' => 11,
+            'part' => 'Part D — Delegation Control',
+            'question' => 'Explain a situation in which delegation can be risky.',
+            'answer' => [
+                'Delegation can become a security risk when permissions are assigned too broadly, assigned to the wrong account, or not reviewed regularly.
+For example, suppose a user only needs permission to reset passwords but is accidentally given much broader control over an organizational unit. That user may then be able to modify accounts or settings that they do not need to manage.
+Delegation can also create a risk if the delegated user\'s account is compromised. An attacker who gains access to that account could potentially use the permissions assigned to it.For this reason, administrators should carefully select which users receive delegated permissions and should assign only the permissions required for their responsibilities. Delegated permissions should also be reviewed periodically so that permissions are removed when they are no longer required.'
+            ]
+        ]
+    ],
+    'sidebar_items' => [
+        [
+            1,
+            'Part A · BitLocker and Encryption'
+        ],
+        [
+            14,
+            'Part B · Event Viewer'
+        ],
+        [
+            17,
+            'Part C · Liza'
+        ],
+        [
+            23,
+            'Part D · Delegation Control'
+        ]
+    ],
+    'related_links' => [
+        [
+            '/cryptography-assignment-help',
+            'Cryptography Assignment Help'
+        ],
+        [
+            '/information-security-assignment-help',
+            'Information Security Assignment Help'
+        ],
+        [
+            '/case-studies/windows-security-lab-1-security-compliance-toolkit',
+            'Security Compliance Toolkit'
+        ],
+        [
+            '/case-studies/windows-security-lab-3-access-controls',
+            'Access Controls Lab'
+        ],
+        [
+            '/case-studies',
+            'All Case Studies'
+        ]
+    ]
+];

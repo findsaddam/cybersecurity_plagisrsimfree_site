@@ -1,5 +1,6 @@
 <?php
 return [
+    'windows-security-lab-7-encryption-with-bitlocker' => require __DIR__ . '/windows-security-lab-7-encryption-with-bitlocker.php',
     'windows-security-lab-5-credentials-harvesting' => require __DIR__ . '/windows-security-lab-5-credentials-harvesting.php',
     'windows-security-lab-3-access-controls' => [
         'menu_featured' => false,
