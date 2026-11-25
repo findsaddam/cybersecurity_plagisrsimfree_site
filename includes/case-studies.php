@@ -1339,7 +1339,7 @@ function renderWindowsSecurityLabCaseStudy(string $slug, array $case, array $cas
             <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies">Case Studies</a><span>/</span><span><?=e($case['nav'])?></span></div>
             <span class="blog-label"><?=e($case['eyebrow'])?></span>
             <h1><?=e($case['h1'])?></h1>
-            <div class="blog-topic-line"><?=e($case['program'])?> <span>•</span> <?=e($case['course'])?> <span>•</span> Security Compliance Toolkit</div>
+            <div class="blog-topic-line"><?=e($case['program'])?> <span>•</span> <?=e($case['course'])?> <span>•</span> <?=e($case['topic_label'] ?? 'Security Compliance Toolkit')?></div>
         </div>
     </section>
     <section class="case-snapshot-section">
@@ -1347,9 +1347,9 @@ function renderWindowsSecurityLabCaseStudy(string $slug, array $case, array $cas
             <div class="case-snapshot-grid">
                 <div class="case-snapshot-card"><span>Program</span><strong><?=e($case['program'])?></strong></div>
                 <div class="case-snapshot-card"><span>Course</span><strong><?=e($case['course'])?></strong></div>
-                <div class="case-snapshot-card"><span>Lab</span><strong>Lab 1</strong></div>
+                <div class="case-snapshot-card"><span>Lab</span><strong><?=e(explode(':', $case['lab'])[0])?></strong></div>
                 <div class="case-snapshot-card"><span>Questions</span><strong><?=e((string)count($case['questions']))?></strong></div>
-                <div class="case-snapshot-card"><span>Main tool</span><strong>Policy Analyzer</strong></div>
+                <div class="case-snapshot-card"><span>Main tool</span><strong><?=e($case['main_tool'] ?? 'Policy Analyzer')?></strong></div>
                 <div class="case-snapshot-card"><span>Platform</span><strong>Windows Security</strong></div>
             </div>
         </div>
@@ -1358,25 +1358,25 @@ function renderWindowsSecurityLabCaseStudy(string $slug, array $case, array $cas
         <div class="container blog-layout">
             <article class="blog-article">
                 <section id="solution">
-                    <div class="case-section-heading"><span class="case-section-number">01</span><div><span class="mini-label">Completed lab solution</span><h2>Security Compliance Toolkit Questions and Answers</h2></div></div>
+                    <div class="case-section-heading"><span class="case-section-number">01</span><div><span class="mini-label">Completed lab solution</span><h2><?=e($case['section_title'] ?? 'Security Compliance Toolkit Questions and Answers')?></h2></div></div>
                     <?php $currentPart=''; foreach($case['questions'] as $item): ?>
                         <?php if($item['part']!==$currentPart): $currentPart=$item['part']; ?>
                         <div class="squid-part-heading" id="part-<?=e((string)$item['n'])?>"><span>Lab section</span><h2><?=e($currentPart)?></h2></div>
                         <?php endif; ?>
                         <section class="vpn-question" id="question-<?=e((string)$item['n'])?>">
-                            <div class="vpn-question__head"><span class="vpn-question__number"><?=e(str_pad((string)$item['n'],2,'0',STR_PAD_LEFT))?></span><div><small>Question <?=e((string)$item['n'])?></small><h3><?=e($item['question'])?></h3></div></div>
+                            <div class="vpn-question__head"><span class="vpn-question__number"><?=e(str_pad((string)($item['source_n'] ?? $item['n']),2,'0',STR_PAD_LEFT))?></span><div><small>Question <?=e((string)($item['source_n'] ?? $item['n']))?></small><h3><?=e($item['question'])?></h3></div></div>
                             <div class="vpn-question__answer">
                                 <?php foreach($item['answer'] as $paragraph): ?><p><?=nl2br(e($paragraph))?></p><?php endforeach; ?>
-                                <?php if(!empty($item['image'])): ?><figure class="source-screenshot"><img src="<?=e($item['image'])?>" alt="Original screenshot for Question <?=e((string)$item['n'])?>" loading="lazy" decoding="async"><figcaption>Original screenshot from the completed Lab 1 solution.</figcaption></figure><?php endif; ?>
+                                <?php if(!empty($item['image'])): ?><figure class="source-screenshot"><img src="<?=e($item['image'])?>" alt="Original screenshot for Question <?=e((string)($item['source_n'] ?? $item['n']))?>" loading="lazy" decoding="async"><figcaption>Original screenshot from the completed <?=e($case['lab'])?> solution.</figcaption></figure><?php endif; ?>
                             </div>
                         </section>
-                        <?php if($item['n']===14): ?><?php renderCaseStudyCTA('mid'); ?><?php endif; ?>
+                        <?php if($item['n']===($case['cta_after'] ?? 14)): ?><?php renderCaseStudyCTA('mid'); ?><?php endif; ?>
                     <?php endforeach; ?>
                 </section>
                 <?php renderCaseStudyCTA('footer'); ?>
             </article>
             <aside class="blog-sidebar">
-                <div class="blog-sidebar-card"><span class="mini-label">On this page</span><a href="#question-1">Part A · Documentation</a><a href="#question-3">Part B · Policy Analyzer</a><a href="#question-10">Part C · Baselines</a><a href="#question-13">Part D · LGPO</a><a href="#question-15">Part E · Windows Settings</a><a href="#question-18">Part F · Protection Settings</a><a href="#question-27">Part G · Protocols</a></div>
+                <div class="blog-sidebar-card"><span class="mini-label">On this page</span><?php foreach(($case['sidebar_items'] ?? [[1,'Part A · Documentation'],[3,'Part B · Policy Analyzer'],[10,'Part C · Baselines'],[13,'Part D · LGPO'],[15,'Part E · Windows Settings'],[18,'Part F · Protection Settings'],[27,'Part G · Protocols']]) as $navItem): ?><a href="#question-<?=e((string)$navItem[0])?>"><?=e($navItem[1])?></a><?php endforeach; ?></div>
                 <div class="blog-sidebar-card"><span class="mini-label">Related</span><?php foreach(($case['related_links'] ?? []) as $link): ?><a href="<?=e($link[0])?>"><?=e($link[1])?></a><?php endforeach; ?></div>
             </aside>
         </div>
