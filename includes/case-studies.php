@@ -1411,6 +1411,7 @@ function renderWindowsSecurityLabCaseStudy(string $slug, array $case, array $cas
             <article class="blog-article">
                 <section id="solution">
                     <div class="case-section-heading"><span class="case-section-number">01</span><div><span class="mini-label">Completed lab solution</span><h2><?=e($case['section_title'] ?? 'Security Compliance Toolkit Questions and Answers')?></h2></div></div>
+                    <?php foreach (($case['intro'] ?? []) as $introParagraph): ?><p class="case-source-intro"><?=e($introParagraph)?></p><?php endforeach; ?>
                     <?php $currentPart=''; foreach($case['questions'] as $item): ?>
                         <?php if($item['part']!==$currentPart): $currentPart=$item['part']; ?>
                         <div class="squid-part-heading" id="part-<?=e((string)$item['n'])?>"><span>Lab section</span><h2><?=e($currentPart)?></h2></div>
@@ -1419,7 +1420,7 @@ function renderWindowsSecurityLabCaseStudy(string $slug, array $case, array $cas
                             <div class="vpn-question__head"><span class="vpn-question__number"><?=e(str_pad((string)($item['source_n'] ?? $item['n']),2,'0',STR_PAD_LEFT))?></span><div><small>Question <?=e((string)($item['source_n'] ?? $item['n']))?></small><h3><?=e($item['question'])?></h3></div></div>
                             <div class="vpn-question__answer">
                                 <?php foreach($item['answer'] as $paragraph): ?><p><?=nl2br(e($paragraph))?></p><?php endforeach; ?>
-                                <?php if(!empty($item['image'])): ?><figure class="source-screenshot"><img src="<?=e($item['image'])?>" alt="Original screenshot for Question <?=e((string)($item['source_n'] ?? $item['n']))?>" loading="lazy" decoding="async"><figcaption>Original screenshot from the completed <?=e($case['lab'])?> solution.</figcaption></figure><?php endif; ?>
+                                <?php foreach (($item['images'] ?? (!empty($item['image']) ? [$item['image']] : [])) as $screenshot): ?><figure class="source-screenshot"><img src="<?=e($screenshot)?>" alt="Original screenshot for Question <?=e((string)($item['source_n'] ?? $item['n']))?>" loading="lazy" decoding="async"><figcaption>Original screenshot from the completed <?=e($case['lab'])?> solution.</figcaption></figure><?php endforeach; ?>
                             </div>
                         </section>
                         <?php if($item['n']===($case['cta_after'] ?? 14)): ?><?php renderCaseStudyCTA('mid'); ?><?php endif; ?>
