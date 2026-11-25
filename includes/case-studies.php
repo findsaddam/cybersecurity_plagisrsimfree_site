@@ -1,5 +1,24 @@
 <?php
 function renderCaseStudiesIndex(array $caseStudies, array $subjects): void {
+    $perPage = 18;
+    $totalCases = count($caseStudies);
+    $totalPages = max(1, (int)ceil($totalCases / $perPage));
+    $requestedPage = $_GET['page'] ?? null;
+    $currentPage = is_string($requestedPage) && preg_match('/^[1-9][0-9]*$/D', $requestedPage)
+        ? (int)$requestedPage
+        : 1;
+    if ($currentPage > $totalPages) {
+        http_response_code(404);
+        render404($subjects, $caseStudies);
+        return;
+    }
+
+    $offset = ($currentPage - 1) * $perPage;
+    $visibleCases = array_slice($caseStudies, $offset, $perPage, true);
+    $firstNumber = $totalCases === 0 ? 0 : $offset + 1;
+    $lastNumber = min($offset + $perPage, $totalCases);
+    $pageUrl = static fn(int $number): string => '/case-studies' . ($number > 1 ? '?page=' . $number : '');
+
     $page = [
         'page_type' => 'case_study_index',
         'title' => 'Solved Assignments',
@@ -9,8 +28,20 @@ function renderCaseStudiesIndex(array $caseStudies, array $subjects): void {
         'primary' => 'solved cybersecurity assignments',
         'nav' => 'Case Studies',
     ];
-    renderHead($page, SITE_URL . '/case-studies', $subjects);
-    renderHeader($subjects, $caseStudies); ?>
+    if ($currentPage > 1) {
+        $page['meta_title'] = 'Cybersecurity Case Studies - Page ' . $currentPage . ' | CyberAssignment';
+        $page['description'] .= ' Browse page ' . $currentPage . ' of ' . $totalPages . '.';
+    }
+    $canonical = SITE_URL . $pageUrl($currentPage);
+    renderHead($page, $canonical, $subjects);
+    renderHeader($subjects, $caseStudies);
+
+    $pageNumbers = array_values(array_unique(array_filter(
+        [1, 2, $currentPage - 1, $currentPage, $currentPage + 1, $totalPages - 1, $totalPages],
+        static fn(int $number): bool => $number >= 1 && $number <= $totalPages
+    )));
+    sort($pageNumbers);
+    ?>
 <main class="blog-index-page">
     <section class="blog-index-head">
         <div class="container blog-shell">
@@ -21,22 +52,43 @@ function renderCaseStudiesIndex(array $caseStudies, array $subjects): void {
     </section>
     <section class="blog-list-section">
         <div class="container blog-shell">
+            <p class="case-study-list-summary" role="status">Showing <?=e((string)$firstNumber)?>–<?=e((string)$lastNumber)?> of <?=e((string)$totalCases)?> case studies</p>
             <div class="blog-list">
-                <?php foreach($caseStudies as $slug=>$case): ?>
+                <?php foreach ($visibleCases as $slug => $case): ?>
                 <article class="blog-list-card">
-                    <span class="blog-list-card__label"><?=e($case['eyebrow'])?></span>
-                    <h2><a href="/case-studies/<?=e($slug)?>"><?=e($case['nav'])?></a></h2>
-                    <p><?=e($case['topic_q2'] ?? '')?> · <?=e($case['topic_q3'] ?? '')?> · <?=e($case['tool_q3'] ?? '')?></p>
+                    <span class="blog-list-card__label"><?=e($case['eyebrow'] ?? 'Case Study')?></span>
+                    <h2><a href="/case-studies/<?=e($slug)?>"><?=e($case['nav'] ?? $case['h1'])?></a></h2>
+                    <p><?=e($case['description'] ?? implode(' · ', array_slice($case['topics'] ?? [], 0, 3)))?></p>
                     <a class="text-link" href="/case-studies/<?=e($slug)?>">Read assignment <?=icon('arrow',16)?></a>
                 </article>
                 <?php endforeach; ?>
             </div>
+            <?php if ($totalPages > 1): ?>
+            <nav class="case-study-pagination" aria-label="Case studies pagination">
+                <?php if ($currentPage > 1): ?>
+                <a class="case-study-pagination__direction" rel="prev" href="<?=e($pageUrl($currentPage - 1))?>">Previous</a>
+                <?php endif; ?>
+                <?php $lastPageShown = 0; foreach ($pageNumbers as $number): ?>
+                    <?php if ($lastPageShown > 0 && $number > $lastPageShown + 1): ?>
+                    <span class="case-study-pagination__ellipsis" aria-hidden="true">…</span>
+                    <?php endif; ?>
+                    <?php if ($number === $currentPage): ?>
+                    <span class="case-study-pagination__current" aria-current="page"><?=e((string)$number)?></span>
+                    <?php else: ?>
+                    <a href="<?=e($pageUrl($number))?>" aria-label="Page <?=e((string)$number)?>"><?=e((string)$number)?></a>
+                    <?php endif; ?>
+                    <?php $lastPageShown = $number; ?>
+                <?php endforeach; ?>
+                <?php if ($currentPage < $totalPages): ?>
+                <a class="case-study-pagination__direction" rel="next" href="<?=e($pageUrl($currentPage + 1))?>">Next</a>
+                <?php endif; ?>
+            </nav>
+            <?php endif; ?>
         </div>
     </section>
 </main>
 <?php renderFooter($subjects);
 }
-
 
 function renderCaseStudyCTA(string $placement='mid'): void { ?>
 <section class="case-conversion-cta case-conversion-cta--<?=e($placement)?>">
