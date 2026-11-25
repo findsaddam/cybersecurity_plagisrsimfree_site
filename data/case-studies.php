@@ -1,5 +1,6 @@
 <?php
 return [
+    'windows-security-lab-5-credentials-harvesting' => require __DIR__ . '/windows-security-lab-5-credentials-harvesting.php',
     'windows-security-lab-3-access-controls' => [
         'menu_featured' => false,
         'template' => 'windows_security_lab',
