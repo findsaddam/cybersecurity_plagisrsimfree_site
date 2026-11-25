@@ -15,8 +15,6 @@ function renderCaseStudiesIndex(array $caseStudies, array $subjects): void {
 
     $offset = ($currentPage - 1) * $perPage;
     $visibleCases = array_slice($caseStudies, $offset, $perPage, true);
-    $firstNumber = $totalCases === 0 ? 0 : $offset + 1;
-    $lastNumber = min($offset + $perPage, $totalCases);
     $pageUrl = static fn(int $number): string => '/case-studies' . ($number > 1 ? '?page=' . $number : '');
 
     $page = [
@@ -46,13 +44,11 @@ function renderCaseStudiesIndex(array $caseStudies, array $subjects): void {
     <section class="blog-index-head">
         <div class="container blog-shell">
             <div class="breadcrumbs"><a href="/">Home</a><span>/</span><span>Case Studies</span></div>
-            <span class="section-kicker">Solved Assignments</span>
             <h1>Solved Cybersecurity Assignments</h1>
         </div>
     </section>
     <section class="blog-list-section">
         <div class="container blog-shell">
-            <p class="case-study-list-summary" role="status">Showing <?=e((string)$firstNumber)?>–<?=e((string)$lastNumber)?> of <?=e((string)$totalCases)?> case studies</p>
             <div class="blog-list">
                 <?php foreach ($visibleCases as $slug => $case): ?>
                 <article class="blog-list-card">

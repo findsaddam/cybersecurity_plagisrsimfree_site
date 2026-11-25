@@ -389,3 +389,13 @@
 .case-study-pagination__direction{padding-inline:19px!important}
 .case-study-pagination__ellipsis{padding:0 5px;color:var(--muted)}
 @media(max-width:760px){.blog-list-section .blog-list{grid-template-columns:minmax(0,1fr)}.blog-list-section .blog-list-card{padding:24px}.blog-list-section .blog-list-card h2{font-size:23px}.case-study-pagination{gap:7px}.case-study-pagination a,.case-study-pagination__current{min-width:40px;min-height:40px}}
+
+/* Compact the case-studies index only; keep all individual case-study layouts unchanged. */
+.blog-index-page .blog-index-head{padding:0 0 8px}
+.blog-index-page .blog-index-head .breadcrumbs{margin:0 0 8px}
+.blog-index-page .blog-index-head h1{margin:0;line-height:1.12}
+.blog-index-page .blog-list-section{padding:8px 0 80px}
+@media(max-width:760px){
+  .blog-index-page .blog-index-head{padding:0 0 8px}
+  .blog-index-page .blog-list-section{padding:8px 0 56px}
+}
