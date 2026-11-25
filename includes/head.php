@@ -232,7 +232,7 @@ function renderHead(array $page, string $canonical, array $subjects): void {
     <meta name="twitter:image:alt" content="<?= e($socialImageAlt) ?>">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-    <link rel="stylesheet" href="/assets/styles.css?v=3.4.0">
+    <link rel="stylesheet" href="/assets/styles.css?v=3.4.1">
     <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 </head>
 <body>
